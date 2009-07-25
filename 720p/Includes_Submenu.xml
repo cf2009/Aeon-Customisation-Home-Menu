@@ -1,0 +1,3626 @@
+<includes>
+	<include name="BackgroundVars_extras">
+		<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_extras)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_scripts/default.png</imagepath>
+		<info>Skin.String(Custom_extras)</info>		
+	</include>
+
+<!-- Add item -->
+	<include name="BackgroundVars_mainmenu_1">
+		<icon>special://skin/media/backdrops/default_assistant/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_1)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_assistant/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_1)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_2">
+		<icon>special://skin/media/backdrops/default_games/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_2)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_games/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_2)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_3">
+		<icon>special://skin/media/backdrops/default_movies/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_3)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_movies/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_3)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_4">
+		<icon>special://skin/media/backdrops/default_music/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_4)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_music/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_4)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_5">
+		<icon>special://skin/media/backdrops/default_pictures/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_5)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_pictures/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_5)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_6">
+		<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_6)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_scripts/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_6)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_7">
+		<icon>special://skin/media/backdrops/default_settings/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_7)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_settings/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_7)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_8">
+		<icon>special://skin/media/backdrops/default_tvshows/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_8)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_tvshows/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_8)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_9">
+		<icon>special://skin/media/backdrops/default_assistant/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_9)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_assistant/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_9)</info>		
+	</include>
+	<include name="BackgroundVars_mainmenu_10">
+		<icon>special://skin/media/backdrops/default_games/default.png</icon>
+		<thumb>$INFO[Skin.String(Custom_mainmenu_10)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_games/default.png</imagepath>
+		<info>Skin.String(Custom_mainmenu_11)</info>		
+	</include>	
+<!-- Add item End -->
+
+<!-- Weather Backdrop by Current Weather Conditions -->
+	<include name="BackgroundVarsWeather2">
+		<thumb>$INFO[Skin.String(Custom_Weather)]$INFO[Weather.FanartCode]</thumb>
+		<imagepath background="true">$INFO[Skin.String(Custom_Weather)]$INFO[Weather.FanartCode]</imagepath>
+	</include>
+<!-- End -->	
+<!-- Weather -->
+<include name="Objects_Weather_Plugin">
+	<posy>180</posy>	
+</include>
+
+<include name="Objects_Weather_NoPlugin">
+	<posy>380</posy>	
+</include>
+
+<include name="Objects_WeatherBack">
+	<posy>0</posy>
+	<width>196</width>
+	<height>287</height>
+	<texture>home/home_weather_small.png</texture>	
+</include>
+<include name="Objects_WeatherDay">
+	<posx>0</posx>
+	<posy>0</posy>
+	<width>196</width>
+	<height>63</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<font>Font_WeatherTitle</font>
+	<textcolor>c0FFFFFF</textcolor>
+</include>
+
+<include name="Objects_WeatherDate">
+	<posx>0</posx>
+	<posy>30</posy>
+	<width>196</width>
+	<height>40</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<font>Font_WeatherLabel</font>
+	<textcolor>c0FFFFFF</textcolor>
+</include>
+
+<include name="Objects_WeatherTemp">
+	<posy>67</posy>
+	<width>96</width>
+	<height>89</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<font>Font_WeatherTemp</font>
+	<textcolor>FFFFFFFF</textcolor>
+</include>
+
+<include name="Objects_WeatherIcon">
+	<posx>44</posx>
+	<posy>169</posy>
+	<width>108</width>
+	<height>108</height>
+	<timeperimage>75</timeperimage>
+	<randomize>false</randomize>
+	<fadetime>0</fadetime>
+</include>		
+
+<include name="Objects_WeatherPopup2">
+	<control type="group">
+		<posx>0</posx>
+		<posy>40</posy>
+		<width>1280</width>
+		<height>287</height>
+		<animation effect="slide" start="0,-20" end="0,-20" time="0" condition="!Skin.HasSetting(highertime)">Conditional</animation>
+		<animation effect="zoom" start="100" end="90" time="200" center="640,80" condition="Player.HasAudio + Skin.HasSetting(lowermainmenu)+!Window.IsVisible(2600)">Conditional</animation>
+		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
+		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+		<control type="group">
+			<posx>67</posx>
+			<animation effect="fade" start="0" end="100" delay="1500" time="400">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>
+			<control type="multiimage">
+				<description>Weather image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>283</width>
+				<height>287</height>
+				<imagepath diffuse="home/home_weather_big_mask.png">icon/$INFO[Weather.FanartCode]/</imagepath>
+				<timeperimage>175</timeperimage>
+				<randomize>false</randomize>
+				<fadetime>0</fadetime>
+				<colordiffuse>88FFFFFF</colordiffuse>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<visible>Skin.HasSetting(Weather_ani)</visible>
+			</control>
+			<control type="image">
+				<description>Weather image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>283</width>
+				<height>287</height>
+				<texture diffuse="home/home_weather_big_mask.png">$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+				<colordiffuse>88FFFFFF</colordiffuse>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<visible>!Skin.HasSetting(Weather_ani)</visible>
+			</control>
+			<control type="image">
+				<posy>0</posy>
+				<width>283</width>
+				<height>287</height>
+				<texture>home/home_weather_big.png</texture>
+			</control>
+			<control type="label">
+				<posx>10</posx>
+				<posy>0</posy>
+				<width>263</width>
+				<height>63</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_WeatherTitle</font>
+				<textcolor>c0FFFFFF</textcolor>
+				<scroll>false</scroll>
+				<label>$INFO[Window(Weather).Property(Location)]</label>
+			</control>
+			<control type="label">
+				<visible>Skin.HasSetting(debug)</visible>				
+				<posx>10</posx>
+				<posy>75</posy>
+				<width>280</width>
+				<height>20</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_WeatherLabel</font>
+				<textcolor>ffFFFFFF</textcolor>					
+				<label>Fanart code: $INFO[Weather.FanartCode]</label>
+			</control>
+			<control type="label">
+				<visible>Skin.HasSetting(debug)</visible>				
+				<posx>10</posx>
+				<posy>95</posy>
+				<width>280</width>
+				<height>20</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_WeatherLabel</font>
+				<textcolor>ffFFFFFF</textcolor>					
+				<label>dir: $INFO[Skin.String(CustomWeather)]</label>
+			</control>
+			<control type="label">
+				<posx>20</posx>
+				<posy>67</posy>
+				<width>141</width>
+				<height>220</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Font_WeatherLabel</font>
+				<textcolor>c0FFFFFF</textcolor>					
+				<label>$LOCALIZE[31008][CR]$LOCALIZE[31009][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405]</label>
+			</control>
+			<control type="label">
+				<posx>263</posx>
+				<posy>67</posy>
+				<width>141</width>
+				<height>220</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>Font_WeatherLabel</font>
+				<textcolor>FFFFFFFF</textcolor>					
+				<label>$INFO[Window(Weather).Property(Current.Temperature)][CR]$INFO[System.TemperatureUnits][CR]$INFO[Window(Weather).Property(Current.Humidity)][CR]$INFO[Window(Weather).Property(Current.UVIndex)][CR]$INFO[Window(Weather).Property(Current.DewPoint)]</label>
+			</control>						
+		</control>
+	<!-- 4 day -->
+		<control type="group">
+                	<visible>[[!Window.IsVisible(2600) + Skin.HasSetting(weatherpopupweek)] | [!Window.IsVisible(2600) + !Skin.HasSetting(weatherpopup36hour) + !Skin.HasSetting(weatherpopupweekend) + !Skin.HasSetting(weatherpopupweek)]] | !StringCompare(Weather.Plugin,weather.com plus)</visible>
+			<control type="group">
+				<posx>370</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day0.Title)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day0.HighTemp)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day0.LowTemp)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>586</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>	
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day1.Title)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day1.HighTemp)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day1.LowTemp)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>802</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>
+				<animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>					
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day2.Title)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day2.HighTemp)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day2.LowTemp)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>1018</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>			
+				<animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>					
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day3.Title)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day3.HighTemp)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Day3.LowTemp)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>				
+				</control>
+			</control>
+		</control>
+	<!-- 10 days (week) -->
+		<control type="group">
+                <visible>StringCompare(Weather.Plugin,weather.com plus) + Window.IsVisible(2600) + !Skin.HasSetting(weatherpopup36hour) + !Skin.HasSetting(weatherpopupweekend)</visible>
+			<control type="group">
+				<posx>370</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.1.LongDay)]</label>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDate</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.1.Date)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.1.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.1.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Daily.1.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>586</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>	
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.2.LongDay)]</label>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDate</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.2.Date)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.2.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.2.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Daily.2.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>802</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>
+				<animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>					
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.3.LongDay)]</label>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDate</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.3.Date)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.3.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.3.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Daily.3.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>1018</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>			
+				<animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>					
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.4.LongDay)]</label>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDate</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.4.Date)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.4.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.4.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Daily.4.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>25</posx>
+				<posy>300</posy>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.5.LongDay)]</label>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDate</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.5.Date)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.5.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.5.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Daily.5.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>231</posx>
+				<posy>300</posy>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>	
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.6.LongDay)]</label>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDate</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.6.Date)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.6.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.6.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Daily.6.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>437</posx>
+				<posy>300</posy>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>
+				<animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>					
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.7.LongDay)]</label>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDate</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.7.Date)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.7.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.7.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>643</posx>
+				<posy>300</posy>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>			
+				<animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>					
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.8.LongDay)]</label>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDate</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.8.Date)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.8.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.8.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Daily.8.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>849</posx>
+				<posy>300</posy>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>
+				<animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>					
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.9.LongDay)]</label>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDate</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.9.Date)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.9.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.9.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Daily.9.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>1055</posx>
+				<posy>300</posy>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>			
+				<animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>					
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.10.LongDay)]</label>
+				</control>
+				<control type="label">
+					<include>Objects_WeatherDate</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.10.Date)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.10.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>99</posx>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Daily.10.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Daily.10.OutlookIcon)]</texture>				
+				</control>
+			</control>
+		</control>
+	<!-- Weekend -->
+		<control type="group">
+			<visible>Skin.HasSetting(weatherpopupweekend) + StringCompare(Weather.Plugin,weather.com plus)</visible>
+			<control type="group">
+				<posx>370</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<width>266</width>
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<width>266</width>
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">15</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<width>136</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Weekend.1.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>136</posx>
+					<width>132</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Weekend.1.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<posx>79</posx>
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Weekend.1.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>656</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>	
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<width>266</width>
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<width>266</width>
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">16</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<width>136</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Weekend.2.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>136</posx>
+					<width>132</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Weekend.2.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<posx>79</posx>
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Weekend.2.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>942</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>					
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<width>266</width>
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<width>266</width>
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">17</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<width>136</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Weekend.3.HighTemperature)]</label>
+				</control>
+				<control type="label">
+					<posx>136</posx>
+					<width>132</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(Weekend.3.LowTemperature)]</label>
+				</control>
+				<control type="image">
+					<posx>79</posx>
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(Weekend.3.OutlookIcon)]</texture>				
+				</control>
+			</control>
+		</control>
+	<!-- 36 hour -->
+		<control type="group">
+			<visible>Skin.HasSetting(weatherpopup36hour) + StringCompare(Weather.Plugin,weather.com plus)</visible>
+			<control type="group">
+				<posx>370</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>				
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<width>266</width>
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<width>266</width>
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(36Hour.1.Heading)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<width>136</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(36Hour.1.Temperature)]</label>
+				</control>
+				<control type="label">
+					<posx>140</posx>
+					<width>126</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(36Hour.1.Precipitation)]</label>
+				</control>
+				<control type="image">
+					<posx>79</posx>
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(36Hour.1.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>656</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>	
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<width>266</width>
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<width>266</width>
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(36Hour.2.Heading)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<width>136</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(36Hour.2.Temperature)]</label>
+				</control>
+				<control type="label">
+					<posx>140</posx>
+					<width>126</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(36Hour.2.Precipitation)]</label>
+				</control>
+				<control type="image">
+					<posx>79</posx>
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(36Hour.2.OutlookIcon)]</texture>				
+				</control>
+			</control>
+			<control type="group">
+				<posx>942</posx>
+				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+				<animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>					
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<control type="image">
+					<width>266</width>
+					<include>Objects_WeatherBack</include>
+				</control>
+				<control type="label">
+					<width>266</width>
+					<include>Objects_WeatherDay</include>
+					<label fallback="-">$INFO[Window(Weather).Property(36Hour.3.Heading)]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<width>136</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(36Hour.3.Temperature)]</label>
+				</control>
+				<control type="label">
+					<posx>140</posx>
+					<width>126</width>
+					<include>Objects_WeatherTemp</include>
+					<label fallback="-">$INFO[Window(Weather).Property(36Hour.3.Precipitation)]</label>
+				</control>
+				<control type="image">
+					<posx>79</posx>
+					<include>Objects_WeatherIcon</include>
+					<texture>$INFO[Window(Weather).Property(36Hour.3.OutlookIcon)]</texture>				
+				</control>
+                	</control>
+        	</control>
+	</control>
+</include>
+<!-------- Weather End -------->
+<!-------- Customise submenu -------->
+<include name="homesubmenu_Customiseanimation">
+	<animation type="Conditional" condition="Control.HasFocus(345)" reversible="false">
+		<effect type="zoom" start="100" end="20" center="auto" time="350" delay="0" tween="Cubic" asing="inout" />
+		<effect type="fade" start="100" end="0" time="400" delay="0" />
+	</animation>
+	<animation type="Conditional" condition="!Control.HasFocus(345)" reversible="false">
+		<effect type="zoom" start="20" end="100" center="auto" time="350" delay="200" tween="Cubic" asing="inout" />
+		<effect type="fade" start="0" end="100" time="350" delay="200" />
+	</animation>
+	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+</include>
+
+<include name="homesubmenu_Customiseanimation2">
+	<animation type="Conditional" condition="Control.HasFocus(345)" reversible="false">
+		<effect type="fade" start="0" end="100" time="350" delay="200" />
+		<effect type="zoom" start="20" end="100" center="auto" time="350" delay="200" tween="Cubic" asing="inout" />
+	</animation>
+	<animation type="Hidden" reversible="false">
+		<effect type="fade" start="100" end="0" time="350" delay="0" />
+		<effect type="zoom" start="100" end="20" center="auto" time="350" delay="0" tween="Cubic" asing="inout" />
+	</animation>
+</include>
+<include name="homeCustomisesubmenu">
+	<control type="button" id="346">
+		<visible>!Control.IsVisible(2345)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(7)</onfocus>
+	</control>
+	<control type="button" id="346">
+		<visible>Control.IsVisible(2345)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(345)</onfocus>
+	</control>
+	<control type="group">
+		<posx>0</posx>
+		<posy>239</posy>
+		<width>840</width>
+		<height>40</height>
+		<defaultcontrol>300</defaultcontrol>
+		<visible>Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1)| Container(301).HasFocus(2)</visible>
+		<control type="group">
+			<posx>328</posx>
+			<posy>-21</posy>
+			<control type="image">
+				<description>Panel</description>
+				<visible>Control.HasFocus(345)</visible>
+				<include>homesubmenu_Customiseanimation2</include>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>20</height>
+				<width>184</width>
+				<texture>osd/osd_button_paused.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+			</control>
+	  		<control type="label">
+				<visible>Control.HasFocus(345)</visible>
+				<include>homesubmenu_Customiseanimation2</include>
+				<posx>10</posx>
+		   		<posy>0</posy>
+    				<width>164</width>
+    				<height>20</height>
+    				<font>Font_Time</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>a9000000</textcolor>
+	    			<label>$INFO[Container(301).ListItem.Label]</label>
+			</control>
+		</control>
+		<control type="image">
+			<visible>Control.HasFocus(345)</visible>
+			<posx>0</posx>
+			<posy>-28</posy>
+			<width>840</width>
+			<height>99</height>
+			<texture>home/homemenu_back.png</texture>
+			<include>Animation_CommonFade</include>
+			<include>homesubmenu_Customiseanimation2</include>
+		</control>
+		<control type="wraplist" id="345">
+			<visible allowhiddenfocus="true">Control.HasFocus(345)</visible>
+			<posx>0</posx>
+			<posy>-1</posy>
+			<height>40</height>
+			<width>840</width>
+			<onleft>345</onleft>
+			<onright>345</onright>
+			<onup>301</onup>
+			<ondown>301</ondown>
+			<viewtype>list</viewtype>
+			<orientation>horizontal</orientation>
+			<focusposition>2</focusposition>
+			<scrolltime>200</scrolltime>
+			<include>homesubmenu_Customiseanimation2</include>
+			<itemlayout width="184" height="40">
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<textcolor>48FFFFFF</textcolor>
+					<info>ListItem.Label</info>
+				</control>
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<info>ListItem.Label2</info>
+					<textcolor>48000000</textcolor>
+				</control>
+			</itemlayout>
+			<focusedlayout width="184" height="40">
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<info>ListItem.Label2</info>
+					<textcolor>48000000</textcolor>
+				</control>
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<info>ListItem.Label2</info>
+					<textcolor>48000000</textcolor>
+					<include>Animation_ButtonFocusFade</include>
+				</control>
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<textcolor>48FFFFFF</textcolor>  
+					<info>ListItem.Label</info>        
+				</control>
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<textcolor>FFFFFFFF</textcolor>
+					<info>ListItem.Label</info>
+					<include>Animation_ButtonFocusFade</include>
+				</control>
+			</focusedlayout>
+			<content>
+			<!-- TV (7) -->
+			<item id="10">
+				<description>Files on</description>
+				<label>744</label>
+				<onclick>Skin.SetBool(sub_tv_file)</onclick>
+				<visible>!Skin.HasSetting(sub_tv_file)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="10">
+				<description>Files off</description>
+				<label2>744</label2>
+				<onclick>Skin.Reset(sub_tv_file)</onclick>
+				<visible>Container(301).HasFocus(7)</visible>
+				<visible>Skin.HasSetting(sub_tv_file)</visible>
+			</item>
+			<item id="11">
+      				<description>By Genre on</description>
+				<label>135</label>
+				<onclick>Skin.SetBool(sub_tv_Genre)</onclick>
+				<visible>!Skin.HasSetting(sub_tv_Genre)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+	            	</item>
+			<item id="11">
+      				<description>By Genre off</description>
+				<label2>135</label2>
+				<onclick>Skin.Reset(sub_tv_Genre)</onclick>
+				<visible>Skin.HasSetting(sub_tv_Genre)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+	            	</item>
+	       	    	<item id="12">
+				<description>By Year on</description>
+				<label>345</label>
+				<onclick>Skin.SetBool(sub_tv_year)</onclick>
+				<visible>!Skin.HasSetting(sub_tv_year)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+        	    	</item>
+	       	    	<item id="12">
+				<description>By Year off</description>
+				<label2>345</label2>
+				<onclick>Skin.Reset(sub_tv_year)</onclick>
+				<visible>Skin.HasSetting(sub_tv_year)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+        	    	</item>
+			<item id="13">
+				<description>By Actor on</description>
+				<label>344</label>
+				<onclick>Skin.SetBool(sub_tv_Actor)</onclick>
+				<visible>!Skin.HasSetting(sub_tv_Actor)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="13">
+				<description>By Actor off</description>
+				<label2>344</label2>
+				<onclick>Skin.Reset(sub_tv_Actor)</onclick>
+				<visible>Skin.HasSetting(sub_tv_Actor)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="14">
+				<description>Recently Added on</description>
+				<label>31920</label>
+				<onclick>Skin.SetBool(sub_tv_recently)</onclick>
+				<visible>!Skin.HasSetting(sub_tv_recently)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="14">
+				<description>Recently Added off</description>
+				<label2>31920</label2>
+				<onclick>Skin.Reset(sub_tv_recently)</onclick>
+				<visible>Skin.HasSetting(sub_tv_recently)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="15">
+				<description>Video Plugins on</description>
+<!--***-->			<label fallback="PLUGINS">31850</label>
+				<onclick>Skin.SetBool(sub_tv_Plugins)</onclick>
+				<visible>!Skin.HasSetting(sub_tv_Plugins)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="15">
+				<description>Video Plugins off</description>
+<!--***-->			<label2 fallback="PLUGINS">31850</label2>
+				<onclick>Skin.Reset(sub_tv_Plugins)</onclick>
+				<visible>Skin.HasSetting(sub_tv_Plugins)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="233">
+				<description>TVShows_Sub 1 on</description>
+				<label>$INFO[Skin.String(TVShows_Sub_1name)]</label>
+				<onclick>Skin.SetBool(no_TVShows_Sub_1)</onclick>
+				<visible>!Skin.HasSetting(no_TVShows_Sub_1)</visible>
+				<visible>Skin.HasSetting(TVShows_Sub_1)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="233">
+				<description>TVShows_Sub 1 off</description>
+				<label2>$INFO[Skin.String(TVShows_Sub_1name)]</label2>
+				<onclick>Skin.Reset(no_TVShows_Sub_1)</onclick>
+				<visible>Skin.HasSetting(no_TVShows_Sub_1)</visible>
+				<visible>Skin.HasSetting(TVShows_Sub_1)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="234">
+				<description>TVShows_Sub 2 on</description>
+				<label>$INFO[Skin.String(TVShows_Sub_2name)]</label>
+				<onclick>Skin.SetBool(no_TVShows_Sub_2)</onclick>
+				<visible>!Skin.HasSetting(no_TVShows_Sub_2)</visible>
+				<visible>Skin.HasSetting(TVShows_Sub_2)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="234">
+				<description>TVShows_Sub 2 off</description>
+				<label2>$INFO[Skin.String(TVShows_Sub_2name)]</label2>
+				<onclick>Skin.Reset(no_TVShows_Sub_2)</onclick>
+				<visible>Skin.HasSetting(no_TVShows_Sub_2)</visible>
+				<visible>Skin.HasSetting(TVShows_Sub_2)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="235">
+				<description>TVShows_Sub 3 on</description>
+				<label>$INFO[Skin.String(TVShows_Sub_3name)]</label>
+				<onclick>Skin.SetBool(no_TVShows_Sub_3)</onclick>
+				<visible>!Skin.HasSetting(no_TVShows_Sub_3)</visible>
+				<visible>Skin.HasSetting(TVShows_Sub_3)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="235">
+				<description>TVShows_Sub 3 off</description>
+				<label2>$INFO[Skin.String(TVShows_Sub_3name)]</label2>
+				<onclick>Skin.Reset(no_TVShows_Sub_3)</onclick>
+				<visible>Skin.HasSetting(no_TVShows_Sub_3)</visible>
+				<visible>Skin.HasSetting(TVShows_Sub_3)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="236">
+				<description>TVShows_Sub 4 on</description>
+				<label>$INFO[Skin.String(TVShows_Sub_4name)]</label>
+				<onclick>Skin.SetBool(no_TVShows_Sub_4)</onclick>
+				<visible>!Skin.HasSetting(no_TVShows_Sub_4)</visible>
+				<visible>Skin.HasSetting(TVShows_Sub_4)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+			<item id="236">
+				<description>TVShows_Sub 4 off</description>
+				<label2>$INFO[Skin.String(TVShows_Sub_4name)]</label2>
+				<onclick>Skin.Reset(no_TVShows_Sub_4)</onclick>
+				<visible>Skin.HasSetting(no_TVShows_Sub_4)</visible>
+				<visible>Skin.HasSetting(TVShows_Sub_4)</visible>
+				<visible>Container(301).HasFocus(7)</visible>
+			</item>
+		<!-- TV (7) end -->
+		<!-- Movies (6) -->
+			<item id="20">
+				<description>files on</description>
+				<label>744</label>
+				<onclick>Skin.SetBool(sub_movies_files)</onclick>
+				<visible>!Skin.HasSetting(sub_movies_files)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="20">
+				<description>files off</description>
+				<label2>744</label2>
+				<onclick>Skin.Reset(sub_movies_files)</onclick>
+				<visible>Skin.HasSetting(sub_movies_files)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="21">
+				<description>By Genre on</description>
+				<label>135</label>
+				<onclick>Skin.SetBool(sub_movies_Genre)</onclick>
+				<visible>!Skin.HasSetting(sub_movies_Genre)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="21">
+				<description>By Genre off</description>
+				<label2>135</label2>
+				<onclick>Skin.Reset(sub_movies_Genre)</onclick>
+				<visible>Skin.HasSetting(sub_movies_Genre)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="22">
+				<description>By Year on</description>
+				<label>345</label>
+				<onclick>Skin.SetBool(sub_movies_Year)</onclick>
+				<visible>Container(301).HasFocus(6)</visible>
+				<visible>!Skin.HasSetting(sub_movies_Year)</visible>
+			</item>
+			<item id="22">
+				<description>By Year off</description>
+				<label2>345</label2>
+				<onclick>Skin.Reset(sub_movies_Year)</onclick>
+				<visible>Skin.HasSetting(sub_movies_Year)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="23">
+				<description>By Actor on</description>
+				<label>344</label>
+				<onclick>Skin.SetBool(sub_movies_Actor)</onclick>
+				<visible>!Skin.HasSetting(sub_movies_Actor)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="23">
+				<description>By Actor off</description>
+				<label2>344</label2>
+				<onclick>Skin.Reset(sub_movies_Actor)</onclick>
+				<visible>Skin.HasSetting(sub_movies_Actor)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="24">
+				<description>By Director on</description>
+				<label>20339</label>
+				<onclick>Skin.SetBool(sub_movies_Director)</onclick>
+				<visible>!Skin.HasSetting(sub_movies_Director)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="24">
+				<description>By Director off</description>
+				<label2>20339</label2>
+				<onclick>Skin.Reset(sub_movies_Director)</onclick>
+				<visible>Skin.HasSetting(sub_movies_Director)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="25">
+				<description>By Studio on</description>
+				<label>20388</label>
+				<onclick>Skin.SetBool(sub_movies_Studio)</onclick>
+				<visible>!Skin.HasSetting(sub_movies_Studio)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="25">
+				<description>By Studio off</description>
+				<label2>20388</label2>
+				<onclick>Skin.Reset(sub_movies_Studio)</onclick>
+				<visible>Skin.HasSetting(sub_movies_Studio)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="26">
+				<description>Recently Added on</description>
+				<label>31920</label>
+				<onclick>Skin.SetBool(sub_movies_recently)</onclick>
+				<visible>!Skin.HasSetting(sub_movies_recently)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="26">
+				<description>Recently Added off</description>
+				<label2>31920</label2>
+				<onclick>Skin.Reset(sub_movies_recently)</onclick>
+				<visible>Skin.HasSetting(sub_movies_recently)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="27">
+				<description>Video Plugins on</description>
+<!--***-->			<label fallback="PLUGINS">31850</label>
+				<onclick>Skin.SetBool(sub_movies_Plugins)</onclick>
+				<visible>!Skin.HasSetting(sub_movies_Plugins)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="27">
+				<description>Video Plugins off</description>
+<!--***-->			<label2 fallback="PLUGINS">31850</label2>
+				<onclick>Skin.Reset(sub_movies_Plugins)</onclick>
+				<visible>Skin.HasSetting(sub_movies_Plugins)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="237">
+				<description>Movies_Sub 1 on</description>
+				<label>$INFO[Skin.String(Movies_Sub_1name)]</label>
+				<onclick>Skin.SetBool(no_Movies_Sub_1)</onclick>
+				<visible>!Skin.HasSetting(no_Movies_Sub_1)</visible>
+				<visible>Skin.HasSetting(Movies_Sub_1)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="237">
+				<description>Movies_Sub 1 off</description>
+				<label2>$INFO[Skin.String(Movies_Sub_1name)]</label2>
+				<onclick>Skin.Reset(no_Movies_Sub_1)</onclick>
+				<visible>Skin.HasSetting(no_Movies_Sub_1)</visible>
+				<visible>Skin.HasSetting(Movies_Sub_1)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="238">
+				<description>Movies_Sub 2 on</description>
+				<label>$INFO[Skin.String(Movies_Sub_2name)]</label>
+				<onclick>Skin.SetBool(no_Movies_Sub_2)</onclick>
+				<visible>!Skin.HasSetting(no_Movies_Sub_2)</visible>
+				<visible>Skin.HasSetting(Movies_Sub_2)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="238">
+				<description>Movies_Sub 2 off</description>
+				<label2>$INFO[Skin.String(Movies_Sub_2name)]</label2>
+				<onclick>Skin.Reset(no_Movies_Sub_2)</onclick>
+				<visible>Skin.HasSetting(no_Movies_Sub_2)</visible>
+				<visible>Skin.HasSetting(Movies_Sub_2)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="239">
+				<description>Movies_Sub 3 on</description>
+				<label>$INFO[Skin.String(Movies_Sub_3name)]</label>
+				<onclick>Skin.SetBool(no_Movies_Sub_3)</onclick>
+				<visible>!Skin.HasSetting(no_Movies_Sub_3)</visible>
+				<visible>Skin.HasSetting(Movies_Sub_3)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="239">
+				<description>Movies_Sub 3 off</description>
+				<label2>$INFO[Skin.String(Movies_Sub_3name)]</label2>
+				<onclick>Skin.Reset(no_Movies_Sub_3)</onclick>
+				<visible>Skin.HasSetting(no_Movies_Sub_3)</visible>
+				<visible>Skin.HasSetting(Movies_Sub_3)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="240">
+				<description>Movies_Sub 4 on</description>
+				<label>$INFO[Skin.String(Movies_Sub_4name)]</label>
+				<onclick>Skin.SetBool(no_Movies_Sub_4)</onclick>
+				<visible>!Skin.HasSetting(no_Movies_Sub_4)</visible>
+				<visible>Skin.HasSetting(Movies_Sub_4)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+			<item id="240">
+				<description>Movies_Sub 4 off</description>
+				<label2>$INFO[Skin.String(Movies_Sub_4name)]</label2>
+				<onclick>Skin.Reset(no_Movies_Sub_4)</onclick>
+				<visible>Skin.HasSetting(no_Movies_Sub_4)</visible>
+				<visible>Skin.HasSetting(Movies_Sub_4)</visible>
+				<visible>Container(301).HasFocus(6)</visible>
+			</item>
+		<!-- Movies (6) End -->
+		<!-- Music (1)  -->
+			<item id="41">
+				<description>Partymode on</description>
+<!--***-->			<label fallback="PARTY">31854</label>
+				<onclick>Skin.SetBool(sub_music_Party)</onclick>
+				<visible>!Skin.HasSetting(sub_music_Party)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="41">
+				<description>Partymode off</description>
+<!--***-->			<label2 fallback="PARTY">31854</label2>
+				<onclick>Skin.Reset(sub_music_Party)</onclick>
+				<visible>Skin.HasSetting(sub_music_Party)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="42">
+				<description>Last.FM off</description>
+				<label>15200</label>
+				<onclick>Skin.Reset(sub_music_fm)</onclick>
+				<visible>Skin.HasSetting(sub_music_fm)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="42">
+				<description>Last.FM on</description>
+				<label2>$LOCALIZE[15200]</label2>
+				<onclick>Skin.SetBool(sub_music_fm)</onclick>
+				<visible>!Skin.HasSetting(sub_music_fm)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="31">
+				<description>Music files on</description>
+				<label>744</label>
+				<onclick>Skin.SetBool(sub_music_files)</onclick>
+				<visible>!Skin.HasSetting(sub_music_files)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="31">
+				<description>Music files off</description>
+				<label2>744</label2>
+				<onclick>Skin.Reset(sub_music_files)</onclick>
+				<visible>Skin.HasSetting(sub_music_files)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="32">
+				<description>Playlists on</description>
+				<label>136</label>
+				<onclick>Skin.SetBool(sub_music_Playlists)</onclick>
+				<visible>!Skin.HasSetting(sub_music_Playlists)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="32">
+				<description>Playlists off</description>
+				<label2>136</label2>
+				<onclick>Skin.Reset(sub_music_Playlists)</onclick>
+				<visible>Skin.HasSetting(sub_music_Playlists)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="33">
+				<description>Music Videos on</description>
+				<label>157</label>
+				<onclick>Skin.SetBool(sub_music_Videos)</onclick>
+				<visible>!Skin.HasSetting(sub_music_Videos)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="33">
+				<description>Music Videos off</description>
+				<label2>157</label2>
+				<onclick>Skin.Reset(sub_music_Videos)</onclick>
+				<visible>Skin.HasSetting(sub_music_Videos)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="34">
+				<description>genres on</description>
+				<label>135</label>
+				<onclick>Skin.SetBool(sub_music_genres)</onclick>
+				<visible>!Skin.HasSetting(sub_music_genres)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="34">
+				<description>genres off</description>
+				<label2>135</label2>
+				<onclick>Skin.Reset(sub_music_genres)</onclick>
+				<visible>Skin.HasSetting(sub_music_genres)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="35">
+				<description>artists on</description>
+				<label>133</label>
+				<onclick>Skin.SetBool(sub_music_artists)</onclick>
+				<visible>!Skin.HasSetting(sub_music_artists)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="35">
+				<description>artists off</description>
+				<label2>133</label2>
+				<onclick>Skin.Reset(sub_music_artists)</onclick>
+				<visible>Skin.HasSetting(sub_music_artists)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="36">
+				<description>Albums on</description>
+				<label>132</label>
+				<onclick>Skin.SetBool(sub_music_albums)</onclick>
+				<visible>!Skin.HasSetting(sub_music_albums)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="36">
+				<description>Albums off</description>
+				<label2>132</label2>
+				<onclick>Skin.Reset(sub_music_albums)</onclick>
+				<visible>Skin.HasSetting(sub_music_albums)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="37">
+				<description>compilations on</description>
+				<label>521</label>
+				<onclick>Skin.SetBool(sub_music_compilations)</onclick>
+				<visible>!Skin.HasSetting(sub_music_compilations)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="37">
+				<description>compilations off</description>
+				<label2>521</label2>
+				<onclick>Skin.Reset(sub_music_compilations)</onclick>
+				<visible>Skin.HasSetting(sub_music_compilations)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="38">
+				<description>Top 100 on</description>
+				<label>271</label>
+				<onclick>Skin.SetBool(sub_music_top)</onclick>
+				<visible>!Skin.HasSetting(sub_music_top)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="38">
+				<description>Top 100 off</description>
+				<label2>271</label2>
+				<onclick>Skin.Reset(sub_music_top)</onclick>
+				<visible>Skin.HasSetting(sub_music_top)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="39">
+				<description>recently added albums on</description>
+				<label>31920</label>
+				<onclick>Skin.SetBool(sub_music_recently)</onclick>
+				<visible>!Skin.HasSetting(sub_music_recently)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="39">
+				<description>recently added albums off</description>
+				<label2>31920</label2>
+				<onclick>Skin.Reset(sub_music_recently)</onclick>
+				<visible>Skin.HasSetting(sub_music_recently)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="40">
+				<description>Music Plugins on</description>
+<!--***-->			<label fallback="PLUGINS">31850</label>
+				<onclick>Skin.SetBool(sub_music_Plugins)</onclick>
+				<visible>!Skin.HasSetting(sub_music_Plugins)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="40">
+				<description>Music Plugins off</description>
+<!--***-->			<label2 fallback="PLUGINS">31850</label2>
+				<onclick>Skin.Reset(sub_music_Plugins)</onclick>
+				<visible>Skin.HasSetting(sub_music_Plugins)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="241">
+				<description>Music_Sub 1 on</description>
+				<label>$INFO[Skin.String(Music_Sub_1name)]</label>
+				<onclick>Skin.SetBool(no_Music_Sub_1)</onclick>
+				<visible>!Skin.HasSetting(no_Music_Sub_1)</visible>
+				<visible>Skin.HasSetting(Music_Sub_1)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="241">
+				<description>Music_Sub 1 off</description>
+				<label2>$INFO[Skin.String(Music_Sub_1name)]</label2>
+				<onclick>Skin.Reset(no_Music_Sub_1)</onclick>
+				<visible>Skin.HasSetting(no_Music_Sub_1)</visible>
+				<visible>Skin.HasSetting(Music_Sub_1)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="242">
+				<description>Music_Sub 2 on</description>
+				<label>$INFO[Skin.String(Music_Sub_2name)]</label>
+				<onclick>Skin.SetBool(no_Music_Sub_2)</onclick>
+				<visible>!Skin.HasSetting(no_Music_Sub_2)</visible>
+				<visible>Skin.HasSetting(Music_Sub_2)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="242">
+				<description>Music_Sub 2 off</description>
+				<label2>$INFO[Skin.String(Music_Sub_2name)]</label2>
+				<onclick>Skin.Reset(no_Music_Sub_2)</onclick>
+				<visible>Skin.HasSetting(no_Music_Sub_2)</visible>
+				<visible>Skin.HasSetting(Music_Sub_2)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="243">
+				<description>Music_Sub 3 on</description>
+				<label>$INFO[Skin.String(Music_Sub_3name)]</label>
+				<onclick>Skin.SetBool(no_Music_Sub_3)</onclick>
+				<visible>!Skin.HasSetting(no_Music_Sub_3)</visible>
+				<visible>Skin.HasSetting(Music_Sub_3)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="243">
+				<description>Music_Sub 3 off</description>
+				<label2>$INFO[Skin.String(Music_Sub_3name)]</label2>
+				<onclick>Skin.Reset(no_Music_Sub_3)</onclick>
+				<visible>Skin.HasSetting(no_Music_Sub_3)</visible>
+				<visible>Skin.HasSetting(Music_Sub_3)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="244">
+				<description>Music_Sub 4 on</description>
+				<label>$INFO[Skin.String(Music_Sub_4name)]</label>
+				<onclick>Skin.SetBool(no_Music_Sub_4)</onclick>
+				<visible>!Skin.HasSetting(no_Music_Sub_4)</visible>
+				<visible>Skin.HasSetting(Music_Sub_4)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+			<item id="244">
+				<description>Music_Sub 4 off</description>
+				<label2>$INFO[Skin.String(Music_Sub_4name)]</label2>
+				<onclick>Skin.Reset(no_Music_Sub_4)</onclick>
+				<visible>Skin.HasSetting(no_Music_Sub_4)</visible>
+				<visible>Skin.HasSetting(Music_Sub_4)</visible>
+				<visible>Container(301).HasFocus(1)</visible>
+			</item>
+		<!-- Music (1) end -->
+		<!-- Extras (2) -->
+			<item id="51">
+				<description>Extras sub Programs on</description>
+				<label>0</label>
+				<onclick>Skin.SetBool(sub_extras_Programs)</onclick>
+				<visible>Skin.HasSetting(no_programs)</visible>
+				<visible>!Skin.HasSetting(sub_extras_Programs)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="51">
+				<description>Extras sub Programs off</description>
+				<label2>0</label2>
+				<onclick>Skin.Reset(sub_extras_Programs)</onclick>
+				<visible>Skin.HasSetting(no_programs)</visible>
+				<visible>Skin.HasSetting(sub_extras_Programs)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="52">
+				<description>Extras sub scripts on</description>
+				<label>247</label>
+				<onclick>Skin.SetBool(sub_extras_scripts)</onclick>
+				<visible>Container(301).HasFocus(2)</visible>
+				<visible>!Skin.HasSetting(sub_extras_scripts)</visible>
+			</item>
+			<item id="52">
+				<description>Extras sub scripts off</description>
+				<label2>247</label2>
+				<onclick>Skin.Reset(sub_extras_scripts)</onclick>
+				<visible>Skin.HasSetting(sub_extras_scripts)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="53">
+				<description>Extras sub Settings on</description>
+				<label>31016</label>
+				<onclick>Skin.SetBool(sub_extras_settings)</onclick>
+				<visible>Skin.HasSetting(nosettings)</visible>
+				<visible>!Skin.HasSetting(sub_extras_settings)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="53">
+				<description>Extras sub Settings off</description>
+				<label2>31016</label2>
+				<onclick>Skin.Reset(sub_extras_settings)</onclick>
+				<visible>Skin.HasSetting(nosettings)</visible>
+				<visible>Skin.HasSetting(sub_extras_settings)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="54">
+				<description>favourite on</description>
+				<label>1036</label>
+				<onclick>Skin.SetBool(sub_extras_favourites)</onclick>
+				<visible>!Skin.HasSetting(sub_extras_favourites)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="54">
+				<description>favourite off</description>
+				<label2>1036</label2>
+				<onclick>Skin.Reset(sub_extras_favourites)</onclick>
+				<visible>Skin.HasSetting(sub_extras_favourites)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="56">
+				<description>Shutdown</description>				
+				<label>31019</label>
+				<onclick>Skin.SetBool(sub_extras_shutdown)</onclick>
+				<visible>!Skin.HasSetting(shutdown)</visible>
+				<visible>!Skin.HasSetting(sub_extras_shutdown)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="56">
+				<description>Shutdown</description>				
+				<label2>31019</label2>
+				<onclick>Skin.Reset(sub_extras_shutdown)</onclick>
+				<visible>!Skin.HasSetting(shutdown)</visible>
+				<visible>Skin.HasSetting(sub_extras_shutdown)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="57">
+				<description>Logout on</description>
+				<label>20126</label>
+				<onclick>Skin.SetBool(sub_Shutdown_Logout)</onclick>
+				<visible>System.HasLoginScreen</visible>
+				<visible>!Skin.HasSetting(signout)</visible>
+				<visible>!Skin.HasSetting(shutdown)</visible>
+				<visible>!Skin.HasSetting(sub_Shutdown_Logout)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="57">
+				<description>Logout off</description>
+				<label2>20126</label2>
+				<onclick>Skin.Reset(sub_Shutdown_Logout)</onclick>
+				<visible>System.HasLoginScreen</visible>
+				<visible>!Skin.HasSetting(signout)</visible>
+				<visible>!Skin.HasSetting(shutdown)</visible>
+				<visible>Skin.HasSetting(sub_Shutdown_Logout)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="55">
+				<description>AlarmClock setup</description>
+<!--***-->			<label fallback="ALARM">31855</label>
+				<onclick>Skin.SetBool(sub_extras_AlarmClock)</onclick>
+				<visible>!Skin.HasSetting(sub_extras_AlarmClock)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="55">
+				<description>AlarmClock setup</description>
+<!--***-->			<label2 fallback="ALARM">31855</label2>
+				<onclick>Skin.Reset(sub_extras_AlarmClock)</onclick>
+				<visible>Skin.HasSetting(sub_extras_AlarmClock)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="245">
+				<description>Extras_Sub 1 on</description>
+				<label>$INFO[Skin.String(Extras_Sub_1name)]</label>
+				<onclick>Skin.SetBool(no_Extras_Sub_1)</onclick>
+				<visible>!Skin.HasSetting(no_Extras_Sub_1)</visible>
+				<visible>Skin.HasSetting(Extras_Sub_1)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="245">
+				<description>Extras_Sub 1 off</description>
+				<label2>$INFO[Skin.String(Extras_Sub_1name)]</label2>
+				<onclick>Skin.Reset(no_Extras_Sub_1)</onclick>
+				<visible>Skin.HasSetting(no_Extras_Sub_1)</visible>
+				<visible>Skin.HasSetting(Extras_Sub_1)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="246">
+				<description>Extras_Sub 2 on</description>
+				<label>$INFO[Skin.String(Extras_Sub_2name)]</label>
+				<onclick>Skin.SetBool(no_Extras_Sub_2)</onclick>
+				<visible>!Skin.HasSetting(no_Extras_Sub_2)</visible>
+				<visible>Skin.HasSetting(Extras_Sub_2)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="246">
+				<description>Extras_Sub 2 off</description>
+				<label2>$INFO[Skin.String(Extras_Sub_2name)]</label2>
+				<onclick>Skin.Reset(no_Extras_Sub_2)</onclick>
+				<visible>Skin.HasSetting(no_Extras_Sub_2)</visible>
+				<visible>Skin.HasSetting(Extras_Sub_2)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="247">
+				<description>Extras_Sub 3 on</description>
+				<label>$INFO[Skin.String(Extras_Sub_3name)]</label>
+				<onclick>Skin.SetBool(no_Extras_Sub_3)</onclick>
+				<visible>!Skin.HasSetting(no_Extras_Sub_3)</visible>
+				<visible>Skin.HasSetting(Extras_Sub_3)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="247">
+				<description>Extras_Sub 3 off</description>
+				<label2>$INFO[Skin.String(Extras_Sub_3name)]</label2>
+				<onclick>Skin.Reset(no_Extras_Sub_3)</onclick>
+				<visible>Skin.HasSetting(no_Extras_Sub_3)</visible>
+				<visible>Skin.HasSetting(Extras_Sub_3)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="248">
+				<description>Extras_Sub 4 on</description>
+				<label>$INFO[Skin.String(Extras_Sub_4name)]</label>
+				<onclick>Skin.SetBool(no_Extras_Sub_4)</onclick>
+				<visible>!Skin.HasSetting(no_Extras_Sub_4)</visible>
+				<visible>Skin.HasSetting(Extras_Sub_4)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+			<item id="248">
+				<description>Extras_Sub 4 off</description>
+				<label2>$INFO[Skin.String(Extras_Sub_4name)]</label2>
+				<onclick>Skin.Reset(no_Extras_Sub_4)</onclick>
+				<visible>Skin.HasSetting(no_Extras_Sub_4)</visible>
+				<visible>Skin.HasSetting(Extras_Sub_4)</visible>
+				<visible>Container(301).HasFocus(2)</visible>
+			</item>
+		<!-- extras (2) End -->
+		<!-- Shutdown (22) -->
+			<item id="61">
+				<description>Shutdown Timer on</description>
+<!--***-->			<label fallback="TIMER">31856</label>
+				<onclick>Skin.SetBool(sub_Shutdown_Timer)</onclick>
+				<visible>!Skin.HasSetting(sub_Shutdown_Timer)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="61">
+				<description>Shutdown Timer off</description>
+<!--***-->			<label2 fallback="TIMER">31856</label2>
+				<onclick>Skin.Reset(sub_Shutdown_Timer)</onclick>
+				<visible>Skin.HasSetting(sub_Shutdown_Timer)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="62">
+				<description>Restart on</description>
+				<label>13313</label>
+				<onclick>Skin.SetBool(sub_Shutdown_Restart)</onclick>
+				<visible>!Skin.HasSetting(sub_Shutdown_Restart)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="62">
+				<description>Restart off</description>
+				<label2>13313</label2>
+				<onclick>Skin.Reset(sub_Shutdown_Restart)</onclick>
+				<visible>Skin.HasSetting(sub_Shutdown_Restart)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="63">
+				<description>Reload on</description>
+				<label>31410</label>
+				<onclick>Skin.SetBool(sub_Shutdown_Reload)</onclick>
+				<visible>!Skin.HasSetting(sub_Shutdown_Reload)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="63">
+				<description>Reload off</description>
+				<label2>31410</label2>
+				<onclick>Skin.Reset(sub_Shutdown_Reload)</onclick>
+				<visible>Skin.HasSetting(sub_Shutdown_Reload)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="64">
+				<description>Refresh on</description>
+				<label>31607</label>
+				<onclick>Skin.SetBool(sub_Shutdown_Refresh)</onclick>
+				<visible>!Skin.HasSetting(sub_Shutdown_Refresh)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="64">
+				<description>Refresh off</description>
+				<label2>31607</label2>
+				<onclick>Skin.Reset(sub_Shutdown_Refresh)</onclick>
+				<visible>Skin.HasSetting(sub_Shutdown_Refresh)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="65">
+				<description>Dashboard on</description>
+				<label>13006</label>
+				<onclick>Skin.SetBool(sub_Shutdown_Dashboard)</onclick>
+				<visible>System.Platform.Xbox</visible>
+				<visible>!Skin.HasSetting(sub_Shutdown_Dashboard)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="65">
+				<description>Dashboard off</description>
+				<label2>13006</label2>
+				<onclick>Skin.Reset(sub_Shutdown_Dashboard)</onclick>
+				<visible>System.Platform.Xbox</visible>
+				<visible>Skin.HasSetting(sub_Shutdown_Dashboard)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="66">
+				<description>Suspend on</description>
+				<label>13011</label>
+				<onclick>Skin.SetBool(sub_Shutdown_Suspend)</onclick>
+				<visible>!System.Platform.Xbox</visible>
+				<visible>!Skin.HasSetting(sub_Shutdown_Suspend)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="66">
+				<description>Suspend off</description>
+				<label2>13011</label2>
+				<onclick>Skin.Reset(sub_Shutdown_Suspend)</onclick>
+				<visible>!System.Platform.Xbox</visible>
+				<visible>Skin.HasSetting(sub_Shutdown_Suspend)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="67">
+				<description>Hibernate on</description>
+				<label>13010</label>
+				<onclick>Skin.SetBool(sub_Shutdown_Hibernate)</onclick>
+				<visible>!System.Platform.Xbox</visible>
+				<visible>!Skin.HasSetting(sub_Shutdown_Hibernate)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="67">
+				<description>Hibernate off</description>
+				<label2>13010</label2>
+				<onclick>Skin.Reset(sub_Shutdown_Hibernate)</onclick>
+				<visible>!System.Platform.Xbox</visible>
+				<visible>Skin.HasSetting(sub_Shutdown_Hibernate)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="68">
+				<description>Logout Button on</description>
+				<label>$LOCALIZE[20126]</label>
+				<onclick>Skin.SetBool(sub_Shutdown_Logout)</onclick>
+				<visible>System.HasLoginScreen</visible>
+				<visible>!Skin.HasSetting(sub_Shutdown_Logout)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+			<item id="68">
+				<description>Logout Button off</description>
+				<label2>20126</label2>
+				<onclick>Skin.Reset(sub_Shutdown_Logout)</onclick>
+				<visible>System.HasLoginScreen</visible>
+				<visible>Skin.HasSetting(sub_Shutdown_Logout)</visible>
+				<visible>Container(301).HasFocus(22)</visible>
+			</item>
+		<!-- Shutdown (22) End -->
+			</content> 
+		</control>
+	</control>
+	<control type="group">
+		<visible>Control.HasFocus(345)|Control.HasFocus(300)|Control.HasFocus(301)</visible>
+		<posx>300</posx>
+		<posy>-512</posy>
+		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+		<animation effect="slide" start="0" end="0,-150" time="0" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+		<control type="image">
+			<description>Panel</description>
+			<posx>20</posx>
+			<posy>0</posy>
+			<height>20</height>
+			<width>200</width>
+			<texture flipy="true">osd/osd_button_paused.png</texture>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+		</control>
+		<control type="label" id="2345">
+			<visible>Container(301).HasFocus(22) | Container(301).HasFocus(6) | Container(301).HasFocus(7) | Container(301).HasFocus(1)| Container(301).HasFocus(2)</visible>
+			<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+			<posx>25</posx>
+			<posy>-1</posy>
+			<width>190</width>
+			<height>20</height>
+			<font>Font_Time</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>a9000000</textcolor>
+			<label>exit</label>	
+		</control>
+  		<control type="label">
+			<visible>!Control.IsVisible(2345)</visible>
+			<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+			<posx>25</posx>
+			<posy>-1</posy>
+	    		<width>190</width>
+    			<height>20</height>
+			<font>Font_Time</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>a9000000</textcolor>
+			<label>submenu</label>	
+		</control>
+	</control>
+	<control type="group">
+		<visible>Control.HasFocus(345)|Control.HasFocus(300)|Control.HasFocus(301)</visible>
+		<posx>300</posx>
+		<posy>1465</posy>
+		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+		<animation effect="slide" start="0" end="0,-150" time="0" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+		<control type="image">
+			<description>Panel</description>
+			<posx>20</posx>
+			<posy>0</posy>
+			<height>20</height>
+			<width>200</width>
+			<texture>osd/osd_button_paused.png</texture>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+		</control>
+  		<control type="label">
+			<posx>25</posx>
+			<posy>-1</posy>
+    			<width>190</width>
+			<height>20</height>
+	    		<font>Font_Time</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>a9000000</textcolor>
+			<label>exit</label>	
+		</control>
+	</control>
+	<control type="group">
+		<description>31086</description>
+		<posx>-112</posx>
+		<posy>520</posy>
+		<width>1280</width>
+		<height>720</height>
+		<animation effect="slide" start="0" end="0,-150" time="0" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+		<animation effect="fade" time="500">Visible</animation>
+		<animation effect="fade" time="200">Hidden</animation>
+		<animation effect="fade" time="500">WindowOpen</animation>
+		<animation effect="fade" time="200">WindowClose</animation>
+		<animation effect="slide" start="0,-8" end="0,-8" time="0" condition="Window.IsActive(4)">Conditional</animation>
+		<visible>Control.HasFocus(345)</visible>
+		<control type="label">
+			<visible>Control.HasFocus(345)</visible>
+			<include>Labels_MainLabelBigVars</include>
+			<label>$LOCALIZE[31104] $INFO[Container(301).ListItem.Label]$INFO[Container(301).ListItem.Label2] - $INFO[Container(345).ListItem.Label]$INFO[Container(345).ListItem.Label2] $LOCALIZE[31105]</label>
+		</control>
+		<control type="label">
+			<include>Labels_MainLabelSmallVars</include>
+			<label>31088</label>
+		</control>
+	</control>
+</include>
+<!-------- Customise submenu End -------->
+<!-------- submenu -------->
+<include name="homesubmenu_animation">
+	<animation type="Conditional" condition="Skin.HasSetting(submenu)" reversible="false">
+		<effect type="fade" start="0" end="100" time="350" delay="0" />
+		<effect type="zoom" start="20" end="100" center="auto" time="350" delay="0" tween="Cubic" asing="inout" />
+	</animation>
+	<animation type="Hidden" reversible="false">
+		<effect type="fade" start="100" end="0" time="350" delay="0" />
+		<effect type="zoom" start="100" end="20" center="auto" time="350" delay="0" tween="Cubic" asing="inout" />
+	</animation>
+</include>
+<include name="homesubmenu_animation2">
+	<animation type="Conditional" condition="Skin.HasSetting(submenu)" reversible="false">
+		<effect type="zoom" start="100" end="200" center="auto" time="350" delay="0" tween="Cubic" asing="inout" />
+		<effect type="fade" start="100" end="0" time="400" delay="0" />
+	</animation>
+	<animation type="Conditional" condition="!Skin.HasSetting(submenu)" reversible="false">
+		<effect type="zoom" start="200" end="100" center="auto" time="350" delay="0" tween="Cubic" asing="inout" />
+		<effect type="fade" start="0" end="100" time="350" delay="0" />
+	</animation>
+</include>
+<include name="homesubmenu_but">
+	<texturefocus></texturefocus>
+	<texturenofocus></texturenofocus>
+	<onclick>-</onclick>
+	<label>-</label>
+	<posy>1280</posy>
+	<posx>2000</posx>
+</include>
+<!-- extras.py set up -->
+<include name="extras_no_totals">
+	<onfocus>XBMC.RunScript(special://skin/extras/extras.py,totals=True)</onfocus>
+</include>
+<include name="extras_no_music">
+	<onfocus>XBMC.RunScript(special://skin/extras/extras.py,music=True)</onfocus>
+</include>
+<include name="extras_no_tvshow">
+	<onfocus>XBMC.RunScript(special://skin/extras/extras.py,tvshow=True,unplayed=True)</onfocus>
+</include>
+<include name="extras_no_movie">
+	<onfocus>XBMC.RunScript(special://skin/extras/extras.py,movie=True,unplayed=True)</onfocus>
+</include>
+<!-- extras.py set up end -->
+<include name="homesubmenu_anim">
+	<!-- OnUp -->
+	<control type="group" id="324">
+		<control type="button" id="624">
+			<visible>Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(CustomMenuanimation)</visible>
+			<include>homesubmenu_but</include>
+			<onfocus>SetFocus(300)</onfocus>
+			<onfocus>Skin.Reset(lowermainmenu)</onfocus>
+		</control>
+		<control type="button" id="625">
+			<visible>!Control.IsVisible(624)+Control.IsVisible(330)</visible>
+			<visible>[!Skin.HasSetting(CustomMenuanimation)|[!Control.IsVisible(8001)|Container(300).HasFocus(1)]]</visible>
+			<visible>[Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)|[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)]]</visible>
+			<include>homesubmenu_but</include>
+			<onfocus>SetFocus(325)</onfocus>
+			<onfocus>Skin.SetBool(submenu)</onfocus>
+		</control>
+		<control type="button" id="626">
+			<visible>Skin.HasSetting(CustomMenuanimation)</visible>
+			<visible>Control.IsVisible(8001)+!Container(300).HasFocus(1)</visible>
+			<include>homesubmenu_but</include>
+			<onfocus>SetFocus(8001)</onfocus>
+		</control>
+		<control type="button" id="627">
+			<visible>!Control.IsVisible(624)</visible>
+			<visible>!Control.IsVisible(625)</visible>
+			<visible>!Control.IsVisible(626)</visible>
+			<include>homesubmenu_but</include>
+			<onfocus>SetFocus(300)</onfocus>
+		</control>
+	</control>
+	<!-- OnUp end -->
+	<!-- Ondown -->
+	<control type="button" id="322">
+		<visible>Control.IsVisible(330)+Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(325)</onfocus>
+		<onfocus>Skin.SetBool(submenu)</onfocus>
+	</control>
+	<control type="button" id="322">
+		<visible>!Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(CustomMenuanimation)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.SetBool(lowermainmenu)</onfocus>
+	</control>
+	<!-- Ondown end -->
+
+	<!-- OnUp sub -->
+	<control type="button" id="321">
+		<visible>[!Control.IsVisible(8001)|Skin.HasSetting(CustomMenuanimation)]+Control.IsVisible(330)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.Reset(submenu)</onfocus>
+	</control>
+	<control type="button" id="321">
+		<visible>!Container(300).HasFocus(1) + Control.IsVisible(8001) + !Skin.HasSetting(CustomMenuanimation)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(8001)</onfocus>
+		<onfocus>Skin.Reset(submenu)</onfocus>
+	</control>
+	<!-- OnUp sub end -->
+	<!-- Ondown sub -->
+	<control type="button" id="320">
+		<visible>Control.IsVisible(330)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.Reset(submenu)</onfocus>
+	</control>
+	<!-- Ondown sub end -->
+
+	<!-- Windowopen -->
+	<control type="button" id="323">
+		<include>homesubmenu_but</include>
+		<!--include condition="!Skin.HasSetting(Library_info)">extras_no_totals</include>
+		<include condition="!Skin.HasSetting(ra_music_info)">extras_no_music</include>
+		<include condition="!Skin.HasSetting(ra_tvshow_info)">extras_no_tvshow</include>
+		<include condition="!Skin.HasSetting(ra_movie_info)">extras_no_movie</include-->
+
+		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True)</onfocus>
+		<onfocus>SetFocus(325)</onfocus>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.Reset(submenu)</onfocus>
+	</control>
+	<!-- Windowopen -->
+</include>
+
+<include name="homesubmenu_main_fix">
+	<control type="label">
+		<visible>!Control.HasFocus(300)+!Skin.HasSetting(submenu)</visible>
+		<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
+			<effect type="slide" start="-1280" end="0" time="400" tween="quadratic" easing="out" />
+			<effect type="fade" start="0" end="100" time="400" />
+		</animation>
+		<animation effect="fade" start="0" end="0" time="1">WindowClose</animation>
+		<include>homesubmenu_animation2</include>
+		<animation effect="fade" start="100" end="99" time="300">Hidden</animation>
+		<label>$INFO[Container(300).ListItem.Label]</label>
+		<posy>0</posy>
+		<posx>500</posx>
+		<height>61</height>
+		<width>280</width>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_MainMenu</font>
+		<textcolor>ffFFFFFF</textcolor>
+	</control>
+</include>
+
+<include name="homesubmenu">
+	<include>homesubmenu_anim</include>
+	<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
+		<effect type="slide" start="-1280" end="0" time="400" tween="quadratic" easing="out" />
+		<effect type="fade" start="0" end="100" time="400" />
+	</animation>
+	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+	<control type="group" id="330">
+		<visible>!Skin.HasSetting(CustomMenuSub)</visible>
+		<control type="group">
+			<posx>509</posx>
+			<posy>-25</posy>
+			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+			<control type="image">
+				<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
+				<posx>20</posx>
+				<posy>0</posy>
+				<height>25</height>
+				<width>220</width>
+				<texture>osd/osd_button_paused.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<animation type="Conditional" condition="Skin.HasSetting(submenu)" reversible="false">
+					<effect type="fade" start="0" end="100" time="400" delay="0" />
+					<effect type="slide" start="0,20" end="0,0" time="300" delay="0" />
+					<effect type="zoom" start="20" end="100" center="auto" time="400" delay="0" tween="Cubic" asing="inout" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="400" delay="0" />
+					<effect type="slide" start="0,0" end="0,20" time="300" delay="0" />
+					<effect type="zoom" start="100" end="20" center="auto" time="400" delay="0" tween="Cubic" asing="inout" />
+				</animation>
+			</control>
+  			<control type="label">
+				<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
+				<posx>30</posx>
+	    			<posy>-3</posy>
+    				<width>205</width>
+    				<height>30</height>
+    				<font>Font_Time</font>
+	    			<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>a9000000</textcolor>
+    				<label>$INFO[Container(300).ListItem.Label]</label>
+				<animation type="Conditional" condition="Skin.HasSetting(submenu)" reversible="false">
+					<effect type="fade" start="0" end="100" time="400" delay="0" />
+					<effect type="slide" start="0,20" end="0,0" time="350" delay="0" />
+					<effect type="zoom" start="20" end="100" center="auto" time="400" delay="0" tween="Cubic" asing="inout" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="400" delay="0" />
+					<effect type="slide" start="0,0" end="0,20" time="350" delay="0" />
+					<effect type="zoom" start="100" end="20" center="auto" time="400" delay="0" tween="Cubic" asing="inout" />
+				</animation>	
+	  		</control>
+		</control>
+		<control type="image">
+			<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
+			<posx>0</posx>
+			<posy>-41</posy>
+			<width>1280</width>
+			<height>150</height>
+			<texture>home/homemenu_back.png</texture>
+			<include>Animation_CommonFade</include>
+			<include>homesubmenu_animation</include>
+		</control>
+		<control type="wraplist" id="325">
+			<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
+			<posx>-50</posx>
+			<posy>0</posy>
+			<height>61</height>
+			<width>1380</width>
+			<onleft>325</onleft>
+			<onright>325</onright>
+			<viewtype>list</viewtype>
+			<orientation>horizontal</orientation>
+			<focusposition>2</focusposition>
+			<scrolltime>200</scrolltime>
+			<ondown>320</ondown>
+			<onup>321</onup>
+			<include>homesubmenu_animation</include> 
+			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+			<itemlayout width="300" height="61">
+				<control type="label">
+					<width>300</width>
+					<posx>90</posx>
+					<include>MainMenu_Label</include>
+					<textcolor>48FFFFFF</textcolor>
+				</control>
+			</itemlayout>
+			<focusedlayout width="300" height="61">
+				<control type="label">
+					<width>300</width>
+					<posx>90</posx>
+					<include>MainMenu_Label</include>
+					<textcolor>48FFFFFF</textcolor>          
+				</control>
+				<control type="label">
+					<width>300</width>
+					<posx>90</posx>
+					<include>MainMenu_Label</include>
+					<textcolor>FFFFFFFF</textcolor>
+					<include>Animation_ButtonFocusFade</include>
+				</control>
+			</focusedlayout>
+			<content>
+			<!-- weather (10) -->
+				<item id="1">
+<!--***-->				<label fallback="4 Days">31853</label>
+					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+					<onclick>Skin.SetBool(weatherpopupweek)</onclick>
+					<visible>Container(300).HasFocus(10)</visible>
+				</item>
+				<item id="2">
+<!--***-->				<label fallback="36 HOURS">31852</label>
+					<onclick>Skin.SetBool(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+					<onclick>Skin.Reset(weatherpopupweek)</onclick>
+					<visible>Container(300).HasFocus(10)</visible>
+				</item>
+				<item id="3">
+<!--***-->				<label fallback="WEEKEND">31851</label>
+					<onclick>Skin.SetBool(weatherpopupweekend)</onclick>
+					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweek)</onclick>
+					<visible>Container(300).HasFocus(10)</visible>
+				</item>
+				<item id="4">
+<!--***-->				<label fallback="4 DAYS">31853</label>
+					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+					<onclick>Skin.SetBool(weatherpopupweek)</onclick>
+					<visible>Container(300).HasFocus(10)</visible>
+				</item>
+				<item id="5">
+<!--***-->				<label fallback="36 HOURS">31852</label>
+					<onclick>Skin.SetBool(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+					<onclick>Skin.Reset(weatherpopupweek)</onclick>
+					<visible>Container(300).HasFocus(10)</visible>
+				</item>
+				<item id="6">
+<!--***-->				<label fallback="WEEKEND">31851</label>
+					<onclick>Skin.SetBool(weatherpopupweekend)</onclick>
+					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweek)</onclick>
+					<visible>Container(300).HasFocus(10)</visible>
+				</item>
+			<!-- weather (10) end -->
+			<!-- TV (7) -->
+				<item id="10">
+					<description>Video Files</description>
+					<label>744</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(24)</onclick>
+					<visible>!Skin.HasSetting(sub_tv_file)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="11">
+              				<description>By Genre</description>
+					<label>135</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowgenres,return)</onclick>
+					<visible>!Skin.HasSetting(sub_tv_Genre)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+		            	</item>
+	        	    	<item id="12">
+					<description>By Year</description>
+					<label>345</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowyears,return)</onclick>
+					<visible>!Skin.HasSetting(sub_tv_year)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+        		    	</item>
+				<item id="13">
+					<description>By Actor</description>
+					<label>344</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowactors,return)</onclick>
+					<visible>!Skin.HasSetting(sub_tv_Actor)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="14">
+					<description>Recently Added</description>
+					<label>31920</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedepisodes,return)</onclick>
+					<visible>!Skin.HasSetting(sub_tv_Recently)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="15">
+					<description>Video Plugins 1037</description>
+<!--***-->				<label fallback="PLUGINS">31850</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,plugins,return)</onclick>
+					<visible>!Skin.HasSetting(sub_tv_Plugins)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="233">
+					<description>TVShows_Sub 1</description>
+					<label>$INFO[Skin.String(TVShows_Sub_1name)]</label>
+					<onclick>$INFO[Skin.String(TVShows_Sub_1path)]</onclick>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<visible>Skin.HasSetting(TVShows_Sub_1)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="234">
+					<description>TVShows_Sub 2</description>
+					<label>$INFO[Skin.String(TVShows_Sub_2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(TVShows_Sub_2path)]</onclick>
+					<visible>Skin.HasSetting(TVShows_Sub_2)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="235">
+					<description>TVShows_Sub 3</description>
+					<label>$INFO[Skin.String(TVShows_Sub_3name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(TVShows_Sub_3path)]</onclick>
+					<visible>Skin.HasSetting(TVShows_Sub_3)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="236">
+					<description>TVShows_Sub 4</description>
+					<label>$INFO[Skin.String(TVShows_Sub_4name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(TVShows_Sub_4path)]</onclick>
+					<visible>Skin.HasSetting(TVShows_Sub_4)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<!-- TV (7) end -->
+				<!-- Movies (6) -->
+				<item id="20">
+					<description>Video Files</description>
+					<label>744</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(24)</onclick>
+					<visible>!Skin.HasSetting(sub_movies_files)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="21">
+					<description>By Genre</description>
+					<label>135</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviegenres,return)</onclick>
+					<visible>!Skin.HasSetting(sub_movies_Genre)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="22">
+					<description>By Year</description>
+					<label>345</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,movieyears,return)</onclick>
+					<visible>!Skin.HasSetting(sub_movies_Year)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="23">
+					<description>By Actor</description>
+					<label>344</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,movieactors,return)</onclick>
+					<visible>!Skin.HasSetting(sub_movies_Actor)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="24">
+					<description>By Director</description>
+					<label>20339</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviedirectors,return)</onclick>
+					<visible>!Skin.HasSetting(sub_movies_Director)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="25">
+					<description>By Studio</description>
+					<label>20388</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviestudios,return)</onclick>
+					<visible>!Skin.HasSetting(sub_movies_Studio)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="26">
+					<description>Recently Added</description>
+					<label>31920</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedmovies,return)</onclick>
+					<visible>!Skin.HasSetting(sub_movies_recently)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="27">
+					<description>Video Plugins 1037</description>
+<!--***-->				<label fallback="PLUGINS">31850</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,plugins,return)</onclick>
+					<visible>!Skin.HasSetting(sub_movies_Plugins)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="237">
+					<description>Movies_Sub 1</description>
+					<label>$INFO[Skin.String(Movies_Sub_1name)]</label>
+					<onclick>$INFO[Skin.String(Movies_Sub_1path)]</onclick>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<visible>Skin.HasSetting(Movies_Sub_1)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="238">
+					<description>Movies_Sub 2</description>
+					<label>$INFO[Skin.String(Movies_Sub_2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(Movies_Sub_2path)]</onclick>
+					<visible>Skin.HasSetting(Movies_Sub_2)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="239">
+					<description>Movies_Sub 3</description>
+					<label>$INFO[Skin.String(Movies_Sub_3name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(Movies_Sub_3path)]</onclick>
+					<visible>Skin.HasSetting(Movies_Sub_3)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="240">
+					<description>Movies_Sub 4</description>
+					<label>$INFO[Skin.String(Movies_Sub_4name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(Movies_Sub_4path)]</onclick>
+					<visible>Skin.HasSetting(Movies_Sub_4)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<!-- Movies (6) End -->
+				<!-- Music (1)  -->
+				<item id="41">
+					<description>Partymode</description>
+<!--***-->				<label fallback="PARTY">31854</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>PlayerControl(Partymode(music))</onclick>
+					<visible>!Skin.HasSetting(sub_music_Party)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="42">
+					<description>Last.FM</description>
+					<label>15200</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MusicFiles,Last.FM)</onclick>
+					<visible>Skin.HasSetting(sub_music_fm)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="31">
+					<description>Browse Button</description>
+					<label>744</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(501,return)</onclick>
+					<visible>!Skin.HasSetting(sub_music_files)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="32">
+					<description>Playlists</description>
+					<label>136</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,playlists,return)</onclick>
+					<visible>!Skin.HasSetting(sub_music_Playlists)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="33">
+					<description>Music Videos</description>
+					<label>157</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,musicvideos,return)</onclick>
+					<visible>!Skin.HasSetting(sub_music_Videos)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="34">
+					<description>genres</description>
+					<label>135</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,genres,return)</onclick>
+					<visible>!Skin.HasSetting(sub_music_genres)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="35">
+					<description>artists</description>
+					<label>133</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,artists,return)</onclick>
+					<visible>!Skin.HasSetting(sub_music_artists)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="36">
+					<description>albums</description>
+					<label>132</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,albums,return)</onclick>
+					<visible>!Skin.HasSetting(sub_music_albums)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="37">
+					<description>compilations</description>
+					<label>521</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,compilations,return)</onclick>
+					<visible>!Skin.HasSetting(sub_music_compilations)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="38">
+					<description>top100</description>
+					<label>271</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,top100,return)</onclick>
+					<visible>!Skin.HasSetting(sub_music_top)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="39">
+					<description>Recently Added</description>
+					<label>31920</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,recentlyaddedalbums,return)</onclick>
+					<visible>!Skin.HasSetting(sub_music_recently)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="40">
+					<description>Music Plugins 1038</description>
+<!--***-->				<label fallback="PLUGINS">31850</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(musiclibrary,plugins,return)</onclick>
+					<visible>!Skin.HasSetting(sub_music_Plugins)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+
+				<item id="241">
+					<description>Music_Sub 1</description>
+					<label>$INFO[Skin.String(Music_Sub_1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(Music_Sub_1path)]</onclick>
+					<visible>Skin.HasSetting(Music_Sub_1)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="242">
+					<description>Music_Sub 2</description>
+					<label>$INFO[Skin.String(Music_Sub_2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(Music_Sub_2path)]</onclick>
+					<visible>Skin.HasSetting(Music_Sub_2)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="243">
+					<description>Music_Sub 3</description>
+					<label>$INFO[Skin.String(Music_Sub_3name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(Music_Sub_3path)]</onclick>
+					<visible>Skin.HasSetting(Music_Sub_3)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="244">
+					<description>Music_Sub 4</description>
+					<label>$INFO[Skin.String(Music_Sub_4name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(Music_Sub_4path)]</onclick>
+					<visible>Skin.HasSetting(Music_Sub_4)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<!-- Music (1) end -->
+				
+			<!-- extras (2) -->
+				<item id="51">
+					<description>Programs</description>
+					<label>0</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(Programs)</onclick>
+					<visible>Skin.HasSetting(no_programs)</visible>
+					<visible>!Skin.HasSetting(sub_extras_Programs)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>	
+				<item id="52">
+					<description>scripts</description>
+					<label>247</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(20)</onclick>
+					<visible>!Skin.HasSetting(scripts)</visible>
+					<visible>!Skin.HasSetting(sub_extras_scripts)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>
+				<item id="53">
+					<description>Settings</description>
+					<label>31016</label>
+					<onclick>Skin.Reset(settingsfade)</onclick>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(4)</onclick>
+					<visible>Skin.HasSetting(nosettings)</visible>
+					<visible>!Skin.HasSetting(kiosk)</visible>
+					<visible>!Skin.HasSetting(sub_extras_settings)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>
+				<item id="56">
+					<description>Shutdown</description>				
+					<label>31019</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.Shutdown()</onclick>
+					<visible>!Skin.HasSetting(shutdown)</visible>
+					<visible>!Skin.HasSetting(sub_extras_shutdown)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>
+				<item id="57">
+					<description>Logout Button</description>
+					<label>20126</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>System.LogOff</onclick>
+					<visible>System.HasLoginScreen</visible>
+					<visible>!Skin.HasSetting(signout)</visible>
+					<visible>!Skin.HasSetting(shutdown)</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Logout)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>
+				<item id="54">
+					<description>favourites</description>
+					<label>1036</label>
+					<onclick>xbmc.activatewindow(134)</onclick>
+					<visible>!Skin.HasSetting(sub_extras_favourites)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>
+
+				<item id="55">
+					<description>AlarmClock setup</description>
+<!--***-->				<label fallback="ALARM">31855</label>
+					<onclick>Skin.SetString(AlarmString)</onclick>
+					<onclick>AlarmClock(Alarm,Notification(Alarm,$INFO[Skin.String(AlarmString)]),)</onclick>
+					<visible>!Skin.HasSetting(sub_extras_AlarmClock)</visible>
+					<visible>!System.HasAlarm(Alarm)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>
+				<item id="55">
+					<description>AlarmClock off</description>
+<!--***-->				<label fallback="ALARM OFF">31862</label>
+					<onclick>CancelAlarm(Alarm)</onclick>
+					<visible>!Skin.HasSetting(sub_extras_AlarmClock)</visible>
+					<visible>System.HasAlarm(Alarm)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>
+
+				<item id="245">
+					<description>Extras_Sub 1</description>
+					<label>$INFO[Skin.String(Extras_Sub_1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(Extras_Sub_1path)]</onclick>
+					<visible>Skin.HasSetting(Extras_Sub_1)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>
+				<item id="246">
+					<description>Extras_Sub 2</description>
+					<label>$INFO[Skin.String(Extras_Sub_2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(Extras_Sub_2path)]</onclick>
+					<visible>Skin.HasSetting(Extras_Sub_2)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>
+				<item id="247">
+					<description>Extras_Sub 3</description>
+					<label>$INFO[Skin.String(Extras_Sub_3name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(Extras_Sub_3path)]</onclick>
+					<visible>Skin.HasSetting(Extras_Sub_3)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>
+				<item id="248">
+					<description>Extras_Sub 4</description>
+					<label>$INFO[Skin.String(Extras_Sub_4name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>$INFO[Skin.String(Extras_Sub_4path)]</onclick>
+					<visible>Skin.HasSetting(Extras_Sub_4)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+				</item>
+			<!-- extras (2) End -->
+
+
+			<!-- Programs (3) scripts --
+				<item id="258">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamescript1)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(gamescript1name)]</label>
+					<onclick>XBMC.RunScript($INFO[Skin.String(gamescript1path)])</onclick>
+				</item>
+				<item id="257">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamescript2)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(gamescript2name)]</label>
+					<onclick>XBMC.RunScript($INFO[Skin.String(gamescript2path)])</onclick>
+				</item>
+			!-- Programs (3) scripts --
+			!-- Programs (3) Plugin --
+				<item id="256">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamesplugin1)</visible>
+					<description>plugin1</description>
+					<label>$INFO[Skin.String(gamesplugin1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(1,plugin://programs/$INFO[Skin.String(gamesplugin1path)]/)</onclick>
+				</item>
+				<item id="255">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamesplugin2)</visible>
+					<description>plugin2</description>
+					<label>$INFO[Skin.String(gamesplugin2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(1,plugin://programs/$INFO[Skin.String(gamesplugin2path)]/)</onclick>
+				</item>
+			!-- Programs (3) Plugin End-->
+
+
+				<!-- Shutdown (22) -->
+				<item id="62">
+					<description>Shutdown Timer</description>
+<!--***-->				<label fallback="TIMER">31856</label>
+					<onclick>AlarmClock($LOCALIZE[20144],XBMC.Shutdown(),)</onclick>
+					<visible>!Skin.HasSetting(sub_Shutdown_Timer)</visible>
+					<visible>Container(300).HasFocus(22)</visible>
+				</item>
+				<item id="62">
+					<description>Restart Button</description>
+					<label>13313</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.Reset()</onclick>
+					<visible>!Skin.HasSetting(sub_Shutdown_Restart)</visible>
+					<visible>Container(300).HasFocus(22)</visible>
+				</item>
+				<item id="64">
+					<description>Refresh Button</description>
+					<label>31607</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ReloadSkin()</onclick>
+					<visible>!Skin.HasSetting(sub_Shutdown_Refresh)</visible>
+					<visible>Container(300).HasFocus(22)</visible>
+				</item>
+				<item id="65">
+					<description>Dashboard Button</description>
+					<label>13006</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.Dashboard()</onclick>
+					<visible>System.Platform.Xbox</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Dashboard)</visible>
+					<visible>Container(300).HasFocus(22)</visible>
+				</item>
+				<item id="66">
+					<description>Suspend</description>
+					<label>13011</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.Suspend()</onclick>
+					<visible>!System.Platform.Xbox</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Suspend)</visible>
+					<visible>Container(300).HasFocus(22)</visible>
+				</item>
+				<item id="67">
+					<description>Hibernate</description>
+					<label>13010</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.Hibernate()</onclick>
+					<visible>!System.Platform.Xbox</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Hibernate)</visible>
+					<visible>Container(300).HasFocus(22)</visible>
+				</item>
+				<item id="68">
+					<description>Logout Button</description>
+					<label>20126</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>System.LogOff</onclick>
+					<visible>System.HasLoginScreen</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Logout)</visible>
+					<visible>Container(300).HasFocus(22)</visible>
+				</item>
+				<!-- Shutdown (22) End -->
+			</content> 
+		</control> 
+	</control>
+
+	<control type="group">
+		<control type="label">
+			<visible>!Control.HasFocus(325)+Skin.HasSetting(submenu)</visible>
+			<animation type="Hidden" condition="!Skin.HasSetting(submenu)">
+				<effect type="fade" start="100" end="0" time="200" delay="0" />
+				<effect type="zoom" start="100" end="20" center="auto" time="400" delay="0" tween="Cubic" asing="inout" />
+			</animation>
+			<animation effect="fade" start="100" end="99" time="200">Hidden</animation>
+			<label>$INFO[Container(325).ListItem.Label]</label>
+			<posy>0</posy>
+			<height>61</height>
+			<posx>490</posx>
+			<width>300</width>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_MainMenu</font>
+			<textcolor>ffFFFFFF</textcolor>
+		</control>
+	</control>
+</include>
+<!-------- Submenu End -------->
+<!-------- Library_info -------->
+<include name="Library_info">
+	<control type="group">
+		<posx>1030</posx>
+		<posy>450</posy>
+		<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)|Container(300).HasFocus(1)</visible>			
+		<visible>!Control.IsVisible(87)</visible>
+		<animation effect="slide" start="0" end="0,-125" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+		<animation effect="slide" start="0" end="300,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
+
+		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
+		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" delay="1100" time="300">Visible</animation>
+		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>240</width>
+			<height>200</height>
+			<texture border="20">home/home_weather_big.png</texture>
+			<colordiffuse>ff000000</colordiffuse>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>240</width>
+			<height>200</height>
+			<texture border="20">home/home_weather_big.png</texture>
+			<colordiffuse>ffffffff</colordiffuse>
+		</control>
+		<control type="label">
+			<visible>Container(300).HasFocus(1)</visible>
+			<posx>10</posx>
+			<posy>10</posy>	
+			<width>220</width>
+			<height>30</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_WeatherTitle</font>
+			<textcolor>c0FFFFFF</textcolor>
+			<label>2</label>
+			<animation effect="fade" start="0" end="100" time="300">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
+		</control>
+		<control type="label">
+			<visible>Container(300).HasFocus(6)</visible>
+			<posx>10</posx>
+			<posy>10</posy>	
+			<width>220</width>
+			<height>30</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_WeatherTitle</font>
+			<textcolor>c0FFFFFF</textcolor>
+			<label>342</label>
+			<animation effect="fade" start="0" end="100" time="300">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
+		</control>
+		<control type="label">
+			<visible>Container(300).HasFocus(7)</visible>
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>220</width>
+			<height>30</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_WeatherTitle</font>
+			<textcolor>c0FFFFFF</textcolor>
+			<label>20343</label>
+			<animation effect="fade" start="0" end="100" time="300">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
+		</control>
+		<control type="label">
+			<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)|Container(300).HasFocus(1)</visible>
+			<posx>10</posx>
+			<posy>55</posy>
+			<width>220</width>
+			<height>30</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_ListPlaying</font>
+			<textcolor>ab749a9a</textcolor>
+<!--***-->		<label>31878</label>
+			<animation effect="fade" start="0" end="100" time="300">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
+		</control>
+		<control type="list">
+			<posx>10</posx>
+			<posy>80</posy>
+			<width>220</width>
+			<height>180</height>
+			<itemlayout width="220" height="24">
+				<control type="label">
+					<posx>2</posx>
+					<posy>0</posy>
+					<width>165</width>
+					<height>20</height>
+					<align>left</align>
+					<aligny>center</aligny>
+    					<font>Font_WeatherLabel</font>
+					<textcolor>c0FFFFFF</textcolor>
+					<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<posx>220</posx>
+					<posy>2</posy>
+					<width>40</width>
+					<height>20</height>
+					<align>right</align>
+					<aligny>center</aligny>
+    					<font>Font_WeatherLabel</font>
+					<textcolor>c0FFFFFF</textcolor>	
+					<label>[UPPERCASE]$INFO[ListItem.label2][/UPPERCASE]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout width="220" height="24">
+				<control type="label">
+					<posx>2</posx>
+					<posy>0</posy>
+					<width>160</width>
+					<height>20</height>
+					<align>left</align>
+					<aligny>center</aligny>
+    					<font>Font_WeatherLabel</font>
+					<textcolor>c0FFFFFF</textcolor>
+					<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<posx>220</posx>
+					<posy>2</posy>
+					<width>40</width>
+					<height>20</height>
+					<align>right</align>
+					<aligny>center</aligny>
+    					<font>Font_WeatherLabel</font>
+					<textcolor>c0FFFFFF</textcolor>	
+					<label>[UPPERCASE]$INFO[ListItem.label2][/UPPERCASE]</label>
+				</control>
+			</focusedlayout>
+			<content>
+				<item>
+					<description>Movies</description>
+					<label>342</label>
+					<label2>$INFO[Window.Property(Movie.Count)]</label2>
+					<onclick>-</onclick>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item>
+					<description>Movies Watched</description>
+					<label>$LOCALIZE[342] $LOCALIZE[16102]</label>
+					<label2>$INFO[Window.Property(Movie.Played)]</label2>
+					<onclick>-</onclick>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item>
+					<description>TVShows</description>
+					<label>20343</label>
+					<label2>$INFO[Window.Property(TVShows.Count)]</label2>
+					<onclick>-</onclick>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item>
+					<description>Episodes</description>
+					<label>20360</label>
+					<label2>$INFO[Window.Property(Episodes.Count)]</label2>
+					<onclick>-</onclick>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item>
+					<description>Episodes  Watched</description>
+					<label>$LOCALIZE[20360] $LOCALIZE[16102]</label>
+					<label2>$INFO[Window.Property(Episodes.Played)]</label2>
+					<onclick>-</onclick>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item>
+					<description>Songs</description>
+					<label>134</label>
+					<label2>$INFO[Window.Property(Songs.Count)]</label2>
+					<onclick>-</onclick>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item>
+					<description>Song Artists</description>
+					<label>$LOCALIZE[179] $LOCALIZE[133]</label>
+					<label2>$INFO[Window.Property(Songs.ArtistCount)]</label2>
+					<onclick>-</onclick>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item>
+					<description>Albums</description>
+					<label>132</label>
+					<label2>$INFO[Window.Property(Album.Count)]</label2>
+					<onclick>-</onclick>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item>
+					<description> Album Artist</description>
+					<label>$LOCALIZE[558] $LOCALIZE[133]</label>
+					<label2>$INFO[Window.Property(Album.ArtistCount)]</label2>
+					<onclick>-</onclick>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+			</content> 
+		</control>
+	</control>		
+</include>
+<!-------- Library_info End -------->
+<!-------- added extras -------->
+<include name="added_extras">
+	<include condition="!Skin.HasSetting(Library_info)">Library_info</include>
+	<include condition="!Skin.HasSetting(Recently_added)">Recently_added</include>
+</include>
+<!-------- added extras End -------->
+<!-------- Recently added -------->
+<include name="Recently_added">
+	<control type="group">
+		<visible>!Skin.HasSetting(Recently_added)</visible>
+		<visible>Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)</visible>
+                <visible>!Control.IsVisible(87)</visible>
+		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
+		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" delay="1000" time="300">Visible</animation>
+		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+
+		<control type="group">
+			<posx>1030</posx>
+			<posy>20</posy>
+			<animation effect="slide" start="0" end="300,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,50" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(Library_info)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)+Skin.HasSetting(Library_info)">Conditional</animation>
+			<animation effect="slide" start="0,430" end="0,430" time="0" condition="Skin.HasSetting(Library_info)">Conditional</animation>
+			<control type="image">
+				<width>240</width>
+				<height>240</height>
+				<texture border="20">home/home_weather_big.png</texture>
+				<colordiffuse>cc000000</colordiffuse>
+			</control>
+			<control type="image">
+				<width>240</width>
+				<height>240</height>
+				<texture border="20">home/home_weather_big.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+			</control>
+			<control type="label">
+				<posx>10</posx>
+				<posy>10</posy>	
+				<width>220</width>
+				<height>40</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_WeatherTitle</font>
+				<textcolor>c0FFFFFF</textcolor>
+<!--***-->			<label>31879</label>
+				<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="image">
+				<texture diffuse="multiplex/multiplex_tvmask.png" background="true">defaultvideo.png</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<info>Container(8001).ListItem.Thumb</info>
+				<posx>10</posx>
+				<posy>70</posy>
+				<width>220</width>
+				<height>123</height>
+				<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)</visible>
+			</control>
+			<control type="image">
+				<texture diffuse="multiplex/multiplex_tvmask.png">multiplex/multiplex_tvglass.png</texture>
+				<posx>10</posx>
+				<posy>70</posy>
+				<width>220</width>
+				<height>123</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)</visible>
+			</control>
+			<control type="image">
+				<texture diffuse="multiplex/multiplex_tvmask.png">home/list_episodeicon_glass.png</texture>
+				<posx>10</posx>
+				<posy>70</posy>
+				<width>220</width>
+				<height>123</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)</visible>
+			</control>
+			<control type="image">
+				<texture diffuse="multiplex/multiplex_tvmask.png">home/list_episodeicon_glass.png</texture>
+				<posx>10</posx>
+				<posy>70</posy>
+				<width>220</width>
+				<height>123</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)</visible>
+			</control>
+			<control type="image">
+				<texture diffuse="home/nowplaying_mask.png" background="true">defaultvideo.png</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<info>Container(8001).ListItem.Thumb</info>
+				<posx>50</posx>
+				<posy>70</posy>
+				<width>140</width>
+				<height>140</height>
+				<visible>Container(300).HasFocus(1)</visible>
+			</control>
+			<control type="image">
+				<texture diffuse="home/nowplaying_mask.png">home/nowplaying_overlay.png</texture>
+				<posx>50</posx>
+				<posy>70</posy>
+				<width>140</width>
+				<height>140</height>
+				<colordiffuse>aaFFFFFF</colordiffuse>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<visible>Container(300).HasFocus(1)</visible>
+			</control>
+			<control type="label">
+				<posx>10</posx>
+				<posy>200</posy>
+				<width>220</width>
+				<height>10</height>
+				<font>Font_Time</font>
+				<textcolor>c0FFFFFF</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<visible>Container(300).HasFocus(7)</visible>
+				<label>$INFO[Container(8001).ListItem.Label2]</label>
+				<animation effect="fade" start="0" end="100" delay="200" time="300">Visible</animation>
+			</control>
+			<control type="label">
+				<posx>10</posx>
+				<posy>210</posy>
+				<width>220</width>
+				<height>20</height>
+				<font>Font_HomeNowPlayingTrack</font>
+				<textcolor>c0FFFFFF</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]$INFO[Container(8001).ListItem.Label][/UPPERCASE]</label>
+				<animation effect="slide" start="0,0" end="0,-10" time="1" condition="Container(300).HasFocus(6)">Conditional</animation>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Container(300).HasFocus(6)</visible>
+			<posx>1340</posx>
+			<posy>450</posy>
+			<animation effect="slide" start="0,0" end="-542,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<control type="image">
+				<texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="defaultvideo.png">$INFO[Window.Property(LatestMovie.1.Thumb)]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<width>155</width>
+				<height>240</height>
+				<visible>Container(8001).Row(0)</visible>
+				<animation effect="fade" start="0" end="100" time="200" delay="200">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
+			</control>
+			<control type="image">
+				<texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="defaultvideo.png">$INFO[Window.Property(LatestMovie.2.Thumb)]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<width>155</width>
+				<height>240</height>
+				<visible>Container(8001).Row(1)</visible>
+				<animation effect="fade" start="0" end="100" time="200" delay="200">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
+			</control>
+			<control type="image">
+				<texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="defaultvideo.png">$INFO[Window.Property(LatestMovie.3.Thumb)]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<width>155</width>
+				<height>240</height>
+				<visible>Container(8001).Row(2)</visible>
+				<animation effect="fade" start="0" end="100" time="200" delay="200">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
+			</control>
+			<control type="image">
+				<texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="defaultvideo.png">$INFO[Window.Property(LatestMovie.4.Thumb)]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<width>155</width>
+				<height>240</height>
+				<visible>Container(8001).Row(3)</visible>
+				<animation effect="fade" start="0" end="100" time="200" delay="200">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
+			</control>
+			<control type="image">
+				<texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="defaultvideo.png">$INFO[Window.Property(LatestMovie.5.Thumb)]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<width>155</width>
+				<height>240</height>
+				<visible>Container(8001).Row(4)</visible>
+				<animation effect="fade" start="0" end="100" time="200" delay="200">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
+			</control>
+			<control type="image">
+				<texture>thumbs/poster_glass.png</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<width>155</width>
+				<height>240</height>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Container(300).HasFocus(7)</visible>
+			<posx>1340</posx>
+			<posy>450</posy>
+			<animation effect="slide" start="0,0" end="-702,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<control type="image">
+				<texture background="true" diffuse="multiplex/multiplex_tvmask.png" fallback="defaultvideo.png">$INFO[Container(8001).ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<posx>0</posx>
+				<posy>57</posy>
+				<width>321</width>
+				<height>180</height>
+				<timeperimage>20000</timeperimage>
+				<randomize>true</randomize>
+				<fadetime>1000</fadetime>
+			</control>
+			<control type="image">
+				<texture diffuse="multiplex/multiplex_tvmask.png">multiplex/multiplex_tvglass.png</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<posx>0</posx>
+				<posy>457</posy>
+				<width>321</width>
+				<height>180</height>
+			</control>
+			<control type="image">
+				<texture diffuse="multiplex/multiplex_tvmask.png">home/list_episodeicon_glass.png</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<posx>0</posx>
+				<posy>57</posy>
+				<width>321</width>
+				<height>180</height>
+			</control>
+		</control>
+
+
+		<control type="group">
+			<visible>[Container(300).HasFocus(6)+!Skin.HasSetting(recently_added_Plot)]|[Container(300).HasFocus(7)+!Skin.HasSetting(recently_added_Plot_tv)]</visible>
+			<posx>1340</posx>
+			<posy>20</posy>
+			<animation effect="slide" start="0,0" end="-542,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>470</width>
+				<height>240</height>
+				<texture border="20">home/home_weather_big.png</texture>
+				<colordiffuse>cc000000</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>470</width>
+				<height>240</height>
+				<texture border="20">home/home_weather_big.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+			</control>
+			<control type="label">
+				<posx>10</posx>
+				<posy>15</posy>
+				<width>450</width>
+				<height>30</height>
+				<font>Font_WeatherTitle</font>
+				<textcolor>c0FFFFFF</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]$INFO[Container(8001).ListItem.Label][/UPPERCASE]</label>
+				<animation effect="slide" start="0,0" end="0,-10" time="1" condition="Container(300).HasFocus(7)">Conditional</animation>
+			</control>
+			<control type="label">
+				<posx>10</posx>
+				<posy>30</posy>
+				<width>450</width>
+				<height>20</height>
+				<font>Font_MultiplexPlotSmall</font>
+				<textcolor>c0FFFFFF</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]$INFO[Container(8001).ListItem.Label2][/UPPERCASE]</label>
+				<visible>Container(300).HasFocus(7)</visible>
+			</control>
+			<control type="textbox">
+				<font>Font_MultiplexPlotSmall</font>
+				<posx>10</posx>
+				<posy>70</posy>
+				<width>450</width>
+				<height>150</height>
+				<textcolor>c0FFFFFF</textcolor>
+				<label fallback="-">$INFO[Container(8001).ListItem.Label2]</label>
+				<include>ListDetail_Autoscroll</include>
+				<visible>Container(300).HasFocus(6)</visible>
+			</control>
+			<control type="textbox">
+				<font>Font_MultiplexPlotSmall</font>
+				<posx>10</posx>
+				<posy>70</posy>
+				<width>450</width>
+				<height>150</height>
+				<textcolor>c0FFFFFF</textcolor>
+				<label fallback="-1">$INFO[Window.Property(LatestEpisode.1.Plot)]</label>
+				<include>ListDetail_Autoscroll</include>
+				<visible>Container(300).HasFocus(7)</visible>
+				<visible>Container(8001).HasFocus(1)</visible>
+			</control>
+			<control type="textbox">
+				<font>Font_MultiplexPlotSmall</font>
+				<posx>10</posx>
+				<posy>70</posy>
+				<width>450</width>
+				<height>150</height>
+				<textcolor>c0FFFFFF</textcolor>
+				<label fallback="-1">$INFO[Window.Property(LatestEpisode.2.Plot)]</label>
+				<include>ListDetail_Autoscroll</include>
+				<visible>Container(300).HasFocus(7)</visible>
+				<visible>Container(8001).HasFocus(2)</visible>
+			</control>
+			<control type="textbox">
+				<font>Font_MultiplexPlotSmall</font>
+				<posx>10</posx>
+				<posy>70</posy>
+				<width>450</width>
+				<height>150</height>
+				<textcolor>c0FFFFFF</textcolor>
+				<label fallback="-1">$INFO[Window.Property(LatestEpisode.3.Plot)]</label>
+				<include>ListDetail_Autoscroll</include>
+				<visible>Container(300).HasFocus(7)</visible>
+				<visible>Container(8001).HasFocus(3)</visible>
+			</control>
+			<control type="textbox">
+				<font>Font_MultiplexPlotSmall</font>
+				<posx>10</posx>
+				<posy>70</posy>
+				<width>450</width>
+				<height>150</height>
+				<textcolor>c0FFFFFF</textcolor>
+				<label fallback="-1">$INFO[Window.Property(LatestEpisode.4.Plot)]</label>
+				<include>ListDetail_Autoscroll</include>
+				<visible>Container(300).HasFocus(7)</visible>
+				<visible>Container(8001).HasFocus(4)</visible>
+			</control>
+			<control type="textbox">
+				<font>Font_MultiplexPlotSmall</font>
+				<posx>10</posx>
+				<posy>70</posy>
+				<width>450</width>
+				<height>150</height>
+				<textcolor>c0FFFFFF</textcolor>
+				<label fallback="-1">$INFO[Window.Property(LatestEpisode.5.Plot)]</label>
+				<include>ListDetail_Autoscroll</include>
+				<visible>Container(300).HasFocus(7)</visible>
+				<visible>Container(8001).HasFocus(5)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<posx>1340</posx>
+			<posy>450</posy>
+			<animation effect="slide" start="0,0" end="-372,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<height>240</height>
+				<texture border="20">home/home_weather_big.png</texture>
+				<colordiffuse>cc000000</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<height>240</height>
+				<texture border="20">home/home_weather_big.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+			</control>
+			<control type="label">
+				<posx>10</posx>
+				<posy>10</posy>	
+				<width>280</width>
+				<height>40</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_WeatherTitle</font>
+				<textcolor>c0FFFFFF</textcolor>
+<!--***-->			<label>31879</label>
+				<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			<control type="list" id="8001">
+				<visible>Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)</visible>
+				<posx>0</posx>
+				<posy>70</posy>
+				<width>300</width>
+				<height>200</height>
+				<onleft>300</onleft>
+				<onright>300</onright>
+				<onup>8001</onup>
+				<ondown>8001</ondown>
+				<pagecontrol>-</pagecontrol>
+				<itemlayout height="30" width="300">			
+					<control type="image">
+						<posx>-6</posx>
+						<posy>-10</posy>
+						<height>40</height>
+						<width>311</width>
+						<texture>osd/osd_settings_buttonnf.png</texture>
+						<colordiffuse>88ffffff</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>280</width>
+						<height>30</height>
+						<font>Font_ListObjects</font>
+						<textcolor>c0FFFFFF</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="30" width="300">
+					<control type="image">
+						<posx>-6</posx>
+						<posy>-10</posy>
+						<height>40</height>
+						<width>311</width>
+						<texture>osd/osd_settings_buttonnf.png</texture>
+						<colordiffuse>88ffffff</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>3</posx>
+						<posy>-1</posy>
+						<width>305</width>
+						<height>30</height>
+						<texture fallback="dialogs/browser_focus.png">windows/listselect.png</texture>
+						<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+						<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+						<visible>control.HasFocus(8001)</visible>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>280</width>
+						<height>30</height>
+						<font>Font_ListObjects</font>
+						<textcolor>c0FFFFFF</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<animation effect="fade" start="100" end="0" time="200">Focus</animation>
+						<animation effect="fade" start="0" end="100" time="200">Unfocus</animation>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>280</width>
+						<height>30</height>
+						<font>Font_ListObjects</font>
+						<textcolor>ffFFFFFF</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+						<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+					</control>
+				</focusedlayout>
+				<content>
+				<item id="1">
+					<label>$INFO[Window.Property(LatestEpisode.1.EpisodeTitle)]</label>
+					<label2>$INFO[Window.Property(LatestEpisode.1.ShowTitle)] - $INFO[Window.Property(LatestEpisode.1.EpisodeNo)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestEpisode.1.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestEpisode.1.Thumb)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="2">
+					<label>$INFO[Window.Property(LatestEpisode.2.EpisodeTitle)]</label>
+					<label2>$INFO[Window.Property(LatestEpisode.2.ShowTitle)] - $INFO[Window.Property(LatestEpisode.2.EpisodeNo)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestEpisode.2.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestEpisode.2.Thumb)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="3">
+					<label>$INFO[Window.Property(LatestEpisode.3.EpisodeTitle)]</label>
+					<label2>$INFO[Window.Property(LatestEpisode.3.ShowTitle)] - $INFO[Window.Property(LatestEpisode.3.EpisodeNo)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestEpisode.3.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestEpisode.3.Thumb)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="4">
+					<label>$INFO[Window.Property(LatestEpisode.4.EpisodeTitle)]</label>
+					<label2>$INFO[Window.Property(LatestEpisode.4.ShowTitle)] - $INFO[Window.Property(LatestEpisode.4.EpisodeNo)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestEpisode.4.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestEpisode.4.Thumb)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="5">
+					<label>$INFO[Window.Property(LatestEpisode.5.EpisodeTitle)]</label>
+					<label2>$INFO[Window.Property(LatestEpisode.5.ShowTitle)] - $INFO[Window.Property(LatestEpisode.5.EpisodeNo)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestEpisode.5.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestEpisode.5.Thumb)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(7)</visible>
+				</item>
+				<item id="10">
+					<label>$INFO[Window.Property(LatestMovie.1.Title)]</label>
+					<label2>$INFO[Window.Property(LatestMovie.1.Plot)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestMovie.1.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestMovie.1.Fanart)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="11">
+					<label>$INFO[Window.Property(LatestMovie.2.Title)]</label>
+					<label2>$INFO[Window.Property(LatestMovie.2.Plot)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestMovie.2.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestMovie.2.Fanart)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="12">
+					<label>$INFO[Window.Property(LatestMovie.3.Title)]</label>
+					<label2>$INFO[Window.Property(LatestMovie.3.Plot)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestMovie.3.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestMovie.3.Fanart)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="13">
+					<label>$INFO[Window.Property(LatestMovie.4.Title)]</label>
+					<label2>$INFO[Window.Property(LatestMovie.4.Plot)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestMovie.4.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestMovie.4.Fanart)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="14">
+					<label>$INFO[Window.Property(LatestMovie.5.Title)]</label>
+					<label2>$INFO[Window.Property(LatestMovie.5.Plot)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestMovie.5.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestMovie.5.Fanart)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(6)</visible>
+				</item>
+				<item id="20">
+					<label>$INFO[Window.Property(LatestSong.1.Album)]</label>
+					<label2>$INFO[Window.Property(LatestSong.1.Artist)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestSong.1.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestSong.1.Thumb)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="21">
+					<label>$INFO[Window.Property(LatestSong.2.Album)]</label>
+					<label2>$INFO[Window.Property(LatestSong.2.Artist)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestSong.2.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestSong.2.Thumb)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="22">
+					<label>$INFO[Window.Property(LatestSong.3.Album)]</label>
+					<label2>$INFO[Window.Property(LatestSong.3.Artist)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestSong.3.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestSong.3.Thumb)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="23">
+					<label>$INFO[Window.Property(LatestSong.4.Album)]</label>
+					<label2>$INFO[Window.Property(LatestSong.4.Artist)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestSong.4.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestSong.4.Thumb)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				<item id="24">
+					<label>$INFO[Window.Property(LatestSong.5.Album)]</label>
+					<label2>$INFO[Window.Property(LatestSong.5.Artist)]</label2>
+					<onclick>PlayMedia($INFO[Window.Property(LatestSong.5.Path)])</onclick>
+					<icon>-</icon>
+					<thumb>$INFO[Window.Property(LatestSong.5.Thumb)]</thumb>
+					<visible>!Control.IsVisible(87)</visible>
+					<visible>Container(300).HasFocus(1)</visible>
+				</item>
+				</content>
+			</control>
+		</control>
+	</control>
+</include>
+<!-------- Recently added End -------->
+
+</includes>
