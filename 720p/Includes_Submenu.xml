@@ -2315,6 +2315,9 @@
 				<item id="233">
 					<description>TVShows_Sub 1</description>
 					<label>$INFO[Skin.String(TVShows_Sub_1name)]</label>
+					<include condition="substring(Skin.String(TVShows_Sub_1path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(TVShows_Sub_1path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(TVShows_Sub_1path),videodb://2)+!substring(Skin.String(TVShows_Sub_1path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(TVShows_Sub_1path)]</onclick>
 					<onclick>Skin.Reset(submenu)</onclick>
 					<visible>Skin.HasSetting(TVShows_Sub_1)</visible>
@@ -2324,6 +2327,9 @@
 					<description>TVShows_Sub 2</description>
 					<label>$INFO[Skin.String(TVShows_Sub_2name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(TVShows_Sub_2path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(TVShows_Sub_2path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(TVShows_Sub_2path),videodb://2)+!substring(Skin.String(TVShows_Sub_2path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(TVShows_Sub_2path)]</onclick>
 					<visible>Skin.HasSetting(TVShows_Sub_2)</visible>
 					<visible>Container(300).HasFocus(7)</visible>
@@ -2332,6 +2338,9 @@
 					<description>TVShows_Sub 3</description>
 					<label>$INFO[Skin.String(TVShows_Sub_3name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(TVShows_Sub_3path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(TVShows_Sub_3path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(TVShows_Sub_3path),videodb://2)+!substring(Skin.String(TVShows_Sub_3path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(TVShows_Sub_3path)]</onclick>
 					<visible>Skin.HasSetting(TVShows_Sub_3)</visible>
 					<visible>Container(300).HasFocus(7)</visible>
@@ -2340,6 +2349,9 @@
 					<description>TVShows_Sub 4</description>
 					<label>$INFO[Skin.String(TVShows_Sub_4name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(TVShows_Sub_4path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(TVShows_Sub_4path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(TVShows_Sub_4path),videodb://2)+!substring(Skin.String(TVShows_Sub_4path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(TVShows_Sub_4path)]</onclick>
 					<visible>Skin.HasSetting(TVShows_Sub_4)</visible>
 					<visible>Container(300).HasFocus(7)</visible>
@@ -2413,8 +2425,11 @@
 				<item id="237">
 					<description>Movies_Sub 1</description>
 					<label>$INFO[Skin.String(Movies_Sub_1name)]</label>
-					<onclick>$INFO[Skin.String(Movies_Sub_1path)]</onclick>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Movies_Sub_1path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Movies_Sub_1path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Movies_Sub_1path),videodb://2)+!substring(Skin.String(Movies_Sub_1path),videodb://1)">video_Link</include>
+					<onclick>$INFO[Skin.String(Movies_Sub_1path)]</onclick>
 					<visible>Skin.HasSetting(Movies_Sub_1)</visible>
 					<visible>Container(300).HasFocus(6)</visible>
 				</item>
@@ -2422,6 +2437,9 @@
 					<description>Movies_Sub 2</description>
 					<label>$INFO[Skin.String(Movies_Sub_2name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Movies_Sub_2path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Movies_Sub_2path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Movies_Sub_2path),videodb://2)+!substring(Skin.String(Movies_Sub_2path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(Movies_Sub_2path)]</onclick>
 					<visible>Skin.HasSetting(Movies_Sub_2)</visible>
 					<visible>Container(300).HasFocus(6)</visible>
@@ -2430,6 +2448,9 @@
 					<description>Movies_Sub 3</description>
 					<label>$INFO[Skin.String(Movies_Sub_3name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Movies_Sub_3path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Movies_Sub_3path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Movies_Sub_3path),videodb://2)+!substring(Skin.String(Movies_Sub_1path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(Movies_Sub_3path)]</onclick>
 					<visible>Skin.HasSetting(Movies_Sub_3)</visible>
 					<visible>Container(300).HasFocus(6)</visible>
@@ -2438,6 +2459,9 @@
 					<description>Movies_Sub 4</description>
 					<label>$INFO[Skin.String(Movies_Sub_4name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Movies_Sub_4path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Movies_Sub_4path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Movies_Sub_4path),videodb://2)+!substring(Skin.String(Movies_Sub_4path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(Movies_Sub_4path)]</onclick>
 					<visible>Skin.HasSetting(Movies_Sub_4)</visible>
 					<visible>Container(300).HasFocus(6)</visible>
@@ -2545,6 +2569,9 @@
 					<description>Music_Sub 1</description>
 					<label>$INFO[Skin.String(Music_Sub_1name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Music_Sub_1path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Music_Sub_1path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Music_Sub_1path),videodb://2)+!substring(Skin.String(Music_Sub_1path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(Music_Sub_1path)]</onclick>
 					<visible>Skin.HasSetting(Music_Sub_1)</visible>
 					<visible>Container(300).HasFocus(1)</visible>
@@ -2553,6 +2580,9 @@
 					<description>Music_Sub 2</description>
 					<label>$INFO[Skin.String(Music_Sub_2name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Music_Sub_2path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Music_Sub_2path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Music_Sub_2path),videodb://2)+!substring(Skin.String(Music_Sub_2path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(Music_Sub_2path)]</onclick>
 					<visible>Skin.HasSetting(Music_Sub_2)</visible>
 					<visible>Container(300).HasFocus(1)</visible>
@@ -2561,6 +2591,9 @@
 					<description>Music_Sub 3</description>
 					<label>$INFO[Skin.String(Music_Sub_3name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Music_Sub_3path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Music_Sub_3path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Music_Sub_3path),videodb://2)+!substring(Skin.String(Music_Sub_3path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(Music_Sub_3path)]</onclick>
 					<visible>Skin.HasSetting(Music_Sub_3)</visible>
 					<visible>Container(300).HasFocus(1)</visible>
@@ -2569,6 +2602,9 @@
 					<description>Music_Sub 4</description>
 					<label>$INFO[Skin.String(Music_Sub_4name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Music_Sub_4path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Music_Sub_4path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Music_Sub_4path),videodb://2)+!substring(Skin.String(Music_Sub_4path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(Music_Sub_4path)]</onclick>
 					<visible>Skin.HasSetting(Music_Sub_4)</visible>
 					<visible>Container(300).HasFocus(1)</visible>
@@ -2655,6 +2691,9 @@
 					<description>Extras_Sub 1</description>
 					<label>$INFO[Skin.String(Extras_Sub_1name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Extras_Sub_1path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Extras_Sub_1path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Extras_Sub_1path),videodb://2)+!substring(Skin.String(Extras_Sub_1path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(Extras_Sub_1path)]</onclick>
 					<visible>Skin.HasSetting(Extras_Sub_1)</visible>
 					<visible>Container(300).HasFocus(2)</visible>
@@ -2663,6 +2702,9 @@
 					<description>Extras_Sub 2</description>
 					<label>$INFO[Skin.String(Extras_Sub_2name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Extras_Sub_2path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Extras_Sub_2path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Extras_Sub_2path),videodb://2)+!substring(Skin.String(Extras_Sub_2path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(Extras_Sub_2path)]</onclick>
 					<visible>Skin.HasSetting(Extras_Sub_2)</visible>
 					<visible>Container(300).HasFocus(2)</visible>
@@ -2671,6 +2713,9 @@
 					<description>Extras_Sub 3</description>
 					<label>$INFO[Skin.String(Extras_Sub_3name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Extras_Sub_3path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Extras_Sub_3path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Extras_Sub_3path),videodb://2)+!substring(Skin.String(Extras_Sub_3path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(Extras_Sub_3path)]</onclick>
 					<visible>Skin.HasSetting(Extras_Sub_3)</visible>
 					<visible>Container(300).HasFocus(2)</visible>
@@ -2679,6 +2724,9 @@
 					<description>Extras_Sub 4</description>
 					<label>$INFO[Skin.String(Extras_Sub_4name)]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
+					<include condition="substring(Skin.String(Extras_Sub_4path),videodb://2)">TV_Link</include>
+					<include condition="substring(Skin.String(Extras_Sub_4path),videodb://1)">Movie_Link</include>
+					<include condition="!substring(Skin.String(Extras_Sub_4path),videodb://2)+!substring(Skin.String(Extras_Sub_4path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(Extras_Sub_4path)]</onclick>
 					<visible>Skin.HasSetting(Extras_Sub_4)</visible>
 					<visible>Container(300).HasFocus(2)</visible>
