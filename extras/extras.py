@@ -184,35 +184,25 @@ class Main:
 
     def _fetch_totals( self ):
         # query the database
-        movies_count_xml = xbmc.executehttpapi( "QueryVideoDatabase(%s)" % quote_plus( "select COUNT(*) from movieview" ), )
-        movies_played_xml = xbmc.executehttpapi( "QueryVideoDatabase(%s)" % quote_plus( "select COUNT(*) from movieview where playCount is not null" ), )
-        episodes_count_xml = xbmc.executehttpapi( "QueryVideoDatabase(%s)" % quote_plus( "select COUNT(*) from episodeview" ), )
-        episodes_played_xml = xbmc.executehttpapi( "QueryVideoDatabase(%s)" % quote_plus( "select COUNT(*) from episodeview where playCount is not null" ), )
-        tvshows_count_xml = xbmc.executehttpapi( "QueryVideoDatabase(%s)" % quote_plus( "select COUNT(DISTINCT strTitle) from episodeview" ), )
-        songs_count_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( "select COUNT(*) from songview" ), )
-        songs_artist_count_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( "select COUNT(DISTINCT idArtist) from songview" ), )
-        album_count_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( "select COUNT(DISTINCT idAlbum) from albumview" ), )
-        album_artist_count_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( "select COUNT(DISTINCT idArtist) from albumview" ), )
-        # separate the records
-        movies_count = movies_count_xml.replace('<record><field>','').replace('</field></record>','')
-        movies_played = movies_played_xml.replace('<record><field>','').replace('</field></record>','')
-        episodes_count = episodes_count_xml.replace('<record><field>','').replace('</field></record>','')
-        episodes_played = episodes_played_xml.replace('<record><field>','').replace('</field></record>','')
-        tvshows_count = tvshows_count_xml.replace('<record><field>','').replace('</field></record>','')
-        songs_count = songs_count_xml.replace('<record><field>','').replace('</field></record>','')
-        songs_artist_count = songs_artist_count_xml.replace('<record><field>','').replace('</field></record>','')
-        album_count = album_count_xml.replace('<record><field>','').replace('</field></record>','')
-        album_artist_count = album_artist_count_xml.replace('<record><field>','').replace('</field></record>','')
+        movies_xml = xbmc.executehttpapi( "QueryVideoDatabase(%s)" % quote_plus( "select COUNT(movie.idfile), COUNT(files.playcount>0) from movie join files on (movie.idFile = files.idFile)" ), )
+        episodes_xml = xbmc.executehttpapi( "QueryVideoDatabase(%s)" % quote_plus( "select COUNT(DISTINCT strTitle), COUNT(*), COUNT(playCount>0) from episodeview" ), )
+        songs_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( "select COUNT(*), COUNT(DISTINCT idArtist) from song" ), )
+        album_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( "select COUNT(DISTINCT idAlbum), COUNT(DISTINCT idArtist) from albumview" ), )
+	    # separate individual fields
+        movies_fields = re.findall( "<field>(.*?)</field>", movies_xml, re.DOTALL )
+        episodes_fields = re.findall( "<field>(.*?)</field>", episodes_xml, re.DOTALL )
+        songs_fields = re.findall( "<field>(.*?)</field>", songs_xml, re.DOTALL )
+        album_fields = re.findall( "<field>(.*?)</field>", album_xml, re.DOTALL )
         # set properties
-        self.WINDOW.setProperty( "Movie.Count" , movies_count )
-        self.WINDOW.setProperty( "Movie.Played" , movies_played )
-        self.WINDOW.setProperty( "Episodes.Count" , episodes_count )
-        self.WINDOW.setProperty( "Episodes.Played" , episodes_played )
-        self.WINDOW.setProperty( "TVShows.Count" , tvshows_count )
-        self.WINDOW.setProperty( "Songs.Count" , songs_count )
-        self.WINDOW.setProperty( "Songs.ArtistCount" , songs_artist_count )
-        self.WINDOW.setProperty( "Album.Count" , album_count )
-        self.WINDOW.setProperty( "Album.ArtistCount" , album_artist_count )
+        self.WINDOW.setProperty( "Movie.Count" , movies_fields [0] )
+        self.WINDOW.setProperty( "Movie.Played" , movies_fields [1] )
+        self.WINDOW.setProperty( "Episodes.Count" , episodes_fields [1] )
+        self.WINDOW.setProperty( "Episodes.Played" , episodes_fields [2] )
+        self.WINDOW.setProperty( "TVShows.Count" , episodes_fields [0] )
+        self.WINDOW.setProperty( "Songs.Count" , songs_fields [0] )
+        self.WINDOW.setProperty( "Songs.ArtistCount" , songs_fields [1] )
+        self.WINDOW.setProperty( "Album.Count" , album_fields [0] )
+        self.WINDOW.setProperty( "Album.ArtistCount" , album_fields [1] )
 
 
 if ( __name__ == "__main__" ):
