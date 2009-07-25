@@ -1,8 +1,7 @@
 import xbmc
 from xbmcgui import Window
-from xml.dom.minidom import parse, parseString
+from xml.dom.minidom import parseString
 import os
-
 
 class Main:
    # grab the home window
@@ -12,7 +11,6 @@ class Main:
       self._clear_properties()
       self._read_file()
       self._parse_String()
-      self.count = 0
       self._fetch_favourites()
       self.doc.unlink()
 
@@ -34,6 +32,7 @@ class Main:
 
    def _fetch_favourites( self ):
       # Go through each favourites
+      self.count = 0
       for self.doc in self.favourites:
          self.WINDOW.setProperty( "favourite.%d.value" % ( self.count + 1, ) , self.doc.childNodes [ 0 ].nodeValue )
          self.WINDOW.setProperty( "favourite.%d.name" % ( self.count + 1, ) , self.doc.attributes [ 'name' ].nodeValue )
@@ -41,7 +40,3 @@ class Main:
 
 if ( __name__ == "__main__" ):
     Main()
-
-
-
-

@@ -139,7 +139,7 @@ class Main:
     def _fetch_music_info( self ):
         # sql statement
         if ( self.ALBUMS ):
-            sql_music = "select DISTINCT idAlbum from albumview order by idAlbum desc limit %d" % ( self.LIMIT, )
+            sql_music = "select DISTINCT idAlbum from albumview order by idAlbum desc limit %d" % ( 1, )
             # query the database for recently added albums
             music_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( sql_music ), )
             # separate the records
@@ -158,7 +158,7 @@ class Main:
             # set our unplayed query
             unplayed = ( "", "where lastplayed isnull ", )[ self.UNPLAYED ]
             # sql statement
-            sql_music = "select * from songview %sorder by idSong desc limit %d" % ( unplayed, self.LIMIT, )
+            sql_music = "select * from songview %sorder by idSong desc limit %d" % ( unplayed, 1, )
             # query the database
             music_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( sql_music ), )
         # separate the records
@@ -184,7 +184,7 @@ class Main:
 
     def _fetch_totals( self ):
         # query the database
-        movies_xml = xbmc.executehttpapi( "QueryVideoDatabase(%s)" % quote_plus( "select COUNT(movie.idfile), COUNT(files.playcount>0) from movie join files on (movie.idFile = files.idFile)" ), )
+        movies_xml = xbmc.executehttpapi( "QueryVideoDatabase(%s)" % quote_plus( "select COUNT(*), COUNT(playcount>0) from movieview" ), )
         episodes_xml = xbmc.executehttpapi( "QueryVideoDatabase(%s)" % quote_plus( "select COUNT(DISTINCT strTitle), COUNT(*), COUNT(playCount>0) from episodeview" ), )
         songs_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( "select COUNT(*), COUNT(DISTINCT idArtist) from song" ), )
         album_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( "select COUNT(DISTINCT idAlbum), COUNT(DISTINCT idArtist) from albumview" ), )

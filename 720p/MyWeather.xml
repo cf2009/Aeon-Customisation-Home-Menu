@@ -101,7 +101,8 @@
 					<aligny>center</aligny>
 					<align>center</align>
 					<font>Font_SettingsSectionTitle</font>
-					<include>Objects_ContextMenuButton</include>
+					<textcolor>menutext</textcolor>
+					<focusedcolor>FFdfdfdf</focusedcolor>
 				</control>
 				<control type="label">
 					<visible>!Control.HasFocus(3)</visible>
@@ -113,7 +114,8 @@
 					<aligny>center</aligny>
 					<align>center</align>
 					<font>Font_SettingsOptions</font>
-					<include>Objects_ContextMenuButton</include>
+					<textcolor>menutext</textcolor>
+					<focusedcolor>FFdfdfdf</focusedcolor>
 				</control>
 				<control type="image">
 					<visible>Control.HasFocus(3)</visible>
@@ -134,7 +136,7 @@
 					<aligny>center</aligny>
 					<align>center</align>
 					<font>Font_SettingsSectionTitle</font>
-					<include>Objects_ContextMenuButton</include>
+					<textcolor>FFdfdfdf</textcolor>
 				</control>
 				<control type="label">
 					<visible>Control.HasFocus(3)</visible>
@@ -146,7 +148,7 @@
 					<aligny>center</aligny>
 					<align>center</align>
 					<font>Font_SettingsOptions</font>
-					<include>Objects_ContextMenuButton</include>
+					<textcolor>FFdfdfdf</textcolor>
 				</control>
 				<control type="spincontrolex" id="3">
 					<description>change location button</description>
@@ -157,14 +159,13 @@
 					<texturedown>settings/spin-down.png</texturedown>
 					<textureupfocus>settings/spin-up-focus.png</textureupfocus>
 					<texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
-					<font>Font_SettingsOptions</font>
+					<font>-</font>
 					<aligny>center</aligny>
 					<align>-</align>
-					<textoffsetx>130</textoffsetx>
+					<textoffsetx>-8130</textoffsetx>
 					<spinposx>-2</spinposx>
 					<spinwidth>40</spinwidth>
 					<spinheight>65</spinheight>
-					<include>Animation_SettingsButtonFade</include>
 					<onleft>50</onleft>
 					<onright>50</onright>
 					<ondown>2</ondown>

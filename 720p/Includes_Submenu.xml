@@ -2007,34 +2007,36 @@
 <!-- extras.py set up end -->
 <include name="homesubmenu_anim">
 	<!-- OnUp -->
-	<control type="group" id="324">
-		<control type="button" id="624">
-			<visible>Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(CustomMenuanimation)</visible>
-			<include>homesubmenu_but</include>
-			<onfocus>SetFocus(300)</onfocus>
-			<onfocus>Skin.Reset(lowermainmenu)</onfocus>
-		</control>
-		<control type="button" id="625">
-			<visible>!Control.IsVisible(624)+Control.IsVisible(330)</visible>
-			<visible>[!Skin.HasSetting(CustomMenuanimation)|[!Control.IsVisible(8001)|Container(300).HasFocus(1)]]</visible>
-			<visible>[Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)|[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)]]</visible>
-			<include>homesubmenu_but</include>
-			<onfocus>SetFocus(325)</onfocus>
-			<onfocus>Skin.SetBool(submenu)</onfocus>
-		</control>
-		<control type="button" id="626">
-			<visible>Skin.HasSetting(CustomMenuanimation)</visible>
-			<visible>Control.IsVisible(8001)+!Container(300).HasFocus(1)</visible>
-			<include>homesubmenu_but</include>
-			<onfocus>SetFocus(8001)</onfocus>
-		</control>
-		<control type="button" id="627">
-			<visible>!Control.IsVisible(624)</visible>
-			<visible>!Control.IsVisible(625)</visible>
-			<visible>!Control.IsVisible(626)</visible>
-			<include>homesubmenu_but</include>
-			<onfocus>SetFocus(300)</onfocus>
-		</control>
+	<!-- OnUp -->
+	<control type="button" id="324">
+		<visible>Control.IsVisible(8001)+!Container(300).HasFocus(1)</visible>
+		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(8001)</onfocus>
+		<!--onfocus>Skin.SetBool(submenu)</onfocus-->
+	</control>
+	<control type="button" id="324">
+		<visible>!Control.IsVisible(8001)</visible>
+		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(325)</onfocus>
+		<onfocus>Skin.SetBool(submenu)</onfocus>
+	</control>
+	<control type="button" id="324">
+		<visible>Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(CustomMenuanimation)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.Reset(lowermainmenu)</onfocus>
+	</control>
+	<control type="button" id="324">
+		<visible>Control.IsVisible(8001)+Container(300).HasFocus(1)</visible>
+		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(325)</onfocus>
+		<onfocus>Skin.SetBool(submenu)</onfocus>
 	</control>
 	<!-- OnUp end -->
 	<!-- Ondown -->
