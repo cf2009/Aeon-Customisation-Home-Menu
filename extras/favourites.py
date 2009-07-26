@@ -21,10 +21,16 @@ class Main:
          self.WINDOW.clearProperty( "favourite.%d.name" % ( count + 1, ) )
 
    def _read_file( self ):
-      # read file
-      self.fav = open('special://masterprofile//favourites.xml', 'r')
-      self.favourites_xml = self.fav.read()
-      self.fav.close()
+      # Set path
+      self.fav_dir = 'special://masterprofile//favourites.xml'
+      # Check to see if file exists
+      if (os.path.isfile( self.fav_dir ) == False):
+         self.favourites_xml = '<favourites><favourite name="Can Not Find favourites.xml">-</favourite></favourites>'
+      else:
+         # read file
+         self.fav = open( self.fav_dir , 'r')
+         self.favourites_xml = self.fav.read()
+         self.fav.close()
 
    def _parse_String( self ):
       self.doc = parseString( self.favourites_xml )
