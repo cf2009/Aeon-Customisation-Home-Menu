@@ -3354,7 +3354,6 @@
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
 				<label fallback="-">$INFO[Container(8001).ListItem.Label2]</label>
-				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(6)</visible>
 			</control>
 			<control type="textbox">
