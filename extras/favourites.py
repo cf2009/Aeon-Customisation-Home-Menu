@@ -17,7 +17,7 @@ class Main:
    def _clear_properties( self ):
       for count in range( 20 ):
          # clear Property
-         self.WINDOW.clearProperty( "favourite.%d.value" % ( count + 1, ) )
+         self.WINDOW.clearProperty( "favourite.%d.path" % ( count + 1, ) )
          self.WINDOW.clearProperty( "favourite.%d.name" % ( count + 1, ) )
 
    def _read_file( self ):
@@ -40,7 +40,11 @@ class Main:
       # Go through each favourites
       self.count = 0
       for self.doc in self.favourites:
-         self.WINDOW.setProperty( "favourite.%d.value" % ( self.count + 1, ) , self.doc.childNodes [ 0 ].nodeValue )
+         self.fav_path = self.doc.childNodes [ 0 ].nodeValue
+         # add return to path if it's not a file path
+         if "10024" not in self.fav_path: self.fav_path = self.fav_path.replace( ')', ',return)' )
+         # set properties
+         self.WINDOW.setProperty( "favourite.%d.path" % ( self.count + 1, ) , self.fav_path )
          self.WINDOW.setProperty( "favourite.%d.name" % ( self.count + 1, ) , self.doc.attributes [ 'name' ].nodeValue )
          self.count = self.count+1
 

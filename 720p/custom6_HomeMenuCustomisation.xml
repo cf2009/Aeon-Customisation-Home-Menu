@@ -3,24 +3,29 @@
 <include>Animation_DialogPopup</include>
 	
 <controls>
-	<!--control type="label">
-		<posy>20</posy>
+	<control type="group">
+		<visible>Skin.HasSetting(debug)</visible>
+		<posy>400</posy>
 		<posx>80</posx>
-		<height>40</height>
-		<width>800</width>
-		<font>Font_ShowcaseMainLabel</font>
-		<textcolor>ffFFFFFF</textcolor>
-		<info>Container(20).ListItem.Label</info>
+		<control type="label">
+			<posy>0</posy>
+			<posx>0</posx>
+			<height>30</height>
+			<width>800</width>
+			<font>Font_ListObjects</font>
+			<textcolor>ffFFFFFF</textcolor>
+			<info>Container(20).ListItem.Label</info>
+		</control>
+		<control type="label">
+			<posy>30</posy>
+			<posx>0</posx>
+			<height>40</height>
+			<width>800</width>
+			<font>Font_ListObjects</font>
+			<textcolor>ffFFFFFF</textcolor>
+			<info>Container(20).ListItem.Label2</info>
+		</control>
 	</control>
-	<control type="label">
-		<posy>50</posy>
-		<posx>80</posx>
-		<height>40</height>
-		<width>800</width>
-		<font>Font_ShowcaseMainLabel</font>
-		<textcolor>ffFFFFFF</textcolor>
-		<info>Container(20).ListItem.Label2</info>
-	</control-->
 
 	<control type="button" id="30">
 		<include>homesubmenu_but</include>
@@ -1015,180 +1020,180 @@
 		</focusedlayout>
 		<content>
 			<item id="1">
-				<label2>$INFO[Window(4).Property(favourite.1.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.1.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.1.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.1.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.1.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.1.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.1.name))</visible>
 			</item>
 			<item id="2">
-				<label2>$INFO[Window(4).Property(favourite.2.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.2.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.2.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.2.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.2.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.2.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.2.name))</visible>
 			</item>
 			<item id="3">
-				<label2>$INFO[Window(4).Property(favourite.3.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.3.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.3.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.3.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.3.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.3.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.3.name))</visible>
 			</item>
 			<item id="4">
-				<label2>$INFO[Window(4).Property(favourite.4.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.4.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.4.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.4.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.4.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.4.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.4.name))</visible>
 			</item>
 			<item id="5">
-				<label2>$INFO[Window(4).Property(favourite.5.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.5.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.5.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.5.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.5.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.5.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.5.name))</visible>
 			</item>
 			<item id="6">
-				<label2>$INFO[Window(4).Property(favourite.6.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.6.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.6.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.6.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.6.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.6.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.6.name))</visible>
 			</item>
 			<item id="7">
-				<label2>$INFO[Window(4).Property(favourite.7.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.7.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.7.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.7.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.7.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.7.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.7.name))</visible>
 			</item>
 			<item id="8">
-				<label2>$INFO[Window(4).Property(favourite.8.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.8.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.8.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.8.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.8.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.8.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.8.name))</visible>
 			</item>
 			<item id="9">
-				<label2>$INFO[Window(4).Property(favourite.9.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.9.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.9.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.9.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.9.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.9.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.9.name))</visible>
 			</item>
 			<item id="10">
-				<label2>$INFO[Window(4).Property(favourite.10.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.10.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.10.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.10.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.10.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.10.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.10.name))</visible>
 			</item>
 			<item id="11">
-				<label2>$INFO[Window(4).Property(favourite.11.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.11.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.11.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.11.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.11.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.11.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.11.name))</visible>
 			</item>
 			<item id="12">
-				<label2>$INFO[Window(4).Property(favourite.12.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.12.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.12.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.12.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.12.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.12.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.12.name))</visible>
 			</item>
 			<item id="13">
-				<label2>$INFO[Window(4).Property(favourite.13.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.13.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.13.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.13.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.13.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.13.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.13.name))</visible>
 			</item>
 			<item id="14">
-				<label2>$INFO[Window(4).Property(favourite.14.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.14.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.14.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.14.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.14.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.14.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.14.name))</visible>
 			</item>
 			<item id="15">
-				<label2>$INFO[Window(4).Property(favourite.15.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.15.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.15.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.15.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.15.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.15.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.15.name))</visible>
 			</item>
 			<item id="16">
-				<label2>$INFO[Window(4).Property(favourite.16.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.16.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.16.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.16.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.16.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.16.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.16.name))</visible>
 			</item>
 			<item id="17">
-				<label2>$INFO[Window(4).Property(favourite.17.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.17.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.17.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.17.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.17.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.17.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.17.name))</visible>
 			</item>
 			<item id="18">
-				<label2>$INFO[Window(4).Property(favourite.18.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.18.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.18.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.18.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.18.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.18.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.18.name))</visible>
 			</item>
 			<item id="19">
-				<label2>$INFO[Window(4).Property(favourite.19.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.19.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.19.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.19.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.19.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.19.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.19.name))</visible>
 			</item>
 			<item id="20">
-				<label2>$INFO[Window(4).Property(favourite.20.value)]</label2>
+				<label2>$INFO[Window(4).Property(favourite.20.path)]</label2>
 				<label>$INFO[Window(4).Property(favourite.20.name)]</label>
-				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.20.value)])</onclick>
+				<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(4).Property(favourite.20.path)])</onclick>
 				<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(4).Property(favourite.20.name)])</onclick>
 				<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
 				<onclick>SetFocus(16)</onclick>
