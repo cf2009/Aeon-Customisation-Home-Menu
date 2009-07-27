@@ -1,18 +1,21 @@
-import xbmc
+import xbmc, xbmcgui, os
 from xbmcgui import Window
 from xml.dom.minidom import parseString
-import os
+
+dialog = xbmcgui.DialogProgress()
 
 class Main:
    # grab the home window
    WINDOW = Window ( 10004 )
 
    def __init__( self ):
+      dialog.create("Aeon Mod","Loading and parsing favourites data...")
       self._clear_properties()
       self._read_file()
       self._parse_String()
       self._fetch_favourites()
       self.doc.unlink()
+      dialog.close()
 
    def _clear_properties( self ):
       for count in range( 20 ):
@@ -41,7 +44,7 @@ class Main:
       self.count = 0
       for self.doc in self.favourites:
          self.fav_path = self.doc.childNodes [ 0 ].nodeValue
-         # add return to path if it's not a file path
+         # add return 
          if "10024" not in self.fav_path: self.fav_path = self.fav_path.replace( ')', ',return)' )
          # set properties
          self.WINDOW.setProperty( "favourite.%d.path" % ( self.count + 1, ) , self.fav_path )
