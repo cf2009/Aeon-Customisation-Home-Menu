@@ -2865,9 +2865,9 @@
 		<posy>450</posy>
 		<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)|Container(300).HasFocus(1)</visible>			
 		<visible>!Control.IsVisible(87)</visible>
-		<animation effect="slide" start="0" end="0,-125" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+		<animation effect="slide" start="0" end="0,-125" time="350" easing="inout" tween="cubic" condition="!Skin.HasSetting(highertime)+Skin.HasSetting(lowermainmenu)">Conditional</animation>
+		<animation effect="slide" start="0,20" end="0,-105" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(highertime)+Skin.HasSetting(lowermainmenu)">Conditional</animation>
 		<animation effect="slide" start="0" end="300,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
-
 		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
 		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 		<animation effect="fade" start="0" end="100" delay="1100" time="300">Visible</animation>
@@ -3086,7 +3086,8 @@
 	<control type="group">
 		<visible>!Skin.HasSetting(Recently_added)</visible>
 		<visible>Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)</visible>
-                <visible>!Control.IsVisible(87)</visible>
+        <visible>!Control.IsVisible(87)</visible>
+		<animation effect="slide" start="0,20" end="0,20" time="0" condition="Skin.HasSetting(highertime)">Conditional</animation>
 		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
 		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 		<animation effect="fade" start="0" end="100" delay="1000" time="300">Visible</animation>
