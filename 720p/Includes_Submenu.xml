@@ -2078,7 +2078,7 @@
 	<!-- Windowopen -->
 	<control type="button" id="323">
 		<include>homesubmenu_but</include>
-		<include condition="!Skin.HasSetting(ra_tvshow_info)">extras_nom</include>
+		<include condition="!Skin.HasSetting(Random_quote)">extras_nom</include>
 		<include condition="Skin.HasSetting(Random_quote)">extras_Random_quote</include>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>SetFocus(300)</onfocus>
