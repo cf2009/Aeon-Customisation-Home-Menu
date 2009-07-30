@@ -2317,11 +2317,11 @@
 				<item id="233">
 					<description>TVShows_Sub 1</description>
 					<label>$INFO[Skin.String(TVShows_Sub_1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
 					<include condition="substring(Skin.String(TVShows_Sub_1path),videodb://2)">TV_Link</include>
 					<include condition="substring(Skin.String(TVShows_Sub_1path),videodb://1)">Movie_Link</include>
 					<include condition="!substring(Skin.String(TVShows_Sub_1path),videodb://2)+!substring(Skin.String(TVShows_Sub_1path),videodb://1)">video_Link</include>
 					<onclick>$INFO[Skin.String(TVShows_Sub_1path)]</onclick>
-					<onclick>Skin.Reset(submenu)</onclick>
 					<visible>Skin.HasSetting(TVShows_Sub_1)</visible>
 					<visible>Container(300).HasFocus(7)</visible>
 				</item>
