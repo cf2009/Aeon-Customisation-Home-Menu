@@ -133,6 +133,7 @@
 </include>		
 
 <include name="Objects_WeatherPopup2">
+	<include>Randomly_quote</include>
 	<control type="group">
 		<posx>0</posx>
 		<posy>40</posy>
@@ -1992,18 +1993,14 @@
 	<posx>2000</posx>
 </include>
 <!-- extras.py set up -->
-<include name="extras_no_totals">
-	<onfocus>XBMC.RunScript(special://skin/extras/extras.py,totals=True)</onfocus>
+
+<include name="extras_Random_quote">
+	<onfocus>XBMC.RunScript(special://skin/extras/extras.py,quote=True,unplayed=True)</onfocus>
 </include>
-<include name="extras_no_music">
-	<onfocus>XBMC.RunScript(special://skin/extras/extras.py,music=True)</onfocus>
+<include name="extras_nom">
+	<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True)</onfocus>
 </include>
-<include name="extras_no_tvshow">
-	<onfocus>XBMC.RunScript(special://skin/extras/extras.py,tvshow=True,unplayed=True)</onfocus>
-</include>
-<include name="extras_no_movie">
-	<onfocus>XBMC.RunScript(special://skin/extras/extras.py,movie=True,unplayed=True)</onfocus>
-</include>
+
 <!-- extras.py set up end -->
 <include name="homesubmenu_anim">
 	<!-- OnUp -->
@@ -2081,12 +2078,8 @@
 	<!-- Windowopen -->
 	<control type="button" id="323">
 		<include>homesubmenu_but</include>
-		<!--include condition="!Skin.HasSetting(Library_info)">extras_no_totals</include>
-		<include condition="!Skin.HasSetting(ra_music_info)">extras_no_music</include>
-		<include condition="!Skin.HasSetting(ra_tvshow_info)">extras_no_tvshow</include>
-		<include condition="!Skin.HasSetting(ra_movie_info)">extras_no_movie</include-->
-
-		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True)</onfocus>
+		<include condition="!Skin.HasSetting(ra_tvshow_info)">extras_nom</include>
+		<include condition="Skin.HasSetting(Random_quote)">extras_Random_quote</include>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>SetFocus(300)</onfocus>
 		<onfocus>Skin.Reset(submenu)</onfocus>
@@ -3676,5 +3669,67 @@
 	</control>
 </include>
 <!-------- Recently added End -------->
+<!-------- Randomly quote -------->
+<include name="Randomly_quote">
+	<control type="group">
+		<visible>Container(300).HasFocus(2)+Skin.HasSetting(Random_quote)</visible>
+		<posx>1340</posx>
+		<posy>450</posy>
+		<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+		<animation effect="slide" start="0,-30" end="0,-30" time="0" condition="Skin.HasSetting(lowerrss)+!Skin.HasSetting(lowermainmenu)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-372,0" time="500" easing="inout" tween="cubic" condition="!control.HasFocus(8001)">Conditional</animation>
+		<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>300</width>
+			<height>240</height>
+			<texture border="20">home/home_weather_big.png</texture>
+			<colordiffuse>cc000000</colordiffuse>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>300</width>
+			<height>240</height>
+			<texture border="20">home/home_weather_big.png</texture>
+			<colordiffuse>ccffffff</colordiffuse>
+		</control>
+		<control type="label">
+			<posx>10</posx>
+			<posy>8</posy>	
+			<width>280</width>
+			<height>30</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_WeatherTitle</font>
+			<textcolor>c0FFFFFF</textcolor>
+			<label>31871</label>
+		</control>
+	  	<control type="label">
+			<posx>10</posx>
+			<posy>35</posy>
+			<width>280</width>
+			<height>20</height>
+    			<font>Font_ListObjects</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>a9ffffff</textcolor>
+			<label>[I]$INFO[Window.Property(Fun.quoted)][/I]</label>
+		</control>
+		<control type="textbox">
+			<posx>10</posx>
+			<posy>70</posy>
+			<width>280</width>
+			<height>180</height>
+			<font>Font_ListObjects</font>
+			<textcolor>aaffffff</textcolor>
+			<autoscroll delay="8000" time="2000" repeat="10000">!Control.HasFocus(61)</autoscroll>
+			<label>$INFO[Window.Property(Fun.quote)]</label>
+		</control>
 
+	</control>
+</include>
+<!-------- Randomly quote End -------->
 </includes>

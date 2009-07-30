@@ -1,6 +1,6 @@
 import xbmc
 from xbmcgui import Window
-from urllib import quote_plus, unquote_plus
+from urllib import quote_plus, unquote_plus, urlopen
 import re
 import sys
 import os
@@ -47,6 +47,7 @@ class Main:
         self.TVSHOW = not params.get( "tvshow", "" ) == "True"
         self.MUSIC = not params.get( "music", "" ) == "True"
         self.TOTALS = not params.get( "totals", "" ) == "True"
+        self.QUOTE = params.get( "quote", "" ) == "True"
 
     def __init__( self ):
         # parse argv for any preferences
@@ -66,6 +67,8 @@ class Main:
             self._fetch_music_info()
         if ( self.TOTALS ):
             self._fetch_totals()
+        if ( self.QUOTE ):
+            self.get_quote()
 
     def _fetch_movie_info( self ):
         # set our unplayed query
@@ -204,6 +207,22 @@ class Main:
         self.WINDOW.setProperty( "Album.Count" , album_fields [0] )
         self.WINDOW.setProperty( "Album.ArtistCount" , album_fields [1] )
 
+ 
+    def get_quote(self): 
+        base_url = 'http://www.qotd.org/' 
+        content = urlopen(base_url).read() 
+        m = re.search('            <i>(.*?)<', content) 
+        n = re.search('</i> - (.*?)<', content) 
+        if m: 
+            quote = m.group(1) 
+            if n: 
+                quoted = n.group(1) 
+            else: 
+                quoted = 'no quoted'
+        else: 
+            quote = 'no quote available for: 2'
+        self.WINDOW.setProperty( "Fun.quote" , quote ) 
+        self.WINDOW.setProperty( "Fun.quoted" , quoted ) 
 
 if ( __name__ == "__main__" ):
     Main()

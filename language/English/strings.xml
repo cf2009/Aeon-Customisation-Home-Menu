@@ -180,6 +180,13 @@
 	<string id="31209">SIGN OUT</string>
 	<string id="31210">EJECT</string>
 
+<!--  Shutdown Submenu  --> 
+
+	<string id="31211">REBOOT</string> 
+	<string id="31212">SUSPEND</string> 
+	<string id="31213">HIBERNATE</string>
+	<string id="31214">OFF TIMER</string>
+
 <!--  Set Content / Add Source dialogs  --> 
   
 	<string id="31220">DIRECTORY CONTAINS:</string>
@@ -483,7 +490,7 @@
 	<string id="31868">LOCK</string>
 	<string id="31869">Weather Backdrop by Current Weather Conditions</string>
 	<string id="31870">-</string>
-	<string id="31871">-</string>
+	<string id="31871">Random quote</string>
 	<string id="31872">-</string>
 	<string id="31873">Next 10 Days</string>
 	<string id="31874">Next 36 Hours</string>

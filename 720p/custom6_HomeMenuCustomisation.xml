@@ -854,6 +854,18 @@
 				<visible>Container(15).HasFocus(4)</visible>
 			</item>
 
+			<item id="59">
+<!--***-->			<label>$LOCALIZE[31871]: $LOCALIZE[351]</label>
+				<onclick>Skin.ToggleSetting(Random_quote)</onclick>
+				<visible>!Skin.HasSetting(Random_quote)</visible>
+				<visible>Container(15).HasFocus(4)</visible>
+			</item>
+			<item id="59">
+<!--***-->			<label>$LOCALIZE[31871]: $LOCALIZE[31077]</label>
+				<onclick>Skin.Reset(Random_quote)</onclick>
+				<visible>Skin.HasSetting(Random_quote)</visible>
+				<visible>Container(15).HasFocus(4)</visible>
+			</item>
 			<item id="56">
 <!--***-->			<label>$LOCALIZE[31879]: $LOCALIZE[31077]</label>
 				<onclick>Skin.ToggleSetting(Recently_added)</onclick>
