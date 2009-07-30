@@ -2868,6 +2868,7 @@
 		<animation effect="slide" start="0" end="0,-125" time="350" easing="inout" tween="cubic" condition="!Skin.HasSetting(highertime)+Skin.HasSetting(lowermainmenu)">Conditional</animation>
 		<animation effect="slide" start="0,20" end="0,-105" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(highertime)+Skin.HasSetting(lowermainmenu)">Conditional</animation>
 		<animation effect="slide" start="0" end="300,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
+
 		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
 		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 		<animation effect="fade" start="0" end="100" delay="1100" time="300">Visible</animation>
@@ -3212,6 +3213,7 @@
 			<visible>Container(300).HasFocus(6)</visible>
 			<posx>1340</posx>
 			<posy>450</posy>
+			<animation effect="slide" start="0,-30" end="0,-30" time="0" condition="Skin.HasSetting(lowerrss)+!Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="-542,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
 			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<control type="image">
@@ -3270,6 +3272,7 @@
 			<visible>Container(300).HasFocus(7)</visible>
 			<posx>1340</posx>
 			<posy>450</posy>
+			<animation effect="slide" start="0,-30" end="0,-30" time="0" condition="Skin.HasSetting(lowerrss)+!Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="-702,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
 			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<control type="image">
@@ -3364,7 +3367,7 @@
 				<width>450</width>
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
-				<label fallback="-1">$INFO[Window.Property(LatestEpisode.1.Plot)]</label>
+				<label fallback="This item has no Plot">$INFO[Window.Property(LatestEpisode.1.Plot)]</label>
 				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(7)</visible>
 				<visible>Container(8001).HasFocus(1)</visible>
@@ -3376,7 +3379,7 @@
 				<width>450</width>
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
-				<label fallback="-1">$INFO[Window.Property(LatestEpisode.2.Plot)]</label>
+				<label fallback="This item has no Plot">$INFO[Window.Property(LatestEpisode.2.Plot)]</label>
 				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(7)</visible>
 				<visible>Container(8001).HasFocus(2)</visible>
@@ -3388,7 +3391,7 @@
 				<width>450</width>
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
-				<label fallback="-1">$INFO[Window.Property(LatestEpisode.3.Plot)]</label>
+				<label fallback="This item has no Plot">$INFO[Window.Property(LatestEpisode.3.Plot)]</label>
 				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(7)</visible>
 				<visible>Container(8001).HasFocus(3)</visible>
@@ -3400,7 +3403,7 @@
 				<width>450</width>
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
-				<label fallback="-1">$INFO[Window.Property(LatestEpisode.4.Plot)]</label>
+				<label fallback="This item has no Plot">$INFO[Window.Property(LatestEpisode.4.Plot)]</label>
 				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(7)</visible>
 				<visible>Container(8001).HasFocus(4)</visible>
@@ -3412,7 +3415,7 @@
 				<width>450</width>
 				<height>150</height>
 				<textcolor>c0FFFFFF</textcolor>
-				<label fallback="-1">$INFO[Window.Property(LatestEpisode.5.Plot)]</label>
+				<label fallback="This item has no Plot">$INFO[Window.Property(LatestEpisode.5.Plot)]</label>
 				<include>ListDetail_Autoscroll</include>
 				<visible>Container(300).HasFocus(7)</visible>
 				<visible>Container(8001).HasFocus(5)</visible>
@@ -3421,6 +3424,7 @@
 		<control type="group">
 			<posx>1340</posx>
 			<posy>450</posy>
+			<animation effect="slide" start="0,-30" end="0,-30" time="0" condition="Skin.HasSetting(lowerrss)+!Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="-372,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
 			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 			<control type="image">
