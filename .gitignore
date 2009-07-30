@@ -1,0 +1,4 @@
+# .gitignore for HMC 
+
+# generated files 
+*.bak
