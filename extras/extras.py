@@ -232,7 +232,7 @@ class Main:
 
  
     def get_picture(self): 
-        base_url = 'http://backend.deviantart.com/rss.xml?q=special%3Anewest&type=deviation&offset=0' 
+        base_url = 'http://backend.deviantart.com/rss.xml?q=&type=deviation' 
         content = urlopen(base_url).read() 
         m = re.search('<media:thumbnail url="(.*?)" height', content) 
         n = re.search('media:credit role="author" scheme="urn:ebu">(.*?)<', content) 
