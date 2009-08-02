@@ -34,6 +34,26 @@
 		<imagepath background="true">$INFO[Container(8001).ListItem.Thumb]</imagepath>
 		<visible>control.HasFocus(8001)+Container(300).HasFocus(6)</visible>
 	</control>
+	<!-- Windowopen -->
+	<control type="button" id="323">
+		<include>homesubmenu_but</include>
+		<onfocus>Window.clearProperty(quote_extras)</onfocus>
+		<onfocus>Window.clearProperty(Picture_extras)</onfocus>
+		<onfocus>Window.clearProperty(totals_extras)</onfocus>
+		<onfocus>Window.clearProperty(recentadded_extras)</onfocus>
+
+		<include condition="!Skin.HasSetting(Recently_added)">extras_recentadded</include>
+		<include condition="!Skin.HasSetting(Library_info)">extras_totals</include>
+		<include condition="Skin.HasSetting(Random_quote)">extras_Random_quote</include>
+		<include condition="Skin.HasSetting(Newest_Pictre_on)">extras_Picture</include>
+
+		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(quote_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
+
+		<onfocus>SetFocus(325)</onfocus>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.Reset(submenu)</onfocus>
+	</control>
+	<!-- Windowopen -->
 	<include>Furniture_HomeNowPlaying</include>
 	<include condition="!Skin.HasSetting(Library_info)">Library_info</include>
 	<include condition="!Skin.HasSetting(Recently_added)">Recently_added</include>

@@ -1,10 +1,12 @@
 import xbmc
-from xbmcgui import Window
-from urllib import quote_plus, unquote_plus, urlopen
-import re
-import sys
-import os
+from xbmcgui import Window, DialogProgress
+from urllib import quote_plus, unquote_plus, urlopen, urlretrieve
+import re, sys, os, time
 
+# Current Working Directory
+CWD = os.getcwd()
+if CWD[-1] == ';': CWD = CWD[0:-1]
+if CWD[-1] != '\\': CWD = CWD + '\\'
 
 class Main:
     # grab the home window
@@ -17,6 +19,7 @@ class Main:
             self.WINDOW.clearProperty( "LatestMovie.%d.Title" % ( count + 1, ) )
             self.WINDOW.clearProperty( "LatestEpisode.%d.ShowTitle" % ( count + 1, ) )
             self.WINDOW.clearProperty( "LatestSong.%d.Title" % ( count + 1, ) )
+            self.WINDOW.clearProperty( "Fun.picture_got" )
 
     def _get_media( self, path, file ):
         # set default values
@@ -43,32 +46,32 @@ class Main:
         self.RECENT = not params.get( "partial", "" ) == "True"
         self.ALBUMS = params.get( "albums", "" ) == "True"
         self.UNPLAYED = params.get( "unplayed", "" ) == "True"
-        self.MOVIE = not params.get( "movie", "" ) == "True"
-        self.TVSHOW = not params.get( "tvshow", "" ) == "True"
-        self.MUSIC = not params.get( "music", "" ) == "True"
-        self.TOTALS = not params.get( "totals", "" ) == "True"
-        self.QUOTE = params.get( "quote", "" ) == "True"
+        self.RECENTADDED = params.get( "recentadded", "" ) == "true"
+        self.TOTALS = params.get( "totals", "" ) == "true"
+        self.QUOTE = params.get( "quote", "" ) == "true"
+        self.PICTURE = params.get( "picture", "" ) == "true"
 
     def __init__( self ):
         # parse argv for any preferences
         self._parse_argv()
         # clear properties
         self._clear_properties()
-        # format our records start and end
-        xbmc.executehttpapi( "SetResponseFormat()" )
-        xbmc.executehttpapi( "SetResponseFormat(OpenRecord,%s)" % ( "<record>", ) )
-        xbmc.executehttpapi( "SetResponseFormat(CloseRecord,%s)" % ( "</record>", ) )
+        if ( self.RECENTADDED ) or ( self.TOTALS ):
+            # format our records start and end
+            xbmc.executehttpapi( "SetResponseFormat()" )
+            xbmc.executehttpapi( "SetResponseFormat(OpenRecord,%s)" % ( "<record>", ) )
+            xbmc.executehttpapi( "SetResponseFormat(CloseRecord,%s)" % ( "</record>", ) )
         # fetch media info
-        if ( self.MOVIE ):
+        if ( self.RECENTADDED ):
             self._fetch_movie_info()
-        if ( self.TVSHOW ):
             self._fetch_tvshow_info()
-        if ( self.MUSIC ):
             self._fetch_music_info()
         if ( self.TOTALS ):
             self._fetch_totals()
         if ( self.QUOTE ):
             self.get_quote()
+        if ( self.PICTURE ):
+            self.get_picture()
 
     def _fetch_movie_info( self ):
         # set our unplayed query
@@ -191,7 +194,7 @@ class Main:
         episodes_xml = xbmc.executehttpapi( "QueryVideoDatabase(%s)" % quote_plus( "select COUNT(DISTINCT strTitle), COUNT(*), COUNT(playCount>0) from episodeview" ), )
         songs_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( "select COUNT(*), COUNT(DISTINCT idArtist) from song" ), )
         album_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( "select COUNT(DISTINCT idAlbum), COUNT(DISTINCT idArtist) from albumview" ), )
-	    # separate individual fields
+        # separate individual fields
         movies_fields = re.findall( "<field>(.*?)</field>", movies_xml, re.DOTALL )
         episodes_fields = re.findall( "<field>(.*?)</field>", episodes_xml, re.DOTALL )
         songs_fields = re.findall( "<field>(.*?)</field>", songs_xml, re.DOTALL )
@@ -218,11 +221,50 @@ class Main:
             if n: 
                 quoted = n.group(1) 
             else: 
-                quoted = 'no quoted'
+                quoted = ''
         else: 
-            quote = 'no quote available for: 2'
+            quote = 'no quote available'
+            quoted = ''
         self.WINDOW.setProperty( "Fun.quote" , quote ) 
-        self.WINDOW.setProperty( "Fun.quoted" , quoted ) 
+        self.WINDOW.setProperty( "Fun.quoted" , quoted )
+
+ 
+    def get_picture(self): 
+        base_url = 'http://backend.deviantart.com/rss.xml?q=special%3Anewest&type=deviation&offset=0' 
+        content = urlopen(base_url).read() 
+        m = re.search('<media:thumbnail url="(.*?)" height', content) 
+        n = re.search('media:credit role="author" scheme="urn:ebu">(.*?)<', content) 
+        if m: 
+            picture = m.group(1)
+            DownloaderClass(picture, CWD + "temp_pic.png")
+            if n: 
+                pictureby = n.group(1) 
+            else: 
+                pictureby = ''
+        else: 
+            picture = ''
+            pictureby = 'no pictureby available'
+        self.WINDOW.setProperty( "Fun.picture_got" , 'yes' )
+        self.WINDOW.setProperty( "Fun.picture" , 'special://skin/extras/temp_pic.png' ) 
+        self.WINDOW.setProperty( "Fun.pictureby" , pictureby )
+
+def DownloaderClass(url,dest):
+    dp = DialogProgress()
+    dp.create("My Script","Downloading Image",url)
+    urlretrieve(url,dest,lambda nb, bs, fs, url=url: _pbhook(nb,bs,fs,url,dp))
+ 
+def _pbhook(numblocks, blocksize, filesize, url=None,dp=None):
+    try:
+        percent = min((numblocks*blocksize*100)/filesize, 100)
+        #print percent
+        dp.update(percent)
+    except:
+        #percent = 100
+        dp.update(percent)
+    if dp.iscanceled(): 
+        print "DOWNLOAD CANCELLED" # need to get this part working
+        dp.close()
+        
 
 if ( __name__ == "__main__" ):
     Main()
