@@ -3690,7 +3690,7 @@
 <!-------- Randomly quote -------->
 <include name="Randomly_quote">
 	<control type="group">
-		<visible>Container(300).HasFocus(2)+Skin.HasSetting(Random_quote)</visible>
+		<visible>Container(300).HasFocus(2)+Skin.HasSetting(Random_quote)+StringCompare(Window.Property(Fun.quote_got),yes)</visible>
 		<posx>1340</posx>
 		<posy>450</posy>
 		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
@@ -3817,6 +3817,6 @@
 
 	</control>
 </include>
-<!-------- Randomly quote End -------->
+<!-------- Newest deviantart End -------->
 
 </includes>

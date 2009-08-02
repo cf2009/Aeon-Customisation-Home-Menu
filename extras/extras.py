@@ -19,6 +19,7 @@ class Main:
             self.WINDOW.clearProperty( "LatestMovie.%d.Title" % ( count + 1, ) )
             self.WINDOW.clearProperty( "LatestEpisode.%d.ShowTitle" % ( count + 1, ) )
             self.WINDOW.clearProperty( "LatestSong.%d.Title" % ( count + 1, ) )
+            self.WINDOW.clearProperty( "Fun.quote_got" )
             self.WINDOW.clearProperty( "Fun.picture_got" )
 
     def _get_media( self, path, file ):
@@ -225,6 +226,7 @@ class Main:
         else: 
             quote = 'no quote available'
             quoted = ''
+        self.WINDOW.setProperty( "Fun.quote_got" , 'yes' ) 
         self.WINDOW.setProperty( "Fun.quote" , quote ) 
         self.WINDOW.setProperty( "Fun.quoted" , quoted )
 
@@ -250,16 +252,16 @@ class Main:
 
 def DownloaderClass(url,dest):
     dp = DialogProgress()
-    dp.create("My Script","Downloading Image",url)
+    dp.create("Extras","Downloading Image",url)
     urlretrieve(url,dest,lambda nb, bs, fs, url=url: _pbhook(nb,bs,fs,url,dp))
  
 def _pbhook(numblocks, blocksize, filesize, url=None,dp=None):
     try:
         percent = min((numblocks*blocksize*100)/filesize, 100)
-        #print percent
+        print percent
         dp.update(percent)
     except:
-        #percent = 100
+        percent = 100
         dp.update(percent)
     if dp.iscanceled(): 
         print "DOWNLOAD CANCELLED" # need to get this part working
