@@ -85,6 +85,8 @@
 	<string id="31077">ON</string>
 	<string id="31078">OFF</string>
 	<string id="31079">AUTOHIDE</string>
+	<string id="310791">HORIZONTAL</string>
+	<string id="310792">VERTICAL</string>
 	
 <!-- Aeon Customisation Virtual Home page labels -->
   
@@ -171,8 +173,8 @@
 	<string id="31200">SETTINGS</string> 
 	<string id="31201">CUSTOMISE</string>
 	<string id="31202">ASSISTANT</string> 
-	<string id="31203">HOME VISUALISER: OFF</string>
-	<string id="31204">HOME VISUALISER: ON</string> 
+	<string id="31203">HOME VISUALS: OFF</string>
+	<string id="31204">HOME VISUALS: ON</string> 
 	<string id="31205">NOW PLAYING</string>
 	<string id="31206">SHUTDOWN TIMER</string> 
 	<string id="31207">RESTART</string> 
@@ -230,6 +232,8 @@
 	<string id="31265">CONTEXTUAL ARTWORK (FANART) FOR TV</string>
 	<string id="31266">CONTEXTUAL ARTWORK FOR PICTURES</string>
 	<string id="31268">SHOW RSS / NOW PLAYING IN WALL VIEW</string>
+	<string id="31269">SHOW RATINGS FOR SLIM LIST (USES YEAR IF DISABLED)</string>
+	<string id="312691">SHOW ASPECT RATIO (USES STUDIO IF DISABLED)</string>
 	<string id="31270">ZOOM ANIMATIONS</string>
 	<string id="31271">FADE PANEL/LIST VIEW MENUS WHEN INACTIVE</string>
 	<string id="31278">ALLOW SCROLLING FOR PLOT/BIO/REVIEW INFO</string>
