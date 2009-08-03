@@ -8,6 +8,9 @@ CWD = os.getcwd()
 if CWD[-1] == ';': CWD = CWD[0:-1]
 if CWD[-1] != '\\': CWD = CWD + '\\'
 
+#picture save temp
+IMAGE_TEMP =  CWD + 'temp_pic.png'
+
 class Main:
     # grab the home window
     WINDOW = Window( 10000 )
@@ -238,7 +241,7 @@ class Main:
         n = re.search('media:credit role="author" scheme="urn:ebu">(.*?)<', content) 
         if m: 
             picture = m.group(1)
-            DownloaderClass(picture, CWD + "temp_pic.png")
+            DownloaderClass(picture, IMAGE_TEMP)
             if n: 
                 pictureby = n.group(1) 
             else: 
@@ -246,26 +249,30 @@ class Main:
         else: 
             picture = ''
             pictureby = 'no pictureby available'
-        self.WINDOW.setProperty( "Fun.picture_got" , 'yes' )
-        self.WINDOW.setProperty( "Fun.picture" , 'special://skin/extras/temp_pic.png' ) 
-        self.WINDOW.setProperty( "Fun.pictureby" , pictureby )
+        for i in range(1, 5):
+            time.sleep(2)
+            if (os.path.isfile( IMAGE_TEMP )):
+                self.WINDOW.setProperty( "Fun.picture_got" , 'yes' )
+                self.WINDOW.setProperty( "Fun.picture" , IMAGE_TEMP )
+                self.WINDOW.setProperty( "Fun.pictureby" , pictureby )
+                i = 5
 
 def DownloaderClass(url,dest):
-    dp = DialogProgress()
-    dp.create("Extras","Downloading Image",url)
-    urlretrieve(url,dest,lambda nb, bs, fs, url=url: _pbhook(nb,bs,fs,url,dp))
+    #dp = DialogProgress()
+    #dp.create("Extras","Downloading Image",url)
+    urlretrieve(url,dest,lambda nb, bs, fs, url=url: _pbhook(nb,bs,fs,url))
  
-def _pbhook(numblocks, blocksize, filesize, url=None,dp=None):
+def _pbhook(numblocks, blocksize, filesize, url=None):
     try:
         percent = min((numblocks*blocksize*100)/filesize, 100)
         print percent
-        dp.update(percent)
+        #dp.update(percent)
     except:
         percent = 100
-        dp.update(percent)
-    if dp.iscanceled(): 
-        print "DOWNLOAD CANCELLED" # need to get this part working
-        dp.close()
+        #dp.update(percent)
+    #if dp.iscanceled(): 
+        #print "DOWNLOAD CANCELLED" # need to get this part working
+        #dp.close()
         
 
 if ( __name__ == "__main__" ):

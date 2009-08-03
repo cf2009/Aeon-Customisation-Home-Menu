@@ -55,7 +55,7 @@
 	</control>
 
 	<!-- Windowopen -->
-	<include>Furniture_HomeNowPlaying</include>
+	<include>Furniture_HomeNowPlaying2</include>
 	<include condition="!Skin.HasSetting(Library_info)">Library_info</include>
 	<include condition="!Skin.HasSetting(Recently_added)">Recently_added</include>
 	<include>Objects_WeatherPopup2</include>

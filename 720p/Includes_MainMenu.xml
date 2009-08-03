@@ -84,11 +84,11 @@
 			</control>
 		</focusedlayout>
 		<content>
-			<item id="1">
-				<label>31010</label>
-				<include>BackgroundVarsMusic</include>
-				<onclick>XBMC.ActivateWindow(MyMusic,return)</onclick>
-				<visible>!Skin.HasSetting(nomusic)</visible>
+			<item id="5">
+				<label>31012</label>
+				<include>BackgroundVarsPictures</include>				
+				<onclick>XBMC.ActivateWindow(MyPictures)</onclick>
+				<visible>!Skin.HasSetting(nopictures)</visible>
 			</item>
 			<item id="2">
 				<description>Extras</description>
@@ -106,12 +106,11 @@
 				<visible>Skin.HasSetting(lowermainmenu)</visible>
 				<visible>!Skin.HasSetting(no_extras)</visible>
 			</item>
-
-			<item id="5">
-				<label>31012</label>
-				<include>BackgroundVarsPictures</include>				
-				<onclick>XBMC.ActivateWindow(MyPictures)</onclick>
-				<visible>!Skin.HasSetting(nopictures)</visible>
+			<item id="1">
+				<label>31010</label>
+				<include>BackgroundVarsMusic</include>
+				<onclick>XBMC.ActivateWindow(MyMusic,return)</onclick>
+				<visible>!Skin.HasSetting(nomusic)</visible>
 			</item>
 			<item id="6">
 				<label>342</label>
