@@ -1994,8 +1994,8 @@
 	<posx>2000</posx>
 </include>
 <!-- extras.py set up -->
-<include name="extras_Random_quote">
-	<onfocus>setProperty(quote_extras,&quote=true)</onfocus>
+<include name="extras_extrapopup">
+	<onfocus>setProperty(extrapopup_extras,&extrapopup=$INFO[Skin.String(widget_set)])</onfocus>
 </include>
 <include name="extras_Picture">
 	<onfocus>setProperty(Picture_extras,&picture=true)</onfocus>
@@ -2007,6 +2007,20 @@
 	<onfocus>setProperty(recentadded_extras,&recentadded=true)</onfocus>
 </include>
 <!-- extras.py set up end -->
+<!-- Custom_widget_reset -->
+<include name="Custom_widget_reset">
+	<onclick>Skin.reset(Custom_widget_1)</onclick>
+	<onclick>Skin.reset(Custom_widget_2)</onclick>
+	<onclick>Skin.reset(Custom_widget_3)</onclick>
+	<onclick>Skin.reset(Custom_widget_4)</onclick>
+	<onclick>Skin.reset(Custom_widget_5)</onclick>
+	<onclick>Skin.reset(Custom_widget_6)</onclick>
+	<onclick>Skin.reset(Custom_widget_7)</onclick>
+	<onclick>Skin.reset(Custom_widget_8)</onclick>
+	<onclick>Skin.reset(Custom_widget_9)</onclick>
+	<onclick>Skin.reset(Custom_widget_10)</onclick>
+</include>
+<!-- Custom_widget_reset end -->				
 <include name="nav_home_locked">
 	<!-- OnUp -->
 	<control type="group" id="324">
@@ -3711,7 +3725,7 @@
 <!-- Randomly quote -->
 <include name="Randomly_quote">
 	<control type="group">
-		<visible>Container(300).HasFocus(2)+Skin.HasSetting(Random_quote)+StringCompare(Window.Property(Fun.quote_got),yes)</visible>
+		<visible>Container(300).HasFocus(2)+Skin.HasSetting(Random_quote)+StringCompare(Window.Property(Fun.ExGot),yes)</visible>
 		<posx>1340</posx>
 		<posy>440</posy>
 		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
@@ -3746,7 +3760,7 @@
 			<aligny>center</aligny>
 			<font>Font_WeatherTitle</font>
 			<textcolor>c0FFFFFF</textcolor>
-			<label>31871</label>
+			<label>$INFO[Window.Property(Fun.ExName)]</label>
 		</control>
 	  	<control type="label">
 			<posx>10</posx>
@@ -3757,7 +3771,7 @@
 			<align>center</align>
 			<aligny>center</aligny>
 			<textcolor>a9ffffff</textcolor>
-			<label>[I]$INFO[Window.Property(Fun.quoted)][/I]</label>
+			<label>[I]$INFO[Window.Property(Fun.ExTitle)][/I]</label>
 		</control>
 		<control type="textbox">
 			<posx>10</posx>
@@ -3767,7 +3781,7 @@
 			<font>Font_ListObjects</font>
 			<textcolor>aaffffff</textcolor>
 			<autoscroll delay="8000" time="2000" repeat="10000">!Control.HasFocus(61)</autoscroll>
-			<label>$INFO[Window.Property(Fun.quote)]</label>
+			<label>$INFO[Window.Property(Fun.ExContent)]</label>
 		</control>
 	</control>
 </include>

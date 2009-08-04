@@ -1,0 +1,5 @@
+Jokes Are Awesome
+http://www.jokesareawesome.com/rss/random/
+<content:encoded><!\[CDATA\[(.*?)\]\]>
+<description>(.*?)<
+0

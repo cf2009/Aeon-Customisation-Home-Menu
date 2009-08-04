@@ -37,17 +37,17 @@
 	<!-- Windowopen -->
 	<control type="button" id="323">
 		<include>homesubmenu_but</include>
-		<onfocus>setProperty(quote_extras,)</onfocus>
+		<onfocus>setProperty(extrapopup_extras,)</onfocus>
 		<onfocus>setProperty(Picture_extras,)</onfocus>
 		<onfocus>setProperty(totals_extras,)</onfocus>
 		<onfocus>setProperty(recentadded_extras,)</onfocus>
 
 		<include condition="!Skin.HasSetting(Recently_added)">extras_recentadded</include>
 		<include condition="!Skin.HasSetting(Library_info)">extras_totals</include>
-		<include condition="Skin.HasSetting(Random_quote)">extras_Random_quote</include>
+		<include condition="!IsEmpty(Skin.String(widget_set))">extras_extrapopup</include>
 		<include condition="Skin.HasSetting(Newest_Pictre_on)">extras_Picture</include>
 
-		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(quote_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
+		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(extrapopup_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
 
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>SetFocus(300)</onfocus>

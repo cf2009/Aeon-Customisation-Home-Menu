@@ -41,7 +41,7 @@ class Main:
 
     def _fetch_favourites( self ):
         # Go through each favourites
-        self.count = 0
+        count = 0
         for self.doc in self.favourites:
             self.fav_path = self.doc.childNodes [ 0 ].nodeValue
             # add return 
@@ -51,9 +51,9 @@ class Main:
                 if 'playlists/video' in self.fav_path: self.fav_path = self.fav_path.replace( 'PlayMedia(', 'ActivateWindow(MyVideoLibrary,' )
             print 'playlists :' + sys.argv[ 1 ]
             # set properties
-            self.WINDOW.setProperty( "favourite.%d.path" % ( self.count + 1, ) , self.fav_path )
-            self.WINDOW.setProperty( "favourite.%d.name" % ( self.count + 1, ) , self.doc.attributes [ 'name' ].nodeValue )
-            self.count = self.count+1
+            self.WINDOW.setProperty( "favourite.%d.path" % ( count + 1, ) , self.fav_path )
+            self.WINDOW.setProperty( "favourite.%d.name" % ( count + 1, ) , self.doc.attributes [ 'name' ].nodeValue )
+            count = count+1
 
 if ( __name__ == "__main__" ):
     Main()

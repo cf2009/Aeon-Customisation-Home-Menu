@@ -1,15 +1,17 @@
 import xbmc
 from xbmcgui import Window, DialogProgress
 from urllib import quote_plus, unquote_plus, urlopen, urlretrieve
-import re, sys, os, time
+import re, sys, os, time, htmlentitydefs
 
 # Current Working Directory
 CWD = os.getcwd()
 if CWD[-1] == ';': CWD = CWD[0:-1]
-if CWD[-1] != '\\': CWD = CWD + '\\'
+if CWD[-1] != '//': CWD = CWD + '//'
 
 #picture save temp
 IMAGE_TEMP =  CWD + 'temp_pic.png'
+#extras scrapers folder
+EXTRAS_FILE =  CWD + 'scrapers//'
 
 class Main:
     # grab the home window
@@ -52,7 +54,7 @@ class Main:
         self.UNPLAYED = params.get( "unplayed", "" ) == "True"
         self.RECENTADDED = params.get( "recentadded", "" ) == "true"
         self.TOTALS = params.get( "totals", "" ) == "true"
-        self.QUOTE = params.get( "quote", "" ) == "true"
+        self.EXTRAS_CONTENT = params.get( "extrapopup", "" )
         self.PICTURE = params.get( "picture", "" ) == "true"
 
     def __init__( self ):
@@ -72,8 +74,8 @@ class Main:
             self._fetch_music_info()
         if ( self.TOTALS ):
             self._fetch_totals()
-        if ( self.QUOTE ):
-            self.get_quote()
+        if ( self.EXTRAS_CONTENT ):
+            self.get_extra_content(self.EXTRAS_CONTENT)
         if ( self.PICTURE ):
             self.get_picture()
 
@@ -215,23 +217,34 @@ class Main:
         self.WINDOW.setProperty( "Album.ArtistCount" , album_fields [1] )
 
  
-    def get_quote(self): 
-        base_url = 'http://www.qotd.org/' 
-        content = urlopen(base_url).read() 
-        m = re.search('            <i>(.*?)<', content) 
-        n = re.search('</i> - (.*?)<', content) 
-        if m: 
-            quote = m.group(1) 
-            if n: 
-                quoted = n.group(1) 
-            else: 
-                quoted = ''
+    def get_extra_content(self, scraper):
+        #open extras scraper file
+        SET_LINES = open(EXTRAS_FILE + scraper + '.txt','r').readlines()
+        #open URL
+        URL_FILE = urlopen(SET_LINES [ 1 ].strip()).read()
+        #find content
+        CONTENT = re.findall(SET_LINES [ 2 ].strip(), URL_FILE, re.DOTALL)
+        #find title
+        TITLE = re.findall(SET_LINES [ 3 ].strip(), URL_FILE, re.DOTALL)
+        #find NAME
+        NAME_EX = SET_LINES [ 0 ].strip()
+        #ITEM NUBER
+        ITEM_NUBER = int( SET_LINES [ 4 ].strip() )
+        if CONTENT: 
+            CONTENT_EX = htmlentitydecode( CONTENT[ ITEM_NUBER ] )
+            CONTENT_EX = remove_html_tags( CONTENT_EX ) 
         else: 
-            quote = 'no quote available'
-            quoted = ''
-        self.WINDOW.setProperty( "Fun.quote_got" , 'yes' ) 
-        self.WINDOW.setProperty( "Fun.quote" , quote ) 
-        self.WINDOW.setProperty( "Fun.quoted" , quoted )
+            CONTENT_EX = 'not available'
+        if TITLE: 
+            TITLE_EX = TITLE [ ITEM_NUBER ] 
+        else: 
+            TITLE_EX = 'No Title'
+        if NAME_EX == False: NAME_EX = 'No Name'
+        # set properties
+        self.WINDOW.setProperty( "Fun.ExGot" , 'yes' )
+        self.WINDOW.setProperty( "Fun.ExName" , NAME_EX )
+        self.WINDOW.setProperty( "Fun.ExContent" , CONTENT_EX.strip() )
+        self.WINDOW.setProperty( "Fun.ExTitle" , TITLE_EX.strip() )
 
  
     def get_picture(self): 
@@ -274,6 +287,36 @@ def _pbhook(numblocks, blocksize, filesize, url=None):
         #print "DOWNLOAD CANCELLED" # need to get this part working
         #dp.close()
         
+def htmlentitydecode(s):
+    # code from http://snipplr.com/view.php?codeview&id=15261
+    # First convert alpha entities (such as &eacute;)
+    # (Inspired from http://mail.python.org/pipermail/python-list/2007-June/443813.html)
+    def entity2char(m):
+        entity = m.group(1)
+        if entity in htmlentitydefs.name2codepoint:
+            return unichr(htmlentitydefs.name2codepoint[entity])
+        return u" "  # Unknown entity: We replace with a space.
+    t = re.sub(u'&(%s);' % u'|'.join(htmlentitydefs.name2codepoint), entity2char, s)
+  
+    # Then convert numerical entities (such as &#233;)
+    t = re.sub(u'&#(\d+);', lambda x: unichr(int(x.group(1))), t)
+   
+    # Then convert hexa entities (such as &#x00E9;)
+    return re.sub(u'&#x(\w+);', lambda x: unichr(int(x.group(1),16)), t)
+
+def decodeEntities(data):
+    data = data or ''
+    data = data.replace('&lt;', '<')
+    data = data.replace('&gt;', '>')
+    data = data.replace('&quot;', '"')
+    data = data.replace('&apos;', "'")
+    data = data.replace('&amp;', '&')
+    return data
+
+	
+def remove_html_tags(data):
+    p = re.compile(r'<[^<]*?/?>')
+    return p.sub(' ', data)
 
 if ( __name__ == "__main__" ):
     Main()

@@ -1,0 +1,5 @@
+inspiringquotes.co.uk
+http://www.inspiringquotes.co.uk/random-quotes/
+<div id="random">(.*?)<
+Author</u>:(.*?)<
+0
