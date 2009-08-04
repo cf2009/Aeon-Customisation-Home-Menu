@@ -5,6 +5,7 @@
 		<control type="multiimage">
 			<description>Settings Backdrop</description>
 			<include>FullscreenDimensions</include>
+			<include>BackgroundTimings</include>
 			<imagepath>backdrops/default_settings</imagepath>
 			<info>Skin.String(CustomSettings)</info>
 			<animation effect="fade" start="0" end="100" time="200" condition="Window.Previous(Home) | Skin.HasSetting(bmtransit)">WindowOpen</animation>
