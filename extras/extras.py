@@ -1,7 +1,8 @@
 import xbmc
 from xbmcgui import Window, DialogProgress
 from urllib import quote_plus, unquote_plus, urlopen, urlretrieve
-import re, sys, os, time, htmlentitydefs
+import re, sys, os, time
+from htmlentitydefs import name2codepoint as n2cp
 
 # Current Working Directory
 CWD = os.getcwd()
@@ -11,7 +12,7 @@ if CWD[-1] != '//': CWD = CWD + '//'
 #picture save temp
 IMAGE_TEMP =  CWD + 'temp_pic.png'
 #extras scrapers folder
-EXTRAS_FILE =  CWD + 'scrapers//'
+EXTRAS_FILE_ADDRESS =  CWD + 'scrapers//'
 
 class Main:
     # grab the home window
@@ -24,8 +25,8 @@ class Main:
             self.WINDOW.clearProperty( "LatestMovie.%d.Title" % ( count + 1, ) )
             self.WINDOW.clearProperty( "LatestEpisode.%d.ShowTitle" % ( count + 1, ) )
             self.WINDOW.clearProperty( "LatestSong.%d.Title" % ( count + 1, ) )
-            self.WINDOW.clearProperty( "Fun.quote_got" )
-            self.WINDOW.clearProperty( "Fun.picture_got" )
+            self.WINDOW.clearProperty( "Fun.ExGot" )
+            self.WINDOW.clearProperty( "Fun.PicGot" )
 
     def _get_media( self, path, file ):
         # set default values
@@ -55,7 +56,7 @@ class Main:
         self.RECENTADDED = params.get( "recentadded", "" ) == "true"
         self.TOTALS = params.get( "totals", "" ) == "true"
         self.EXTRAS_CONTENT = params.get( "extrapopup", "" )
-        self.PICTURE = params.get( "picture", "" ) == "true"
+        self.EXTRAS_PICTURE = params.get( "picture", "" )
 
     def __init__( self ):
         # parse argv for any preferences
@@ -76,8 +77,8 @@ class Main:
             self._fetch_totals()
         if ( self.EXTRAS_CONTENT ):
             self.get_extra_content(self.EXTRAS_CONTENT)
-        if ( self.PICTURE ):
-            self.get_picture()
+        if ( self.EXTRAS_PICTURE ):
+            self.get_picture(self.EXTRAS_PICTURE)
 
     def _fetch_movie_info( self ):
         # set our unplayed query
@@ -219,104 +220,130 @@ class Main:
  
     def get_extra_content(self, scraper):
         #open extras scraper file
-        SET_LINES = open(EXTRAS_FILE + scraper + '.txt','r').readlines()
-        #open URL
-        URL_FILE = urlopen(SET_LINES [ 1 ].strip()).read()
-        #find content
-        CONTENT = re.findall(SET_LINES [ 2 ].strip(), URL_FILE, re.DOTALL)
-        #find title
-        TITLE = re.findall(SET_LINES [ 3 ].strip(), URL_FILE, re.DOTALL)
-        #find NAME
-        NAME_EX = SET_LINES [ 0 ].strip()
-        #ITEM NUBER
-        ITEM_NUBER = int( SET_LINES [ 4 ].strip() )
-        if CONTENT: 
-            CONTENT_EX = htmlentitydecode( CONTENT[ ITEM_NUBER ] )
-            CONTENT_EX = remove_html_tags( CONTENT_EX ) 
-        else: 
-            CONTENT_EX = 'not available'
-        if TITLE: 
-            TITLE_EX = TITLE [ ITEM_NUBER ] 
-        else: 
-            TITLE_EX = 'No Title'
-        if NAME_EX == False: NAME_EX = 'No Name'
-        # set properties
-        self.WINDOW.setProperty( "Fun.ExGot" , 'yes' )
-        self.WINDOW.setProperty( "Fun.ExName" , NAME_EX )
-        self.WINDOW.setProperty( "Fun.ExContent" , CONTENT_EX.strip() )
-        self.WINDOW.setProperty( "Fun.ExTitle" , TITLE_EX.strip() )
-
- 
-    def get_picture(self): 
-        base_url = 'http://backend.deviantart.com/rss.xml?q=&type=deviation' 
-        content = urlopen(base_url).read() 
-        m = re.search('<media:thumbnail url="(.*?)" height', content) 
-        n = re.search('media:credit role="author" scheme="urn:ebu">(.*?)<', content) 
-        if m: 
-            picture = m.group(1)
-            DownloaderClass(picture, IMAGE_TEMP)
-            if n: 
-                pictureby = n.group(1) 
+        FILE_ADDRESS = EXTRAS_FILE_ADDRESS + '[txt]' + scraper + '.txt'
+        # Check to see if file exists
+        if (os.path.isfile( FILE_ADDRESS ) == False):
+            self.WINDOW.setProperty( "Fun.ExGot" , 'yes' )
+            self.WINDOW.setProperty( "Fun.ExName" , 'Can\'t Find Widget' )
+            self.WINDOW.setProperty( "Fun.ExContent" , '' )
+            self.WINDOW.setProperty( "Fun.ExTitle" , '' )
+        else:
+            #open extras scraper file
+            SET_LINES = open(FILE_ADDRESS,'r').readlines()
+            #open URL
+            URL_FILE = urlopen(SET_LINES [ 1 ].strip()).read()
+            #find content
+            CONTENT = re.findall(SET_LINES [ 2 ].strip(), URL_FILE, re.DOTALL)
+            #find title
+            TITLE = re.findall(SET_LINES [ 3 ].strip(), URL_FILE, re.DOTALL)
+            #find NAME
+            NAME_EX = SET_LINES [ 0 ].strip()
+            #ITEM NUBER
+            ITEM_NUBER = int( SET_LINES [ 4 ].strip() )
+            if CONTENT:
+                print '---->' + CONTENT[ ITEM_NUBER ]
+                CONTENT_EX = self.Clean_text( CONTENT[ ITEM_NUBER ] )
+                print '---->' + CONTENT_EX
             else: 
-                pictureby = ''
-        else: 
-            picture = ''
-            pictureby = 'no pictureby available'
-        for i in range(1, 5):
-            time.sleep(2)
-            if (os.path.isfile( IMAGE_TEMP )):
-                self.WINDOW.setProperty( "Fun.picture_got" , 'yes' )
-                self.WINDOW.setProperty( "Fun.picture" , IMAGE_TEMP )
-                self.WINDOW.setProperty( "Fun.pictureby" , pictureby )
-                i = 5
+                CONTENT_EX = 'not available'
+            if TITLE: 
+                TITLE_EX = self.Clean_text( TITLE [ ITEM_NUBER ] )
+            else: 
+                TITLE_EX = 'No Title'
+            if NAME_EX == False: NAME_EX = 'No Name'
+            # set properties
+            self.WINDOW.setProperty( "Fun.ExGot" , 'yes' )
+            self.WINDOW.setProperty( "Fun.ExName" , NAME_EX )
+            self.WINDOW.setProperty( "Fun.ExContent" , CONTENT_EX.strip() )
+            self.WINDOW.setProperty( "Fun.ExTitle" , TITLE_EX.strip() )
 
-def DownloaderClass(url,dest):
-    #dp = DialogProgress()
-    #dp.create("Extras","Downloading Image",url)
-    urlretrieve(url,dest,lambda nb, bs, fs, url=url: _pbhook(nb,bs,fs,url))
  
-def _pbhook(numblocks, blocksize, filesize, url=None):
-    try:
-        percent = min((numblocks*blocksize*100)/filesize, 100)
-        print percent
-        #dp.update(percent)
-    except:
-        percent = 100
-        #dp.update(percent)
-    #if dp.iscanceled(): 
-        #print "DOWNLOAD CANCELLED" # need to get this part working
-        #dp.close()
-        
-def htmlentitydecode(s):
-    # code from http://snipplr.com/view.php?codeview&id=15261
-    # First convert alpha entities (such as &eacute;)
-    # (Inspired from http://mail.python.org/pipermail/python-list/2007-June/443813.html)
-    def entity2char(m):
-        entity = m.group(1)
-        if entity in htmlentitydefs.name2codepoint:
-            return unichr(htmlentitydefs.name2codepoint[entity])
-        return u" "  # Unknown entity: We replace with a space.
-    t = re.sub(u'&(%s);' % u'|'.join(htmlentitydefs.name2codepoint), entity2char, s)
-  
-    # Then convert numerical entities (such as &#233;)
-    t = re.sub(u'&#(\d+);', lambda x: unichr(int(x.group(1))), t)
-   
-    # Then convert hexa entities (such as &#x00E9;)
-    return re.sub(u'&#x(\w+);', lambda x: unichr(int(x.group(1),16)), t)
+    def get_picture(self, scraper): 
+        #open extras scraper file
+        FILE_ADDRESS = EXTRAS_FILE_ADDRESS + '[pic]' + scraper + '.txt'
+        # Check to see if file exists
+        if (os.path.isfile( FILE_ADDRESS ) == False):
+            self.WINDOW.setProperty( "Fun.PicGot" , 'yes' )
+            self.WINDOW.setProperty( "Fun.PicName" , 'Can\'t Find Widget' )
+            self.WINDOW.setProperty( "Fun.Picture" , '' )
+            self.WINDOW.setProperty( "Fun.PicBy" , '' )
+        else:	
+            SET_LINES = open(FILE_ADDRESS, 'r').readlines()
+            #open URL
+            URL_FILE = urlopen(SET_LINES [ 1 ].strip()).read()
+            #find PICTURE
+            PICTURE_URL = re.findall(SET_LINES [ 2 ].strip(), URL_FILE, re.DOTALL)
+            #find title
+            TITLE = re.findall(SET_LINES [ 3 ].strip(), URL_FILE, re.DOTALL)
+            #find NAME
+            NAME_EX = SET_LINES [ 0 ].strip()
+            #ITEM NUBER
+            ITEM_NUBER = int( SET_LINES [ 4 ].strip() )
+            if PICTURE_URL: 
+                print 'Pic-->' + PICTURE_URL [ ITEM_NUBER ]
+                PICTURE = PICTURE_URL [ ITEM_NUBER ]
+                urlretrieve(PICTURE, IMAGE_TEMP)
+            else: 
+                PICTURE = ''
+            if TITLE: 
+                TITLE_EX = self.Clean_text( TITLE [ ITEM_NUBER ] )
+            else: 
+                TITLE_EX = 'No Title'
+            if NAME_EX == False: NAME_EX = 'No Name'
+            # set properties
+            for i in range(1, 5):
+                time.sleep(2)
+                if (os.path.isfile( IMAGE_TEMP )):
+                    self.WINDOW.setProperty( "Fun.PicGot" , 'yes' )
+                    self.WINDOW.setProperty( "Fun.PicName" , NAME_EX )
+                    self.WINDOW.setProperty( "Fun.Picture" , IMAGE_TEMP )
+                    self.WINDOW.setProperty( "Fun.PicBy" , TITLE_EX )
+                    i = 5
 
+    def Clean_text(self,  data):
+        data = htmldecode2( data )
+        data = decodeEntities( data )
+        data = remove_html_tags( data )
+        data = remove_extra_spaces( data )
+        return data
+
+def htmldecode2(text):
+        """Decode HTML entities in the given text."""
+		#http://evaisse.com/post/52749338/python-html-entities-decode-cgi-unescape
+        if type(text) is unicode:
+                uchr = unichr
+        else:
+                uchr = lambda value: value > 255 and unichr(value) or chr(value)
+        def entitydecode(match, uchr=uchr):
+                entity = match.group(1)
+                if entity.startswith('#x'):
+                        return uchr(int(entity[2:], 16))
+                elif entity.startswith('#'):
+                        return uchr(int(entity[1:]))
+                elif entity in n2cp:
+                        return uchr(n2cp[entity])
+                else:
+                        return match.group(0)
+        charrefpat = re.compile(r'&(#(\d+|x[\da-fA-F]+)|[\w.:-]+);?')
+        return charrefpat.sub(entitydecode, text)
+
+def remove_extra_spaces(data):
+    p = re.compile(r'\s+')
+    return p.sub(' ', data)
+	
+def remove_html_tags(data):
+    p = re.compile(r'<[^<]*?/?>')
+    return p.sub(' ', data)
+	
 def decodeEntities(data):
     data = data or ''
+    data = data.replace('&#160;', ' ')
     data = data.replace('&lt;', '<')
     data = data.replace('&gt;', '>')
     data = data.replace('&quot;', '"')
     data = data.replace('&apos;', "'")
     data = data.replace('&amp;', '&')
-    return data
-
-	
-def remove_html_tags(data):
-    p = re.compile(r'<[^<]*?/?>')
-    return p.sub(' ', data)
+    return data	
 
 if ( __name__ == "__main__" ):
     Main()

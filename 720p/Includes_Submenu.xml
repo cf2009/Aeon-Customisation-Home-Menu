@@ -1995,10 +1995,10 @@
 </include>
 <!-- extras.py set up -->
 <include name="extras_extrapopup">
-	<onfocus>setProperty(extrapopup_extras,&extrapopup=$INFO[Skin.String(widget_set)])</onfocus>
+	<onfocus>setProperty(extrapopup_extras,&extrapopup=$INFO[Skin.String(extra_widget_set)])</onfocus>
 </include>
 <include name="extras_Picture">
-	<onfocus>setProperty(Picture_extras,&picture=true)</onfocus>
+	<onfocus>setProperty(Picture_extras,&picture=$INFO[Skin.String(pic_widget_set)])</onfocus>
 </include>
 <include name="extras_totals">
 	<onfocus>setProperty(totals_extras,&totals=true)</onfocus>
@@ -2007,20 +2007,6 @@
 	<onfocus>setProperty(recentadded_extras,&recentadded=true)</onfocus>
 </include>
 <!-- extras.py set up end -->
-<!-- Custom_widget_reset -->
-<include name="Custom_widget_reset">
-	<onclick>Skin.reset(Custom_widget_1)</onclick>
-	<onclick>Skin.reset(Custom_widget_2)</onclick>
-	<onclick>Skin.reset(Custom_widget_3)</onclick>
-	<onclick>Skin.reset(Custom_widget_4)</onclick>
-	<onclick>Skin.reset(Custom_widget_5)</onclick>
-	<onclick>Skin.reset(Custom_widget_6)</onclick>
-	<onclick>Skin.reset(Custom_widget_7)</onclick>
-	<onclick>Skin.reset(Custom_widget_8)</onclick>
-	<onclick>Skin.reset(Custom_widget_9)</onclick>
-	<onclick>Skin.reset(Custom_widget_10)</onclick>
-</include>
-<!-- Custom_widget_reset end -->				
 <include name="nav_home_locked">
 	<!-- OnUp -->
 	<control type="group" id="324">
@@ -2869,8 +2855,9 @@
 	<control type="group">
 		<posx>1030</posx>
 		<posy>444</posy>
-		<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)|Container(300).HasFocus(1)</visible>			
+		<visible>[Container(300).HasFocus(6)|Container(300).HasFocus(7)|Container(300).HasFocus(1)]</visible>			
 		<visible>!Control.IsVisible(87)</visible>
+		<visible>!IsEmpty(Window.Property(Album.ArtistCount))</visible>
 		<animation effect="slide" start="0" end="0,-113" time="350" easing="inout" tween="cubic" condition="!Skin.HasSetting(highertime)+Skin.HasSetting(lowermainmenu)">Conditional</animation>
 		<animation effect="slide" start="0,20" end="0,-105" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(highertime)+Skin.HasSetting(lowermainmenu)">Conditional</animation>
 		<animation effect="slide" start="0" end="300,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
@@ -3789,7 +3776,7 @@
 <!-- Newest deviantart -->
 <include name="Newest_Pictre">
 	<control type="group">
-		<visible>Container(300).HasFocus(5)+Skin.HasSetting(Newest_Pictre_on)+StringCompare(Window.Property(Fun.picture_got),yes)</visible>
+		<visible>Container(300).HasFocus(5)+Skin.HasSetting(Newest_Pictre_on)+StringCompare(Window.Property(Fun.PicGot),yes)</visible>
 		<posx>1340</posx>
 		<posy>440</posy>
 		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
@@ -3824,7 +3811,7 @@
 			<aligny>center</aligny>
 			<font>Font_WeatherTitle</font>
 			<textcolor>c0FFFFFF</textcolor>
-			<label>31863</label>
+			<label>$INFO[Window.Property(Fun.PicName)]</label>
 		</control>
 	  	<control type="label">
 			<posx>10</posx>
@@ -3835,15 +3822,15 @@
 			<align>center</align>
 			<aligny>center</aligny>
 			<textcolor>a9ffffff</textcolor>
-			<label>By [I]$INFO[Window.Property(Fun.pictureby)][/I]</label>
+			<label>[I]$INFO[Window.Property(Fun.PicBy)][/I]</label>
 		</control>
 		<control type="image">
-			<visible>StringCompare(Window.Property(Fun.picture_got),yes)</visible>
+			<visible>StringCompare(Window.Property(Fun.PicGot),yes)</visible>
 			<posx>10</posx>
 			<posy>75</posy>
 			<width>280</width>
 			<height>180</height>
-			<texture>$INFO[Window.Property(Fun.picture)]</texture>
+			<texture>$INFO[Window.Property(Fun.Picture)]</texture>
 			<aspectratio scalediffuse="false">keep</aspectratio>
 			<fadetime>400</fadetime>
 		</control>

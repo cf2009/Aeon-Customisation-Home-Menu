@@ -44,8 +44,8 @@
 
 		<include condition="!Skin.HasSetting(Recently_added)">extras_recentadded</include>
 		<include condition="!Skin.HasSetting(Library_info)">extras_totals</include>
-		<include condition="!IsEmpty(Skin.String(widget_set))">extras_extrapopup</include>
-		<include condition="Skin.HasSetting(Newest_Pictre_on)">extras_Picture</include>
+		<include condition="Skin.HasSetting(Custom_extra_widget_set)">extras_extrapopup</include>
+		<include condition="Skin.HasSetting(Custom_pic_widget_set)">extras_Picture</include>
 
 		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(extrapopup_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
 

@@ -1,5 +1,5 @@
 <window type="dialog" id="801">
-<defaultcontrol always="true">31</defaultcontrol>
+<defaultcontrol always="true">15</defaultcontrol>
 <include>Animation_DialogPopup</include>
 	
 <controls>
@@ -41,8 +41,13 @@
 	</control>
 	<control type="button" id="31">
 		<include>homesubmenu_but</include>
-		<onfocus>XBMC.RunScript(special://skin/extras/widget.py)</onfocus>
-		<onfocus>SetFocus(15)</onfocus>
+		<onfocus>XBMC.RunScript(special://skin/extras/widget.py,type=txt)</onfocus>
+		<onfocus>SetFocus(25)</onfocus>
+	</control>
+	<control type="button" id="32">
+		<include>homesubmenu_but</include>
+		<onfocus>XBMC.RunScript(special://skin/extras/widget.py,type=pic)</onfocus>
+		<onfocus>SetFocus(25)</onfocus>
 	</control>
 	<control type="group">
 		<posx>500</posx>
@@ -182,7 +187,7 @@
 			</item>
 			<item id="8">
 				<description>widget</description>
-				<label>widget</label>
+				<label>Widgets</label>
 				<onclick>SetFocus(16)</onclick>
 			</item>
 		<!-- favourites -->
@@ -818,183 +823,6 @@
 				<visible>Container(15).HasFocus(6)</visible>
 			</item>
 		<!-- Extras Sub End -->
-		<!-- Extras widget -->
-			<item id="100">
-				<label>extra popup widget: $LOCALIZE[31077]</label>
-				<onclick>Skin.reset(widget_set)</onclick>
-				<onclick>Skin.ToggleSetting(Custom_widget_set)</onclick>
-				<visible>!Skin.HasSetting(Custom_widget_set)</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="100">
-				<label>extra popup widget: $LOCALIZE[351]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.1.name)])</onclick>
-				<onclick>Skin.ToggleSetting(Custom_widget_1)</onclick>
-				<onclick>Skin.reset(Custom_widget_set)</onclick>
-				<visible>Skin.HasSetting(Custom_widget_set)</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="101">
-				<label>$INFO[Window(4).Property(widget.1.name)]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.1.name)])</onclick>
-				<include>Custom_widget_reset</include>
-				<onclick>Skin.ToggleSetting(Custom_widget_1)</onclick>
-				<visible>!Skin.HasSetting(Custom_widget_1)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.1.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="101">
-				<label>$INFO[Window(4).Property(widget.1.name)]: $LOCALIZE[31077]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.1.name)])</onclick>
-				<visible>Skin.HasSetting(Custom_widget_1)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.1.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="102">
-				<label>$INFO[Window(4).Property(widget.2.name)]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.2.name)])</onclick>
-				<include>Custom_widget_reset</include>
-				<onclick>Skin.ToggleSetting(Custom_widget_2)</onclick>
-				<visible>!Skin.HasSetting(Custom_widget_2)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.2.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="102">
-				<label>$INFO[Window(4).Property(widget.2.name)]: $LOCALIZE[31077]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.2.name)])</onclick>
-				<visible>Skin.HasSetting(Custom_widget_2)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.2.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="103">
-				<label>$INFO[Window(4).Property(widget.3.name)]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.3.name)])</onclick>
-				<include>Custom_widget_reset</include>
-				<onclick>Skin.ToggleSetting(Custom_widget_3)</onclick>
-				<visible>!Skin.HasSetting(Custom_widget_3)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.3.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="103">
-				<label>$INFO[Window(4).Property(widget.3.name)]: $LOCALIZE[31077]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.3.name)])</onclick>
-				<visible>Skin.HasSetting(Custom_widget_3)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.3.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="104">
-				<label>$INFO[Window(4).Property(widget.4.name)]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.4.name)])</onclick>
-				<include>Custom_widget_reset</include>
-				<onclick>Skin.ToggleSetting(Custom_widget_4)</onclick>
-				<visible>!Skin.HasSetting(Custom_widget_4)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.4.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="104">
-				<label>$INFO[Window(4).Property(widget.4.name)]: $LOCALIZE[31077]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.4.name)])</onclick>
-				<visible>Skin.HasSetting(Custom_widget_4)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.4.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="105">
-				<label>$INFO[Window(4).Property(widget.5.name)]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.5.name)])</onclick>
-				<include>Custom_widget_reset</include>
-				<onclick>Skin.ToggleSetting(Custom_widget_5)</onclick>
-				<visible>!Skin.HasSetting(Custom_widget_5)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.5.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="105">
-				<label>$INFO[Window(4).Property(widget.5.name)]: $LOCALIZE[31077]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.5.name)])</onclick>
-				<visible>Skin.HasSetting(Custom_widget_5)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.5.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="106">
-				<label>$INFO[Window(4).Property(widget.6.name)]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.6.name)])</onclick>
-				<include>Custom_widget_reset</include>
-				<onclick>Skin.ToggleSetting(Custom_widget_6)</onclick>
-				<visible>!Skin.HasSetting(Custom_widget_6)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.6.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="106">
-				<label>$INFO[Window(4).Property(widget.6.name)]: $LOCALIZE[31077]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.6.name)])</onclick>
-				<visible>Skin.HasSetting(Custom_widget_6)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.6.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="107">
-				<label>$INFO[Window(4).Property(widget.7.name)]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.7.name)])</onclick>
-				<include>Custom_widget_reset</include>
-				<onclick>Skin.ToggleSetting(Custom_widget_7)</onclick>
-				<visible>!Skin.HasSetting(Custom_widget_7)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.7.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="107">
-				<label>$INFO[Window(4).Property(widget.7.name)]: $LOCALIZE[31077]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.7.name)])</onclick>
-				<visible>Skin.HasSetting(Custom_widget_7)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.7.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="108">
-				<label>$INFO[Window(4).Property(widget.8.name)]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.8.name)])</onclick>
-				<include>Custom_widget_reset</include>
-				<onclick>Skin.ToggleSetting(Custom_widget_8)</onclick>
-				<visible>!Skin.HasSetting(Custom_widget_8)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.8.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="108">
-				<label>$INFO[Window(4).Property(widget.8.name)]: $LOCALIZE[31077]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.8.name)])</onclick>
-				<visible>Skin.HasSetting(Custom_widget_8)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.8.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="109">
-				<label>$INFO[Window(4).Property(widget.9.name)]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.9.name)])</onclick>
-				<include>Custom_widget_reset</include>
-				<onclick>Skin.ToggleSetting(Custom_widget_9)</onclick>
-				<visible>!Skin.HasSetting(Custom_widget_9)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.9.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="109">
-				<label>$INFO[Window(4).Property(widget.9.name)]: $LOCALIZE[31077]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.9.name)])</onclick>
-				<visible>Skin.HasSetting(Custom_widget_9)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.9.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="110">
-				<label>$INFO[Window(4).Property(widget.10.name)]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.10.name)])</onclick>
-				<include>Custom_widget_reset</include>
-				<onclick>Skin.ToggleSetting(Custom_widget_10)</onclick>
-				<visible>!Skin.HasSetting(Custom_widget_10)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.10.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-			<item id="110">
-				<label>$INFO[Window(4).Property(widget.10.name)]: $LOCALIZE[31077]</label>
-				<onclick>Skin.SetString(widget_set,$INFO[Window(4).Property(widget.10.name)])</onclick>
-				<visible>Skin.HasSetting(Custom_widget_10)</visible>
-				<visible>!IsEmpty(Window(4).Property(widget.10.name))</visible>
-				<visible>Container(15).HasFocus(8)</visible>
-			</item>
-		<!-- Extras widget End -->
 		<!-- Settings -->
 			<item id="50">
 				<label>$LOCALIZE[1034]: $LOCALIZE[31077]</label>
@@ -1162,6 +990,41 @@
 				<visible>Container(15).HasFocus(4)</visible>
 			</item>
 		<!-- Settings End -->
+		<!-- Extras widget -->
+
+			<item id="101">
+				<label>extra popup widget : $LOCALIZE[351]</label>
+				<onclick>Skin.SetString(widget_set,extra_widget_set)</onclick>
+				<onclick>Skin.ToggleSetting(Custom_extra_widget_set)</onclick>
+				<onclick>SetFocus(31)</onclick>
+				<visible>!Skin.HasSetting(Custom_extra_widget_set)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
+			<item id="101">
+				<label>[B]extra popup widget[/B] $INFO[Skin.String(extra_widget_set)]</label>
+				<onclick>Skin.Reset(Custom_extra_widget_set)</onclick>
+				<onclick>Skin.Reset(extra_widget_set)</onclick>
+				<visible>Skin.HasSetting(Custom_extra_widget_set)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
+
+			<item id="102">
+				<label>pic popup widget : $LOCALIZE[351]</label>
+				<onclick>Skin.SetString(widget_set,pic_widget_set)</onclick>
+				<onclick>Skin.ToggleSetting(Custom_pic_widget_set)</onclick>
+				<onclick>SetFocus(32)</onclick>
+				<visible>!Skin.HasSetting(Custom_pic_widget_set)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
+			<item id="102">
+				<label>[B]pic popup widget[/B] $INFO[Skin.String(pic_widget_set)]</label>
+				<onclick>Skin.Reset(Custom_pic_widget_set)</onclick>
+				<onclick>Skin.Reset(pic_widget_set)</onclick>
+				<visible>Skin.HasSetting(Custom_pic_widget_set)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
+
+
 		</content>
 	</control>
 	<control type="list" id="20">
@@ -1176,7 +1039,7 @@
 		<viewtype>list</viewtype>
 		<scrolltime>200</scrolltime>
 		<animation effect="fade" start="0" end="100" time="200">Focus</animation>
-		<animation effect="fade" start="100" end="0" time="200" condition="control.HasFocus(15)|control.HasFocus(16)">Conditional</animation>
+		<animation effect="fade" start="100" end="0" time="200" condition="control.HasFocus(15)|control.HasFocus(16)|control.HasFocus(25)">Conditional</animation>
 			
 		<itemlayout height="30">
 			<control type="image">
@@ -1434,6 +1297,219 @@
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(favourite.20.name))</visible>
 			</item>
+		</content>
+	</control>
+	<control type="list" id="25">
+		<posx>520</posx>
+		<posy>207</posy>
+		<height>180</height>
+		<width>460</width>
+		<onleft>16</onleft>
+		<onright>16</onright>
+		<onup>25</onup>
+		<ondown>25</ondown>
+		<viewtype>list</viewtype>
+		<scrolltime>200</scrolltime>
+		<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+		<animation effect="fade" start="100" end="0" time="200" condition="control.HasFocus(15)|control.HasFocus(16)|control.HasFocus(20)">Conditional</animation>
+			
+		<itemlayout height="30">
+			<control type="image">
+				<posx>-20</posx>
+				<posy>-10</posy>
+				<height>40</height>
+				<width>550</width>
+				<texture>osd/osd_settings_buttonnf.png</texture>
+				<colordiffuse>88ffffff</colordiffuse>
+			</control>
+			<control type="label">
+				<posy>0</posy>
+				<posx>10</posx>
+				<height>30</height>
+				<width>440</width>
+				<aligny>center</aligny>
+				<font>Font_ListObjects</font>
+				<textcolor>48FFFFFF</textcolor>
+				<info>ListItem.Label</info>
+			</control>
+		</itemlayout>
+		<focusedlayout height="30">
+			<control type="image">
+				<posx>-20</posx>
+				<posy>-10</posy>
+				<height>40</height>
+				<width>550</width>
+				<texture>osd/osd_settings_buttonnf.png</texture>
+				<colordiffuse>88ffffff</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>1</posx>
+				<posy>-1</posy>
+				<width>465</width>
+				<height>30</height>
+				<texture fallback="dialogs/browser_focus.png">windows/listselect.png</texture>
+				<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+				<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+				<visible>!control.HasFocus(15)</visible>
+			</control>
+			<control type="label">
+				<posy>0</posy>
+				<posx>10</posx>
+				<height>30</height>
+				<width>440</width>
+				<aligny>center</aligny>
+				<font>Font_ListObjects</font>
+				<textcolor>48FFFFFF</textcolor>
+				<info>ListItem.Label</info>
+				<animation effect="fade" start="100" end="0" time="200">Focus</animation>
+				<animation effect="fade" start="0" end="100" time="200">Unfocus</animation>
+			</control>
+			<control type="label">
+				<posy>0</posy>
+				<posx>10</posx>
+				<height>30</height>
+				<width>440</width>
+				<aligny>center</aligny>
+				<font>Font_ListObjects</font>
+				<textcolor>ffFFFFFF</textcolor>
+				<info>ListItem.Label</info>
+				<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+				<animation effect="fade" start="100" end="0" time="200" condition="!control.HasFocus(15)">Unfocus</animation>
+			</control>
+			<control type="label">
+				<posy>0</posy>
+				<posx>10</posx>
+				<height>30</height>
+				<width>440</width>
+				<aligny>center</aligny>
+				<font>Font_ListObjects</font>
+				<textcolor>ffFFFFFF</textcolor>
+				<info>ListItem.Label</info>
+				<visible>control.HasFocus(15)</visible>
+			</control>
+		</focusedlayout>
+		<content>
+			<item id="1">
+				<label>$INFO[Window(4).Property(widget.1.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.1.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.1.name))</visible>
+			</item>
+			<item id="2">
+				<label>$INFO[Window(4).Property(widget.2.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.2.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.2.name))</visible>
+			</item>
+			<item id="3">
+				<label>$INFO[Window(4).Property(widget.3.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.3.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.3.name))</visible>
+			</item>
+			<item id="4">
+				<label>$INFO[Window(4).Property(widget.4.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.4.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.4.name))</visible>
+			</item>
+			<item id="5">
+				<label>$INFO[Window(4).Property(widget.5.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.5.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.5.name))</visible>
+			</item>
+			<item id="6">
+				<label>$INFO[Window(4).Property(widget.6.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.6.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.6.name))</visible>
+			</item>
+			<item id="7">
+				<label>$INFO[Window(4).Property(widget.7.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.7.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.7.name))</visible>
+			</item>
+			<item id="8">
+				<label>$INFO[Window(4).Property(widget.8.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.8.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.8.name))</visible>
+			</item>
+			<item id="9">
+				<label>$INFO[Window(4).Property(widget.9.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.9.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.9.name))</visible>
+			</item>
+			<item id="10">
+				<label>$INFO[Window(4).Property(widget.10.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.10.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.10.name))</visible>
+			</item>
+			<item id="11">
+				<label>$INFO[Window(4).Property(widget.11.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.11.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.11.name))</visible>
+			</item>
+			<item id="12">
+				<label>$INFO[Window(4).Property(widget.12.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.12.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.12.name))</visible>
+			</item>
+			<item id="13">
+				<label>$INFO[Window(4).Property(widget.13.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.13.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.13.name))</visible>
+			</item>
+			<item id="14">
+				<label>$INFO[Window(4).Property(widget.14.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.14.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.14.name))</visible>
+			</item>
+			<item id="15">
+				<label>$INFO[Window(4).Property(widget.15.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.15.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.15.name))</visible>
+			</item>
+			<item id="16">
+				<label>$INFO[Window(4).Property(widget.16.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.16.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.16.name))</visible>
+			</item>
+			<item id="17">
+				<label>$INFO[Window(4).Property(widget.17.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.17.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.17.name))</visible>
+			</item>
+			<item id="18">
+				<label>$INFO[Window(4).Property(widget.18.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.18.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.18.name))</visible>
+			</item>
+			<item id="19">
+				<label>$INFO[Window(4).Property(widget.19.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.19.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.19.name))</visible>
+			</item>
+			<item id="20">
+				<label>$INFO[Window(4).Property(widget.20.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.20.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.20.name))</visible>
+			</item>
+		<!-- Extras widget End -->
 		</content>
 	</control>
 </controls>
