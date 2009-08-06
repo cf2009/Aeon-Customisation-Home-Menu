@@ -3709,6 +3709,7 @@
 	</control>
 </include>
 <!-- Recently added End -->
+<!-- WIDGETS -->
 <!-- WIDGET_EXTRAS -->
 <include name="Randomly_quote">
 	<control type="group">
@@ -3726,7 +3727,7 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>300</width>
-			<height>240</height>
+			<height>270</height>
 			<texture border="20">home/home_weather_big.png</texture>
 			<colordiffuse>cc000000</colordiffuse>
 		</control>
@@ -3734,7 +3735,7 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>300</width>
-			<height>240</height>
+			<height>270</height>
 			<texture border="20">home/home_weather_big.png</texture>
 			<colordiffuse>ccffffff</colordiffuse>
 		</control>
@@ -3760,15 +3761,47 @@
 			<textcolor>a9ffffff</textcolor>
 			<label>[I]$INFO[Window.Property(ExtrasWidget.ContentTitle)][/I]</label>
 		</control>
-		<control type="textbox">
+	  	<control type="label">
 			<posx>10</posx>
 			<posy>70</posy>
+			<width>280</width>
+			<height>20</height>
+    			<font>Font_ListObjects</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>a9ffffff</textcolor>
+			<label>[I]$INFO[Window.Property(ExtrasWidget.PubDate)][/I]</label>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture)) + !IsEmpty(Window.Property(ExtrasWidget.Content))</visible>
+			<posx>10</posx>
+			<posy>75</posy>
+			<width>280</width>
+			<height>180</height>
+			<texture diffuse="home/home_widget_mask.png">$INFO[Window.Property(ExtrasWidget.Picture)]</texture>
+			<aspectratio scalediffuse="false">keep</aspectratio>
+			<fadetime>400</fadetime>
+			<colordiffuse>66FFFFFF</colordiffuse>
+		</control>
+		<control type="textbox">
+			<posx>10</posx>
+			<posy>90</posy>
 			<width>280</width>
 			<height>160</height>
 			<font>Font_ListObjects</font>
 			<textcolor>aaffffff</textcolor>
 			<autoscroll delay="8000" time="2000" repeat="10000">!Control.HasFocus(61)</autoscroll>
 			<label>$INFO[Window.Property(ExtrasWidget.Content)]</label>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture)) + IsEmpty(Window.Property(ExtrasWidget.Content))</visible>
+			<posx>10</posx>
+			<posy>75</posy>
+			<width>280</width>
+			<height>180</height>
+			<texture>$INFO[Window.Property(ExtrasWidget.Picture)]</texture>
+			<aspectratio scalediffuse="false">keep</aspectratio>
+			<fadetime>400</fadetime>
 		</control>
 	</control>
 </include>
@@ -3824,13 +3857,45 @@
 			<textcolor>a9ffffff</textcolor>
 			<label>[I]$INFO[Window.Property(PictureWidget.ContentTitle)][/I]</label>
 		</control>
+	  	<control type="label">
+			<posx>10</posx>
+			<posy>70</posy>
+			<width>280</width>
+			<height>20</height>
+    			<font>Font_ListObjects</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>a9ffffff</textcolor>
+			<label>[I]$INFO[Window.Property(PictureWidget.PubDate)][/I]</label>
+		</control>
 		<control type="image">
-			<visible>StringCompare(Window.Property(PictureWidget.Got),yes)</visible>
+			<visible>!IsEmpty(Window.Property(PictureWidget.Picture)) + !IsEmpty(Window.Property(PictureWidget.Content))</visible>
 			<posx>10</posx>
 			<posy>75</posy>
 			<width>280</width>
 			<height>180</height>
-			<texture>$INFO[Window.Property(PictureWidget.Picture)]</texture>
+			<texture diffuse="home/home_widget_mask.png">$INFO[Window.Property(ExtrasWidget.Picture)]</texture>
+			<aspectratio scalediffuse="false">keep</aspectratio>
+			<fadetime>400</fadetime>
+			<colordiffuse>66FFFFFF</colordiffuse>
+		</control>
+		<control type="textbox">
+			<posx>10</posx>
+			<posy>90</posy>
+			<width>280</width>
+			<height>160</height>
+			<font>Font_ListObjects</font>
+			<textcolor>aaffffff</textcolor>
+			<autoscroll delay="8000" time="2000" repeat="10000">!Control.HasFocus(61)</autoscroll>
+			<label>$INFO[Window.Property(PictureWidget.Content)]</label>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(Window.Property(PictureWidget.Picture)) + IsEmpty(Window.Property(PictureWidget.Content))</visible>
+			<posx>10</posx>
+			<posy>75</posy>
+			<width>280</width>
+			<height>180</height>
+			<texture>$INFO[Window.Property(ExtrasWidget.Picture)]</texture>
 			<aspectratio scalediffuse="false">keep</aspectratio>
 			<fadetime>400</fadetime>
 		</control>

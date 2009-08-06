@@ -233,15 +233,15 @@ class Main:
             URL_FILE = urlopen(SET_LINES [ 1 ].strip()).read()
             #find PICTURE (WIDGET_FOR.Picture)
             if SET_LINES [ 2 ].strip():
-                PICTURE_URL_LIST = re.findall(SET_LINES [ 2 ].strip(), URL_FILE, re.DOTALL)
+                PICTURE_URL_LIST = re.findall(SET_LINES [ 2 ].rstrip(), URL_FILE, re.DOTALL)
             else:
                 PICTURE_URL_LIST = ''
-            #find Content Title (WIDGET_FOR.ContentTitle)
-            CONTENT_TITLE_LIST = re.findall(SET_LINES [ 3 ].strip(), URL_FILE, re.DOTALL)
+            #find Content Title (WIDGET_FOR.ContentTitle) 
+            CONTENT_TITLE_LIST = re.findall( SET_LINES [ 3 ].rstrip() , URL_FILE, re.DOTALL)
             #find Content (WIDGET_FOR.Content)
-            CONTENT_LIST = re.findall(SET_LINES [ 4 ].strip(), URL_FILE, re.DOTALL)
+            CONTENT_LIST = re.findall(SET_LINES [ 4 ].rstrip(), URL_FILE, re.DOTALL)
             #find PubDate/time (WIDGET_FOR.PubDate)
-            PUBDATE_LIST = re.findall(SET_LINES [ 5 ].strip(), URL_FILE, re.DOTALL)
+            PUBDATE_LIST = re.findall(SET_LINES [ 5 ].rstrip(), URL_FILE, re.DOTALL)
             #ITEM NUBER
             ITEM_NUBER = int( SET_LINES [ 6 ].strip() )
             #see if there is a picture to download
