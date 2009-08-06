@@ -1,5 +1,7 @@
 ComingSoon.net
 http://feeds.feedburner.com/comingsoonnet30
-<description>(.*?)<
+
 <title>(.*?)<
+<description>(.*?)<
+
 1

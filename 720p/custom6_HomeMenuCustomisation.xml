@@ -849,24 +849,6 @@
 				<visible>Container(15).HasFocus(4)</visible>
 			</item>
 
-			<!--item id="52">
-				<label>$LOCALIZE[1034] $LOCALIZE[31868]: $LOCALIZE[31077]</label>
-				<onclick>Skin.ToggleSetting(CustomSubMenuanimation)</onclick>
-				<visible>!Skin.HasSetting(CustomSubMenuanimation)</visible>
-				<visible>!Skin.HasSetting(CustomMenuSub)</visible>
-				<visible>!Skin.HasSetting(CustomMenuanimation)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-
-			<item id="52">
-				<label>$LOCALIZE[1034] $LOCALIZE[31868]: $LOCALIZE[351]</label>
-				<onclick>Skin.reset(CustomSubMenuanimation)</onclick>
-				<visible>Skin.HasSetting(CustomSubMenuanimation)</visible>
-				<visible>!Skin.HasSetting(CustomMenuSub)</visible>
-				<visible>!Skin.HasSetting(CustomMenuanimation)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item-->
-
 			<item id="65">
 <!--***-->			<label>$LOCALIZE[31864]: $LOCALIZE[351]</label>
 				<onclick>Skin.ToggleSetting(open_playlists)</onclick>
@@ -877,86 +859,6 @@
 <!--***-->			<label>$LOCALIZE[31864]: $LOCALIZE[31077]</label>
 				<onclick>Skin.Reset(open_playlists)</onclick>
 				<visible>Skin.HasSetting(open_playlists)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-
-			<item id="55">
-<!--***-->			<label>$LOCALIZE[14022] $LOCALIZE[31878]: $LOCALIZE[31077]</label>
-				<onclick>Skin.ToggleSetting(Library_info)</onclick>
-				<visible>!Skin.HasSetting(Library_info)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-			<item id="55">
-<!--***-->			<label>$LOCALIZE[14022] $LOCALIZE[31878]: $LOCALIZE[351]</label>
-				<onclick>Skin.Reset(Library_info)</onclick>
-				<visible>Skin.HasSetting(Library_info)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-
-			<item id="59">
-<!--***-->			<label>$LOCALIZE[31871]: $LOCALIZE[351]</label>
-				<onclick>Skin.ToggleSetting(Random_quote)</onclick>
-				<visible>!Skin.HasSetting(Random_quote)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-			<item id="59">
-<!--***-->			<label>$LOCALIZE[31871]: $LOCALIZE[31077]</label>
-				<onclick>Skin.Reset(Random_quote)</onclick>
-				<visible>Skin.HasSetting(Random_quote)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-			<item id="60">
-<!--***-->			<label>$LOCALIZE[31863]: $LOCALIZE[351]</label>
-				<onclick>Skin.ToggleSetting(Newest_Pictre_on)</onclick>
-				<visible>!Skin.HasSetting(Newest_Pictre_on)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-			<item id="60">
-<!--***-->			<label>$LOCALIZE[31863]: $LOCALIZE[31077]</label>
-				<onclick>Skin.Reset(Newest_Pictre_on)</onclick>
-				<visible>Skin.HasSetting(Newest_Pictre_on)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-			<item id="56">
-<!--***-->			<label>$LOCALIZE[31879]: $LOCALIZE[31077]</label>
-				<onclick>Skin.ToggleSetting(Recently_added)</onclick>
-				<visible>!Skin.HasSetting(Recently_added)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-			<item id="56">
-<!--***-->			<label>$LOCALIZE[31879]: $LOCALIZE[351]</label>
-				<onclick>Skin.Reset(Recently_added)</onclick>
-				<visible>Skin.HasSetting(Recently_added)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-
-			<item id="57">
-<!--***-->			<label> -- $LOCALIZE[342] $LOCALIZE[207]: $LOCALIZE[31077]</label>
-				<onclick>Skin.ToggleSetting(recently_added_Plot)</onclick>
-				<visible>!Skin.HasSetting(Recently_added)</visible>
-				<visible>!Skin.HasSetting(recently_added_Plot)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-			<item id="57">
-<!--***-->			<label> -- $LOCALIZE[342] $LOCALIZE[207]: $LOCALIZE[351]</label>
-				<onclick>Skin.Reset(recently_added_Plot)</onclick>
-				<visible>!Skin.HasSetting(Recently_added)</visible>
-				<visible>Skin.HasSetting(recently_added_Plot)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-
-			<item id="58">
-<!--***-->			<label> -- $LOCALIZE[20364] $LOCALIZE[207]: $LOCALIZE[31077]</label>
-				<onclick>Skin.ToggleSetting(recently_added_Plot_tv)</onclick>
-				<visible>!Skin.HasSetting(Recently_added)</visible>
-				<visible>!Skin.HasSetting(recently_added_Plot_tv)</visible>
-				<visible>Container(15).HasFocus(4)</visible>
-			</item>
-			<item id="58">
-<!--***-->			<label> -- $LOCALIZE[20364] $LOCALIZE[207]: $LOCALIZE[351]</label>
-				<onclick>Skin.Reset(recently_added_Plot_tv)</onclick>
-				<visible>!Skin.HasSetting(Recently_added)</visible>
-				<visible>Skin.HasSetting(recently_added_Plot_tv)</visible>
 				<visible>Container(15).HasFocus(4)</visible>
 			</item>
 			<item id="62">
@@ -991,40 +893,82 @@
 			</item>
 		<!-- Settings End -->
 		<!-- Extras widget -->
-
 			<item id="101">
-				<label>extra popup widget : $LOCALIZE[351]</label>
+				<label>extras widget: $LOCALIZE[351]</label>
 				<onclick>Skin.SetString(widget_set,extra_widget_set)</onclick>
 				<onclick>Skin.ToggleSetting(Custom_extra_widget_set)</onclick>
+				<onclick>Skin.ToggleSetting(load_extra_widget_set)</onclick>
 				<onclick>SetFocus(31)</onclick>
 				<visible>!Skin.HasSetting(Custom_extra_widget_set)</visible>
 				<visible>Container(15).HasFocus(8)</visible>
 			</item>
 			<item id="101">
-				<label>[B]extra popup widget[/B] $INFO[Skin.String(extra_widget_set)]</label>
-				<onclick>Skin.Reset(Custom_extra_widget_set)</onclick>
-				<onclick>Skin.Reset(extra_widget_set)</onclick>
+				<label>extras widget:  $INFO[Skin.String(extra_widget_set)]</label>
+				<onclick>Skin.SetString(widget_set,extra_widget_set)</onclick>
+				<onclick>Skin.ToggleSetting(load_extra_widget_set)</onclick>
+				<onclick>SetFocus(31)</onclick>
 				<visible>Skin.HasSetting(Custom_extra_widget_set)</visible>
+				<visible>!Skin.HasSetting(load_extra_widget_set)</visible>
 				<visible>Container(15).HasFocus(8)</visible>
 			</item>
-
+			<item id="101">
+				<label>extras widget: $INFO[Skin.String(extra_widget_set)]</label>
+				<onclick>Skin.SetString(widget_set,extra_widget_set)</onclick>
+				<onclick>SetFocus(31)</onclick>
+				<visible>Skin.HasSetting(Custom_extra_widget_set)</visible>
+				<visible>Skin.HasSetting(load_extra_widget_set)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
 			<item id="102">
-				<label>pic popup widget : $LOCALIZE[351]</label>
+				<label>Pictures widget: $LOCALIZE[351]</label>
 				<onclick>Skin.SetString(widget_set,pic_widget_set)</onclick>
 				<onclick>Skin.ToggleSetting(Custom_pic_widget_set)</onclick>
+				<onclick>Skin.ToggleSetting(load_pic_widget_set)</onclick>
 				<onclick>SetFocus(32)</onclick>
 				<visible>!Skin.HasSetting(Custom_pic_widget_set)</visible>
 				<visible>Container(15).HasFocus(8)</visible>
 			</item>
 			<item id="102">
-				<label>[B]pic popup widget[/B] $INFO[Skin.String(pic_widget_set)]</label>
-				<onclick>Skin.Reset(Custom_pic_widget_set)</onclick>
-				<onclick>Skin.Reset(pic_widget_set)</onclick>
+				<label>Pictures widget: $INFO[Skin.String(pic_widget_set)]</label>
+				<onclick>Skin.SetString(widget_set,pic_widget_set)</onclick>
+				<onclick>Skin.ToggleSetting(load_pic_widget_set)</onclick>
+				<onclick>SetFocus(32)</onclick>
 				<visible>Skin.HasSetting(Custom_pic_widget_set)</visible>
+				<visible>!Skin.HasSetting(load_pic_widget_set)</visible>
 				<visible>Container(15).HasFocus(8)</visible>
 			</item>
-
-
+			<item id="102">
+				<label>Pictures widget: $INFO[Skin.String(pic_widget_set)]</label>
+				<onclick>Skin.SetString(widget_set,pic_widget_set)</onclick>
+				<onclick>SetFocus(32)</onclick>
+				<visible>Skin.HasSetting(Custom_pic_widget_set)</visible>
+				<visible>Skin.HasSetting(load_pic_widget_set)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
+			<item id="103">
+				<label>$LOCALIZE[14022] $LOCALIZE[31878] widget: $LOCALIZE[31077]</label>
+				<onclick>Skin.ToggleSetting(Library_info)</onclick>
+				<visible>!Skin.HasSetting(Library_info)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
+			<item id="103">
+				<label>$LOCALIZE[14022] $LOCALIZE[31878] widget: $LOCALIZE[351]</label>
+				<onclick>Skin.Reset(Library_info)</onclick>
+				<visible>Skin.HasSetting(Library_info)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
+			<item id="104">
+				<label>$LOCALIZE[31879] widget: $LOCALIZE[31077]</label>
+				<onclick>Skin.ToggleSetting(Recently_added)</onclick>
+				<visible>!Skin.HasSetting(Recently_added)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
+			<item id="104">
+				<label>$LOCALIZE[31879] widget: $LOCALIZE[351]</label>
+				<onclick>Skin.Reset(Recently_added)</onclick>
+				<visible>Skin.HasSetting(Recently_added)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
 		</content>
 	</control>
 	<control type="list" id="20">
@@ -1389,6 +1333,24 @@
 			</control>
 		</focusedlayout>
 		<content>
+			<item id="100">
+				<label>[B]widget[/B]: $LOCALIZE[351]</label>
+				<onclick>Skin.Reset(load_extra_widget_set)</onclick>
+				<onclick>Skin.Reset(Custom_extra_widget_set)</onclick>
+				<onclick>Skin.Reset(extra_widget_set)</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>Skin.HasSetting(load_extra_widget_set)</visible>
+			</item>
+			<item id="101">
+				<label>[B]widget[/B]: $LOCALIZE[351]</label>
+				<onclick>Skin.Reset(load_pic_widget_set)</onclick>
+				<onclick>Skin.Reset(Custom_pic_widget_set)</onclick>
+				<onclick>Skin.Reset(pic_widget_set)</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>Skin.HasSetting(load_pic_widget_set)</visible>
+			</item>
+
+
 			<item id="1">
 				<label>$INFO[Window(4).Property(widget.1.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.1.name)])</onclick>

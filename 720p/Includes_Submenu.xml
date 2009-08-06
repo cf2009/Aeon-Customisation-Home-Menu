@@ -1995,7 +1995,7 @@
 </include>
 <!-- extras.py set up -->
 <include name="extras_extrapopup">
-	<onfocus>setProperty(extrapopup_extras,&extrapopup=$INFO[Skin.String(extra_widget_set)])</onfocus>
+	<onfocus>setProperty(extrapopup_extras,&extra=$INFO[Skin.String(extra_widget_set)])</onfocus>
 </include>
 <include name="extras_Picture">
 	<onfocus>setProperty(Picture_extras,&picture=$INFO[Skin.String(pic_widget_set)])</onfocus>
@@ -3709,10 +3709,10 @@
 	</control>
 </include>
 <!-- Recently added End -->
-<!-- Randomly quote -->
+<!-- WIDGET_EXTRAS -->
 <include name="Randomly_quote">
 	<control type="group">
-		<visible>Container(300).HasFocus(2)+Skin.HasSetting(Random_quote)+StringCompare(Window.Property(Fun.ExGot),yes)</visible>
+		<visible>Container(300).HasFocus(2)+Skin.HasSetting(Random_quote)+StringCompare(Window.Property(ExtrasWidget.Got),yes)</visible>
 		<posx>1340</posx>
 		<posy>440</posy>
 		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
@@ -3747,7 +3747,7 @@
 			<aligny>center</aligny>
 			<font>Font_WeatherTitle</font>
 			<textcolor>c0FFFFFF</textcolor>
-			<label>$INFO[Window.Property(Fun.ExName)]</label>
+			<label>$INFO[Window.Property(ExtrasWidget.Title)]</label>
 		</control>
 	  	<control type="label">
 			<posx>10</posx>
@@ -3758,7 +3758,7 @@
 			<align>center</align>
 			<aligny>center</aligny>
 			<textcolor>a9ffffff</textcolor>
-			<label>[I]$INFO[Window.Property(Fun.ExTitle)][/I]</label>
+			<label>[I]$INFO[Window.Property(ExtrasWidget.ContentTitle)][/I]</label>
 		</control>
 		<control type="textbox">
 			<posx>10</posx>
@@ -3768,15 +3768,15 @@
 			<font>Font_ListObjects</font>
 			<textcolor>aaffffff</textcolor>
 			<autoscroll delay="8000" time="2000" repeat="10000">!Control.HasFocus(61)</autoscroll>
-			<label>$INFO[Window.Property(Fun.ExContent)]</label>
+			<label>$INFO[Window.Property(ExtrasWidget.Content)]</label>
 		</control>
 	</control>
 </include>
-<!-- Randomly quote End -->
-<!-- Newest deviantart -->
+<!-- WIDGET_EXTRAS End -->
+<!-- WIDGET_PICTURE -->
 <include name="Newest_Pictre">
 	<control type="group">
-		<visible>Container(300).HasFocus(5)+Skin.HasSetting(Newest_Pictre_on)+StringCompare(Window.Property(Fun.PicGot),yes)</visible>
+		<visible>Container(300).HasFocus(5)+Skin.HasSetting(Newest_Pictre_on)+StringCompare(Window.Property(PictureWidget.Got),yes)</visible>
 		<posx>1340</posx>
 		<posy>440</posy>
 		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
@@ -3811,7 +3811,7 @@
 			<aligny>center</aligny>
 			<font>Font_WeatherTitle</font>
 			<textcolor>c0FFFFFF</textcolor>
-			<label>$INFO[Window.Property(Fun.PicName)]</label>
+			<label>$INFO[Window.Property(PictureWidget.Title)]</label>
 		</control>
 	  	<control type="label">
 			<posx>10</posx>
@@ -3822,21 +3822,21 @@
 			<align>center</align>
 			<aligny>center</aligny>
 			<textcolor>a9ffffff</textcolor>
-			<label>[I]$INFO[Window.Property(Fun.PicBy)][/I]</label>
+			<label>[I]$INFO[Window.Property(PictureWidget.ContentTitle)][/I]</label>
 		</control>
 		<control type="image">
-			<visible>StringCompare(Window.Property(Fun.PicGot),yes)</visible>
+			<visible>StringCompare(Window.Property(PictureWidget.Got),yes)</visible>
 			<posx>10</posx>
 			<posy>75</posy>
 			<width>280</width>
 			<height>180</height>
-			<texture>$INFO[Window.Property(Fun.Picture)]</texture>
+			<texture>$INFO[Window.Property(PictureWidget.Picture)]</texture>
 			<aspectratio scalediffuse="false">keep</aspectratio>
 			<fadetime>400</fadetime>
 		</control>
 	</control>
 </include>
-<!-- Newest deviantart End  -->
+<!-- WIDGET_PICTURE End  -->
 <!-- HomeNowPlaying2 -->
 	<include name="Furniture_HomeNowPlaying2">
 		<control type="image">
