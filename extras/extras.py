@@ -3,7 +3,6 @@ from xbmcgui import Window, DialogProgress
 from urllib import quote_plus, unquote_plus, urlopen, urlretrieve
 import re, sys, os, time
 from htmlentitydefs import name2codepoint as n2cp
-
 # Current Working Directory
 CWD = os.getcwd()
 if CWD[-1] == ';': CWD = CWD[0:-1]
@@ -223,7 +222,7 @@ class Main:
         FILE_ADDRESS = EXTRAS_FILE_ADDRESS + WIDGET + '.txt'
         # Check to see if file exists
         if (os.path.isfile( FILE_ADDRESS ) == False):
-            self.set_Property(WIDGET_FOR)
+            self.set_Property(WIDGET_FOR,'yes', 'Can\'t Find Widget',WIDGET)
         else:
         #Else Open WIDGET
             SET_LINES = open(FILE_ADDRESS, 'r').readlines()
@@ -232,10 +231,16 @@ class Main:
             #Read URL
             URL_FILE = urlopen(SET_LINES [ 1 ].strip()).read()
             #find PICTURE (WIDGET_FOR.Picture)
-            if SET_LINES [ 2 ].strip():
-                PICTURE_URL_LIST = re.findall(SET_LINES [ 2 ].rstrip(), URL_FILE, re.DOTALL)
+            if '[|*|]' in SET_LINES [ 2 ]:
+                PICTURE_ADDRESS, SITE_ADDRESS = SET_LINES [ 2 ].split('[|*|]')
+            elif SET_LINES [ 2 ].strip():
+                PICTURE_ADDRESS = SET_LINES [ 2 ].strip()
+                SITE_ADDRESS =''
             else:
-                PICTURE_URL_LIST = ''
+                PICTURE_ADDRESS = ''
+                PICTURE_URL_LIST  = ''
+            if PICTURE_ADDRESS:
+                PICTURE_URL_LIST = re.findall(PICTURE_ADDRESS.rstrip(), URL_FILE, re.DOTALL)
             #find Content Title (WIDGET_FOR.ContentTitle) 
             CONTENT_TITLE_LIST = re.findall( SET_LINES [ 3 ].rstrip() , URL_FILE, re.DOTALL)
             #find Content (WIDGET_FOR.Content)
@@ -244,16 +249,16 @@ class Main:
             PUBDATE_LIST = re.findall(SET_LINES [ 5 ].rstrip(), URL_FILE, re.DOTALL)
             #ITEM NUBER
             ITEM_NUBER = int( SET_LINES [ 6 ].strip() )
-            #see if there is a picture to download
+            #ch
             if WIDGET_TITLE == False: WIDGET_TITLE = 'No Name'
             if CONTENT_TITLE_LIST: CONTENT_TITLE_SP = CONTENT_TITLE_LIST [ ITEM_NUBER ]
             if CONTENT_LIST: CONTENT_SP = CONTENT_LIST [ ITEM_NUBER ]
             if PUBDATE_LIST: PUBDATE_SP = PUBDATE_LIST [ ITEM_NUBER ]
             #see if there is a picture to download
             if PICTURE_URL_LIST:
-                PICTURE = PICTURE_URL_LIST [ ITEM_NUBER ]
+                PICTURE = SITE_ADDRESS.rstrip() + PICTURE_URL_LIST [ ITEM_NUBER ]
                 PICTURE_SP = IMAGE_TEMP + WIDGET_FOR + '.png'
-                urlretrieve(PICTURE, PICTURE_SP)
+                urlretrieve( PICTURE, PICTURE_SP)
                 # set properties
                 for i in range(1, 5):
                     time.sleep(2)
@@ -264,7 +269,7 @@ class Main:
                 # set properties
                 self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE, CONTENT_TITLE_SP, '', CONTENT_SP, PUBDATE_SP )
 
-    def set_Property(self, WIDGET_FOR, spGot = 'yes', spTitle = 'Can\'t Find Widget', spContentTitle = '', spPicture = '', spContent = '', spPubDate = ''):			
+    def set_Property(self, WIDGET_FOR, spGot = 'yes', spTitle = 'Can\'t Find Widget', spContentTitle = '', spPicture = '', spContent = '', spPubDate = ''):
         self.WINDOW.setProperty( WIDGET_FOR + '.Got' , spGot )
         self.WINDOW.setProperty( WIDGET_FOR + '.Title' , spTitle )
         self.WINDOW.setProperty( WIDGET_FOR + '.ContentTitle' , self.Clean_text( spContentTitle ) )
@@ -276,7 +281,8 @@ class Main:
         data = htmldecode2( data )
         data = decodeEntities( data )
         data = remove_html_tags( data )
-        data = remove_extra_spaces( data )
+        #data = remove_extra_spaces( data )
+        data = remove_extra_lines( data )
         return data
 
 def htmldecode2(text):
@@ -302,6 +308,10 @@ def htmldecode2(text):
 def remove_extra_spaces(data):
     p = re.compile(r'\s+')
     return p.sub(' ', data)
+
+def remove_extra_lines(data):
+    p = re.compile(r'\n+')
+    return p.sub('\n', data)
 
 def remove_html_tags(data):
     p = re.compile(r'<[^<]*?/?>')

@@ -1,0 +1,7 @@
+Opening This Week
+http://www.movies.com/new-releases/
+                                                         <img src="(.*?)" alt=
+                                                     <h3>(.*?)</h3>
+Synopsis:</strong>(.*?)<a href=
+                                                         <strong>(.*?)</span>
+0

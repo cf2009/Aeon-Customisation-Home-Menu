@@ -1,7 +1,7 @@
 Andy ShowMix News
 http://github.com/feeds/andyblac/commits/aeon/master
 
-    <title>(.*?)<
-&lt;pre&gt;m (.*?)&lt;/pre&gt;
     <updated>(.*?)<
+    <title>(.*?)<
+
 0
