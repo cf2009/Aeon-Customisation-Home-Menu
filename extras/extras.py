@@ -1,16 +1,17 @@
-import xbmc
-from xbmcgui import Window, DialogProgress
+import xbmc, re, sys, os, time
+from xbmcgui import Window
 from urllib import quote_plus, unquote_plus, urlopen, urlretrieve
-import re, sys, os, time
 from htmlentitydefs import name2codepoint as n2cp
+
 # Current Working Directory
 CWD = os.getcwd()
 if CWD[-1] == ';': CWD = CWD[0:-1]
 if CWD[-1] != '//': CWD = CWD + '//'
 
-#picture save temp
-IMAGE_TEMP =  CWD + 'temp_pic'
-#extras scrapers folder
+#picture temp folder
+IMAGE_TEMP =  CWD + 'temp//temp_'
+
+#scrapers folder
 EXTRAS_FILE_ADDRESS =  CWD + 'scrapers//'
 
 class Main:
@@ -53,17 +54,28 @@ class Main:
         self.ALBUMS = params.get( "albums", "" ) == "True"
         self.UNPLAYED = params.get( "unplayed", "" ) == "True"
         self.RECENTADDED = params.get( "recentadded", "" ) == "true"
+        self.PLAY_TRAILER = params.get( "trailer", "" ) == "True"
+        self.ALARM = int( params.get( "alarm", "0" ) )
         self.TOTALS = params.get( "totals", "" ) == "true"
         self.WIDGET_EXTRAS = params.get( "extra", "" )
         self.WIDGET_PICTURE = params.get( "picture", "" )
+
+    def _set_alarm( self ):
+        # only run if user/skinner preference
+        if ( not self.ALARM ): return
+        # set the alarms command
+        command = "XBMC.RunScript(%s,limit=%d&partial=%s&albums=%s&unplayed=%s&totals=%s&trailer=%s&alarm=%d)" % ( os.path.join( os.getcwd(), __file__ ), self.LIMIT, str( not self.RECENT ), str( self.ALBUMS ), str( self.UNPLAYED ), str( self.TOTALS ), str( self.PLAY_TRAILER ), self.ALARM, )
+        xbmc.executebuiltin( "AlarmClock(LatestAdded,%s,%d,true)" % ( command, self.ALARM, ) )
 
     def __init__( self ):
         # parse argv for any preferences
         self._parse_argv()
         # clear properties
         self._clear_properties()
+        # set any alarm
+        self._set_alarm()
+        # format our records start and end
         if ( self.RECENTADDED ) or ( self.TOTALS ):
-            # format our records start and end
             xbmc.executehttpapi( "SetResponseFormat()" )
             xbmc.executehttpapi( "SetResponseFormat(OpenRecord,%s)" % ( "<record>", ) )
             xbmc.executehttpapi( "SetResponseFormat(CloseRecord,%s)" % ( "</record>", ) )
@@ -106,7 +118,8 @@ class Main:
             self.WINDOW.setProperty( "LatestMovie.%d.RunningTime" % ( count + 1, ), fields[ 12 ] )
             # get cache names of path to use for thumbnail/fanart and play path
             thumb_cache, fanart_cache, play_path = self._get_media( fields[ 24 ], fields[ 23 ] )
-            self.WINDOW.setProperty( "LatestMovie.%d.Path" % ( count + 1, ), play_path )
+            self.WINDOW.setProperty( "LatestMovie.%d.Path" % ( count + 1, ), ( play_path, fields[ 20 ], )[ fields[ 20 ] != "" and self.PLAY_TRAILER ] )
+            self.WINDOW.setProperty( "LatestMovie.%d.Trailer" % ( count + 1, ), fields[ 20 ] )
             self.WINDOW.setProperty( "LatestMovie.%d.Fanart" % ( count + 1, ), "special://profile/Thumbnails/Video/%s/%s" % ( "Fanart", fanart_cache, ) )
             # initial thumb path
             thumb = "special://profile/Thumbnails/Video/%s/%s" % ( thumb_cache[ 0 ], thumb_cache, )
@@ -226,7 +239,7 @@ class Main:
         else:
         #Else Open WIDGET
             SET_LINES = open(FILE_ADDRESS, 'r').readlines()
-            #scrapers TITLE/name (WIDGET_FOR.Title)
+            #scraper title/name (WIDGET_FOR.Title)
             WIDGET_TITLE = SET_LINES [ 0 ].strip()
             #Read URL
             URL_FILE = urlopen(SET_LINES [ 1 ].strip()).read()
@@ -249,7 +262,7 @@ class Main:
             PUBDATE_LIST = re.findall(SET_LINES [ 5 ].rstrip(), URL_FILE, re.DOTALL)
             #ITEM NUBER
             ITEM_NUBER = int( SET_LINES [ 6 ].strip() )
-            #ch
+            #check
             if WIDGET_TITLE == False: WIDGET_TITLE = 'No Name'
             if CONTENT_TITLE_LIST: CONTENT_TITLE_SP = CONTENT_TITLE_LIST [ ITEM_NUBER ]
             if CONTENT_LIST: CONTENT_SP = CONTENT_LIST [ ITEM_NUBER ]

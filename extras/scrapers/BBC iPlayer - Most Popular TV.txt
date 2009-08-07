@@ -3,5 +3,5 @@ http://feeds.bbc.co.uk/iplayer/popular/tv/list
           &lt;img src=&quot;(.*?)&quot; alt
     <title type="text">(.*?)<
 
-    <updated>(.*?)<
+
 0

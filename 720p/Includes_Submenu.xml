@@ -3755,13 +3755,61 @@
 	<animation effect="slide" start="0,0" end="-372,0" time="500" easing="inout" tween="cubic" condition="!control.HasFocus(8001)">Conditional</animation>
 	<animation effect="slide" start="0" end="0,-180" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 </include>
+<include name="widget_Title">
+	<posx>10</posx>
+	<posy>8</posy>	
+	<width>280</width>
+	<height>30</height>
+	<align>center</align>
+	<aligny>center</aligny>
+	<font>Font_WeatherTitle</font>
+	<textcolor>c0FFFFFF</textcolor>
+</include>
+<include name="widget_ContentTitle">
+	<posx>10</posx>
+	<posy>35</posy>
+	<width>280</width>
+	<height>20</height>
+    	<font>Font_ListObjects</font>
+	<align>center</align>
+	<aligny>center</aligny>
+	<textcolor>a9ffffff</textcolor>
+</include>
+<include name="widget_PubDate">
+	<posx>10</posx>
+	<posy>70</posy>
+	<width>280</width>
+	<height>20</height>
+    	<font>Font_ListObjects</font>
+	<aligny>center</aligny>
+	<textcolor>a9ffffff</textcolor>
+</include>
+<include name="widget_Content">
+	<posx>10</posx>
+	<posy>90</posy>
+	<width>280</width>
+	<height>160</height>
+	<font>Font_ListObjects</font>
+	<textcolor>aaffffff</textcolor>
+	<autoscroll delay="8000" time="2000" repeat="10000">!Control.HasFocus(61)</autoscroll>
+</include>
+<include name="widget_XY">
+	<posx>1340</posx>
+	<posy>440</posy>
+</include>
+<include name="widget_Picture">
+	<posx>10</posx>
+	<posy>75</posy>
+	<width>280</width>
+	<height>170</height>
+	<aspectratio scalediffuse="false">keep</aspectratio>
+	<fadetime>400</fadetime>
+</include>
 <!-- WIDGET_EXTRAS -->
 <include name="Randomly_quote">
 	<control type="group">
 		<visible>Container(300).HasFocus(2)+Skin.HasSetting(Random_quote)+StringCompare(Window.Property(ExtrasWidget.Got),yes)</visible>
-		<posx>1340</posx>
-		<posy>440</posy>
-
+		<include>widget_XY</include>
 		<include>widget_animation</include>
 		<control type="group">
 			<visible>IsEmpty(Window.Property(ExtrasWidget.Picture)) | IsEmpty(Window.Property(ExtrasWidget.Content))</visible>
@@ -3771,81 +3819,31 @@
 			<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture)) + !IsEmpty(Window.Property(ExtrasWidget.Content))</visible>
 			<include>widget_back2</include>
 		</control>
-
 		<control type="label">
-			<posx>10</posx>
-			<posy>8</posy>	
-			<width>280</width>
-			<height>30</height>
-			<align>center</align>
-			<aligny>center</aligny>
-			<font>Font_WeatherTitle</font>
-			<textcolor>c0FFFFFF</textcolor>
+			<include>widget_Title</include>
 			<label>$INFO[Window.Property(ExtrasWidget.Title)]</label>
 			<animation effect="slide" start="-100,0" end="-100,0" time="0" condition="!IsEmpty(Window.Property(ExtrasWidget.Picture)) + !IsEmpty(Window.Property(ExtrasWidget.Content))">Conditional</animation>
 		</control>
 	  	<control type="label">
-			<posx>10</posx>
-			<posy>35</posy>
-			<width>280</width>
-			<height>20</height>
-    		<font>Font_ListObjects</font>
-			<align>center</align>
-			<aligny>center</aligny>
-			<textcolor>a9ffffff</textcolor>
+			<include>widget_ContentTitle</include>
 			<label>[I]$INFO[Window.Property(ExtrasWidget.ContentTitle)][/I]</label>
 			<animation effect="slide" start="-100,0" end="-100,0" time="0" condition="!IsEmpty(Window.Property(ExtrasWidget.Picture)) + !IsEmpty(Window.Property(ExtrasWidget.Content))">Conditional</animation>
 		</control>
 	  	<control type="label">
-			<posx>10</posx>
-			<posy>70</posy>
-			<width>280</width>
-			<height>20</height>
-    		<font>Font_ListObjects</font>
-			<aligny>center</aligny>
-			<textcolor>a9ffffff</textcolor>
+			<include>widget_PubDate</include>
 			<label>$INFO[Window.Property(ExtrasWidget.PubDate)]</label>
 		</control>
 		<control type="textbox">
-			<posx>10</posx>
-			<posy>90</posy>
-			<width>280</width>
-			<height>160</height>
-			<font>Font_ListObjects</font>
-			<textcolor>aaffffff</textcolor>
-			<autoscroll delay="8000" time="2000" repeat="10000">!Control.HasFocus(61)</autoscroll>
+			<include>widget_Content</include>
 			<label>$INFO[Window.Property(ExtrasWidget.Content)]</label>
 			<animation effect="slide" start="0,-20" end="0,-20" time="0" condition="IsEmpty(Window.Property(ExtrasWidget.PubDate))">Conditional</animation>
 		</control>
 		<control type="image">
-			<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture)) + IsEmpty(Window.Property(ExtrasWidget.Content)) + !IsEmpty(Window.Property(ExtrasWidget.PubDate))</visible>
-			<posx>10</posx>
-			<posy>92</posy>
-			<width>280</width>
-			<height>165</height>
+			<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture)) + IsEmpty(Window.Property(ExtrasWidget.PubDate))</visible>
+			<include>widget_Picture</include>
 			<texture>$INFO[Window.Property(ExtrasWidget.Picture)]</texture>
-			<aspectratio scalediffuse="false">keep</aspectratio>
-			<fadetime>400</fadetime>
-		</control>
-		<control type="image">
-			<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture)) + IsEmpty(Window.Property(ExtrasWidget.Content)) + IsEmpty(Window.Property(ExtrasWidget.PubDate))</visible>
-			<posx>10</posx>
-			<posy>75</posy>
-			<width>280</width>
-			<height>180</height>
-			<texture>$INFO[Window.Property(ExtrasWidget.Picture)]</texture>
-			<aspectratio scalediffuse="false">keep</aspectratio>
-			<fadetime>400</fadetime>
-		</control>
-		<control type="image">
-			<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture)) + !IsEmpty(Window.Property(ExtrasWidget.Content))</visible>
-			<posx>-190</posx>
-			<posy>75</posy>
-			<width>180</width>
-			<height>180</height>
-			<texture>$INFO[Window.Property(ExtrasWidget.Picture)]</texture>
-			<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
-			<fadetime>400</fadetime>
+			<animation effect="slide" start="-200,0" end="-200,0" time="0" condition="!IsEmpty(Window.Property(ExtrasWidget.Content))">Conditional</animation>
+			<animation effect="slide" start="0,10" end="0,10" time="0" condition="!IsEmpty(Window.Property(ExtrasWidget.PubDate))+IsEmpty(Window.Property(ExtrasWidget.Content))">Conditional</animation>
 		</control>
 	</control>
 </include>
@@ -3854,9 +3852,7 @@
 <include name="Newest_Pictre">
 	<control type="group">
 		<visible>Container(300).HasFocus(5)+StringCompare(Window.Property(PictureWidget.Got),yes)</visible>
-		<posx>1340</posx>
-		<posy>440</posy>
-
+		<include>widget_XY</include>
 		<include>widget_animation</include>
 		<control type="group">
 			<visible>IsEmpty(Window.Property(PictureWidget.Picture)) | IsEmpty(Window.Property(PictureWidget.Content))</visible>
@@ -3867,79 +3863,30 @@
 			<include>widget_back2</include>
 		</control>
 		<control type="label">
-			<posx>10</posx>
-			<posy>8</posy>
-			<width>280</width>
-			<height>30</height>
-			<align>center</align>
-			<aligny>center</aligny>
-			<font>Font_WeatherTitle</font>
-			<textcolor>c0FFFFFF</textcolor>
+			<include>widget_Title</include>
 			<label>$INFO[Window.Property(PictureWidget.Title)]</label>
 			<animation effect="slide" start="-100,0" end="-100,0" time="0" condition="!IsEmpty(Window.Property(PictureWidget.Picture)) + !IsEmpty(Window.Property(PictureWidget.Content))">Conditional</animation>
 		</control>
 	  	<control type="label">
-			<posx>10</posx>
-			<posy>35</posy>
-			<width>280</width>
-			<height>20</height>
-    		<font>Font_ListObjects</font>
-			<align>center</align>
-			<aligny>center</aligny>
-			<textcolor>a9ffffff</textcolor>
+			<include>widget_ContentTitle</include>
 			<label>[I]$INFO[Window.Property(PictureWidget.ContentTitle)][/I]</label>
 			<animation effect="slide" start="-100,0" end="-100,0" time="0" condition="!IsEmpty(Window.Property(PictureWidget.Picture)) + !IsEmpty(Window.Property(PictureWidget.Content))">Conditional</animation>
 		</control>
 	  	<control type="label">
-			<posx>10</posx>
-			<posy>70</posy>
-			<width>280</width>
-			<height>20</height>
-    		<font>Font_ListObjects</font>
-			<aligny>center</aligny>
-			<textcolor>a9ffffff</textcolor>
+			<include>widget_PubDate</include>
 			<label>$INFO[Window.Property(PictureWidget.PubDate)]</label>
 		</control>
 		<control type="textbox">
-			<posx>10</posx>
-			<posy>90</posy>
-			<width>280</width>
-			<height>160</height>
-			<font>Font_ListObjects</font>
-			<textcolor>aaffffff</textcolor>
-			<autoscroll delay="8000" time="2000" repeat="10000">!Control.HasFocus(61)</autoscroll>
+			<include>widget_Content</include>
 			<label>$INFO[Window.Property(PictureWidget.Content)]</label>
 			<animation effect="slide" start="0,-20" end="0,-20" time="0" condition="IsEmpty(Window.Property(PictureWidget.PubDate))">Conditional</animation>
 		</control>
 		<control type="image">
-			<visible>!IsEmpty(Window.Property(PictureWidget.Picture)) + IsEmpty(Window.Property(PictureWidget.Content)) + !IsEmpty(Window.Property(PictureWidget.PubDate))</visible>
-			<posx>10</posx>
-			<posy>92</posy>
-			<width>280</width>
-			<height>165</height>
+			<visible>!IsEmpty(Window.Property(PictureWidget.Picture)) + IsEmpty(Window.Property(PictureWidget.PubDate))</visible>
+			<include>widget_Picture</include>
 			<texture>$INFO[Window.Property(PictureWidget.Picture)]</texture>
-			<aspectratio scalediffuse="false">keep</aspectratio>
-			<fadetime>400</fadetime>
-		</control>
-		<control type="image">
-			<visible>!IsEmpty(Window.Property(PictureWidget.Picture)) + IsEmpty(Window.Property(PictureWidget.Content)) + IsEmpty(Window.Property(PictureWidget.PubDate))</visible>
-			<posx>10</posx>
-			<posy>75</posy>
-			<width>280</width>
-			<height>180</height>
-			<texture>$INFO[Window.Property(PictureWidget.Picture)]</texture>
-			<aspectratio scalediffuse="false">keep</aspectratio>
-			<fadetime>400</fadetime>
-		</control>
-		<control type="image">
-			<visible>!IsEmpty(Window.Property(PictureWidget.Picture)) + !IsEmpty(Window.Property(PictureWidget.Content))</visible>
-			<posx>-190</posx>
-			<posy>75</posy>
-			<width>180</width>
-			<height>180</height>
-			<texture>$INFO[Window.Property(PictureWidget.Picture)]</texture>
-			<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
-			<fadetime>400</fadetime>
+			<animation effect="slide" start="-200,0" end="-200,0" time="0" condition="!IsEmpty(Window.Property(PictureWidget.Content))">Conditional</animation>
+			<animation effect="slide" start="0,10" end="0,10" time="0" condition="!IsEmpty(Window.Property(PictureWidget.PubDate))+IsEmpty(Window.Property(PictureWidget.Content))">Conditional</animation>
 		</control>
 	</control>
 </include>
@@ -3965,7 +3912,6 @@
 		</control>
 		<control type="group">
 			<animation effect="slide" start="0,0" end="-980,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
-			
 			<posx>0</posx>
 			<posy>0</posy>
 			<height>720</height>
@@ -3986,7 +3932,6 @@
 		</control>
 		<control type="group">
 			<animation effect="slide" start="0,0" end="-980,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
-			
 			<posx>0</posx>
 			<posy>-30</posy>
 			<height>720</height>
@@ -4007,7 +3952,6 @@
 		</control>
 		<control type="group">
 			<animation effect="slide" start="0,0" end="-980,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
-			
 			<posx>0</posx>
 			<posy>-15</posy>
 			<height>720</height>
@@ -4027,7 +3971,6 @@
 		</control>
 		<control type="group">
 			<animation effect="slide" start="0,0" end="-980,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
-			
 			<posx>0</posx>
 			<posy>-15</posy>
 			<height>720</height>

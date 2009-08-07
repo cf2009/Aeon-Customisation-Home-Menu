@@ -1,0 +1,7 @@
+Empire Movie News
+http://www.empireonline.com/news/
+<td width="100" valign="top"><img src="(.*?)" alt=[|*|]http://www.empireonline.com
+<tr><td class="mediumblack"><b><i>(.*?)<
+		<tr><td class="mediumblack">[^<b><i>](.*?)</td></tr>
+
+0
