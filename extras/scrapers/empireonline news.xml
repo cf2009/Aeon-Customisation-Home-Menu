@@ -1,0 +1,10 @@
+<widget>
+	<Title>Empire Movie News</Title>
+	<URL>http://www.empireonline.com/news/</URL>
+	<ContentTitle>&lt;tr&gt;&lt;td class=&quot;mediumblack&quot;&gt;&lt;b&gt;&lt;i&gt;(.*?)&lt;</ContentTitle>
+	<Image>&lt;td width=&quot;100&quot; valign=&quot;top&quot;&gt;&lt;img src=&quot;(.*?)&quot; alt=</Image>
+	<Image:URL>http://www.empireonline.com</Image:URL>
+	<Content>		&lt;tr&gt;&lt;td class=&quot;mediumblack&quot;&gt;[^&lt;b&gt;&lt;i&gt;](.*?)&lt;/td&gt;&lt;/tr&gt;</Content>
+	<PubDate></PubDate>
+	<Item>0</Item>
+</widget>

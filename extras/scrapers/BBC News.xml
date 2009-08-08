@@ -1,0 +1,10 @@
+<widget>
+	<Title>BBC News</Title>
+	<URL>http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss.xml</URL>
+	<ContentTitle>&lt;item&gt;&lt;title&gt;(.*?)&lt;/title&gt;</ContentTitle>
+	<Image></Image>
+	<Image:URL></Image:URL>
+	<Content>&lt;/title&gt;&lt;description&gt;(.*?)&lt;/description&gt;</Content>
+	<PubDate>&lt;pubDate&gt;(.*?)&lt;</PubDate>
+	<Item>0</Item>
+</widget>

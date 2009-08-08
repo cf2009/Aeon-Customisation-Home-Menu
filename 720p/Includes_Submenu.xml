@@ -133,8 +133,6 @@
 </include>		
 
 <include name="Objects_WeatherPopup2">
-	<include>Randomly_quote</include>
-	<include>Newest_Pictre</include>
 	<control type="group">
 		<posx>0</posx>
 		<posy>40</posy>
@@ -1993,20 +1991,6 @@
 	<posy>1280</posy>
 	<posx>2000</posx>
 </include>
-<!-- extras.py set up -->
-<include name="extras_extrapopup">
-	<onfocus>setProperty(extrapopup_extras,&extra=$INFO[Skin.String(extra_widget_set)])</onfocus>
-</include>
-<include name="extras_Picture">
-	<onfocus>setProperty(Picture_extras,&picture=$INFO[Skin.String(pic_widget_set)])</onfocus>
-</include>
-<include name="extras_totals">
-	<onfocus>setProperty(totals_extras,&totals=true)</onfocus>
-</include>
-<include name="extras_recentadded">
-	<onfocus>setProperty(recentadded_extras,&recentadded=true)</onfocus>
-</include>
-<!-- extras.py set up end -->
 <include name="nav_home_locked">
 	<!-- OnUp -->
 	<control type="group" id="324">
@@ -2850,8 +2834,8 @@
 	<animation effect="fade" start="0" end="100" delay="1000" time="800">Visible</animation>
 	<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 </include>
-<!-- Library_info -->
-<include name="Library_info">
+<!-- Widget_Totals -->
+<include name="Widget_Totals">
 	<control type="group">
 		<posx>1030</posx>
 		<posy>444</posy>
@@ -3066,8 +3050,8 @@
 	</control>		
 </include>
 <!-- Library_info End -->
-<!-- Recently added -->
-<include name="Recently_added">
+<!-- Widget Recent Added -->
+<include name="Widget_RecentAdded">
 	<control type="group">
 		<visible>!Skin.HasSetting(Recently_added)</visible>
 		<visible>[Container(300).HasFocus(6)+!IsEmpty(Window.Property(LatestEpisode.1.ShowTitle))] | [Container(300).HasFocus(7)+!IsEmpty(Window.Property(LatestMovie.1.Title))] | [Container(300).HasFocus(1)+!IsEmpty(Window.Property(LatestSong.1.Title))]</visible>
@@ -3730,17 +3714,17 @@
 </include>
 <include name="widget_back2">
 	<control type="image">
-		<posx>-200</posx>
+		<posx>-220</posx>
 		<posy>0</posy>
-		<width>500</width>
+		<width>520</width>
 		<height>270</height>
 		<texture border="20">home/home_weather_big.png</texture>
 		<colordiffuse>cc000000</colordiffuse>
 	</control>
 	<control type="image">
-		<posx>-200</posx>
+		<posx>-220</posx>
 		<posy>0</posy>
-		<width>500</width>
+		<width>520</width>
 		<height>270</height>
 		<texture border="20">home/home_weather_big.png</texture>
 		<colordiffuse>ccffffff</colordiffuse>
@@ -3777,16 +3761,20 @@
 </include>
 <include name="widget_PubDate">
 	<posx>10</posx>
-	<posy>70</posy>
+	<posy>75</posy>
 	<width>280</width>
-	<height>20</height>
+	<height>15</height>
     	<font>Font_ListObjects</font>
 	<aligny>center</aligny>
+	<align>left</align>
 	<textcolor>a9ffffff</textcolor>
+</include>
+<include name="widget_PubDate_center">
+	<align>center</align>
 </include>
 <include name="widget_Content">
 	<posx>10</posx>
-	<posy>90</posy>
+	<posy>75</posy>
 	<width>280</width>
 	<height>160</height>
 	<font>Font_ListObjects</font>
@@ -3802,95 +3790,33 @@
 	<posy>75</posy>
 	<width>280</width>
 	<height>170</height>
-	<aspectratio scalediffuse="false">keep</aspectratio>
+	<aspectratio scalediffuse="false" aligny="top">keep</aspectratio>
 	<fadetime>400</fadetime>
 </include>
-<!-- WIDGET_EXTRAS -->
-<include name="Randomly_quote">
-	<control type="group">
-		<visible>Container(300).HasFocus(2)+Skin.HasSetting(Random_quote)+StringCompare(Window.Property(ExtrasWidget.Got),yes)</visible>
-		<include>widget_XY</include>
-		<include>widget_animation</include>
-		<control type="group">
-			<visible>IsEmpty(Window.Property(ExtrasWidget.Picture)) | IsEmpty(Window.Property(ExtrasWidget.Content))</visible>
-			<include>widget_back1</include>
-		</control>
-		<control type="group">
-			<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture)) + !IsEmpty(Window.Property(ExtrasWidget.Content))</visible>
-			<include>widget_back2</include>
-		</control>
-		<control type="label">
-			<include>widget_Title</include>
-			<label>$INFO[Window.Property(ExtrasWidget.Title)]</label>
-			<animation effect="slide" start="-100,0" end="-100,0" time="0" condition="!IsEmpty(Window.Property(ExtrasWidget.Picture)) + !IsEmpty(Window.Property(ExtrasWidget.Content))">Conditional</animation>
-		</control>
-	  	<control type="label">
-			<include>widget_ContentTitle</include>
-			<label>[I]$INFO[Window.Property(ExtrasWidget.ContentTitle)][/I]</label>
-			<animation effect="slide" start="-100,0" end="-100,0" time="0" condition="!IsEmpty(Window.Property(ExtrasWidget.Picture)) + !IsEmpty(Window.Property(ExtrasWidget.Content))">Conditional</animation>
-		</control>
-	  	<control type="label">
-			<include>widget_PubDate</include>
-			<label>$INFO[Window.Property(ExtrasWidget.PubDate)]</label>
-		</control>
-		<control type="textbox">
-			<include>widget_Content</include>
-			<label>$INFO[Window.Property(ExtrasWidget.Content)]</label>
-			<animation effect="slide" start="0,-20" end="0,-20" time="0" condition="IsEmpty(Window.Property(ExtrasWidget.PubDate))">Conditional</animation>
-		</control>
-		<control type="image">
-			<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture)) + IsEmpty(Window.Property(ExtrasWidget.PubDate))</visible>
-			<include>widget_Picture</include>
-			<texture>$INFO[Window.Property(ExtrasWidget.Picture)]</texture>
-			<animation effect="slide" start="-200,0" end="-200,0" time="0" condition="!IsEmpty(Window.Property(ExtrasWidget.Content))">Conditional</animation>
-			<animation effect="slide" start="0,10" end="0,10" time="0" condition="!IsEmpty(Window.Property(ExtrasWidget.PubDate))+IsEmpty(Window.Property(ExtrasWidget.Content))">Conditional</animation>
-		</control>
-	</control>
+<include name="widget_Picture_small">
+	<posx>-200</posx>
+	<posy>75</posy>
+	<width>200</width>
+	<height>185</height>
+	<aspectratio scalediffuse="false" aligny="top">keep</aspectratio>
+	<fadetime>400</fadetime>
 </include>
-<!-- WIDGET_EXTRAS End -->
-<!-- WIDGET_PICTURE -->
-<include name="Newest_Pictre">
-	<control type="group">
-		<visible>Container(300).HasFocus(5)+StringCompare(Window.Property(PictureWidget.Got),yes)</visible>
-		<include>widget_XY</include>
-		<include>widget_animation</include>
-		<control type="group">
-			<visible>IsEmpty(Window.Property(PictureWidget.Picture)) | IsEmpty(Window.Property(PictureWidget.Content))</visible>
-			<include>widget_back1</include>
-		</control>
-		<control type="group">
-			<visible>!IsEmpty(Window.Property(PictureWidget.Picture)) + !IsEmpty(Window.Property(PictureWidget.Content))</visible>
-			<include>widget_back2</include>
-		</control>
-		<control type="label">
-			<include>widget_Title</include>
-			<label>$INFO[Window.Property(PictureWidget.Title)]</label>
-			<animation effect="slide" start="-100,0" end="-100,0" time="0" condition="!IsEmpty(Window.Property(PictureWidget.Picture)) + !IsEmpty(Window.Property(PictureWidget.Content))">Conditional</animation>
-		</control>
-	  	<control type="label">
-			<include>widget_ContentTitle</include>
-			<label>[I]$INFO[Window.Property(PictureWidget.ContentTitle)][/I]</label>
-			<animation effect="slide" start="-100,0" end="-100,0" time="0" condition="!IsEmpty(Window.Property(PictureWidget.Picture)) + !IsEmpty(Window.Property(PictureWidget.Content))">Conditional</animation>
-		</control>
-	  	<control type="label">
-			<include>widget_PubDate</include>
-			<label>$INFO[Window.Property(PictureWidget.PubDate)]</label>
-		</control>
-		<control type="textbox">
-			<include>widget_Content</include>
-			<label>$INFO[Window.Property(PictureWidget.Content)]</label>
-			<animation effect="slide" start="0,-20" end="0,-20" time="0" condition="IsEmpty(Window.Property(PictureWidget.PubDate))">Conditional</animation>
-		</control>
-		<control type="image">
-			<visible>!IsEmpty(Window.Property(PictureWidget.Picture)) + IsEmpty(Window.Property(PictureWidget.PubDate))</visible>
-			<include>widget_Picture</include>
-			<texture>$INFO[Window.Property(PictureWidget.Picture)]</texture>
-			<animation effect="slide" start="-200,0" end="-200,0" time="0" condition="!IsEmpty(Window.Property(PictureWidget.Content))">Conditional</animation>
-			<animation effect="slide" start="0,10" end="0,10" time="0" condition="!IsEmpty(Window.Property(PictureWidget.PubDate))+IsEmpty(Window.Property(PictureWidget.Content))">Conditional</animation>
-		</control>
-	</control>
+
+<!-- extras.py set up -->
+<include name="Widget_Extras_py">
+	<onfocus>setProperty(extrapopup_extras,&extra=$INFO[Skin.String(extra_widget_set)])</onfocus>
 </include>
-<!-- WIDGET_PICTURE End  -->
+<include name="Widget_Picture_py">
+	<onfocus>setProperty(Picture_extras,&picture=$INFO[Skin.String(pic_widget_set)])</onfocus>
+</include>
+<include name="Widget_Totals_py">
+	<onfocus>setProperty(totals_extras,&totals=true)</onfocus>
+</include>
+<include name="Widget_RecentAdded_py">
+	<onfocus>setProperty(recentadded_extras,&recentadded=true)</onfocus>
+</include>
+<!-- extras.py set up end -->
+
 <!-- HomeNowPlaying2 -->
 	<include name="Furniture_HomeNowPlaying2">
 		<control type="image">

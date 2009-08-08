@@ -1,7 +1,0 @@
-Word Of The Day
-http://feeds.urbandictionary.com/UrbanWordOfTheDay
-
-<title>(.*?)<
-<description>(.*?)<
-
-1

@@ -1,7 +1,0 @@
-Astronomy POTD
-http://page2rss.com/rss/657577bfe75fd9320cddf45715220fdd
-img src=&quot;(.*?)&quot;
-page2rssins&quot;&gt; (.*?) &lt;/b&gt;&lt;b 
-[&lt;/center&gt;$]&lt;/center&gt;(.*?)&lt;/p&gt;
-<pubDate>(.*?)<
-0

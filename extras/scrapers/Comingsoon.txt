@@ -1,7 +1,0 @@
-ComingSoon.net
-http://feeds.feedburner.com/comingsoonnet30
-
-<title>(.*?)<
-<description>(.*?)<
-
-1

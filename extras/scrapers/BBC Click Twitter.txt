@@ -1,7 +1,0 @@
-BBC Click Twitter
-http://twitter.com/statuses/user_timeline/7400702.rss
-
-<pubDate>(.*?)<
-<title>BBCClick:(.*?)<
-
-0

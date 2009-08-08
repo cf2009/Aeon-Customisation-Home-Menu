@@ -1,7 +1,0 @@
-NASA Image of the Day
-http://www.nasa.gov/rss/image_of_the_day.rss
-> <url>(.*?)</url> <title>
-</url> <title>(.*?)<
-</link> <description>(.*?)<
-</guid> <pubDate>(.*?)<
-0

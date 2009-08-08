@@ -1,7 +1,0 @@
-BBC Sport
-http://newsrss.bbc.co.uk/rss/sportonline_uk_edition/front_page/rss.xml
-
-<pubDate>(.*?)<
-</title><description>(.*?)</description>
-
-0

@@ -1,7 +1,0 @@
-Jokes Are Awesome
-http://www.jokesareawesome.com/rss/random/
-
-<description>(.*?)<
-<content:encoded><!\[CDATA\[(.*?)\]\]>
-
-0

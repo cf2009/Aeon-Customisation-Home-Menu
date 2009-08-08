@@ -1,0 +1,10 @@
+<widget>
+	<Title>deviantart</Title>
+	<URL>http://backend.deviantart.com/rss.xml?q=&type=deviation</URL>
+	<ContentTitle>media:credit role=&quot;author&quot; scheme=&quot;urn:ebu&quot;&gt;(.*?)&lt;</ContentTitle>
+	<Image>&lt;media:thumbnail url=&quot;(.*?)&quot; height</Image>
+	<Image:URL></Image:URL>
+	<Content></Content>
+	<PubDate>                &lt;pubDate&gt;(.*?)&lt;</PubDate>
+	<Item>0</Item>
+</widget>

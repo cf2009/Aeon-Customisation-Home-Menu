@@ -1,7 +1,0 @@
-deviantart
-http://backend.deviantart.com/rss.xml?q=&type=deviation
-<media:thumbnail url="(.*?)" height
-media:credit role="author" scheme="urn:ebu">(.*?)<
-
-                <pubDate>(.*?)<
-0

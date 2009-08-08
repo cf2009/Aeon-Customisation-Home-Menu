@@ -1,0 +1,10 @@
+<widget>
+	<Title>rottentomatoes</Title>
+	<URL>http://uk.rottentomatoes.com/?intcmp=topnav_home</URL>
+	<ContentTitle>    &lt;h4 class=&quot;title&quot;&gt;(.*?)&lt;</ContentTitle>
+	<Image>background-image: url\((.*?)\);</Image>
+	<Image:URL></Image:URL>
+	<Content></Content>
+	<PubDate></PubDate>
+	<Item>0</Item>
+</widget>

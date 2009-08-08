@@ -2,3 +2,5 @@
 
 # generated files 
 *.bak
+extras/temp/*.png
+

@@ -13,6 +13,7 @@ dialog = xbmcgui.DialogProgress()
 class Main:
     # grab the home window
     WINDOW = Window ( 10004 )
+    Home_CLEAN = Window ( 10000 )
 
     def __init__( self ):
         dialog.create("Aeon Mod","Loading Widget List...")
@@ -26,6 +27,18 @@ class Main:
         for count in range( 20 ):
             # clear Property
             self.WINDOW.clearProperty( "widget.%d.name" % ( count + 1, ) )
+            self.Home_CLEAN.clearProperty( "ExtrasWidget.Got" )
+            self.Home_CLEAN.clearProperty( 'ExtrasWidget.PubDate' )
+            self.Home_CLEAN.clearProperty( 'ExtrasWidget.Title' )
+            self.Home_CLEAN.clearProperty( 'ExtrasWidget.ContentTitle' )
+            self.Home_CLEAN.clearProperty( 'ExtrasWidget.Picture' )
+            self.Home_CLEAN.clearProperty( 'ExtrasWidget.Content' )
+            self.Home_CLEAN.clearProperty( "PictureWidget.Got" )
+            self.Home_CLEAN.clearProperty( 'PictureWidget.PubDate' )
+            self.Home_CLEAN.clearProperty( 'PictureWidget.Title' )
+            self.Home_CLEAN.clearProperty( 'PictureWidget.ContentTitle' )
+            self.Home_CLEAN.clearProperty( 'PictureWidget.Picture' )
+            self.Home_CLEAN.clearProperty( 'PictureWidget.Content' )
 
     def _fetch_widget_list( self ):
         count = 0

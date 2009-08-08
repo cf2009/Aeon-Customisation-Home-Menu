@@ -1,7 +1,0 @@
-radio 1 webcam
-http://www.bbc.co.uk/radio1/webcam/webcam1/
-webcam-box"><img src="(.*?)"[|*|]http://www.bbc.co.uk
-height="36" alt="(.*?)"
-
-
-0

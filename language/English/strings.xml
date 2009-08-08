@@ -87,6 +87,12 @@
 	<string id="31079">AUTOHIDE</string>
 	<string id="310791">HORIZONTAL</string>
 	<string id="310792">VERTICAL</string>
+	<string id="310793">THIN LIST: OFF</string>
+	<string id="310794">THIN LIST: ON</string>
+	<string id="310795">THIN INFO: OFF</string>
+	<string id="310796">THIN INFO: ON</string>
+	<string id="310797">LIGHT</string>
+	<string id="310798">NIGHT</string>
 	
 <!-- Aeon Customisation Virtual Home page labels -->
   
@@ -234,6 +240,8 @@
 	<string id="31268">SHOW RSS / NOW PLAYING IN WALL VIEW</string>
 	<string id="31269">SHOW RATINGS FOR SLIM LIST (USES YEAR IF DISABLED)</string>
 	<string id="312691">SHOW ASPECT RATIO (USES STUDIO IF DISABLED)</string>
+	<string id="312692">ALTERNATE MULTIPLEX LAYOUT FOR MOVIES & TV SHOWS</string>
+	<string id="312693">ALTERNATE MULTIPLEX LAYOUT FOR SEASONS & EPISODES</string>
 	<string id="31270">ZOOM ANIMATIONS</string>
 	<string id="31271">FADE PANEL/LIST VIEW MENUS WHEN INACTIVE</string>
 	<string id="31278">ALLOW SCROLLING FOR PLOT/BIO/REVIEW INFO</string>
@@ -350,6 +358,7 @@
 	<string id="31442">DATE MODIFIED INFO UNAVAILABLE</string>
 	<string id="31443">RESOLUTION INFO UNAVAILABLE</string>
 	<string id="31444">FILESIZE INFO UNAVAILABLE</string>
+	<string id="31445">ASPECT RATIO</string>
 	
 <!--  Aeon Assistant  -->
 
@@ -436,15 +445,16 @@
 
 	<string id="31750">WALL</string>
 	<string id="31751">SHOWCASE</string>
-	<string id="31752">LIST FULL</string>
+	<string id="31752">FULL LIST</string>
 	<string id="31753">PANEL</string>	
 	<string id="31754">SELECT</string>	
 	<string id="31755">DIRECTIONS CHOOSE VIEWS[CR]CLICK TO ESCAPE</string>	
 	<string id="31756">ONLY LIST VIEW IS AVAILABLE FOR EPISODES</string>
 	<string id="31757">MULTIPLEX</string>
 	<string id="31578">STRIPSHOW</string>
-	<string id="31579">LIST SLIM</string>
-	<string id="31580">LIST LOW</string>
+	<string id="31579">SLIM LIST</string>
+	<string id="31580">LOW LIST</string>
+	<string id="31581">CLEAR LIST</string>
 
 <!-- Aeon Settings panel labels -->
   
@@ -486,7 +496,7 @@
 	<string id="31860">CLEAR</string>
 	<string id="31861">10 DAYS</string>
 	<string id="31862">ALARM Off</string>
-	<string id="31863">Newest deviantart</string>
+	<string id="31863">-</string>
 	<string id="31864">Open Playlists</string>
 	<string id="31865">Extras</string>
 	<string id="31866">-</string>
@@ -494,7 +504,7 @@
 	<string id="31868">LOCK</string>
 	<string id="31869">Weather Backdrop by Current Weather Conditions</string>
 	<string id="31870">-</string>
-	<string id="31871">Random quote</string>
+	<string id="31871">-</string>
 	<string id="31872">-</string>
 	<string id="31873">Next 10 Days</string>
 	<string id="31874">Next 36 Hours</string>

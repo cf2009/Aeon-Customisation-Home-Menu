@@ -1,7 +1,0 @@
-Giant Ocean Tank
-http://www.earthcam.com/swf/cam_player/enlarge_image.php?type=live&path=http://images.earthcam.com/ec_metros/ourcams/bostonaqu1.jpg&portrait=false&rotate=false&name=Giant%20Ocean%20Tank&width=704&height=480&img_width=320&img_height=240
-dotcom_live_viewer_stretch.swf\?(.*?),50
-liveEC">(.*?)<
-
-
-0

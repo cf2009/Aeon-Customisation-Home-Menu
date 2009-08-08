@@ -1,0 +1,10 @@
+<widget>
+	<Title>Xbox's on e-bay</Title>
+	<URL>http://video-games.shop.ebay.co.uk/items/Consoles-Systems__xbox-console_W0QQConsoleZXboxQQQ5ftrkparmsZ65Q253A12Q257C66Q253A4Q257C39Q253A1Q257C72Q253A1687QQ_dmptZUKQ5fVideoGamesQ5fVideoGameConsolesQ5fVideoGameConsolesQQ_sacatZ139971QQ_trksidZp3286Q2ec0Q2em14QQ_sopZ1QQ_scZ1</URL>
+	<ContentTitle>g-b&quot;&gt;(.*?)&lt;</ContentTitle>
+	<Image>pic&quot; r=&quot;1&quot;&gt;&lt;img src=&quot;(.*?)&quot;</Image>
+	<Image:URL></Image:URL>
+	<Content>[kb]&quot; r=&quot;1&quot;&gt;(.*?)&lt;/td&gt;&lt;/tr&gt;</Content>
+	<PubDate></PubDate>
+	<Item>0</Item>
+</widget>

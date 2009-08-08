@@ -1,0 +1,10 @@
+<widget>
+	<Title>Andy ShowMix News</Title>
+	<URL>http://github.com/feeds/andyblac/commits/aeon/master</URL>
+	<ContentTitle>    &lt;updated&gt;(.*?)&lt;</ContentTitle>
+	<Image></Image>
+	<Image:URL></Image:URL>
+	<Content>    &lt;title&gt;(.*?)&lt;</Content>
+	<PubDate></PubDate>
+	<Item>0</Item>
+</widget>

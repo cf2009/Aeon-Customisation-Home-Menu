@@ -1,0 +1,10 @@
+<widget>
+	<Title>Jokes Are Awesome</Title>
+	<URL>http://www.jokesareawesome.com/rss/random/</URL>
+	<ContentTitle>&lt;description&gt;(.*?)&lt;</ContentTitle>
+	<Image></Image>
+	<Image:URL></Image:URL>
+	<Content>&lt;content:encoded&gt;&lt;!\[CDATA\[(.*?)\]\]&gt;</Content>
+	<PubDate></PubDate>
+	<Item>0</Item>
+</widget>

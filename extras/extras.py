@@ -232,70 +232,71 @@ class Main:
 
     def get_widget(self, WIDGET, WIDGET_FOR):
         #open extras WIDGET file
-        FILE_ADDRESS = EXTRAS_FILE_ADDRESS + WIDGET + '.txt'
+        FILE_ADDRESS = EXTRAS_FILE_ADDRESS + WIDGET + '.xml'
         # Check to see if file exists
         if (os.path.isfile( FILE_ADDRESS ) == False):
             self.set_Property(WIDGET_FOR,'yes', 'Can\'t Find Widget',WIDGET)
         else:
         #Else Open WIDGET
-            SET_LINES = open(FILE_ADDRESS, 'r').readlines()
+            SET_LINES_READ = open( FILE_ADDRESS, 'r')
+            SET_LINES = SET_LINES_READ.read()
+            SET_LINES_READ.close()
             #scraper title/name (WIDGET_FOR.Title)
-            WIDGET_TITLE = SET_LINES [ 0 ].strip()
+            WIDGET_TITLE_XML = decodeEntities( re.findall( "<Title>(.*?)</Title>", SET_LINES, re.DOTALL ) [0] )
+            WIDGET_URL_XML = decodeEntities( re.findall( "<URL>(.*?)</URL>", SET_LINES, re.DOTALL ) [0] )
+            WIDGET_CONTENT_TITLE_XML = decodeEntities( re.findall( "<ContentTitle>(.*?)</ContentTitle>", SET_LINES, re.DOTALL ) [0] )
+            WIDGET_PICTURE_ADDRESS_XML = decodeEntities( re.findall( "<Image>(.*?)</Image>", SET_LINES, re.DOTALL ) [0] )
+            WIDGET_SITE_ADDRESS_XML = decodeEntities( re.findall( "<Image:URL>(.*?)</Image:URL>", SET_LINES, re.DOTALL ) [0] )
+            WIDGET_CONTENT_XML = decodeEntities( re.findall( "<Content>(.*?)</Content>", SET_LINES, re.DOTALL ) [0] )
+            WIDGET_PUBDATE_XML = decodeEntities( re.findall( "<PubDate>(.*?)</PubDate>", SET_LINES, re.DOTALL ) [0] )
+            WIDGET_ITEM_NUBER_XML =  int( re.findall( "<Item>(.*?)</Item>", SET_LINES, re.DOTALL ) [0] )
             #Read URL
-            URL_FILE = urlopen(SET_LINES [ 1 ].strip()).read()
-            #find PICTURE (WIDGET_FOR.Picture)
-            if '[|*|]' in SET_LINES [ 2 ]:
-                PICTURE_ADDRESS, SITE_ADDRESS = SET_LINES [ 2 ].split('[|*|]')
-            elif SET_LINES [ 2 ].strip():
-                PICTURE_ADDRESS = SET_LINES [ 2 ].strip()
-                SITE_ADDRESS =''
-            else:
-                PICTURE_ADDRESS = ''
-                PICTURE_URL_LIST  = ''
-            if PICTURE_ADDRESS:
-                PICTURE_URL_LIST = re.findall(PICTURE_ADDRESS.rstrip(), URL_FILE, re.DOTALL)
-            #find Content Title (WIDGET_FOR.ContentTitle) 
-            CONTENT_TITLE_LIST = re.findall( SET_LINES [ 3 ].rstrip() , URL_FILE, re.DOTALL)
-            #find Content (WIDGET_FOR.Content)
-            CONTENT_LIST = re.findall(SET_LINES [ 4 ].rstrip(), URL_FILE, re.DOTALL)
-            #find PubDate/time (WIDGET_FOR.PubDate)
-            PUBDATE_LIST = re.findall(SET_LINES [ 5 ].rstrip(), URL_FILE, re.DOTALL)
-            #ITEM NUBER
-            ITEM_NUBER = int( SET_LINES [ 6 ].strip() )
+            WIDGET_URL = urlopen( WIDGET_URL_XML ).read()
+            # PICTURE (WIDGET_FOR.Picture)
+            if (WIDGET_PICTURE_ADDRESS_XML): PICTURE_URL_LIST = re.findall(WIDGET_PICTURE_ADDRESS_XML, WIDGET_URL, re.DOTALL)
+            # Content Title (WIDGET_FOR.ContentTitle) 
+            CONTENT_TITLE_LIST = re.findall( WIDGET_CONTENT_TITLE_XML , WIDGET_URL, re.DOTALL)
+            # Content (WIDGET_FOR.Content)
+            CONTENT_LIST = re.findall( WIDGET_CONTENT_XML, WIDGET_URL, re.DOTALL)
+            # PubDate/time (WIDGET_FOR.PubDate)
+            PUBDATE_LIST = re.findall(WIDGET_PUBDATE_XML, WIDGET_URL, re.DOTALL)
             #check
-            if WIDGET_TITLE == False: WIDGET_TITLE = 'No Name'
-            if CONTENT_TITLE_LIST: CONTENT_TITLE_SP = CONTENT_TITLE_LIST [ ITEM_NUBER ]
-            if CONTENT_LIST: CONTENT_SP = CONTENT_LIST [ ITEM_NUBER ]
-            if PUBDATE_LIST: PUBDATE_SP = PUBDATE_LIST [ ITEM_NUBER ]
+            if WIDGET_TITLE_XML == False: WIDGET_TITLE_XML = 'No Name'
+            if CONTENT_TITLE_LIST: CONTENT_TITLE_SP = CONTENT_TITLE_LIST [ WIDGET_ITEM_NUBER_XML ]
+            if CONTENT_LIST: CONTENT_SP = CONTENT_LIST [ WIDGET_ITEM_NUBER_XML ]
+            if PUBDATE_LIST: PUBDATE_SP = PUBDATE_LIST [ WIDGET_ITEM_NUBER_XML ]
             #see if there is a picture to download
-            if PICTURE_URL_LIST:
-                PICTURE = SITE_ADDRESS.rstrip() + PICTURE_URL_LIST [ ITEM_NUBER ]
+            if (WIDGET_PICTURE_ADDRESS_XML):
+                PICTURE = WIDGET_SITE_ADDRESS_XML + PICTURE_URL_LIST [ WIDGET_ITEM_NUBER_XML ]
                 PICTURE_SP = IMAGE_TEMP + WIDGET_FOR + '.png'
-                urlretrieve( PICTURE, PICTURE_SP)
-                # set properties
-                for i in range(1, 5):
-                    time.sleep(2)
-                    if (os.path.isfile( IMAGE_TEMP + WIDGET_FOR + '.png' )):
-                        self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE, CONTENT_TITLE_SP, PICTURE_SP, CONTENT_SP, PUBDATE_SP )
-                        break
+                downloaded = urlretrieve( PICTURE, PICTURE_SP)
+                if downloaded:
+                    # set properties
+                    for i in range(1, 5):
+                        time.sleep(2)
+                        if (os.path.isfile( IMAGE_TEMP + WIDGET_FOR + '.png' )):
+                            self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE_XML, CONTENT_TITLE_SP, PICTURE_SP, CONTENT_SP, PUBDATE_SP )
+                            break
             else:
                 # set properties
-                self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE, CONTENT_TITLE_SP, '', CONTENT_SP, PUBDATE_SP )
+                self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE_XML, CONTENT_TITLE_SP, '', CONTENT_SP, PUBDATE_SP )
+
+
 
     def set_Property(self, WIDGET_FOR, spGot = 'yes', spTitle = 'Can\'t Find Widget', spContentTitle = '', spPicture = '', spContent = '', spPubDate = ''):
-        self.WINDOW.setProperty( WIDGET_FOR + '.Got' , spGot )
+        self.WINDOW.setProperty( WIDGET_FOR + '.PubDate' , self.Clean_text( spPubDate ) )
         self.WINDOW.setProperty( WIDGET_FOR + '.Title' , spTitle )
         self.WINDOW.setProperty( WIDGET_FOR + '.ContentTitle' , self.Clean_text( spContentTitle ) )
         self.WINDOW.setProperty( WIDGET_FOR + '.Picture' , spPicture )
         self.WINDOW.setProperty( WIDGET_FOR + '.Content' , self.Clean_text( spContent ) )
-        self.WINDOW.setProperty( WIDGET_FOR + '.PubDate' , self.Clean_text( spPubDate ) )
+        self.WINDOW.setProperty( WIDGET_FOR + '.Got' , spGot )
 
     def Clean_text(self,  data):
         data = htmldecode2( data )
         data = decodeEntities( data )
         data = remove_html_tags( data )
-        #data = remove_extra_spaces( data )
-        data = remove_extra_lines( data )
+        data = remove_extra_spaces( data )
+        #data = remove_extra_lines( data )
         return data
 
 def htmldecode2(text):
@@ -338,6 +339,7 @@ def decodeEntities(data):
     data = data.replace('&quot;', '"')
     data = data.replace('&apos;', "'")
     data = data.replace('&amp;', '&')
+    data = data.replace('_#', '')
     return data	
 
 if ( __name__ == "__main__" ):

@@ -1,0 +1,10 @@
+<widget>
+	<Title>radio 1 webcam</Title>
+	<URL>http://www.bbc.co.uk/radio1/webcam/webcam1/</URL>
+	<ContentTitle>height=&quot;36&quot; alt=&quot;(.*?)&quot;</ContentTitle>
+	<Image>webcam-box&quot;&gt;&lt;img src=&quot;(.*?)&quot;</Image>
+	<Image:URL>http://www.bbc.co.uk</Image:URL>
+	<Content></Content>
+	<PubDate></PubDate>
+	<Item>0</Item>
+</widget>
