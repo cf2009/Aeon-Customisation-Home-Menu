@@ -3804,16 +3804,22 @@
 
 <!-- extras.py set up -->
 <include name="Widget_Extras_py">
-	<onfocus>setProperty(extrapopup_extras,&extra=$INFO[Skin.String(extra_widget_set)])</onfocus>
+	<onfocus>setProperty(extra_extras,&extra=$INFO[Skin.String(extra_widget_set)])</onfocus>
 </include>
 <include name="Widget_Picture_py">
-	<onfocus>setProperty(Picture_extras,&picture=$INFO[Skin.String(pic_widget_set)])</onfocus>
+	<onfocus>setProperty(Picture_extras,&picture=$INFO[Skin.String(Pictures_widget_set)])</onfocus>
 </include>
 <include name="Widget_Totals_py">
 	<onfocus>setProperty(totals_extras,&totals=true)</onfocus>
 </include>
 <include name="Widget_RecentAdded_py">
 	<onfocus>setProperty(recentadded_extras,&recentadded=true)</onfocus>
+</include>
+<include name="Widget_CustomMenu1_py">
+	<onfocus>setProperty(CustomMenu1_extras,&CustomMenu1=$INFO[Skin.String(CustomMenu1_widget_set)])</onfocus>
+</include>
+<include name="Widget_CustomMenu2_py">
+	<onfocus>setProperty(CustomMenu2_extras,&CustomMenu2=$INFO[Skin.String(CustomMenu2_widget_set)])</onfocus>
 </include>
 <!-- extras.py set up end -->
 

@@ -3,30 +3,6 @@
 <include>Animation_DialogPopup</include>
 	
 <controls>
-	<!--control type="group">
-		<visible>Skin.HasSetting(debug)</visible>
-		<posy>400</posy>
-		<posx>80</posx>
-		<control type="label">
-			<posy>0</posy>
-			<posx>0</posx>
-			<height>30</height>
-			<width>800</width>
-			<font>Font_ListObjects</font>
-			<textcolor>ffFFFFFF</textcolor>
-			<info>Container(20).ListItem.Label</info>
-		</control>
-		<control type="label">
-			<posy>30</posy>
-			<posx>0</posx>
-			<height>40</height>
-			<width>800</width>
-			<font>Font_ListObjects</font>
-			<textcolor>ffFFFFFF</textcolor>
-			<info>Container(20).ListItem.Label2</info>
-		</control>
-	</control-->
-
 	<control type="button" id="30">
 		<visible>!Skin.HasSetting(open_playlists)</visible>
 		<include>homesubmenu_but</include>
@@ -41,14 +17,10 @@
 	</control>
 	<control type="button" id="31">
 		<include>homesubmenu_but</include>
-		<onfocus>XBMC.RunScript(special://skin/extras/widget.py,type=txt)</onfocus>
+		<onfocus>XBMC.RunScript(special://skin/extras/widgetlist.py)</onfocus>
 		<onfocus>SetFocus(25)</onfocus>
 	</control>
-	<control type="button" id="32">
-		<include>homesubmenu_but</include>
-		<onfocus>XBMC.RunScript(special://skin/extras/widget.py,type=pic)</onfocus>
-		<onfocus>SetFocus(25)</onfocus>
-	</control>
+
 	<control type="group">
 		<posx>500</posx>
 		<posy>110</posy>
@@ -295,7 +267,7 @@
 			</item>
 		<!-- Main Menu -->
 			<item id="1">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,mainmenu_1path)</onclick>
 				<onclick>Skin.SetString(custom_name,mainmenu_1name)</onclick>
 				<onclick>Skin.SetString(custom_done,mainmenu_1)</onclick>
@@ -314,7 +286,7 @@
 				<visible>Container(15).HasFocus(1)</visible>
 			</item>
 			<item id="2">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,mainmenu_2path)</onclick>
 				<onclick>Skin.SetString(custom_name,mainmenu_2name)</onclick>
 				<onclick>Skin.SetString(custom_done,mainmenu_2)</onclick>
@@ -334,7 +306,7 @@
 				<visible>Container(15).HasFocus(1)</visible>
 			</item>
 			<item id="3">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,mainmenu_3path)</onclick>
 				<onclick>Skin.SetString(custom_name,mainmenu_3name)</onclick>
 				<onclick>Skin.SetString(custom_done,mainmenu_3)</onclick>
@@ -354,7 +326,7 @@
 				<visible>Container(15).HasFocus(1)</visible>
 			</item>
 			<item id="4">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,mainmenu_4path)</onclick>
 				<onclick>Skin.SetString(custom_name,mainmenu_4name)</onclick>
 				<onclick>Skin.SetString(custom_done,mainmenu_4)</onclick>
@@ -374,7 +346,7 @@
 				<visible>Container(15).HasFocus(1)</visible>
 			</item>
 			<item id="5">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,mainmenu_5path)</onclick>
 				<onclick>Skin.SetString(custom_name,mainmenu_5name)</onclick>
 				<onclick>Skin.SetString(custom_done,mainmenu_5)</onclick>
@@ -395,7 +367,7 @@
 			</item>
 
 			<item id="6">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,mainmenu_6path)</onclick>
 				<onclick>Skin.SetString(custom_name,mainmenu_6name)</onclick>
 				<onclick>Skin.SetString(custom_done,mainmenu_6)</onclick>
@@ -415,7 +387,7 @@
 				<visible>Container(15).HasFocus(1)</visible>
 			</item>
 			<item id="7">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,mainmenu_7path)</onclick>
 				<onclick>Skin.SetString(custom_name,mainmenu_7name)</onclick>
 				<onclick>Skin.SetString(custom_done,mainmenu_7)</onclick>
@@ -436,7 +408,7 @@
 				<visible>Container(15).HasFocus(1)</visible>
 			</item>
 			<item id="8">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,mainmenu_8path)</onclick>
 				<onclick>Skin.SetString(custom_name,mainmenu_8name)</onclick>
 				<onclick>Skin.SetString(custom_done,mainmenu_8)</onclick>
@@ -457,7 +429,7 @@
 				<visible>Container(15).HasFocus(1)</visible>
 			</item>
 			<item id="9">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,mainmenu_9path)</onclick>
 				<onclick>Skin.SetString(custom_name,mainmenu_9name)</onclick>
 				<onclick>Skin.SetString(custom_done,mainmenu_9)</onclick>
@@ -478,7 +450,7 @@
 				<visible>Container(15).HasFocus(1)</visible>
 			</item>
 			<item id="10">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,mainmenu_10path)</onclick>
 				<onclick>Skin.SetString(custom_name,mainmenu_10name)</onclick>
 				<onclick>Skin.SetString(custom_done,mainmenu_10)</onclick>
@@ -501,7 +473,7 @@
 		<!-- Main Menu End -->
 		<!-- TVShows Sub -->
 			<item id="21">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,TVShows_Sub_1path)</onclick>
 				<onclick>Skin.SetString(custom_name,TVShows_Sub_1name)</onclick>
 				<onclick>Skin.SetString(custom_done,TVShows_Sub_1)</onclick>
@@ -520,7 +492,7 @@
 				<visible>Container(15).HasFocus(2)</visible>
 			</item>
 			<item id="22">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,TVShows_Sub_2path)</onclick>
 				<onclick>Skin.SetString(custom_name,TVShows_Sub_2name)</onclick>
 				<onclick>Skin.SetString(custom_done,TVShows_Sub_2)</onclick>
@@ -540,7 +512,7 @@
 				<visible>Container(15).HasFocus(2)</visible>
 			</item>
 			<item id="23">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,TVShows_Sub_3path)</onclick>
 				<onclick>Skin.SetString(custom_name,TVShows_Sub_3name)</onclick>
 				<onclick>Skin.SetString(custom_done,TVShows_Sub_3)</onclick>
@@ -560,7 +532,7 @@
 				<visible>Container(15).HasFocus(2)</visible>
 			</item>
 			<item id="24">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,TVShows_Sub_4path)</onclick>
 				<onclick>Skin.SetString(custom_name,TVShows_Sub_4name)</onclick>
 				<onclick>Skin.SetString(custom_done,TVShows_Sub_4)</onclick>
@@ -582,7 +554,7 @@
 		<!-- TVShows Sub End -->
 		<!-- Movies Sub -->
 			<item id="25">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Movies_Sub_1path)</onclick>
 				<onclick>Skin.SetString(custom_name,Movies_Sub_1name)</onclick>
 				<onclick>Skin.SetString(custom_done,Movies_Sub_1)</onclick>
@@ -601,7 +573,7 @@
 				<visible>Container(15).HasFocus(3)</visible>
 			</item>
 			<item id="26">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Movies_Sub_2path)</onclick>
 				<onclick>Skin.SetString(custom_name,Movies_Sub_2name)</onclick>
 				<onclick>Skin.SetString(custom_done,Movies_Sub_2)</onclick>
@@ -621,7 +593,7 @@
 				<visible>Container(15).HasFocus(3)</visible>
 			</item>
 			<item id="27">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Movies_Sub_3path)</onclick>
 				<onclick>Skin.SetString(custom_name,Movies_Sub_3name)</onclick>
 				<onclick>Skin.SetString(custom_done,Movies_Sub_3)</onclick>
@@ -641,7 +613,7 @@
 				<visible>Container(15).HasFocus(3)</visible>
 			</item>
 			<item id="28">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Movies_Sub_4path)</onclick>
 				<onclick>Skin.SetString(custom_name,Movies_Sub_4name)</onclick>
 				<onclick>Skin.SetString(custom_done,Movies_Sub_4)</onclick>
@@ -663,7 +635,7 @@
 		<!-- Movies Sub End -->
 		<!-- Music Sub -->
 			<item id="31">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Music_Sub_1path)</onclick>
 				<onclick>Skin.SetString(custom_name,Music_Sub_1name)</onclick>
 				<onclick>Skin.SetString(custom_done,Music_Sub_1)</onclick>
@@ -682,7 +654,7 @@
 				<visible>Container(15).HasFocus(5)</visible>
 			</item>
 			<item id="32">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Music_Sub_2path)</onclick>
 				<onclick>Skin.SetString(custom_name,Music_Sub_2name)</onclick>
 				<onclick>Skin.SetString(custom_done,Music_Sub_2)</onclick>
@@ -702,7 +674,7 @@
 				<visible>Container(15).HasFocus(5)</visible>
 			</item>
 			<item id="33">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Music_Sub_3path)</onclick>
 				<onclick>Skin.SetString(custom_name,Music_Sub_3name)</onclick>
 				<onclick>Skin.SetString(custom_done,Music_Sub_3)</onclick>
@@ -722,7 +694,7 @@
 				<visible>Container(15).HasFocus(5)</visible>
 			</item>
 			<item id="34">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Music_Sub_4path)</onclick>
 				<onclick>Skin.SetString(custom_name,Music_Sub_4name)</onclick>
 				<onclick>Skin.SetString(custom_done,Music_Sub_4)</onclick>
@@ -744,7 +716,7 @@
 		<!-- Music Sub End -->
 		<!-- Extras Sub -->
 			<item id="35">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Extras_Sub_1path)</onclick>
 				<onclick>Skin.SetString(custom_name,Extras_Sub_1name)</onclick>
 				<onclick>Skin.SetString(custom_done,Extras_Sub_1)</onclick>
@@ -763,7 +735,7 @@
 				<visible>Container(15).HasFocus(6)</visible>
 			</item>
 			<item id="36">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Extras_Sub_2path)</onclick>
 				<onclick>Skin.SetString(custom_name,Extras_Sub_2name)</onclick>
 				<onclick>Skin.SetString(custom_done,Extras_Sub_2)</onclick>
@@ -783,7 +755,7 @@
 				<visible>Container(15).HasFocus(6)</visible>
 			</item>
 			<item id="37">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Extras_Sub_3path)</onclick>
 				<onclick>Skin.SetString(custom_name,Extras_Sub_3name)</onclick>
 				<onclick>Skin.SetString(custom_done,Extras_Sub_3)</onclick>
@@ -803,7 +775,7 @@
 				<visible>Container(15).HasFocus(6)</visible>
 			</item>
 			<item id="38">
-<!--***-->			<label>[B]$LOCALIZE[31857][/B]</label>
+				<label>[B]$LOCALIZE[31857][/B]</label>
 				<onclick>Skin.SetString(custom_path,Extras_Sub_4path)</onclick>
 				<onclick>Skin.SetString(custom_name,Extras_Sub_4name)</onclick>
 				<onclick>Skin.SetString(custom_done,Extras_Sub_4)</onclick>
@@ -850,13 +822,13 @@
 			</item>
 
 			<item id="65">
-<!--***-->			<label>$LOCALIZE[31864]: $LOCALIZE[351]</label>
+				<label>$LOCALIZE[31864]: $LOCALIZE[351]</label>
 				<onclick>Skin.ToggleSetting(open_playlists)</onclick>
 				<visible>!Skin.HasSetting(open_playlists)</visible>
 				<visible>Container(15).HasFocus(4)</visible>
 			</item>
 			<item id="65">
-<!--***-->			<label>$LOCALIZE[31864]: $LOCALIZE[31077]</label>
+				<label>$LOCALIZE[31864]: $LOCALIZE[31077]</label>
 				<onclick>Skin.Reset(open_playlists)</onclick>
 				<visible>Skin.HasSetting(open_playlists)</visible>
 				<visible>Container(15).HasFocus(4)</visible>
@@ -893,44 +865,77 @@
 			</item>
 		<!-- Settings End -->
 		<!-- Extras widget -->
-			<item id="101">
+
+			<item id="101"> <!-- Off Extras -->
 				<label>extras widget: $LOCALIZE[351]</label>
 				<onclick>Skin.SetString(widget_set,extra_widget_set)</onclick>
-				<onclick>Skin.SetString(set_widget,Custom_extra_widget_set)</onclick>
-				<onclick>Skin.reset(load_pic_widget_set)</onclick>
-				<onclick>Skin.ToggleSetting(load_extra_widget_set)</onclick>
+				<onclick>Skin.SetString(widget_on,extra_widget_on)</onclick>
 				<onclick>SetFocus(31)</onclick>
-				<visible>!Skin.HasSetting(Custom_extra_widget_set)</visible>
+				<visible>!Skin.HasSetting(extra_widget_on)</visible>
 				<visible>Container(15).HasFocus(8)</visible>
 			</item>
+
 			<item id="101">
 				<label>extras widget:  $INFO[Skin.String(extra_widget_set)]</label>
 				<onclick>Skin.SetString(widget_set,extra_widget_set)</onclick>
-				<onclick>Skin.reset(load_pic_widget_set)</onclick>
-				<onclick>Skin.ToggleSetting(load_extra_widget_set)</onclick>
+				<onclick>Skin.SetString(widget_on,extra_widget_on)</onclick>
 				<onclick>SetFocus(31)</onclick>
-				<visible>Skin.HasSetting(Custom_extra_widget_set)</visible>
+				<visible>Skin.HasSetting(extra_widget_on)</visible>
 				<visible>Container(15).HasFocus(8)</visible>
 			</item>
 
 			<item id="102">
 				<label>Pictures widget: $LOCALIZE[351]</label>
-				<onclick>Skin.SetString(widget_set,pic_widget_set)</onclick>
-				<onclick>Skin.SetString(set_widget,Custom_pic_widget_set)</onclick>
-				<onclick>Skin.reset(load_extra_widget_set)</onclick>
-				<onclick>Skin.ToggleSetting(load_pic_widget_set)</onclick>
-				<onclick>SetFocus(32)</onclick>
-				<visible>!Skin.HasSetting(Custom_pic_widget_set)</visible>
+				<onclick>Skin.SetString(widget_set,Pictures_widget_set)</onclick>
+				<onclick>Skin.SetString(widget_on,Pictures_widget_on)</onclick>
+				<onclick>SetFocus(31)</onclick>
+				<visible>!Skin.HasSetting(Pictures_widget_on)</visible>
 				<visible>Container(15).HasFocus(8)</visible>
 			</item>
 			<item id="102">
-				<label>Pictures widget: $INFO[Skin.String(pic_widget_set)]</label>
-				<onclick>Skin.SetString(widget_set,pic_widget_set)</onclick>
-				<onclick>Skin.reset(load_extra_widget_set)</onclick>
-				<onclick>Skin.ToggleSetting(load_pic_widget_set)</onclick>
-				<onclick>SetFocus(32)</onclick>
-				<visible>Skin.HasSetting(Custom_pic_widget_set)</visible>
+				<label>Pictures widget: $INFO[Skin.String(Pictures_widget_set)]</label>
+				<onclick>Skin.SetString(widget_set,Pictures_widget_set)</onclick>
+				<onclick>Skin.SetString(widget_on,Pictures_widget_on)</onclick>
+				<onclick>SetFocus(31)</onclick>
+				<visible>Skin.HasSetting(Pictures_widget_on)</visible>
 				<visible>Container(15).HasFocus(8)</visible>
+			</item>
+			<item id="105">
+				<label>$INFO[Skin.String(mainmenu_1name)] widget: $LOCALIZE[351]</label>
+				<onclick>Skin.SetString(widget_set,CustomMenu1_widget_set)</onclick>
+				<onclick>Skin.SetString(widget_on,CustomMenu1_widget_on)</onclick>
+				<onclick>SetFocus(31)</onclick>
+				<visible>!Skin.HasSetting(CustomMenu1_widget_on)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+				<visible>Skin.HasSetting(mainmenu_1)</visible>
+			</item>
+			<item id="105">
+				<label>$INFO[Skin.String(mainmenu_1name)] widget:  $INFO[Skin.String(CustomMenu1_widget_set)]</label>
+				<onclick>Skin.SetString(widget_set,CustomMenu1_widget_set)</onclick>
+				<onclick>Skin.SetString(widget_on,CustomMenu1_widget_on)</onclick>
+				<onclick>SetFocus(31)</onclick>
+				<visible>Skin.HasSetting(CustomMenu1_widget_on)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+				<visible>Skin.HasSetting(mainmenu_1)</visible>
+			</item>
+
+			<item id="106">
+				<label>$INFO[Skin.String(mainmenu_2name)] widget: $LOCALIZE[351]</label>
+				<onclick>Skin.SetString(widget_set,CustomMenu2_widget_set)</onclick>
+				<onclick>Skin.SetString(widget_on,CustomMenu2_widget_on)</onclick>
+				<onclick>SetFocus(31)</onclick>
+				<visible>!Skin.HasSetting(CustomMenu2_widget_on)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+				<visible>Skin.HasSetting(mainmenu_2)</visible>
+			</item>
+			<item id="106">
+				<label>$INFO[Skin.String(mainmenu_2name)] widget: $INFO[Skin.String(CustomMenu2_widget_set)]</label>
+				<onclick>Skin.SetString(widget_set,CustomMenu2_widget_set)</onclick>
+				<onclick>Skin.SetString(widget_on,CustomMenu2_widget_on)</onclick>
+				<onclick>SetFocus(31)</onclick>
+				<visible>Skin.HasSetting(CustomMenu2_widget_on)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+				<visible>Skin.HasSetting(mainmenu_2)</visible>
 			</item>
 
 
@@ -1237,12 +1242,8 @@
 		<posy>207</posy>
 		<height>180</height>
 		<width>460</width>
-		<onleft>Skin.Reset(load_extra_widget_set)</onleft>
-		<onleft>Skin.Reset(load_pic_widget_set)</onleft>
-		<onleft>SetFocus(16)</onleft>
-		<onright>Skin.Reset(load_extra_widget_set)</onright>
-		<onright>Skin.Reset(load_pic_widget_set)</onright>
-		<onright>SetFocus(16)</onright>
+		<onleft>16</onleft>
+		<onright>16</onright>
 		<onup>25</onup>
 		<ondown>25</ondown>
 		<viewtype>list</viewtype>
@@ -1328,137 +1329,127 @@
 		<content>
 			<item id="100">
 				<label>[B]widget[/B]: $LOCALIZE[351]</label>
-				<onclick>Skin.Reset(load_extra_widget_set)</onclick>
-				<onclick>Skin.Reset(Custom_extra_widget_set)</onclick>
-				<onclick>Skin.Reset(extra_widget_set)</onclick>
+				<onclick>Skin.Reset($INFO[Skin.String(widget_set)])</onclick>
+				<onclick>Skin.Reset($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
-				<visible>Skin.HasSetting(load_extra_widget_set)</visible>
 			</item>
-			<item id="101">
-				<label>[B]widget[/B]: $LOCALIZE[351]</label>
-				<onclick>Skin.Reset(load_pic_widget_set)</onclick>
-				<onclick>Skin.Reset(Custom_pic_widget_set)</onclick>
-				<onclick>Skin.Reset(pic_widget_set)</onclick>
-				<onclick>SetFocus(16)</onclick>
-				<visible>Skin.HasSetting(load_pic_widget_set)</visible>
-			</item>
+
 			<item id="1">
 				<label>$INFO[Window(4).Property(widget.1.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.1.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.1.name))</visible>
 			</item>
 			<item id="2">
 				<label>$INFO[Window(4).Property(widget.2.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.2.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.2.name))</visible>
 			</item>
 			<item id="3">
 				<label>$INFO[Window(4).Property(widget.3.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.3.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.3.name))</visible>
 			</item>
 			<item id="4">
 				<label>$INFO[Window(4).Property(widget.4.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.4.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.4.name))</visible>
 			</item>
 			<item id="5">
 				<label>$INFO[Window(4).Property(widget.5.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.5.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.5.name))</visible>
 			</item>
 			<item id="6">
 				<label>$INFO[Window(4).Property(widget.6.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.6.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.6.name))</visible>
 			</item>
 			<item id="7">
 				<label>$INFO[Window(4).Property(widget.7.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.7.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.7.name))</visible>
 			</item>
 			<item id="8">
 				<label>$INFO[Window(4).Property(widget.8.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.8.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.8.name))</visible>
 			</item>
 			<item id="9">
 				<label>$INFO[Window(4).Property(widget.9.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.9.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.9.name))</visible>
 			</item>
 			<item id="10">
 				<label>$INFO[Window(4).Property(widget.10.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.10.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.10.name))</visible>
 			</item>
 			<item id="11">
 				<label>$INFO[Window(4).Property(widget.11.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.11.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.11.name))</visible>
 			</item>
 			<item id="12">
 				<label>$INFO[Window(4).Property(widget.12.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.12.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.12.name))</visible>
 			</item>
 			<item id="13">
 				<label>$INFO[Window(4).Property(widget.13.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.13.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.13.name))</visible>
 			</item>
 			<item id="14">
 				<label>$INFO[Window(4).Property(widget.14.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.14.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.14.name))</visible>
 			</item>
 			<item id="15">
 				<label>$INFO[Window(4).Property(widget.15.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.15.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.15.name))</visible>
 			</item>
 			<item id="16">
 				<label>$INFO[Window(4).Property(widget.16.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.16.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.16.name))</visible>
 			</item>
 			<item id="17">
 				<label>$INFO[Window(4).Property(widget.17.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.17.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.17.name))</visible>
 			</item>
@@ -1471,14 +1462,14 @@
 			<item id="19">
 				<label>$INFO[Window(4).Property(widget.19.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.19.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.19.name))</visible>
 			</item>
 			<item id="20">
 				<label>$INFO[Window(4).Property(widget.20.name)]</label>
 				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.20.name)])</onclick>
-				<onclick>Skin.SetBool($INFO[Skin.String(set_widget)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.20.name))</visible>
 			</item>

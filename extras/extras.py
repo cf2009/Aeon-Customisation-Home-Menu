@@ -59,6 +59,8 @@ class Main:
         self.TOTALS = params.get( "totals", "" ) == "true"
         self.WIDGET_EXTRAS = params.get( "extra", "" )
         self.WIDGET_PICTURE = params.get( "picture", "" )
+        self.WIDGET_CustomMenu1 = params.get( "custommenu1", "" )
+        self.WIDGET_CustomMenu2 = params.get( "custommenu2", "" )
 
     def _set_alarm( self ):
         # only run if user/skinner preference
@@ -90,6 +92,11 @@ class Main:
             self.get_widget( self.WIDGET_EXTRAS,'ExtrasWidget' )
         if ( self.WIDGET_PICTURE ):
             self.get_widget( self.WIDGET_PICTURE,'PictureWidget' )
+        if ( self.WIDGET_CustomMenu1 ):
+            self.get_widget( self.WIDGET_CustomMenu1,'CustomMenu1' )
+        if ( self.WIDGET_CustomMenu2 ):
+            self.get_widget( self.WIDGET_CustomMenu2,'CustomMenu2' )
+
 
 
     def _fetch_movie_info( self ):

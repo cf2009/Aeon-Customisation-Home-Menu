@@ -37,17 +37,21 @@
 <!-- Windowopen -->
 	<control type="button" id="323">
 		<include>homesubmenu_but</include>
-		<onfocus>setProperty(extrapopup_extras,)</onfocus>
+		<onfocus>setProperty(extra_extras,)</onfocus>
 		<onfocus>setProperty(Picture_extras,)</onfocus>
 		<onfocus>setProperty(totals_extras,)</onfocus>
 		<onfocus>setProperty(recentadded_extras,)</onfocus>
+		<onfocus>setProperty(CustomMenu1_extras,)</onfocus>
+		<onfocus>setProperty(CustomMenu2_extras,)</onfocus>
 
 		<include condition="!Skin.HasSetting(Recently_added)">Widget_RecentAdded_py</include>
 		<include condition="!Skin.HasSetting(Library_info)">Widget_Totals_py</include>
-		<include condition="Skin.HasSetting(Custom_extra_widget_set)">Widget_Extras_py</include>
-		<include condition="Skin.HasSetting(Custom_pic_widget_set)">Widget_Picture_py</include>
+		<include condition="Skin.HasSetting(extra_widget_on)">Widget_Extras_py</include>
+		<include condition="Skin.HasSetting(Pictures_widget_on)">Widget_Picture_py</include>
+		<include condition="Skin.HasSetting(CustomMenu1_widget_on)">Widget_CustomMenu1_py</include>
+		<include condition="Skin.HasSetting(CustomMenu2_widget_on)">Widget_CustomMenu2_py</include>
 
-		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(extrapopup_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
+		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(CustomMenu1_extras)]$INFO[Window.Property(CustomMenu2_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(extra_extras)]$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
 
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>SetFocus(300)</onfocus>
@@ -56,6 +60,7 @@
 <!-- Windowopen end-->
 <!-- WIDGET_EXTRAS -->
 	<control type="group">
+		<visible>Skin.HasSetting(extra_widget_on)</visible>
 		<visible>Container(300).HasFocus(2)+StringCompare(Window.Property(ExtrasWidget.Got),yes)</visible>
 		<include>widget_XY</include>
 		<include>widget_animation</include>
@@ -103,6 +108,7 @@
 <!-- WIDGET_EXTRAS End -->
 <!-- WIDGET_PICTURE -->
 	<control type="group">
+		<visible>Skin.HasSetting(Pictures_widget_on)</visible>
 		<visible>Container(300).HasFocus(5)+StringCompare(Window.Property(PictureWidget.Got),yes)</visible>
 		<include>widget_XY</include>
 		<include>widget_animation</include>
@@ -148,12 +154,107 @@
 		</control>
 	</control>
 <!-- WIDGET_PICTURE End  -->
+<!-- WIDGET_custom_mainmenu 1 -->
+	<control type="group">
+		<visible>Skin.HasSetting(CustomMenu1_widget_on)</visible>
+		<visible>Container(300).HasFocus(30)+StringCompare(Window.Property(CustomMenu1.Got),yes)</visible>
+		<include>widget_XY</include>
+		<include>widget_animation</include>
+		<control type="group">
+			<visible>IsEmpty(Window.Property(CustomMenu1.Picture)) | IsEmpty(Window.Property(CustomMenu1.Content))</visible>
+			<include>widget_back1</include>
+		</control>
+		<control type="group">
+			<visible>!IsEmpty(Window.Property(CustomMenu1.Picture)) + !IsEmpty(Window.Property(CustomMenu1.Content))</visible>
+			<include>widget_back2</include>
+		</control>
+		<control type="label">
+			<include>widget_Title</include>
+			<label>$INFO[Window.Property(CustomMenu1.Title)]</label>
+			<animation effect="slide" start="0,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(CustomMenu1.Picture)) + !IsEmpty(Window.Property(CustomMenu1.Content))">Conditional</animation>
+		</control>
+	  	<control type="label">
+			<include>widget_ContentTitle</include>
+			<label>[I]$INFO[Window.Property(CustomMenu1.ContentTitle)][/I]</label>
+			<animation effect="slide" start="0,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(CustomMenu1.Picture)) + !IsEmpty(Window.Property(CustomMenu1.Content))">Conditional</animation>
+		</control>
+	  	<control type="label">
+			<include condition="IsEmpty(Window.Property(CustomMenu1.Content))">widget_PubDate_center</include>
+			<include>widget_PubDate</include>
+			<label>$INFO[Window.Property(CustomMenu1.PubDate)]</label>
+		</control>
+		<control type="textbox">
+			<include>widget_Content</include>
+			<label>$INFO[Window.Property(CustomMenu1.Content)]</label>
+			<animation effect="slide" start="19,0" end="0,20" time="1" condition="!IsEmpty(Window.Property(CustomMenu1.PubDate))">Conditional</animation>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(Window.Property(CustomMenu1.Picture))+IsEmpty(Window.Property(CustomMenu1.Content))]</visible>
+			<include>widget_Picture</include>
+			<texture>$INFO[Window.Property(CustomMenu1.Picture)]</texture>
+			<animation effect="zoom" start="100" end="95" time="1" center="auto" condition="!IsEmpty(Window.Property(CustomMenu1.PubDate))">Conditional</animation>
+			<animation effect="slide" start="0,14" end="0,15" time="1" condition="!IsEmpty(Window.Property(CustomMenu1.PubDate))">Conditional</animation>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(Window.Property(CustomMenu1.Picture))+!IsEmpty(Window.Property(CustomMenu1.Content))</visible>
+			<include>widget_Picture_small</include>
+			<texture>$INFO[Window.Property(CustomMenu1.Picture)]</texture>
+		</control>
+	</control>
+<!-- WIDGET_custom_mainmenu 1 End  -->
+<!-- WIDGET_custom_mainmenu 2 -->
+	<control type="group">
+		<visible>Skin.HasSetting(CustomMenu2_widget_on)</visible>
+		<visible>Container(300).HasFocus(31)+StringCompare(Window.Property(CustomMenu2.Got),yes)</visible>
+		<include>widget_XY</include>
+		<include>widget_animation</include>
+		<control type="group">
+			<visible>IsEmpty(Window.Property(CustomMenu2.Picture)) | IsEmpty(Window.Property(CustomMenu2.Content))</visible>
+			<include>widget_back1</include>
+		</control>
+		<control type="group">
+			<visible>!IsEmpty(Window.Property(CustomMenu2.Picture)) + !IsEmpty(Window.Property(CustomMenu2.Content))</visible>
+			<include>widget_back2</include>
+		</control>
+		<control type="label">
+			<include>widget_Title</include>
+			<label>$INFO[Window.Property(CustomMenu2.Title)]</label>
+			<animation effect="slide" start="0,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(CustomMenu2.Picture)) + !IsEmpty(Window.Property(CustomMenu2.Content))">Conditional</animation>
+		</control>
+	  	<control type="label">
+			<include>widget_ContentTitle</include>
+			<label>[I]$INFO[Window.Property(CustomMenu2.ContentTitle)][/I]</label>
+			<animation effect="slide" start="0,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(CustomMenu2.Picture)) + !IsEmpty(Window.Property(CustomMenu2.Content))">Conditional</animation>
+		</control>
+	  	<control type="label">
+			<include condition="IsEmpty(Window.Property(CustomMenu2.Content))">widget_PubDate_center</include>
+			<include>widget_PubDate</include>
+			<label>$INFO[Window.Property(CustomMenu2.PubDate)]</label>
+		</control>
+		<control type="textbox">
+			<include>widget_Content</include>
+			<label>$INFO[Window.Property(CustomMenu2.Content)]</label>
+			<animation effect="slide" start="19,0" end="0,20" time="1" condition="!IsEmpty(Window.Property(CustomMenu2.PubDate))">Conditional</animation>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(Window.Property(CustomMenu2.Picture))+IsEmpty(Window.Property(CustomMenu2.Content))]</visible>
+			<include>widget_Picture</include>
+			<texture>$INFO[Window.Property(CustomMenu2.Picture)]</texture>
+			<animation effect="zoom" start="100" end="95" time="1" center="auto" condition="!IsEmpty(Window.Property(CustomMenu2.PubDate))">Conditional</animation>
+			<animation effect="slide" start="0,14" end="0,15" time="1" condition="!IsEmpty(Window.Property(CustomMenu2.PubDate))">Conditional</animation>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(Window.Property(CustomMenu2.Picture))+!IsEmpty(Window.Property(CustomMenu2.Content))</visible>
+			<include>widget_Picture_small</include>
+			<texture>$INFO[Window.Property(CustomMenu2.Picture)]</texture>
+		</control>
+	</control>
+<!-- WIDGET_custom_mainmenu 1 End  -->
+
 
 	<include>Furniture_HomeNowPlaying2</include>
 	<include condition="!Skin.HasSetting(Library_info)">Widget_Totals</include>
 	<include condition="!Skin.HasSetting(Recently_added)">Widget_RecentAdded</include>
-	<!--include condition="Skin.HasSetting(Custom_extra_widget_set)">Widget_Extras</include>
-	<include condition="Skin.HasSetting(Custom_pic_widget_set)">Widget_Picture</include-->
 
 	<include>Objects_WeatherPopup2</include>
 	<include>Furniture_Time</include>
