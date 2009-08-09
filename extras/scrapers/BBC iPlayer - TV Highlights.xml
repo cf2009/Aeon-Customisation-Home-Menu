@@ -1,6 +1,6 @@
 <widget>
-	<Title>iPlayer Most Popular TV</Title>
-	<URL>http://feeds.bbc.co.uk/iplayer/popular/tv/list</URL>
+	<Title>iPlayer TV Highlights</Title>
+	<URL>http://feeds.bbc.co.uk/iplayer/highlights/tv</URL>
 	<ContentTitle>    &lt;title type=&quot;text&quot;&gt;(.*?)&lt;</ContentTitle>
 	<Image>          &_#lt;img src=&_#quot;(.*?)&_#quot; alt</Image>
 	<Image:URL></Image:URL>
