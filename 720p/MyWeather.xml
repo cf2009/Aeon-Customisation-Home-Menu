@@ -11,7 +11,6 @@
 		<include>BackgroundVarsGlobal</include>
 		<include>BackgroundVarsWeather2</include>
 	</control>
-
 	<control type="image">
 		<description>Darken screen for Context Menu etc.</description>
 		<include>FullscreenDimensions</include>
@@ -37,11 +36,11 @@
 	</control>
 	<control type="group" id="9000">
 		<animation type="focus">
-		    	<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+			<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
 			<effect type="fade" start="0" end="100" time="300" />
 		</animation>
 		<animation type="Conditional" condition="Control.HasFocus(50)">
-		    	<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+			<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 			<effect type="fade" start="100" end="0" time="200" />
 		</animation>
 		<include>common-fade-quick</include>
@@ -230,7 +229,7 @@
 				<height>90</height>
 				<include>common-fade-quick</include>
 				<control type="button" id="200">
-<!--***-->				<label>31873</label>
+					<label>31873</label>
 					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
 					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
 					<onclick>Skin.SetBool(weatherpopupweek)</onclick>
@@ -245,7 +244,7 @@
 					<onup>4</onup>
 				</control>
 				<control type="button" id="201">
-<!--***-->				<label>31874</label>
+					<label>31874</label>
 					<onclick>Skin.SetBool(weatherpopup36hour)</onclick>
 					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
 					<onclick>Skin.Reset(weatherpopupweek)</onclick>
@@ -260,7 +259,7 @@
 					<onup>200</onup>
 				</control>
 				<control type="button" id="202">
-<!--***-->				<label>31875</label>
+					<label>31875</label>
 					<onclick>Skin.SetBool(weatherpopupweekend)</onclick>
 					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
 					<onclick>Skin.Reset(weatherpopupweek)</onclick>
