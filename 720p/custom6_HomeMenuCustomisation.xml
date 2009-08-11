@@ -1473,6 +1473,75 @@
 				<onclick>SetFocus(16)</onclick>
 				<visible>!IsEmpty(Window(4).Property(widget.20.name))</visible>
 			</item>
+			<item id="21">
+				<label>$INFO[Window(4).Property(widget.21.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.21.name)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.21.name))</visible>
+			</item>
+			<item id="22">
+				<label>$INFO[Window(4).Property(widget.22.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.22.name)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.22.name))</visible>
+			</item>
+			<item id="23">
+				<label>$INFO[Window(4).Property(widget.23.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.23.name)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.23.name))</visible>
+			</item>
+			<item id="24">
+				<label>$INFO[Window(4).Property(widget.24.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.24.name)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.24.name))</visible>
+			</item>
+			<item id="25">
+				<label>$INFO[Window(4).Property(widget.25.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.25.name)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.25.name))</visible>
+			</item>
+			<item id="26">
+				<label>$INFO[Window(4).Property(widget.26.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.26.name)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.26.name))</visible>
+			</item>
+			<item id="27">
+				<label>$INFO[Window(4).Property(widget.27.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.27.name)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.27.name))</visible>
+			</item>
+			<item id="28">
+				<label>$INFO[Window(4).Property(widget.28.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.28.name)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.28.name))</visible>
+			</item>
+			<item id="29">
+				<label>$INFO[Window(4).Property(widget.29.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.29.name)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.29.name))</visible>
+			</item>
+			<item id="30">
+				<label>$INFO[Window(4).Property(widget.30.name)]</label>
+				<onclick>Skin.SetString($INFO[Skin.String(widget_set)],$INFO[Window(4).Property(widget.30.name)])</onclick>
+				<onclick>Skin.SetBool($INFO[Skin.String(widget_on)])</onclick>
+				<onclick>SetFocus(16)</onclick>
+				<visible>!IsEmpty(Window(4).Property(widget.30.name))</visible>
+			</item>
 		<!-- Extras widget End -->
 		</content>
 	</control>

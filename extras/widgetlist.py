@@ -24,7 +24,7 @@ class Main:
         dialog.close()
 		
     def _clear_properties( self ):
-        for count in range( 20 ):
+        for count in range( 30 ):
             # clear Property
             self.WINDOW.clearProperty( "widget.%d.name" % ( count + 1, ) )
             if count == 1:
