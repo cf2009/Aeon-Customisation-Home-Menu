@@ -959,8 +959,23 @@
 			</item>
 			<item id="104">
 				<label>$LOCALIZE[31879] widget: $LOCALIZE[351]</label>
+				<onclick>Skin.Reset(Widget_random_order)</onclick>
 				<onclick>Skin.Reset(Recently_added)</onclick>
 				<visible>Skin.HasSetting(Recently_added)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
+			<item id="105">
+				<label>Random UnWatched Movies & TV shows widget:  $LOCALIZE[31077]</label>
+				<onclick>Skin.Reset(Widget_random_order)</onclick>
+				<visible>Skin.HasSetting(Widget_random_order)</visible>
+				<visible>Container(15).HasFocus(8)</visible>
+			</item>
+			<item id="105">
+				<label>Random UnWatched Movies & TV shows widget: $LOCALIZE[351]</label>
+				<onclick>Skin.ToggleSetting(Widget_random_order)</onclick>
+				<onclick>Skin.Reset(Recently_added)</onclick>
+				<onclick>Skin.ToggleSetting(Recently_added)</onclick>
+				<visible>!Skin.HasSetting(Widget_random_order)</visible>
 				<visible>Container(15).HasFocus(8)</visible>
 			</item>
 		</content>

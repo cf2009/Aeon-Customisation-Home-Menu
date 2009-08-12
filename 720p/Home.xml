@@ -34,6 +34,9 @@
 		<imagepath background="true">$INFO[Container(8001).ListItem.Thumb]</imagepath>
 		<visible>control.HasFocus(8001)+Container(300).HasFocus(6)</visible>
 	</control>
+
+	<include>Furniture_HomeNowPlaying2</include>
+
 <!-- Windowopen -->
 	<control type="button" id="323">
 		<include>homesubmenu_but</include>
@@ -43,6 +46,8 @@
 		<onfocus>setProperty(recentadded_extras,)</onfocus>
 		<onfocus>setProperty(CustomMenu1_extras,)</onfocus>
 		<onfocus>setProperty(CustomMenu2_extras,)</onfocus>
+		<onfocus>setProperty(random_order,)</onfocus>
+
 
 		<include condition="!Skin.HasSetting(Recently_added)">Widget_RecentAdded_py</include>
 		<include condition="!Skin.HasSetting(Library_info)">Widget_Totals_py</include>
@@ -50,8 +55,9 @@
 		<include condition="Skin.HasSetting(Pictures_widget_on)">Widget_Picture_py</include>
 		<include condition="Skin.HasSetting(CustomMenu1_widget_on)">Widget_CustomMenu1_py</include>
 		<include condition="Skin.HasSetting(CustomMenu2_widget_on)">Widget_CustomMenu2_py</include>
+		<include condition="Skin.HasSetting(Widget_random_order)">Widget_random_order_py</include>
 
-		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(CustomMenu1_extras)]$INFO[Window.Property(CustomMenu2_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(extra_extras)]$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
+		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(random_order)]$INFO[Window.Property(CustomMenu1_extras)]$INFO[Window.Property(CustomMenu2_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(extra_extras)]$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
 
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>SetFocus(300)</onfocus>
@@ -251,10 +257,8 @@
 	</control>
 <!-- WIDGET_custom_mainmenu 1 End  -->
 
-
-	<include>Furniture_HomeNowPlaying2</include>
 	<include condition="!Skin.HasSetting(Library_info)">Widget_Totals</include>
-	<include condition="!Skin.HasSetting(Recently_added)">Widget_RecentAdded</include>
+	<include condition="!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)">Widget_RecentAdded</include>
 
 	<include>Objects_WeatherPopup2</include>
 	<include>Furniture_Time</include>

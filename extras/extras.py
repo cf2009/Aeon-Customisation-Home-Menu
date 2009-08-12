@@ -50,11 +50,12 @@ class Main:
             params = {}
         # set our preferences
         self.LIMIT = int( params.get( "limit", "5" ) )
-        self.RECENT = not params.get( "partial", "" ) == "True"
-        self.ALBUMS = params.get( "albums", "" ) == "True"
-        self.UNPLAYED = params.get( "unplayed", "" ) == "True"
+        self.RECENT = not params.get( "partial", "" ) == "true"
+        self.RANDOM_ORDER = params.get( "random", "" ) == "true"
+        self.ALBUMS = params.get( "albums", "" ) == "true"
+        self.UNPLAYED = params.get( "unplayed", "" ) == "true"
         self.RECENTADDED = params.get( "recentadded", "" ) == "true"
-        self.PLAY_TRAILER = params.get( "trailer", "" ) == "True"
+        self.PLAY_TRAILER = params.get( "trailer", "" ) == "true"
         self.ALARM = int( params.get( "alarm", "0" ) )
         self.TOTALS = params.get( "totals", "" ) == "true"
         self.WIDGET_EXTRAS = params.get( "extra", "" )
@@ -77,12 +78,12 @@ class Main:
         # set any alarm
         self._set_alarm()
         # format our records start and end
-        if ( self.RECENTADDED ) or ( self.TOTALS ):
+        if ( self.RECENTADDED ) or ( self.TOTALS ) or ( self.RANDOM_ORDER ):
             xbmc.executehttpapi( "SetResponseFormat()" )
             xbmc.executehttpapi( "SetResponseFormat(OpenRecord,%s)" % ( "<record>", ) )
             xbmc.executehttpapi( "SetResponseFormat(CloseRecord,%s)" % ( "</record>", ) )
         # fetch media info
-        if ( self.RECENTADDED ):
+        if ( self.RECENTADDED ) or ( self.RANDOM_ORDER ):
             self._fetch_movie_info()
             self._fetch_tvshow_info()
             self._fetch_music_info()
@@ -103,7 +104,10 @@ class Main:
         # set our unplayed query
         unplayed = ( "", "where playCount isnull ", )[ self.UNPLAYED ]
         # sql statement
-        if ( self.RECENT ):
+        if ( self.RANDOM_ORDER ):
+            # random order
+            sql_movies = "select * from movieview %sorder by RANDOM() limit %d" % ( unplayed, self.LIMIT, )
+        elif ( self.RECENT ):
             # recently added
             sql_movies = "select * from movieview %sorder by idMovie desc limit %d" % ( unplayed, self.LIMIT, )
         else:
@@ -139,7 +143,10 @@ class Main:
         # set our unplayed query
         unplayed = ( "", "where playCount isnull ", )[ self.UNPLAYED ]
         # sql statement
-        if ( self.RECENT ):
+        if ( self.RANDOM_ORDER ):
+            # random order
+            sql_episodes = "select * from episodeview %sorder by RANDOM() limit %d" % ( unplayed, self.LIMIT, )
+        elif ( self.RECENT ):
             # recently added
             sql_episodes = "select * from episodeview %sorder by idepisode desc limit %d" % ( unplayed, self.LIMIT, )
         else:
