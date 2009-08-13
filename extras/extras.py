@@ -3,6 +3,8 @@ from xbmcgui import Window
 from urllib import quote_plus, unquote_plus, urlopen, urlretrieve
 from htmlentitydefs import name2codepoint as n2cp
 
+__VER__ = 0.9.3.3
+
 # Current Working Directory
 CWD = os.getcwd()
 if CWD[-1] == ';': CWD = CWD[0:-1]
@@ -280,7 +282,7 @@ class Main:
                 PUBDATE_LIST = re.findall(WIDGET_PUBDATE_XML, WIDGET_URL, re.DOTALL)
                 #check
                 if WIDGET_RANDOM_XML == 'yes':
-                    WIDGET_ITEM_NUBER_XML = random.randrange(WIDGET_ITEM_NUBER_XML, len (WIDGET_TITLE_XML), 1)
+                    WIDGET_ITEM_NUBER_XML = random.randrange(WIDGET_ITEM_NUBER_XML, len (CONTENT_TITLE_LIST )-1, 1)
                 if WIDGET_TITLE_XML == False: WIDGET_TITLE_XML = 'No Name'
                 if CONTENT_TITLE_LIST: CONTENT_TITLE_SP = CONTENT_TITLE_LIST [ WIDGET_ITEM_NUBER_XML ]
                 if CONTENT_LIST: CONTENT_SP = CONTENT_LIST [ WIDGET_ITEM_NUBER_XML ]
@@ -301,7 +303,7 @@ class Main:
                     # set properties
                     self.set_Property( WIDGET_FOR, 'yes', WIDGET_TITLE_XML, CONTENT_TITLE_SP, '', CONTENT_SP, PUBDATE_SP )
             except:
-                print 'get_widget Err -- ' + SET_LINES
+                print 'get_widget ' + __VER__ + ' Err -- ' + SET_LINES
 
 
     def set_Property(self, WIDGET_FOR, spGot = 'yes', spTitle = 'Can\'t Find Widget', spContentTitle = '', spPicture = '', spContent = '', spPubDate = ''):

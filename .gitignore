@@ -1,6 +1,11 @@
-# .gitignore for HMC 
+# .gitignore for HMC Aeon
 
 # generated files 
 *.bak
+*.db
+
+# temp files
 extras/temp/*.png
 
+# fonts 
+/fonts
