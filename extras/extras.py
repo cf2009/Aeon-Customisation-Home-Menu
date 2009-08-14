@@ -185,8 +185,6 @@ class Main:
         # query the database for recently added albums
         music_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( sql_music ), )
         # separate the records
-        albums = re.findall( "<record>(.+?)</record>", music_xml, re.DOTALL )
-        # separate the records
         items = re.findall( "<record>(.+?)</record>", music_xml, re.DOTALL )
         # enumerate thru our records and set our properties
         for count, item in enumerate( items ):
@@ -203,15 +201,15 @@ class Main:
             path = 'XBMC.RunScript(' + CWD + 'extras.py,albumid=' + fields[ 0 ] + ')'
             self.WINDOW.setProperty( "LatestSong.%d.Path" % ( count + 1, ), path )
             # get cache name of path to use for fanart
-            cache_name = xbmc.getCacheThumbName( fields[ 7 ] )
+            cache_name = xbmc.getCacheThumbName( fields[ 6 ] )
             self.WINDOW.setProperty( "LatestSong.%d.Fanart" % ( count + 1, ), "special://profile/Thumbnails/Music/%s/%s" % ( "Fanart", cache_name, ) )
             self.WINDOW.setProperty( "LatestSong.%d.Thumb" % ( count + 1, ), fields[ 9 ] )
 
     def _Play_Album( self, ID ):
-        pl=xbmc.PlayList(0)
-        pl.clear()
+        playlist=xbmc.PlayList(0)
+        playlist.clear()
         # sql statements
-        sql_song = "select songview.* from songview where songview.idAlbum='%s' order by songview.iTrack " % ( ID )
+        sql_song = "select * from songview where idAlbum='%s' order by iTrack " % ( ID )
         # query the databases
         songs_xml = xbmc.executehttpapi( "QueryMusicDatabase(%s)" % quote_plus( sql_song ), )
         # separate the records
@@ -224,7 +222,7 @@ class Main:
             path = fields[ 22 ] + fields[ 8 ]
             listitem = ListItem( fields[ 7 ] )
             xbmc.PlayList(0).add (path, listitem )
-        xbmc.Player().playselected(0)
+        xbmc.Player().play(playlist)
         xbmc.executebuiltin('XBMC.ActivateWindow(10500)')
 
     def _fetch_totals( self ):
