@@ -3533,7 +3533,7 @@
 						<font>Font_WeatherTitle</font>
 						<textcolor>ccffffff</textcolor>
 						<aligny>center</aligny>
-						<label>[UPPERCASE]$INFO[Container(8001).ListItem.Label][/UPPERCASE]</label>
+						<label fallback="-">[UPPERCASE]$INFO[Container(8001).ListItem.Label][/UPPERCASE]</label>
 						<animation effect="slide" start="0,0" end="0,-10" time="1" condition="Container(300).HasFocus(7)">Conditional</animation>
 					</control>
 					<control type="label">
@@ -3544,7 +3544,7 @@
 						<font>Font_MultiplexPlotSmall</font>
 						<textcolor>ccFFFFFF</textcolor>
 						<aligny>center</aligny>
-						<label>[UPPERCASE]$INFO[Container(8001).ListItem.Label2][/UPPERCASE]</label>
+						<label fallback="-">[UPPERCASE]$INFO[Container(8001).ListItem.Label2][/UPPERCASE]</label>
 						<visible>Container(300).HasFocus(7)</visible>
 					</control>
 					<control type="group">
@@ -3557,7 +3557,7 @@
 							<width>450</width>
 							<height>150</height>
 							<textcolor>c0FFFFFF</textcolor>
-							<label fallback="This item has no Plot">$INFO[Container(8001).ListItem.Label2]</label>
+							<label fallback="31414">$INFO[Container(8001).ListItem.Label2]</label>
 							<visible>Container(300).HasFocus(6)</visible>
 						</control>
 						<control type="textbox">
@@ -3567,7 +3567,7 @@
 							<width>450</width>
 							<height>150</height>
 							<textcolor>c0FFFFFF</textcolor>
-							<label fallback="This item has no Plot">$INFO[Window.Property(LatestEpisode.1.Plot)]</label>
+							<label fallback="31414">$INFO[Window.Property(LatestEpisode.1.Plot)]</label>
 							<visible>Container(300).HasFocus(7)</visible>
 							<visible>Container(8001).HasFocus(1)</visible>
 						</control>
@@ -3578,7 +3578,7 @@
 							<width>450</width>
 							<height>150</height>
 							<textcolor>c0FFFFFF</textcolor>
-							<label fallback="This item has no Plot">$INFO[Window.Property(LatestEpisode.2.Plot)]</label>
+							<label fallback="31414">$INFO[Window.Property(LatestEpisode.2.Plot)]</label>
 							<visible>Container(300).HasFocus(7)</visible>
 							<visible>Container(8001).HasFocus(2)</visible>
 						</control>
@@ -3589,7 +3589,7 @@
 							<width>450</width>
 							<height>150</height>
 							<textcolor>c0FFFFFF</textcolor>
-							<label fallback="This item has no Plot">$INFO[Window.Property(LatestEpisode.3.Plot)]</label>
+							<label fallback="31414">$INFO[Window.Property(LatestEpisode.3.Plot)]</label>
 							<visible>Container(300).HasFocus(7)</visible>
 							<visible>Container(8001).HasFocus(3)</visible>
 						</control>
@@ -3600,7 +3600,7 @@
 							<width>450</width>
 							<height>150</height>
 							<textcolor>c0FFFFFF</textcolor>
-							<label fallback="This item has no Plot">$INFO[Window.Property(LatestEpisode.4.Plot)]</label>
+							<label fallback="31414">$INFO[Window.Property(LatestEpisode.4.Plot)]</label>
 							<visible>Container(300).HasFocus(7)</visible>
 							<visible>Container(8001).HasFocus(4)</visible>
 						</control>
@@ -3611,7 +3611,7 @@
 							<width>450</width>
 							<height>150</height>
 							<textcolor>c0FFFFFF</textcolor>
-							<label fallback="This item has no Plot">$INFO[Window.Property(LatestEpisode.5.Plot)]</label>
+							<label fallback="31414">$INFO[Window.Property(LatestEpisode.5.Plot)]</label>
 							<visible>Container(300).HasFocus(7)</visible>
 							<visible>Container(8001).HasFocus(5)</visible>
 						</control>
@@ -3741,7 +3741,6 @@
 				<width>242</width>
 				<texture>home/nowplaying_overlay.png</texture>
 			</control>
-
 			<control type="label">
 				<posy>478</posy>
 				<label>[UPPERCASE]$INFO[Container(8001).ListItem.Label][/UPPERCASE]</label>
@@ -3785,13 +3784,23 @@
 					<label>$LOCALIZE[515]: [COLOR abFFFFFF]$INFO[Window.Property(LatestSong.1.Genre)][/COLOR]</label>
 					<font>Font_HomeNowPlayingAlbum</font>
 				</control>
+				<control type="label">
+					<posx>296</posx>
+					<width>533</width>
+					<height>25</height>
+					<aligny>left</aligny>>
+					<posy>559</posy>
+					<textcolor>ab749a9a</textcolor>
+					<label>$LOCALIZE[31866]:</label>
+					<font>Font_HomeNowPlayingAlbum</font>
+				</control>
 				<control type="textbox">
 					<font>Font_HomeNowPlayingAlbum</font>
 					<posy>574</posy>
 					<width>533</width>
 					<height>117</height>
 					<textcolor>c0FFFFFF</textcolor>
-					<label fallback="This item has no Plot">$INFO[Window.Property(LatestSong.1.Plot)]</label>
+					<label fallback="31424">$INFO[Window.Property(LatestSong.1.Review)]</label>
 					<posx>296</posx>
 					<aligny>left</aligny>>
 				</control>
@@ -3820,13 +3829,23 @@
 					<label>$LOCALIZE[515]: [COLOR abFFFFFF]$INFO[Window.Property(LatestSong.2.Genre)][/COLOR]</label>
 					<font>Font_HomeNowPlayingAlbum</font>
 				</control>
+				<control type="label">
+					<posx>296</posx>
+					<width>533</width>
+					<height>25</height>
+					<aligny>left</aligny>>
+					<posy>559</posy>
+					<textcolor>ab749a9a</textcolor>
+					<label>$LOCALIZE[31866]:</label>
+					<font>Font_HomeNowPlayingAlbum</font>
+				</control>
 				<control type="textbox">
 					<font>Font_HomeNowPlayingAlbum</font>
 					<posy>574</posy>
 					<width>533</width>
 					<height>117</height>
 					<textcolor>c0FFFFFF</textcolor>
-					<label fallback="This item has no Plot">$INFO[Window.Property(LatestSong.2.Plot)]</label>
+					<label fallback="31424">$INFO[Window.Property(LatestSong.2.Review)]</label>
 					<posx>296</posx>
 					<aligny>left</aligny>>
 				</control>
@@ -3855,13 +3874,23 @@
 					<label>$LOCALIZE[515]: [COLOR abFFFFFF]$INFO[Window.Property(LatestSong.3.Genre)][/COLOR]</label>
 					<font>Font_HomeNowPlayingAlbum</font>
 				</control>
+				<control type="label">
+					<posx>296</posx>
+					<width>533</width>
+					<height>25</height>
+					<aligny>left</aligny>>
+					<posy>559</posy>
+					<textcolor>ab749a9a</textcolor>
+					<label>$LOCALIZE[31866]:</label>
+					<font>Font_HomeNowPlayingAlbum</font>
+				</control>
 				<control type="textbox">
 					<font>Font_HomeNowPlayingAlbum</font>
 					<posy>574</posy>
 					<width>533</width>
 					<height>117</height>
 					<textcolor>c0FFFFFF</textcolor>
-					<label fallback="This item has no Plot">$INFO[Window.Property(LatestSong.3.Plot)]</label>
+					<label fallback="31424">$INFO[Window.Property(LatestSong.3.Review)]</label>
 					<posx>296</posx>
 					<aligny>left</aligny>>
 				</control>
@@ -3890,13 +3919,23 @@
 					<label>$LOCALIZE[515]: [COLOR abFFFFFF]$INFO[Window.Property(LatestSong.4.Genre)][/COLOR]</label>
 					<font>Font_HomeNowPlayingAlbum</font>
 				</control>
+				<control type="label">
+					<posx>296</posx>
+					<width>533</width>
+					<height>25</height>
+					<aligny>left</aligny>>
+					<posy>559</posy>
+					<textcolor>ab749a9a</textcolor>
+					<label>$LOCALIZE[31866]:</label>
+					<font>Font_HomeNowPlayingAlbum</font>
+				</control>
 				<control type="textbox">
 					<font>Font_HomeNowPlayingAlbum</font>
 					<posy>574</posy>
 					<width>533</width>
 					<height>117</height>
 					<textcolor>c0FFFFFF</textcolor>
-					<label fallback="This item has no Plot">$INFO[Window.Property(LatestSong.4.Plot)]</label>
+					<label fallback="31424">$INFO[Window.Property(LatestSong.4.Review)]</label>
 					<posx>296</posx>
 					<aligny>left</aligny>>
 				</control>
@@ -3925,20 +3964,28 @@
 					<label>$LOCALIZE[515]: [COLOR abFFFFFF]$INFO[Window.Property(LatestSong.5.Genre)][/COLOR]</label>
 					<font>Font_HomeNowPlayingAlbum</font>
 				</control>
+				<control type="label">
+					<posx>296</posx>
+					<width>533</width>
+					<height>25</height>
+					<aligny>left</aligny>>
+					<posy>559</posy>
+					<textcolor>ab749a9a</textcolor>
+					<label>$LOCALIZE[31866]:</label>
+					<font>Font_HomeNowPlayingAlbum</font>
+				</control>
 				<control type="textbox">
 					<font>Font_HomeNowPlayingAlbum</font>
 					<posy>574</posy>
 					<width>533</width>
 					<height>117</height>
 					<textcolor>c0FFFFFF</textcolor>
-					<label fallback="This item has no Plot">$INFO[Window.Property(LatestSong.5.Plot)]</label>
+					<label fallback="31424">$INFO[Window.Property(LatestSong.5.Review)]</label>
 					<posx>296</posx>
 					<aligny>left</aligny>>
 				</control>
 			</control>
 		</control>
-
-
 	<!-- List -->
 		<control type="group">
 			<posx>1340</posx>

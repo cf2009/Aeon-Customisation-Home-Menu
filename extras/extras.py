@@ -196,7 +196,7 @@ class Main:
             self.WINDOW.setProperty( "LatestSong.%d.Year" % ( count + 1, ), fields[ 8 ] )
             self.WINDOW.setProperty( "LatestSong.%d.Artist" % ( count + 1, ), fields[ 6 ] )
             self.WINDOW.setProperty( "LatestSong.%d.Album" % ( count + 1, ), fields[ 1 ] )
-            self.WINDOW.setProperty( "LatestSong.%d.Plot" % ( count + 1, ), fields[ 14 ] )
+            self.WINDOW.setProperty( "LatestSong.%d.Review" % ( count + 1, ), fields[ 14 ] )
             # Album Path  (ID)
             path = 'XBMC.RunScript(' + CWD + 'extras.py,albumid=' + fields[ 0 ] + ')'
             self.WINDOW.setProperty( "LatestSong.%d.Path" % ( count + 1, ), path )
@@ -315,12 +315,11 @@ class Main:
         self.WINDOW.setProperty( WIDGET_FOR + '.Content' , self.Clean_text( spContent ) )
         self.WINDOW.setProperty( WIDGET_FOR + '.Got' , spGot )
 
+
     def read_widget(self, file_address):
         read = open( file_address, 'r')
         widget_lines = read.read()
         read.close()
-        #Debug log
-        #print '  -----  ' + SET_LINES
         return widget_lines
 
     def findall_widget(self, type, fromfile):
