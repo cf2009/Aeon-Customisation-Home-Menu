@@ -5,14 +5,15 @@
 		<control type="multiimage">
 			<description>Settings Backdrop</description>
 			<include>FullscreenDimensions</include>
-			<include>BackgroundTimings</include>
 			<imagepath>backdrops/default_settings</imagepath>
 			<info>Skin.String(CustomSettings)</info>
+			<include>BackgroundTimings</include>
 			<animation effect="fade" start="0" end="100" time="200" condition="Window.Previous(Home) | Skin.HasSetting(bmtransit)">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">WindowClose</animation>
 		</control>
-		
+
 		<control type="group">
+
 			<include>FullscreenDimensions</include>
 			<animation type="WindowOpen" reversible="false" condition="Window.Previous(Home) | Skin.HasSetting(bmtransit)">
 				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
@@ -22,50 +23,45 @@
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
-		
 			<include>Furniture_SettingsBackPanel</include>
-			
 			<include>Settings_CustomiseButtons</include>
-
 			<control type="image">
 				<description>Internal Panel (rear texture)</description>
 				<include>Furniture_SettingsInternalBackPanel</include>
 				<include>Animation_SettingsInternalPanel</include>
 			</control>
 
-<!-- Virtual Home page environment starts -->
-			
+			<!-- Virtual Home page environment starts -->
 			<control type="group">
+
 				<posx>332</posx>
 				<posy>58</posy>
 				<include>Furniture_SettingsVHPVars</include>
 				<include>Animation_CommonFade</include>
-
 				<control type="image" id="87">
 					<visible>[Container(300).OnNext | Container(300).OnPrevious] | [Container(301).OnNext | Container(301).OnPrevious]</visible>
 					<animation effect="fade" time="300">Hidden</animation>
 				</control>
-	
+
 				<control type="image" id="88">
 					<visible>Control.IsVisible(300) | Control.IsVisible(301)</visible>
 					<animation effect="fade" time="300">Hidden</animation>
 				</control>
-		
+
 				<control type="multiimage">
 					<include>BackgroundVarsVirtual</include>
 					<imagepath background="true">$INFO[Container(300).ListItem.Icon]</imagepath>
 					<visible>Control.IsVisible(300)</visible>
 				</control>
-				
+
 				<control type="multiimage">
 					<include>BackgroundVarsVirtual</include>
 					<imagepath background="true">$INFO[Container(301).ListItem.Icon]</imagepath>
 					<visible>Control.IsVisible(301)</visible>
-				</control>				
+				</control>
 
 				<include>Furniture_VirtualTime</include>
 				<include>Furniture_VirtualRSS</include>
-
 				<control type="image">
 					<description>Darken screen for Backdrop type select</description>
 					<posx>0</posx>
@@ -76,14 +72,14 @@
 					<visible>Control.HasFocus(92)</visible>
 					<include>Animation_VisibleChange400</include>
 				</control>
-								
+
 				<control type="group">
+
 					<posx>0</posx>
 					<posy>-13</posy>
 					<include>Furniture_SettingsVHPVars</include>
 					<animation effect="slide" start="0,0" end="0,150" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Control.HasFocus(92)">Conditional</animation>
 					<include>Animation_CommonFade</include>
-
 					<control type="image">
 						<posx>0</posx>
 						<posy>211</posy>
@@ -95,17 +91,16 @@
 					</control>
 
 					<control type="group">
+
 						<posx>0</posx>
 						<posy>239</posy>
 						<width>840</width>
 						<height>40</height>
 						<defaultcontrol>300</defaultcontrol>
-						
 						<include>VirtualMainMenu</include>
 						<include>VirtualMainMenuOptions</include>
 					</control>
-						<include>homeCustomisesubmenu</include><!-- <<<<< ADD this -->	
-						
+						<include>homeCustomisesubmenu</include><!-- <<<<< ADD this -->
 					<control type="image">
 						<posx>0</posx>
 						<posy>211</posy>
@@ -114,35 +109,34 @@
 						<texture>home/homemenu_gradient.png</texture>
 						<include>Animation_CommonFade</include>
 						<visible>!Skin.HasSetting(nohomegradient)</visible>
-						<colordiffuse>d0FFFFFF</colordiffuse>						
+						<colordiffuse>d0FFFFFF</colordiffuse>
 					</control>
 
 				</control>
-			</control>
-			
-<!-- Virtual OSD environment starts -->
 
+			</control>
+
+			<!-- Virtual OSD environment starts -->
 			<control type="image" id="213">
 				<texture>-</texture>
 				<visible>![Control.HasFocus(10) | Control.HasFocus(60) | Control.HasFocus(61) | Control.HasFocus(62)]</visible>
 				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 			</control>
-			
+
 			<control type="group">
+
 				<posx>332</posx>
 				<posy>58</posy>
 				<include>Furniture_SettingsVHPVars</include>
 				<include>Animation_CommonFade</include>
 				<visible>Control.HasFocus(10) | Control.HasFocus(60) | Control.HasFocus(61) | Control.HasFocus(62)</visible>
-
 				<control type="multiimage">
 					<include>BackgroundVarsVirtual</include>
 					<imagepath>backdrops/virtualosd</imagepath>
 				</control>
-				
-				<include>Furniture_VirtualOSD</include>				
 
-			</control>			
+				<include>Furniture_VirtualOSD</include>
+			</control>
 
 			<control type="button" id="30">
 				<description>Home Menu furniture select button</description>
@@ -160,7 +154,7 @@
 				<pulseonselect>true</pulseonselect>
 				<animation effect="slide" start="0,0" end="0,150" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 				<include>Animation_CommonFadeFocus</include>
-			</control> 
+			</control>
 
 			<control type="button" id="31">
 				<description>Time panel furniture select button - Normal version</description>
@@ -180,7 +174,7 @@
 				<animation effect="slide" start="0,0" end="0,-210" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(highertime)">Conditional</animation>
 				<include>Animation_CommonFadeFocus</include>
 			</control>
-		
+
 			<control type="button" id="31">
 				<description>Time panel furniture select button - Lower version</description>
 				<posx>863</posx>
@@ -198,8 +192,8 @@
 				<visible>Skin.HasSetting(lowermainmenu)</visible>
 				<animation effect="slide" start="0,0" end="0,-362" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(highertime)">Conditional</animation>
 				<include>Animation_CommonFadeFocus</include>
-			</control>		
-			
+			</control>
+
 			<control type="button" id="32">
 				<description>RSS furniture select button - Normal version</description>
 				<posx>357</posx>
@@ -218,7 +212,7 @@
 				<animation effect="slide" start="0,0" end="0,188" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(lowerrss)">Conditional</animation>
 				<include>Animation_CommonFadeFocus</include>
 			</control>
-		
+
 			<control type="button" id="32">
 				<description>RSS furniture select button - Lower version</description>
 				<posx>357</posx>
@@ -238,8 +232,7 @@
 				<include>Animation_CommonFadeFocus</include>
 			</control>
 
-<!-- Furniture select buttons end -->
-
+			<!-- Furniture select buttons end -->
 			<control type="button" id="60">
 				<description>Home Menu furniture select button</description>
 				<posx>307</posx>
@@ -255,7 +248,7 @@
 				<texturenofocus>-</texturenofocus>
 				<pulseonselect>true</pulseonselect>
 				<include>Animation_CommonFadeFocus</include>
-			</control> 
+			</control>
 
 			<control type="button" id="61">
 				<description>Home Menu furniture select button</description>
@@ -273,7 +266,7 @@
 				<pulseonselect>true</pulseonselect>
 				<include>Animation_CommonFadeFocus</include>
 			</control>
-		
+
 			<control type="button" id="62">
 				<description>Home Menu furniture select button</description>
 				<posx>307</posx>
@@ -290,7 +283,7 @@
 				<pulseonselect>true</pulseonselect>
 				<include>Animation_CommonFadeFocus</include>
 			</control>
-		
+
 			<control type="button" id="40">
 				<description>The Big Red Purge Button</description>
 				<posx>332</posx>
@@ -307,19 +300,20 @@
 				<onclick>Skin.Reset(CustomMusic)</onclick>
 				<onclick>Skin.Reset(CustomMusicFolder)</onclick>
 				<onclick>Skin.Reset(CustomGames)</onclick>
-				<onclick>Skin.Reset(CustomGamesFolder)</onclick>					
+				<onclick>Skin.Reset(CustomGamesFolder)</onclick>
 				<onclick>Skin.Reset(CustomPictures)</onclick>
-				<onclick>Skin.Reset(CustomPicturesFolder)</onclick>					
+				<onclick>Skin.Reset(CustomPicturesFolder)</onclick>
 				<onclick>Skin.Reset(CustomMovies)</onclick>
-				<onclick>Skin.Reset(CustomMoviesFolder)</onclick>					
+				<onclick>Skin.Reset(CustomMoviesFolder)</onclick>
 				<onclick>Skin.Reset(CustomTV)</onclick>
 				<onclick>Skin.Reset(CustomTVFolder)</onclick>
 				<onclick>Skin.Reset(CustomVideo)</onclick>
-				<onclick>Skin.Reset(CustomVideoFolder)</onclick>					
+				<onclick>Skin.Reset(CustomVideoFolder)</onclick>
+				<onclick>Skin.Reset(CustomWeather)</onclick>
+				<onclick>Skin.Reset(CustomWeatherFolder)</onclick>
 			</control>
 
 			<include>Furniture_SettingsFrontPanel</include>
-
 			<control type="image">
 				<posx>331</posx>
 				<posy>43</posy>
@@ -330,6 +324,7 @@
 			</control>
 
 			<control type="group">
+
 				<description>Main instruction labels</description>
 				<include>FullscreenDimensions</include>
 				<include>Animation_CommonFade</include>
@@ -356,7 +351,7 @@
 					<effect type="fade" start="0" end="100" time="600" />
 				</animation>
 			</control>
-			
+
 			<control type="image">
 				<posx>685</posx>
 				<posy>400</posy>
@@ -369,7 +364,7 @@
 					<effect type="slide" start="0,-100" end="0,0" time="600" tween="back" easing="out" />
 				</animation>
 			</control>
-			
+
 			<control type="image">
 				<posx>685</posx>
 				<posy>155</posy>
@@ -380,14 +375,12 @@
 				<animation type="Visible">
 					<effect type="fade" start="0" end="100" time="600" />
 					<effect type="slide" start="0,100" end="0,0" time="600" tween="back" easing="out" />
-				</animation>			
-			</control>	
-			
+				</animation>
+			</control>
+
 		</control>
 
-	<!--<include>Background_ContextBlack</include>-->
-	<include>Furniture_Debug</include>
-	
-</controls>
-
+		<include>Background_ContextBlack</include>
+		<include>Furniture_Debug</include>
+	</controls>
 </window>

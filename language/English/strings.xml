@@ -264,6 +264,11 @@
 	<string id="31297">USE SINGLE THUMBNAIL FOR MUSIC LIST</string>
 	<string id="31298">USE SINGLE THUMBNAIL FOR MOVIE LIST</string>
 	<string id="31299">SHOW RSS / NOW PLAYING IN SHOWCASE VIEW</string>
+	<string id="312991">ENABLE LATEST ADDED WIDGETS</string>
+	<string id="312992">WEATHER BACKDROP BASED ON CURRECT CONDITIONS</string>
+	<string id="312993">ANIMATED WEATHER ICONS</string>
+	<string id="312994">LOWER LATEST ADDED WIDGETS</string>
+	<string id="312995">SHOW LIBRARY TOTALS</string>
 	
 <!-- XBMC Settings Menu headings -->
 	

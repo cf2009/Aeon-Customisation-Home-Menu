@@ -3768,7 +3768,7 @@
 					<posx>296</posx>
 					<width>533</width>
 					<height>25</height>
-					<aligny>left</aligny>>
+					<aligny>left</aligny>
 					<posy>529</posy>
 					<textcolor>ab749a9a</textcolor>
 					<label>$LOCALIZE[562]: [COLOR abFFFFFF]$INFO[Window.Property(LatestSong.1.Year)][/COLOR]</label>
