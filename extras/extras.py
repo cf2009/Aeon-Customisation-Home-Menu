@@ -225,7 +225,7 @@ class Main:
             listitem = ListItem( fields[ 7 ] )
             xbmc.PlayList(0).add (path, listitem )
         xbmc.Player().playselected(0)
-	xbmc.executebuiltin('XBMC.ActivateWindow(10500)')
+        xbmc.executebuiltin('XBMC.ActivateWindow(10500)')
 
     def _fetch_totals( self ):
         # query the database
