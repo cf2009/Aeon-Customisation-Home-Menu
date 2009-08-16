@@ -4465,4 +4465,94 @@
 			<include>Furniture_HomeNowPlayingInfo</include>
 		</control>
 	</include>
+	
+<include name="Custom6_list">
+		<posx>520</posx>
+		<posy>207</posy>
+		<height>180</height>
+		<width>460</width>
+		<onleft>10</onleft>
+		<onright>10</onright>
+		<onup>11</onup>
+		<ondown>11</ondown>
+		<viewtype>list</viewtype>
+		<scrolltime>200</scrolltime>
+		<include>Animation_CommonFade</include>
+		<itemlayout height="30">
+			<control type="image">
+				<posx>-20</posx>
+				<posy>-10</posy>
+				<height>40</height>
+				<width>550</width>
+				<texture>osd/osd_settings_buttonnf.png</texture>
+				<colordiffuse>88ffffff</colordiffuse>
+			</control>
+			<control type="label">
+				<posy>0</posy>
+				<posx>10</posx>
+				<height>30</height>
+				<width>440</width>
+				<aligny>center</aligny>
+				<font>Font_ListObjects</font>
+				<textcolor>48FFFFFF</textcolor>
+				<info>ListItem.Label</info>
+			</control>
+		</itemlayout>
+		<focusedlayout height="30">
+			<control type="image">
+				<posx>-20</posx>
+				<posy>-10</posy>
+				<height>40</height>
+				<width>550</width>
+				<texture>osd/osd_settings_buttonnf.png</texture>
+				<colordiffuse>88ffffff</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>1</posx>
+				<posy>-1</posy>
+				<width>465</width>
+				<height>30</height>
+				<texture fallback="dialogs/browser_focus.png">windows/listselect.png</texture>
+				<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+				<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+				<visible>!control.HasFocus(10)</visible>
+			</control>
+			<control type="label">
+				<posy>0</posy>
+				<posx>10</posx>
+				<height>30</height>
+				<width>440</width>
+				<aligny>center</aligny>
+				<font>Font_ListObjects</font>
+				<textcolor>48FFFFFF</textcolor>
+				<info>ListItem.Label</info>
+				<animation effect="fade" start="100" end="0" time="200">Focus</animation>
+				<animation effect="fade" start="0" end="100" time="200">Unfocus</animation>
+			</control>
+			<control type="label">
+				<posy>0</posy>
+				<posx>10</posx>
+				<height>30</height>
+				<width>440</width>
+				<aligny>center</aligny>
+				<font>Font_ListObjects</font>
+				<textcolor>ffFFFFFF</textcolor>
+				<info>ListItem.Label</info>
+				<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+				<animation effect="fade" start="100" end="0" time="200" condition="!control.HasFocus(10)">Unfocus</animation>
+			</control>
+			<control type="label">
+				<posy>0</posy>
+				<posx>10</posx>
+				<height>30</height>
+				<width>440</width>
+				<aligny>center</aligny>
+				<font>Font_ListObjects</font>
+				<textcolor>ffFFFFFF</textcolor>
+				<info>ListItem.Label</info>
+				<visible>control.HasFocus(10)</visible>
+			</control>
+		</focusedlayout>
+</include>
+
 </includes>
