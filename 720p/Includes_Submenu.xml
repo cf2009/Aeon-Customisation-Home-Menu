@@ -3352,7 +3352,7 @@
 			<aligny>center</aligny>
 			<font>Font_WeatherTitle</font>
 			<textcolor>c0FFFFFF</textcolor>
-<!--***-->		<label>Random pick</label>
+			<label>31871</label>
 			<include>animation_Window_ocvh</include>
 		</control>
 		<control type="image">
@@ -3424,7 +3424,7 @@
 			<posy>210</posy>
 			<width>220</width>
 			<height>20</height>
-			<font>Font_HomeNowPlayingTrack</font>
+			<font>Font_Time</font>
 			<textcolor>c0FFFFFF</textcolor>
 			<align>center</align>
 			<aligny>center</aligny>

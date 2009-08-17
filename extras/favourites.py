@@ -6,7 +6,7 @@ dialog = xbmcgui.DialogProgress()
 
 class Main:
     # grab the home window
-    WINDOW = Window ( 10004 )
+    WINDOW = Window ( 10000 )
 
     def __init__( self ):
         dialog.create("Aeon Mod","Loading and parsing favourites data...")
