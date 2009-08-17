@@ -1,30 +1,30 @@
 <includes>
-<include name="MainMenu_Label">
-	<posy>0</posy>
-	<height>61</height>
-	<font>Font_MainMenu</font>
-	<posx>80</posx>
-	<width>280</width>
-	<info>ListItem.Label</info>
-	<align>center</align>
-	<aligny>center</aligny>
-</include>
-<include name="VirtualMainMenu_Label">
-	<posy>0</posy>
-	<height>40</height>
-	<font>Font_VirtualMainMenu</font>
-	<posx>53</posx>
-	<width>184</width>
-	<align>center</align>
-	<aligny>center</aligny>
-</include>
-<include name="VirtualMainMenu_Label2">
-	<posx>53</posx>
-	<width>184</width>
-	<info>ListItem.Label2</info>
-	<align>center</align>
-	<aligny>center</aligny>
-</include>
+	<include name="MainMenu_Label">
+		<posy>1</posy>
+		<height>61</height>
+		<font>Font_MainMenu</font>
+		<posx>80</posx>
+		<width>280</width>
+		<info>ListItem.Label</info>
+		<align>center</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="VirtualMainMenu_Label">
+		<posy>0</posy>
+		<height>40</height>
+		<font>Font_VirtualMainMenu</font>
+		<posx>53</posx>
+		<width>184</width>
+		<align>center</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="VirtualMainMenu_Label2">
+		<posx>53</posx>
+		<width>184</width>
+		<info>ListItem.Label2</info>
+		<align>center</align>
+		<aligny>center</aligny>
+	</include>
 <!-- Add Link -->
 <include name="TV_Link">
 	<onclick>Skin.SetBool(videotv)</onclick>
@@ -35,17 +35,10 @@
 	<onclick>Skin.Reset(videotv)</onclick>
 </include>
 <include name="video_Link">
-	<onclick>Skin.SetBool(videomovies)</onclick>
+	<onclick>Skin.Reset(videomovies)</onclick>
 	<onclick>Skin.Reset(videotv)</onclick>
 </include>
-<!--include name="video_type">
-	<include condition="substring(info,string)">TV_Link</include>
-	<include condition="substring(info,string)">Movie_Link</include>
-	<include condition="substring(info,string)">video_Link</include>
-</include-->
-
 <!-- Add Link End -->
-
 <include name="MainMenu">
 	<control type="wraplist" id="300">
 		<posx>0</posx>
@@ -86,25 +79,23 @@
 		<content>
 			<item id="5">
 				<label>31012</label>
-				<include>BackgroundVarsPictures</include>				
+				<include>BackgroundVarsPictures</include>
 				<onclick>XBMC.ActivateWindow(MyPictures)</onclick>
 				<visible>!Skin.HasSetting(nopictures)</visible>
 			</item>
 			<item id="2">
 				<description>Extras</description>
 				<label>31865</label>
-				<include>BackgroundVars_extras</include>					
+				<include>BackgroundVars_extras</include>
 				<onclick>SetFocus(324)</onclick>
-				<visible>!Skin.HasSetting(lowermainmenu)</visible>
-				<visible>!Skin.HasSetting(no_extras)</visible>
+				<visible>!Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(no_extras)</visible>
 			</item>
 			<item id="2">
 				<description>Extras</description>
 				<label>31865</label>
 				<include>BackgroundVars_extras</include>
 				<onclick>SetFocus(322)</onclick>
-				<visible>Skin.HasSetting(lowermainmenu)</visible>
-				<visible>!Skin.HasSetting(no_extras)</visible>
+				<visible>Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(no_extras)</visible>
 			</item>
 			<item id="1">
 				<label>31010</label>
@@ -117,20 +108,18 @@
 				<include>BackgroundVarsMovies</include>
 				<include>Movie_Link</include>
 				<onclick>XBMC.ActivateWindow(MyVideoLibrary,movietitles,return)</onclick>
-				<visible>library.hascontent(movies)</visible>
-				<visible>!Skin.HasSetting(nomovies)</visible>
+				<visible>library.hascontent(movies)+!Skin.HasSetting(nomovies)</visible>
 			</item>
 			<item id="7">
 				<label>31014</label>
 				<include>BackgroundVarsTV</include>
 				<include>TV_Link</include>
 				<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowtitles,return)</onclick>
-				<visible>library.hascontent(tvshows)</visible>
-				<visible>!Skin.HasSetting(notvshows)</visible>
+				<visible>library.hascontent(tvshows)+!Skin.HasSetting(notvshows)</visible>
 			</item>
 			<item id="8">
 				<label>31015</label>
-				<include>BackgroundVarsVideo</include>				
+				<include>BackgroundVarsVideo</include>
 				<onclick>XBMC.ActivateWindow(MyVideoFiles)</onclick>
 				<visible>!Skin.HasSetting(novideos)</visible>
 			</item>
@@ -143,7 +132,7 @@
 				<visible>System.HasNetwork</visible>
 				<visible>Skin.HasSetting(weather)</visible>
 			</item>
-		<!-- Add Items -->
+		<!-- Add Items 
 			<item id="30">
 				<label>$INFO[Skin.String(mainmenu_1name)]</label>
 				<include>BackgroundVars_mainmenu_1</include>
@@ -243,198 +232,222 @@
 				<onclick>$INFO[Skin.String(mainmenu_10path)]</onclick>
 				<visible>!Skin.HasSetting(no_mainmenu_10)</visible>
 				<visible>Skin.HasSetting(mainmenu_10)</visible>
-			</item>		
+			</item>
+			-->
 		<!-- Add Item End -->
 			<item id="3">
 				<label>0</label>
-				<include>BackgroundVarsGames</include>					
+				<include>BackgroundVarsGames</include>
 				<onclick>XBMC.ActivateWindow(MyPrograms)</onclick>
 				<visible>!Skin.HasSetting(no_programs)</visible>
 			</item>
 			<item id="9">
 				<label>31016</label>
-				<include>BackgroundVarsSettings</include>				
+				<include>BackgroundVarsSettings</include>
 				<onclick>Skin.Reset(settingsfade)</onclick>
 				<onclick>XBMC.ActivateWindow(4)</onclick>
 				<visible>!Skin.HasSetting(nosettings)</visible>
 			</item>
 			<item id="24">
 				<description>Scripts</description>
-				<include>BackgroundVarsScripts</include>					
+				<include>BackgroundVarsScripts</include>
 				<label>31020</label>
 				<onclick>XBMC.ActivateWindow(20)</onclick>
 				<visible>Skin.HasSetting(scripts)</visible>
 			</item>
 			<item id="13">
 				<description>Play DVD</description>
-				<include>BackgroundVarsPlayDVD</include>					
+				<include>BackgroundVarsPlayDVD</include>
 				<label>31018</label>
 				<onclick>XBMC.PlayDVD</onclick>
 				<visible>System.HasMediadvd</visible>
 			</item>
 			<item id="20">
 				<description>Refresh</description>
-				<include>BackgroundVarsSettings</include>				
+				<include>BackgroundVarsSettings</include>
 				<label>31607</label>
 				<onclick>XBMC.ReloadSkin</onclick>
 				<visible>Skin.HasSetting(debug)</visible>
 			</item>
 			<item id="21">
 				<description>Assistant</description>
-				<include>BackgroundVarsAssistant</include>					
+				<include>BackgroundVarsAssistant</include>
 				<label>31021</label>
 				<onclick>XBMC.ActivateWindow(605)</onclick>
 				<visible>Skin.HasSetting(assistant)</visible>
 			</item>
 			<item id="23">
 				<description>Sign out</description>
-				<include>BackgroundVarsSignOut</include>					
+				<include>BackgroundVarsSignOut</include>
 				<label>31209</label>
 				<onclick>System.LogOff</onclick>
 				<visible>System.HasLoginScreen</visible>
 				<visible>Skin.HasSetting(signout)</visible>
-			</item>				
+			</item>
 			<item id="22">
 				<description>Shutdown</description>
-				<include>BackgroundVarsShutdown</include>				
+				<include>BackgroundVarsShutdown</include>
 				<label>31019</label>
 				<onclick>XBMC.Shutdown()</onclick>
 				<visible>Skin.HasSetting(shutdown)</visible>
-			</item>			
+			</item>
 		</content>
 	</control>
-
 </include>
 
-<include name="VirtualMainMenu">
-	<control type="wraplist" id="300">
-		<posx>0</posx>
-		<posy>-1</posy>
-		<height>40</height>
-		<width>840</width>
-		<onleft>300</onleft>
-		<onright>300</onright>
-		<onup>6</onup>
-		<ondown>6</ondown>
-		<viewtype>list</viewtype>
-		<orientation>horizontal</orientation>
-		<focusposition>2</focusposition>
-		<scrolltime>200</scrolltime>
-		<visible>![Control.HasFocus(301) | Control.HasFocus(7) | Control.HasFocus(10) | Control.HasFocus(345) | Control.HasFocus(346)]</visible>
-		<animation effect="fade" start="0" end="100" time="200" condition="!Window.Previous(56) + !Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(17) + !Window.Previous(18) + !Window.Previous(19)">WindowOpen</animation>
-		<itemlayout width="184" height="40">
-			<control type="label">
-				<include>VirtualMainMenu_Label</include>
-				<info>ListItem.Label</info>
-				<textcolor>48FFFFFF</textcolor>
-				<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-			</control>
-		</itemlayout>
-		<focusedlayout width="184" height="40">
-			<control type="label">
-				<include>VirtualMainMenu_Label</include>
-				<info>ListItem.Label</info>
-				<textcolor>48FFFFFF</textcolor>
-				<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-			</control>		
-			<control type="label">
-				<include>VirtualMainMenu_Label</include>
-				<info>ListItem.Label</info>
-				<textcolor>FFFFFFFF</textcolor>
-				<animation effect="fade" start="0" end="100" time="200">Focus</animation>
-				<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>				
-				<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-			</control>
-		</focusedlayout>
-		<content>
-			<item id="1">
-				<label>31010</label>
-				<include>BackgroundVarsMusic</include>				
-				<onclick>Skin.SetString(custom,CustomMusic)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>!Skin.HasSetting(nomusic)</visible>
-			</item>
-			<item id="2">
-				<description>Extras</description>
-				<label>31865</label>
-				<include>BackgroundVars_extras</include>				
-				<onclick>Skin.SetString(custom,Custom_extras)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>!Skin.HasSetting(no_extras)</visible>
-			</item>
-			<item id="5">
-				<label>31012</label>
-				<include>BackgroundVarsPictures</include>						
-				<onclick>Skin.SetString(custom,CustomPictures)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>!Skin.HasSetting(nopictures)</visible>
-			</item>
-			<item id="6">
-				<label>31013</label>
-				<include>BackgroundVarsMovies</include>				
-				<onclick>Skin.SetString(custom,CustomMovies)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>library.hascontent(movies)</visible>
-				<visible>!Skin.HasSetting(nomovies)</visible>
-			</item>
-			<item id="7">
-				<description>My Videos</description>
-				<label>31014</label>
-				<include>BackgroundVarsTV</include>						
-				<onclick>Skin.SetString(custom,CustomTV)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>library.hascontent(tvshows)</visible>
-				<visible>!Skin.HasSetting(notvshows)</visible>
-			</item>
-			<item id="8">
-				<label>31015</label>
-				<include>BackgroundVarsVideo</include>					
-				<onclick>Skin.SetString(custom,CustomVideos)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>!Skin.HasSetting(novideos)</visible>
-			</item>
-			<item id="24">
-				<label>31020</label>
-				<include>BackgroundVarsScripts</include>						
-				<onclick>Skin.SetString(custom,CustomScripts)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>Skin.HasSetting(scripts)</visible>
-			</item>			
-			<item id="3">
-				<label>0</label>
-				<include>BackgroundVarsGames</include>					
-				<onclick>Skin.SetString(custom,CustomGames)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>!Skin.HasSetting(no_programs)</visible>
-			</item>	
-			<item id="9">
-				<include>BackgroundVarsSettings</include>						
-				<onclick>Skin.SetString(custom,CustomSettings)</onclick>				
-				<onclick>SetFocus(92)</onclick>				
-				<label>31016</label>
-				<visible>!Skin.HasSetting(nosettings)</visible>
-			</item>
-			<item id="10">
-				<description>Weather</description>
-				<label>31017</label>
-				<include>BackgroundVarsWeather</include>
-				<onclick>Skin.SetString(custom,CustomWeather)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>System.HasNetwork</visible>
-				<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
-				<visible>Skin.HasSetting(weather)</visible>
-			</item>
-			<item id="10">
-				<description>Weather</description>
-				<label>31017</label>
-				<include>BackgroundVarsWeather2</include>
-				<onclick>Skin.SetString(custom,Custom_Weather)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>System.HasNetwork</visible>
-				<visible>Skin.HasSetting(CustomWeatherConditions)</visible>
-				<visible>Skin.HasSetting(weather)</visible>
-			</item>
-		<!-- Add Item -->
+	<include name="VirtualMainMenu">
+		<control type="wraplist" id="300">
+			<posx>0</posx>
+			<posy>-1</posy>
+			<height>40</height>
+			<width>840</width>
+			<onleft>300</onleft>
+			<onright>300</onright>
+			<onup>6</onup>
+			<ondown>6</ondown>
+			<viewtype>list</viewtype>
+			<orientation>horizontal</orientation>
+			<focusposition>2</focusposition>
+			<scrolltime>200</scrolltime>
+			<visible>![Control.HasFocus(301) | Control.HasFocus(7) | Control.HasFocus(10) | Control.HasFocus(345) | Control.HasFocus(346)]</visible>
+			<animation effect="fade" start="0" end="100" time="200" condition="!Window.Previous(56) + !Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(17) + !Window.Previous(18) + !Window.Previous(19)">WindowOpen</animation>
+			<itemlayout width="184" height="40">
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<info>ListItem.Label</info>
+					<textcolor>48FFFFFF</textcolor>
+					<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
+				</control>
+			</itemlayout>
+			<focusedlayout width="184" height="40">
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<info>ListItem.Label</info>
+					<textcolor>48FFFFFF</textcolor>
+					<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
+				</control>
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<info>ListItem.Label</info>
+					<textcolor>FFFFFFFF</textcolor>
+					<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+					<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<label>31010</label>
+					<include>BackgroundVarsMusic</include>
+					<onclick>Skin.SetString(custom,CustomMusic)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>!Skin.HasSetting(nomusic)</visible>
+				</item>
+				<item id="2">
+					<label>31865</label>
+					<include>BackgroundVars_extras</include>
+					<onclick>Skin.SetString(custom,Custom_extras)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>!Skin.HasSetting(no_extras)</visible>
+				</item>
+				<item id="5">
+					<label>31012</label>
+					<include>BackgroundVarsPictures</include>
+					<onclick>Skin.SetString(custom,CustomPictures)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>!Skin.HasSetting(nopictures)</visible>
+				</item>
+				<item id="6">
+					<label>31013</label>
+					<include>BackgroundVarsMovies</include>
+					<onclick>Skin.SetString(custom,CustomMovies)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>library.hascontent(movies)+!Skin.HasSetting(nomovies)</visible>
+				</item>
+				<item id="7">
+					<description>My Videos</description>
+					<label>31014</label>
+					<include>BackgroundVarsTV</include>
+					<onclick>Skin.SetString(custom,CustomTV)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>library.hascontent(tvshows)+!Skin.HasSetting(notvshows)</visible>
+				</item>
+				<item id="8">
+					<label>31015</label>
+					<include>BackgroundVarsVideo</include>
+					<onclick>Skin.SetString(custom,CustomVideos)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>!Skin.HasSetting(novideos)</visible>
+				</item>
+				<item id="24">
+					<label>31020</label>
+					<include>BackgroundVarsScripts</include>
+					<onclick>Skin.SetString(custom,CustomScripts)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>Skin.HasSetting(scripts)</visible>
+				</item>
+				<item id="3">
+					<label>0</label>
+					<include>BackgroundVarsGames</include>
+					<onclick>Skin.SetString(custom,CustomGames)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>!Skin.HasSetting(no_programs)</visible>
+				</item>	
+				<item id="9">
+					<include>BackgroundVarsSettings</include>
+					<onclick>Skin.SetString(custom,CustomSettings)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<label>31016</label>
+					<visible>!Skin.HasSetting(nosettings)</visible>
+				</item>
+				<item id="10">
+					<description>Weather</description>
+					<label>31017</label>
+					<include>BackgroundVarsWeather</include>
+					<onclick>Skin.SetString(custom,CustomWeather)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>System.HasNetwork+!Skin.HasSetting(CustomWeatherConditions)+Skin.HasSetting(weather)</visible>
+				</item>
+				<item id="10">
+					<description>Weather</description>
+					<label>31017</label>
+					<include>BackgroundVarsWeather2</include>
+					<onclick>Skin.SetString(custom,Custom_Weather)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>System.HasNetwork+Skin.HasSetting(CustomWeatherConditions)+Skin.HasSetting(weather)</visible>
+				</item>
+				<item id="13">
+					<description>Play DVD</description>
+					<label>31018</label>
+					<include>BackgroundVarsPlayDVD</include>
+					<onclick>Skin.SetString(custom,CustomPlayDVD)</onclick>
+					<onclick>SetFocus(92)</onclick>
+				</item>
+				<item id="21">
+					<description>Assistant</description>
+					<label>31021</label>
+					<include>BackgroundVarsAssistant</include>
+					<onclick>Skin.SetString(custom,CustomAssistant)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>Skin.HasSetting(assistant)</visible>
+				</item>
+				<item id="23">
+					<description>Sign Out</description>
+					<label>31209</label>
+					<include>BackgroundVarsSignOut</include>
+					<onclick>Skin.SetString(custom,CustomSignOut)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>System.HasLoginScreen+Skin.HasSetting(signout)</visible>
+				</item>
+				<item id="22">
+					<description>Shutdown</description>
+					<label>31019</label>
+					<include>BackgroundVarsShutdown</include>
+					<onclick>Skin.SetString(custom,CustomShutdown)</onclick>
+					<onclick>SetFocus(92)</onclick>
+					<visible>Skin.HasSetting(shutdown)</visible>
+				</item>
+		<!-- Add Item 
 			<item id="30">
 				<label>$INFO[Skin.String(mainmenu_1name)]</label>
 				<include>BackgroundVars_mainmenu_1</include>
@@ -515,236 +528,257 @@
 				<visible>!Skin.HasSetting(no_mainmenu_10)</visible>
 				<visible>Skin.HasSetting(mainmenu_10)</visible>
 			</item>
-		<!-- Add Item End -->	
-			<item id="13">
-				<description>Play DVD</description>
-				<label>31018</label>
-				<include>BackgroundVarsPlayDVD</include>						
-				<onclick>Skin.SetString(custom,CustomPlayDVD)</onclick>
-				<onclick>SetFocus(92)</onclick>
-			</item>
-			<item id="21">
-				<description>Assistant</description>
-				<label>31021</label>
-				<include>BackgroundVarsAssistant</include>					
-				<onclick>Skin.SetString(custom,CustomAssistant)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>Skin.HasSetting(assistant)</visible>				
-			</item>
-			<item id="23">
-				<description>Sign Out</description>
-				<label>31209</label>
-				<include>BackgroundVarsSignOut</include>						
-				<onclick>Skin.SetString(custom,CustomSignOut)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>System.HasLoginScreen</visible>
-				<visible>Skin.HasSetting(signout)</visible>				
-			</item>
-			<item id="22">
-				<description>Shutdown</description>
-				<label>31019</label>
-				<include>BackgroundVarsShutdown</include>					
-				<onclick>Skin.SetString(custom,CustomShutdown)</onclick>
-				<onclick>SetFocus(92)</onclick>
-				<visible>Skin.HasSetting(shutdown)</visible>
-			</item>				
-		</content>
-	</control>
-
-</include>
-
-<include name="VirtualMainMenuOptions">
-
-	<control type="wraplist" id="301">
-		<posx>0</posx>
-		<posy>-1</posy>
-		<height>40</height>
-		<width>840</width>
-		<onleft>301</onleft>
-		<onright>301</onright>
-		<onup>346</onup>
-		<ondown>7</ondown>
-		<viewtype>list</viewtype>
-		<orientation>horizontal</orientation>
-		<focusposition>2</focusposition>
-		<scrolltime>200</scrolltime>
-		<visible allowhiddenfocus="true">Control.HasFocus(301) | Control.HasFocus(7) | Control.HasFocus(345)</visible>
-		<include>homesubmenu_Customiseanimation</include>
-		<animation effect="fade" start="0" end="100" time="200" condition="!Window.Previous(56) + !Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(17) + !Window.Previous(18) + !Window.Previous(19)">WindowOpen</animation>
-		<itemlayout width="184" height="40">
-			<control type="label">
-				<include>VirtualMainMenu_Label</include>
-				<info>ListItem.Label</info>
-				<textcolor>48FFFFFF</textcolor>
-				<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-			</control>
-			<control type="label">
-				<include>VirtualMainMenu_Label</include>
-				<info>ListItem.Label2</info>
-				<textcolor>48000000</textcolor>
-				<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-			</control>
-		</itemlayout>
-		<focusedlayout width="184" height="40">
-			<control type="label">
-				<include>VirtualMainMenu_Label</include>
-				<info>ListItem.Label</info>
-				<textcolor>48FFFFFF</textcolor>
-				<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-			</control>		
-			<control type="label">
-				<include>VirtualMainMenu_Label</include>
-				<info>ListItem.Label</info>
-				<textcolor>FFFFFFFF</textcolor>
-				<animation effect="fade" start="0" end="100" time="200">Focus</animation>
-				<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>				
-				<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-			</control>
-			<control type="label">
-				<include>VirtualMainMenu_Label</include>
-				<info>ListItem.Label2</info>
-				<textcolor>48000000</textcolor>
-				<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
-			</control>
-		</focusedlayout>
-		<content>
-			<item id="1">
-				<label>31010</label>
-				<include>BackgroundVarsMusic</include>						
-				<onclick>Skin.SetBool(nomusic)</onclick>
-				<visible>!Skin.HasSetting(nomusic)</visible>
-			</item>
-			<item id="1">
-				<label2>31010</label2>
-				<include>BackgroundVarsMusic</include>						
-				<onclick>Skin.Reset(nomusic)</onclick>
-				<visible>Skin.HasSetting(nomusic)</visible>
-			</item>
-			<item id="2">
-				<description>Extras on</description>
-				<label>31865</label>
-				<include>BackgroundVars_extras</include>				
-				<onclick>Skin.SetBool(no_extras)</onclick>
-				<visible>!Skin.HasSetting(no_extras)</visible>
-			</item>
-			<item id="2">
-				<description>Extras off</description>
-				<label2>31865</label2>
-				<include>BackgroundVars_extras</include>					
-				<onclick>Skin.Reset(no_extras)</onclick>
-				<visible>Skin.HasSetting(no_extras)</visible>
-			</item>
-			<item id="5">
-				<label>31012</label>
-				<include>BackgroundVarsPictures</include>					
-				<onclick>Skin.SetBool(nopictures)</onclick>
-				<visible>!Skin.HasSetting(nopictures)</visible>
-			</item>
-			<item id="5">
-				<label2>31012</label2>
-				<include>BackgroundVarsPictures</include>					
-				<onclick>Skin.Reset(nopictures)</onclick>
-				<visible>Skin.HasSetting(nopictures)</visible>
-			</item>
-			<item id="6">
-				<label>31013</label>
-				<include>BackgroundVarsMovies</include>					
-				<onclick>Skin.SetBool(nomovies)</onclick>
-				<visible>library.hascontent(movies)</visible>
-				<visible>!Skin.HasSetting(nomovies)</visible>
-			</item>
-			<item id="6">
-				<label2>31013</label2>
-				<include>BackgroundVarsMovies</include>					
-				<onclick>Skin.Reset(nomovies)</onclick>
-				<visible>library.hascontent(movies)</visible>
-				<visible>Skin.HasSetting(nomovies)</visible>
-			</item>
-			<item id="7">
-				<description>My Videos</description>
-				<label>31014</label>
-				<include>BackgroundVarsTV</include>					
-				<onclick>Skin.SetBool(notvshows)</onclick>
-				<visible>library.hascontent(tvshows)</visible>
-				<visible>!Skin.HasSetting(notvshows)</visible>
-			</item>
-			<item id="7">
-				<description>My Videos</description>
-				<label2>31014</label2>
-				<include>BackgroundVarsTV</include>					
-				<onclick>Skin.Reset(notvshows)</onclick>
-				<visible>Skin.HasSetting(notvshows)</visible>
-			</item>
-			<item id="8">
-				<label>31015</label>
-				<include>BackgroundVarsVideo</include>					
-				<onclick>Skin.SetBool(novideos)</onclick>
-				<visible>!Skin.HasSetting(novideos)</visible>
-			</item>
-			<item id="8">
-				<label2>31015</label2>
-				<include>BackgroundVarsVideo</include>					
-				<onclick>Skin.Reset(novideos)</onclick>
-				<visible>Skin.HasSetting(novideos)</visible>
-			</item>
-			<item id="10">
-				<description>Weather On</description>
-				<label>31017</label>
-				<include>BackgroundVarsWeather</include>
-				<onclick>Skin.Reset(weather)</onclick>
-				<visible>System.HasNetwork</visible>
-				<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
-				<visible>Skin.HasSetting(weather)</visible>
-			</item>
-			<item id="10">
-				<description>Weather Off</description>
-				<label2>31017</label2>
-				<include>BackgroundVarsWeather</include>
-				<onclick>Skin.SetBool(weather)</onclick>
-				<visible>System.HasNetwork</visible>
-				<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
-				<visible>!Skin.HasSetting(weather)</visible>
-			</item>
-			<item id="10">
-				<description>Weather On</description>
-				<label>31017</label>
-				<include>BackgroundVarsWeather2</include>
-				<onclick>Skin.Reset(weather)</onclick>
-				<visible>System.HasNetwork</visible>
-				<visible>Skin.HasSetting(CustomWeatherConditions)</visible>
-				<visible>Skin.HasSetting(weather)</visible>
-			</item>
-			<item id="10">
-				<description>Weather Off</description>
-				<label2>31017</label2>
-				<include>BackgroundVarsWeather2</include>
-				<onclick>Skin.SetBool(weather)</onclick>
-				<visible>System.HasNetwork</visible>
-				<visible>Skin.HasSetting(CustomWeatherConditions)</visible>
-				<visible>!Skin.HasSetting(weather)</visible>
-			</item>
-			<item id="3">
-				<description>Programs On</description>
-				<label>0</label>
-				<include>BackgroundVarsGames</include>
-				<onclick>Skin.SetBool(no_programs)</onclick>
-				<visible>!Skin.HasSetting(no_programs)</visible>
-			</item>
-			<item id="3">
-				<description>Programs Off</description>
-				<label2>0</label2>
-				<include>BackgroundVarsGames</include>
-				<onclick>Skin.Reset(no_programs)</onclick>
-				<visible>Skin.HasSetting(no_programs)</visible>
-			</item>
-		<!-- Add item settings -->
+		-->
+		<!-- Add Item End -->
+			</content>
+		</control>
+	</include>
+	<include name="VirtualMainMenuOptions">
+		<control type="wraplist" id="301">
+			<posx>0</posx>
+			<posy>-1</posy>
+			<height>40</height>
+			<width>840</width>
+			<onleft>301</onleft>
+			<onright>301</onright>
+			<onup>346</onup>
+			<ondown>7</ondown>
+			<viewtype>list</viewtype>
+			<orientation>horizontal</orientation>
+			<focusposition>2</focusposition>
+			<scrolltime>200</scrolltime>
+			<visible allowhiddenfocus="true">Control.HasFocus(301) | Control.HasFocus(7) | Control.HasFocus(345)</visible>
+			<include>homesubmenu_Customiseanimation</include>
+			<animation effect="fade" start="0" end="100" time="200" condition="!Window.Previous(56) + !Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(17) + !Window.Previous(18) + !Window.Previous(19)">WindowOpen</animation>
+			<itemlayout width="184" height="40">
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<info>ListItem.Label</info>
+					<textcolor>48FFFFFF</textcolor>
+					<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
+				</control>
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<info>ListItem.Label2</info>
+					<textcolor>48000000</textcolor>
+					<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
+				</control>
+			</itemlayout>
+			<focusedlayout width="184" height="40">
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<info>ListItem.Label</info>
+					<textcolor>48FFFFFF</textcolor>
+					<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19) | Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
+				</control>
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<info>ListItem.Label</info>
+					<textcolor>FFFFFFFF</textcolor>
+					<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+					<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
+				</control>
+				<control type="label">
+					<include>VirtualMainMenu_Label</include>
+					<info>ListItem.Label2</info>
+					<textcolor>48000000</textcolor>
+					<animation effect="fade" start="100" end="0" time="200" condition="Window.Next(3) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)">Conditional</animation>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<label>31010</label>
+					<include>BackgroundVarsMusic</include>
+					<onclick>Skin.SetBool(nomusic)</onclick>
+					<visible>!Skin.HasSetting(nomusic)</visible>
+				</item>
+				<item id="1">
+					<label2>31010</label2>
+					<include>BackgroundVarsMusic</include>
+					<onclick>Skin.Reset(nomusic)</onclick>
+					<visible>Skin.HasSetting(nomusic)</visible>
+				</item>
+				<item id="2">
+					<description>Extras on</description>
+					<label>31865</label>
+					<include>BackgroundVars_extras</include>
+					<onclick>Skin.SetBool(no_extras)</onclick>
+					<visible>!Skin.HasSetting(no_extras)</visible>
+				</item>
+				<item id="2">
+					<description>Extras off</description>
+					<label2>31865</label2>
+					<include>BackgroundVars_extras</include>
+					<onclick>Skin.Reset(no_extras)</onclick>
+					<visible>Skin.HasSetting(no_extras)</visible>
+				</item>
+				<item id="5">
+					<label>31012</label>
+					<include>BackgroundVarsPictures</include>
+					<onclick>Skin.SetBool(nopictures)</onclick>
+					<visible>!Skin.HasSetting(nopictures)</visible>
+				</item>
+				<item id="5">
+					<label2>31012</label2>
+					<include>BackgroundVarsPictures</include>
+					<onclick>Skin.Reset(nopictures)</onclick>
+					<visible>Skin.HasSetting(nopictures)</visible>
+				</item>
+				<item id="6">
+					<label>31013</label>
+					<include>BackgroundVarsMovies</include>
+					<onclick>Skin.SetBool(nomovies)</onclick>
+					<visible>library.hascontent(movies)+!Skin.HasSetting(nomovies)</visible>
+				</item>
+				<item id="6">
+					<label2>31013</label2>
+					<include>BackgroundVarsMovies</include>
+					<onclick>Skin.Reset(nomovies)</onclick>
+					<visible>library.hascontent(movies)+Skin.HasSetting(nomovies)</visible>
+				</item>
+				<item id="7">
+					<label>31014</label>
+					<include>BackgroundVarsTV</include>
+					<onclick>Skin.SetBool(notvshows)</onclick>
+					<visible>library.hascontent(tvshows)+!Skin.HasSetting(notvshows)</visible>
+				</item>
+				<item id="7">
+					<label2>31014</label2>
+					<include>BackgroundVarsTV</include>
+					<onclick>Skin.Reset(notvshows)</onclick>
+					<visible>library.hascontent(tvshows)+Skin.HasSetting(notvshows)</visible>
+				</item>
+				<item id="8">
+					<label>31015</label>
+					<include>BackgroundVarsVideo</include>
+					<onclick>Skin.SetBool(novideos)</onclick>
+					<visible>!Skin.HasSetting(novideos)</visible>
+				</item>
+				<item id="8">
+					<label2>31015</label2>
+					<include>BackgroundVarsVideo</include>
+					<onclick>Skin.Reset(novideos)</onclick>
+					<visible>Skin.HasSetting(novideos)</visible>
+				</item>
+				<item id="10">
+					<description>Weather On</description>
+					<label>31017</label>
+					<include>BackgroundVarsWeather</include>
+					<onclick>Skin.Reset(weather)</onclick>
+					<visible>System.HasNetwork+!Skin.HasSetting(CustomWeatherConditions)+Skin.HasSetting(weather)</visible>
+				</item>
+				<item id="10">
+					<description>Weather Off</description>
+					<label2>31017</label2>
+					<include>BackgroundVarsWeather</include>
+					<onclick>Skin.SetBool(weather)</onclick>
+					<visible>System.HasNetwork+!Skin.HasSetting(CustomWeatherConditions)+!Skin.HasSetting(weather)</visible>
+				</item>
+				<item id="10">
+					<description>Weather On</description>
+					<label>31017</label>
+					<include>BackgroundVarsWeather2</include>
+					<onclick>Skin.Reset(weather)</onclick>
+					<visible>System.HasNetwork+Skin.HasSetting(CustomWeatherConditions)+Skin.HasSetting(weather)</visible>
+				</item>
+				<item id="10">
+					<description>Weather Off</description>
+					<label2>31017</label2>
+					<include>BackgroundVarsWeather2</include>
+					<onclick>Skin.SetBool(weather)</onclick>
+					<visible>System.HasNetwork+Skin.HasSetting(CustomWeatherConditions)+!Skin.HasSetting(weather)</visible>
+				</item>
+				<item id="3">
+					<description>Programs On</description>
+					<label>0</label>
+					<include>BackgroundVarsGames</include>
+					<onclick>Skin.SetBool(no_programs)</onclick>
+					<visible>!Skin.HasSetting(no_programs)</visible>
+				</item>
+				<item id="3">
+					<description>Programs Off</description>
+					<label2>0</label2>
+					<include>BackgroundVarsGames</include>
+					<onclick>Skin.Reset(no_programs)</onclick>
+					<visible>Skin.HasSetting(no_programs)</visible>
+				</item>
+				<item id="24">
+					<label>31020</label>
+					<include>BackgroundVarsScripts</include>
+					<onclick>Skin.Reset(scripts)</onclick>
+					<visible>Skin.HasSetting(scripts)</visible>
+				</item>
+				<item id="24">
+					<label2>31020</label2>
+					<include>BackgroundVarsScripts</include>
+					<onclick>Skin.SetBool(scripts)</onclick>
+					<visible>!Skin.HasSetting(scripts)</visible>
+				</item>
+				<item id="9">
+					<label>31016</label>
+					<include>BackgroundVarsSettings</include>
+					<onclick>Skin.SetBool(nosettings)</onclick>
+					<visible>!Skin.HasSetting(nosettings)</visible>
+				</item>
+				<item id="9">
+					<label2>31016</label2>
+					<include>BackgroundVarsSettings</include>
+					<onclick>Skin.Reset(nosettings)</onclick>
+					<visible>Skin.HasSetting(nosettings)</visible>
+				</item>
+				<item id="22">
+					<description>Shutdown</description>
+					<label>31019</label>
+					<include>BackgroundVarsShutdown</include>
+					<onclick>Skin.Reset(shutdown)</onclick>
+					<visible>Skin.HasSetting(shutdown)</visible>
+				</item>
+				<item id="22">
+					<description>Shutdown</description>
+					<label2>31019</label2>
+					<include>BackgroundVarsShutdown</include>
+					<onclick>Skin.SetBool(shutdown)</onclick>
+					<visible>!Skin.HasSetting(shutdown)</visible>
+				</item>
+				<item id="21">
+					<description>Assistant</description>
+					<label>31021</label>
+					<include>BackgroundVarsAssistant</include>
+					<onclick>Skin.Reset(assistant)</onclick>
+					<visible>Skin.HasSetting(assistant)</visible>
+				</item>
+				<item id="21">
+					<description>Assistant</description>
+					<label2>31021</label2>
+					<include>BackgroundVarsAssistant</include>
+					<onclick>Skin.SetBool(assistant)</onclick>
+					<visible>!Skin.HasSetting(assistant)</visible>
+				</item>
+				<item id="23">
+					<description>Sign Out</description>
+					<label>31209</label>
+					<include>BackgroundVarsSignOut</include>
+					<onclick>Skin.Reset(signout)</onclick>
+					<visible>System.HasLoginScreen</visible>
+					<visible>Skin.HasSetting(signout)</visible>
+				</item>
+				<item id="23">
+					<description>Sign Out</description>
+					<label2>31209</label2>
+					<include>BackgroundVarsSignOut</include>
+					<onclick>Skin.SetBool(signout)</onclick>
+					<visible>!Skin.HasSetting(signout)</visible>
+				</item>
+		<!-- Add item settings
 			<item id="40">
 				<label>Aeon Mod</label>
-				<include>BackgroundVarsSettings</include>				
+				<include>BackgroundVarsSettings</include>
 				<onclick>Skin.Reset(settingsfade)</onclick>
 				<onclick>XBMC.ActivateWindow(801)</onclick>
 			</item>
-		<!-- Add Items -->
+		 -->
+		<!-- Add Items 
 			<item id="30">
 				<label>$INFO[Skin.String(mainmenu_1name)]</label>
 				<include>BackgroundVars_mainmenu_1</include>
@@ -885,77 +919,9 @@
 				<visible>Skin.HasSetting(no_mainmenu_10)</visible>
 				<visible>Skin.HasSetting(mainmenu_10)</visible>
 			</item>
+		-->
 	<!-- Add Item End -->
-			<item id="24">
-				<label>31020</label>
-				<include>BackgroundVarsScripts</include>					
-				<onclick>Skin.Reset(scripts)</onclick>
-				<visible>Skin.HasSetting(scripts)</visible>
-			</item>
-			<item id="24">
-				<label2>31020</label2>
-				<include>BackgroundVarsScripts</include>					
-				<onclick>Skin.SetBool(scripts)</onclick>
-				<visible>!Skin.HasSetting(scripts)</visible>
-			</item>			
-			<item id="9">
-				<label>31016</label>
-				<include>BackgroundVarsSettings</include>					
-				<onclick>Skin.SetBool(nosettings)</onclick>
-				<visible>!Skin.HasSetting(nosettings)</visible>
-			</item>
-			<item id="9">
-				<label2>31016</label2>
-				<include>BackgroundVarsSettings</include>					
-				<onclick>Skin.Reset(nosettings)</onclick>
-				<visible>Skin.HasSetting(nosettings)</visible>
-			</item>
-			<item id="22">
-				<description>Shutdown</description>
-				<label>31019</label>
-				<include>BackgroundVarsShutdown</include>					
-				<onclick>Skin.Reset(shutdown)</onclick>
-				<visible>Skin.HasSetting(shutdown)</visible>
-			</item>
-			<item id="22">
-				<description>Shutdown</description>
-				<label2>31019</label2>
-				<include>BackgroundVarsShutdown</include>					
-				<onclick>Skin.SetBool(shutdown)</onclick>
-				<visible>!Skin.HasSetting(shutdown)</visible>
-			</item>
-			<item id="21">
-				<description>Assistant</description>
-				<label>31021</label>
-				<include>BackgroundVarsAssistant</include>					
-				<onclick>Skin.Reset(assistant)</onclick>
-				<visible>Skin.HasSetting(assistant)</visible>
-			</item>
-			<item id="21">
-				<description>Assistant</description>
-				<label2>31021</label2>
-				<include>BackgroundVarsAssistant</include>					
-				<onclick>Skin.SetBool(assistant)</onclick>
-				<visible>!Skin.HasSetting(assistant)</visible>
-			</item>
-			<item id="23">
-				<description>Sign Out</description>
-				<label>31209</label>
-				<include>BackgroundVarsSignOut</include>					
-				<onclick>Skin.Reset(signout)</onclick>
-				<visible>System.HasLoginScreen</visible>
-				<visible>Skin.HasSetting(signout)</visible>
-			</item>
-			<item id="23">
-				<description>Sign Out</description>
-				<label2>31209</label2>
-				<include>BackgroundVarsSignOut</include>					
-				<onclick>Skin.SetBool(signout)</onclick>
-				<visible>!Skin.HasSetting(signout)</visible>
-			</item>				
-		</content>
-	</control>
-
-</include>
-
+			</content>
+		</control>
+	</include>
 </includes>

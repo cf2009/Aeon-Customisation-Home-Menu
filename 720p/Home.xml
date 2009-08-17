@@ -35,11 +35,12 @@
 		<visible>control.HasFocus(8001)+Container(300).HasFocus(6)</visible>
 	</control>
 
-	<include>Furniture_HomeNowPlaying2</include>
+	<include>Furniture_HomeNowPlaying</include>
 
 <!-- Windowopen -->
 	<control type="button" id="323">
 		<include>homesubmenu_but</include>
+<!--
 		<onfocus>setProperty(extra_extras,)</onfocus>
 		<onfocus>setProperty(Picture_extras,)</onfocus>
 		<onfocus>setProperty(totals_extras,)</onfocus>
@@ -58,7 +59,7 @@
 		<include condition="Skin.HasSetting(Widget_random_order)">Widget_random_order_py</include>
 
 		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(random_order)]$INFO[Window.Property(CustomMenu1_extras)]$INFO[Window.Property(CustomMenu2_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(extra_extras)]$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
-
+-->
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>SetFocus(300)</onfocus>
 		<onfocus>Skin.Reset(submenu)</onfocus>

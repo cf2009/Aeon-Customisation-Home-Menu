@@ -314,12 +314,22 @@ class Main:
         self.WINDOW.setProperty( WIDGET_FOR + '.Picture' , spPicture )
         self.WINDOW.setProperty( WIDGET_FOR + '.Content' , self.Clean_text( spContent ) )
         self.WINDOW.setProperty( WIDGET_FOR + '.Got' , spGot )
-
+        #Debug log
+        print ''
+        print '     -->' + WIDGET_FOR + '.Got ' + ' = spGot --> ' + spGot
+        print '     -->' + WIDGET_FOR + '.Title ' + ' = spTitle --> ' + spTitle
+        print '     -->' + WIDGET_FOR + '.ContentTitle ' + ' =  spContentTitle --> ' + self.Clean_text( spContentTitle )
+        print '     -->' + WIDGET_FOR + '.Picture ' + ' =  spPicture --> ' + spPicture
+        print '     -->' + WIDGET_FOR + '.Content ' + ' =  spContent --> ' + self.Clean_text( spContent )
+        print '     -->' + WIDGET_FOR + '.PubDate ' + ' =  spPubDate --> ' + spPubDate 
+        print ''
 
     def read_widget(self, file_address):
         read = open( file_address, 'r')
         widget_lines = read.read()
         read.close()
+        #Debug log
+        #print '  -----  ' + SET_LINES
         return widget_lines
 
     def findall_widget(self, type, fromfile):
