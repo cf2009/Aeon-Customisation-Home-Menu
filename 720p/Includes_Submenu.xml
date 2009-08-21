@@ -1,78 +1,9 @@
 <includes>
-	<include name="BackgroundVars_extras">
-		<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_extras)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_scripts/default.png</imagepath>
-		<info>Skin.String(Custom_extras)</info>
-	</include>
-<!-- Add item -->
-	<include name="BackgroundVars_mainmenu_1">
-		<icon>special://skin/media/backdrops/default_assistant/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_1)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_assistant/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_1)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_2">
-		<icon>special://skin/media/backdrops/default_games/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_2)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_games/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_2)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_3">
-		<icon>special://skin/media/backdrops/default_movies/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_3)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_movies/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_3)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_4">
-		<icon>special://skin/media/backdrops/default_music/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_4)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_music/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_4)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_5">
-		<icon>special://skin/media/backdrops/default_pictures/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_5)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_pictures/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_5)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_6">
-		<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_6)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_scripts/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_6)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_7">
-		<icon>special://skin/media/backdrops/default_settings/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_7)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_settings/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_7)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_8">
-		<icon>special://skin/media/backdrops/default_tvshows/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_8)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_tvshows/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_8)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_9">
-		<icon>special://skin/media/backdrops/default_assistant/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_9)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_assistant/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_9)</info>
-	</include>
-	<include name="BackgroundVars_mainmenu_10">
-		<icon>special://skin/media/backdrops/default_games/default.png</icon>
-		<thumb>$INFO[Skin.String(Custom_mainmenu_10)]</thumb>
-		<imagepath>special://skin/media/backdrops/default_games/default.png</imagepath>
-		<info>Skin.String(Custom_mainmenu_11)</info>
-	</include>
-<!-- Add item End -->
 <!-- Weather Backdrop by Current Weather Conditions -->
 	<include name="BackgroundVarsWeather2">
 		<thumb>$INFO[Skin.String(Custom_Weather)]$INFO[Weather.FanartCode]</thumb>
 		<imagepath background="true">$INFO[Skin.String(Custom_Weather)]$INFO[Weather.FanartCode]</imagepath>
 	</include>
-<!-- End -->
 <!-- Weather -->
 	<include name="Widget_WeatherTitleNarrow">
 		<width>105</width>
@@ -91,21 +22,6 @@
 		<font>Font_WeatherLabel</font>
 		<include>Widget_WeatherTitleNarrow</include>
 	</include>
-	<include name="Widget_WeatherIconNarrow">
-		<posy>100</posy>
-		<height>80</height>
-		<aspectratio>keep</aspectratio>
-	</include>
-	<include name="Widget_WeatherTempHighNarrow">
-		<posx>0</posx>
-		<posy>195</posy>
-		<width>125</width>
-		<height>40</height>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>Font_WeatherTemp</font>
-		<textcolor>ccffffff</textcolor>
-	</include>
 	<include name="Widget_WeatherTempLowNarrow">
 		<posx>0</posx>
 		<posy>240</posy>
@@ -116,11 +32,7 @@
 		<font>Font_SettingsSectionTitle</font>
 		<textcolor>ccffffff</textcolor>
 	</include>
-	<include name="Widget_Weather7DayGroup">
-		<width>130</width>
-		<visible>Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)</visible>
-		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-	</include>
+
 <include name="Objects_Weather_Plugin">
 	<posy>180</posy>
 </include>
@@ -171,18 +83,7 @@
 	<randomize>false</randomize>
 	<fadetime>0</fadetime>
 </include>
-<include name="Widget_Weather7DayGroup">
-	<width>130</width>
-	<include>Conditions_Weather</include>
-	<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-</include>
-<include name="Widget_WeatherBackNarrow2">
-	<posx>0</posx>
-	<posy>0</posy>
-	<width>125</width>
-	<height>287</height>
-	<texture border="20">home/home_weather_big.png</texture>
-</include>
+
 <include name="Objects_WeatherPopup2">
 	<control type="group">
 		<posx>0</posx>
@@ -728,10 +629,16 @@
 			<orientation>horizontal</orientation>
 			<visible>Skin.HasSetting(WeatherWidget7Day) + StringCompare(Weather.Plugin,weather.com plus) + !Window.IsVisible(2600)</visible>
 			<control type="group">
-				<include>Widget_Weather7DayGroup</include>
+				<width>130</width>
+				<visible>Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)</visible>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>
 				<control type="image">
-					<include>Widget_WeatherBackNarrow2</include>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>125</width>
+					<height>287</height>
+					<texture border="20">home/home_weather_big.png</texture>
 				</control>
 				<control type="label">
 					<include>Widget_WeatherTitleNarrow</include>
@@ -743,7 +650,10 @@
 				</control>
 				<control type="label">
 					<posx>0</posx>
-					<include>Widget_WeatherTempHighNarrow</include>
+					<posy>195</posy>
+					<width>125</width>
+					<height>40</height>
+					<include>Objects_WeatherTemp</include>
 					<label fallback="-">$INFO[Window(Weather).Property(Daily.1.HighTemperature)]</label>
 				</control>
 				<control type="label">
@@ -752,14 +662,22 @@
 				</control>
 				<control type="image">
 					<texture>$INFO[Window(Weather).Property(Daily.1.OutlookIcon)]</texture>
-					<include>Widget_WeatherIconNarrow</include>
+					<posy>100</posy>
+					<height>80</height>
+					<aspectratio>keep</aspectratio>
 				</control>
 			</control>
 			<control type="group">
-				<include>Widget_Weather7DayGroup</include>
+				<width>130</width>
+				<visible>Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)</visible>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="fade" start="0" end="100" delay="1650" time="400">Visible</animation>
 				<control type="image">
-					<include>Widget_WeatherBackNarrow2</include>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>125</width>
+					<height>287</height>
+					<texture border="20">home/home_weather_big.png</texture>
 				</control>
 				<control type="label">
 					<include>Widget_WeatherTitleNarrow</include>
@@ -771,7 +689,10 @@
 				</control>
 				<control type="label">
 					<posx>0</posx>
-					<include>Widget_WeatherTempHighNarrow</include>
+					<posy>195</posy>
+					<width>125</width>
+					<height>40</height>
+					<include>Objects_WeatherTemp</include>
 					<label fallback="-">$INFO[Window(Weather).Property(Daily.2.HighTemperature)]</label>
 				</control>
 				<control type="label">
@@ -780,14 +701,22 @@
 				</control>
 				<control type="image">
 					<texture>$INFO[Window(Weather).Property(Daily.2.OutlookIcon)]</texture>
-					<include>Widget_WeatherIconNarrow</include>
+					<posy>100</posy>
+					<height>80</height>
+					<aspectratio>keep</aspectratio>
 				</control>
 			</control>
 			<control type="group">
-				<include>Widget_Weather7DayGroup</include>
+				<width>130</width>
+				<visible>Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)</visible>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>
 				<control type="image">
-					<include>Widget_WeatherBackNarrow2</include>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>125</width>
+					<height>287</height>
+					<texture border="20">home/home_weather_big.png</texture>
 				</control>
 				<control type="label">
 					<include>Widget_WeatherTitleNarrow</include>
@@ -799,7 +728,10 @@
 				</control>
 				<control type="label">
 					<posx>0</posx>
-					<include>Widget_WeatherTempHighNarrow</include>
+					<posy>195</posy>
+					<width>125</width>
+					<height>40</height>
+					<include>Objects_WeatherTemp</include>
 					<label fallback="-">$INFO[Window(Weather).Property(Daily.3.HighTemperature)]</label>
 				</control>
 				<control type="label">
@@ -808,14 +740,22 @@
 				</control>
 				<control type="image">
 					<texture>$INFO[Window(Weather).Property(Daily.3.OutlookIcon)]</texture>
-					<include>Widget_WeatherIconNarrow</include>
+					<posy>100</posy>
+					<height>80</height>
+					<aspectratio>keep</aspectratio>
 				</control>
 			</control>
 			<control type="group">
-				<include>Widget_Weather7DayGroup</include>
+				<width>130</width>
+				<visible>Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)</visible>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="fade" start="0" end="100" delay="1750" time="400">Visible</animation>
 				<control type="image">
-					<include>Widget_WeatherBackNarrow2</include>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>125</width>
+					<height>287</height>
+					<texture border="20">home/home_weather_big.png</texture>
 				</control>
 				<control type="label">
 					<include>Widget_WeatherTitleNarrow</include>
@@ -827,7 +767,10 @@
 				</control>
 				<control type="label">
 					<posx>0</posx>
-					<include>Widget_WeatherTempHighNarrow</include>
+					<posy>195</posy>
+					<width>125</width>
+					<height>40</height>
+					<include>Objects_WeatherTemp</include>
 					<label fallback="-">$INFO[Window(Weather).Property(Daily.4.HighTemperature)]</label>
 				</control>
 				<control type="label">
@@ -836,14 +779,22 @@
 				</control>
 				<control type="image">
 					<texture>$INFO[Window(Weather).Property(Daily.4.OutlookIcon)]</texture>
-					<include>Widget_WeatherIconNarrow</include>
+					<posy>100</posy>
+					<height>80</height>
+					<aspectratio>keep</aspectratio>
 				</control>
 			</control>
 			<control type="group">
-				<include>Widget_Weather7DayGroup</include>
+				<width>130</width>
+				<visible>Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)</visible>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>
 				<control type="image">
-					<include>Widget_WeatherBackNarrow2</include>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>125</width>
+					<height>287</height>
+					<texture border="20">home/home_weather_big.png</texture>
 				</control>
 				<control type="label">
 					<include>Widget_WeatherTitleNarrow</include>
@@ -855,7 +806,10 @@
 				</control>
 				<control type="label">
 					<posx>0</posx>
-					<include>Widget_WeatherTempHighNarrow</include>
+					<posy>195</posy>
+					<width>125</width>
+					<height>40</height>
+					<include>Objects_WeatherTemp</include>
 					<label fallback="-">$INFO[Window(Weather).Property(Daily.5.HighTemperature)]</label>
 				</control>
 				<control type="label">
@@ -864,14 +818,22 @@
 				</control>
 				<control type="image">
 					<texture>$INFO[Window(Weather).Property(Daily.5.OutlookIcon)]</texture>
-					<include>Widget_WeatherIconNarrow</include>
+					<posy>100</posy>
+					<height>80</height>
+					<aspectratio>keep</aspectratio>
 				</control>
 			</control>
 			<control type="group">
-				<include>Widget_Weather7DayGroup</include>
+				<width>130</width>
+				<visible>Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)</visible>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="fade" start="0" end="100" delay="1850" time="400">Visible</animation>
 				<control type="image">
-					<include>Widget_WeatherBackNarrow2</include>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>125</width>
+					<height>287</height>
+					<texture border="20">home/home_weather_big.png</texture>
 				</control>
 				<control type="label">
 					<include>Widget_WeatherTitleNarrow</include>
@@ -883,7 +845,10 @@
 				</control>
 				<control type="label">
 					<posx>0</posx>
-					<include>Widget_WeatherTempHighNarrow</include>
+					<posy>195</posy>
+					<width>125</width>
+					<height>40</height>
+					<include>Objects_WeatherTemp</include>
 					<label fallback="-">$INFO[Window(Weather).Property(Daily.6.HighTemperature)]</label>
 				</control>
 				<control type="label">
@@ -892,14 +857,22 @@
 				</control>
 				<control type="image">
 					<texture>$INFO[Window(Weather).Property(Daily.6.OutlookIcon)]</texture>
-					<include>Widget_WeatherIconNarrow</include>
+					<posy>100</posy>
+					<height>80</height>
+					<aspectratio>keep</aspectratio>
 				</control>
 			</control>
 			<control type="group">
-				<include>Widget_Weather7DayGroup</include>
+				<width>130</width>
+				<visible>Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)</visible>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>
 				<control type="image">
-					<include>Widget_WeatherBackNarrow2</include>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>125</width>
+					<height>287</height>
+					<texture border="20">home/home_weather_big.png</texture>
 				</control>
 				<control type="label">
 					<include>Widget_WeatherTitleNarrow</include>
@@ -911,7 +884,10 @@
 				</control>
 				<control type="label">
 					<posx>0</posx>
-					<include>Widget_WeatherTempHighNarrow</include>
+					<posy>195</posy>
+					<width>125</width>
+					<height>40</height>
+					<include>Objects_WeatherTemp</include>
 					<label fallback="-">$INFO[Window(Weather).Property(Daily.7.HighTemperature)]</label>
 				</control>
 				<control type="label">
@@ -920,7 +896,9 @@
 				</control>
 				<control type="image">
 					<texture>$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</texture>
-					<include>Widget_WeatherIconNarrow</include>
+					<posy>100</posy>
+					<height>80</height>
+					<aspectratio>keep</aspectratio>
 				</control>
 			</control>
 		</control>
@@ -4281,7 +4259,6 @@
 		</control>
 	</control>
 </include>
-<!-- Recently added End -->
 <!-- WIDGETS -->
 <include name="widget_back1">
 	<control type="image">
@@ -4412,7 +4389,6 @@
 <include name="Widget_random_order_py">
 	<onfocus>setProperty(random_order,&random=true)</onfocus>
 </include>
-<!-- extras.py set up end -->
 <!-- HomeNowPlaying2 -->
 	<include name="Furniture_HomeNowPlaying2">
 		<control type="image">
@@ -4512,7 +4488,6 @@
 			<include>Furniture_HomeNowPlayingInfo</include>
 		</control>
 	</include>
-	
 <include name="Custom6_list">
 		<posx>520</posx>
 		<posy>207</posy>
