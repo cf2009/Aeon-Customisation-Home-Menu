@@ -74,6 +74,53 @@
 	</include>
 <!-- End -->
 <!-- Weather -->
+	<include name="Widget_WeatherTitleNarrow">
+		<width>105</width>
+		<posx>10</posx>
+		<posy>15</posy>
+		<width>176</width>
+		<height>25</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_WeatherTitle</font>
+		<scroll>false</scroll>
+		<textcolor>c0FFFFFF</textcolor>
+	</include>
+	<include name="Widget_WeatherSubitleNarrow">
+		<posy>40</posy>
+		<font>Font_WeatherLabel</font>
+		<include>Widget_WeatherTitleNarrow</include>
+	</include>
+	<include name="Widget_WeatherIconNarrow">
+		<posy>100</posy>
+		<height>80</height>
+		<aspectratio>keep</aspectratio>
+	</include>
+	<include name="Widget_WeatherTempHighNarrow">
+		<posx>0</posx>
+		<posy>195</posy>
+		<width>125</width>
+		<height>40</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_WeatherTemp</font>
+		<textcolor>ccffffff</textcolor>
+	</include>
+	<include name="Widget_WeatherTempLowNarrow">
+		<posx>0</posx>
+		<posy>240</posy>
+		<width>125</width>
+		<height>40</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_SettingsSectionTitle</font>
+		<textcolor>ccffffff</textcolor>
+	</include>
+	<include name="Widget_Weather7DayGroup">
+		<width>130</width>
+		<visible>Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)</visible>
+		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+	</include>
 <include name="Objects_Weather_Plugin">
 	<posy>180</posy>
 </include>
