@@ -289,7 +289,6 @@
 			<defaultcontrol>300</defaultcontrol>
 			<include>homesubmenu</include>
 			<include>MainMenu</include>
-			<include>homesubmenu_main_fix</include>
 		</control>
 		<control type="image">
 			<posx>0</posx>

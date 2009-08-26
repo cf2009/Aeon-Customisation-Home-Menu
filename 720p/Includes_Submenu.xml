@@ -2380,27 +2380,6 @@
 	</control>
 	<!-- Ondown sub end -->
 </include>
-<include name="homesubmenu_main_fix">
-	<control type="label">
-		<visible>!Control.HasFocus(300)+!Skin.HasSetting(submenu)</visible>
-		<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
-			<effect type="slide" start="-1280" end="0" time="400" tween="quadratic" easing="out" />
-			<effect type="fade" start="0" end="100" time="400" />
-		</animation>
-		<animation effect="fade" start="0" end="0" time="1">WindowClose</animation>
-		<include>homesubmenu_animation2</include>
-		<animation effect="fade" start="100" end="99" time="300">Hidden</animation>
-		<label>$INFO[Container(300).ListItem.Label]</label>
-		<posy>0</posy>
-		<posx>500</posx>
-		<height>61</height>
-		<width>280</width>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>Font_MainMenu</font>
-		<textcolor>ffFFFFFF</textcolor>
-	</control>
-</include>
 <include name="homesubmenu">
 	<include>homesubmenu_anim</include>
 	<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
@@ -2504,6 +2483,11 @@
 					<include>MainMenu_Label</include>
 					<textcolor>FFFFFFFF</textcolor>
 					<include>Animation_ButtonFocusFade</include>
+				</control>
+				<control type="label">
+					<include>MainMenu_Label</include>
+					<textcolor>FFFFFFFF</textcolor>
+					<animation effect="fade" start="0" end="100" time="0" condition="!Control.HasFocus(300)">Unfocus</animation>
 				</control>
 			</focusedlayout>
 			<content>
@@ -3083,25 +3067,6 @@
 			<!-- Shutdown (22) End -->
 			</content> 
 		</control> 
-	</control>
-	<control type="group">
-		<control type="label">
-			<visible>!Control.HasFocus(325)+Skin.HasSetting(submenu)</visible>
-			<animation type="Hidden" condition="!Skin.HasSetting(submenu)">
-				<effect type="fade" start="100" end="0" time="200" delay="0" />
-				<effect type="zoom" start="100" end="20" center="auto" time="400" delay="0" tween="Cubic" asing="inout" />
-			</animation>
-			<animation effect="fade" start="100" end="99" time="200">Hidden</animation>
-			<label>$INFO[Container(325).ListItem.Label]</label>
-			<posy>0</posy>
-			<height>61</height>
-			<posx>490</posx>
-			<width>300</width>
-			<align>center</align>
-			<aligny>center</aligny>
-			<font>Font_MainMenu</font>
-			<textcolor>ffFFFFFF</textcolor>
-		</control>
 	</control>
 </include>
 <!-- Submenu End -->
