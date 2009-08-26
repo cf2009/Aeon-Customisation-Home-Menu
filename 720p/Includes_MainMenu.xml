@@ -37,6 +37,10 @@
 		<onclick>Skin.SetBool(videomovies)</onclick>
 		<onclick>Skin.Reset(videotv)</onclick>
 	</include>
+	<control type="button" id="3003">
+		<visible>Container(300).OnPrevious|Container(300).OnNext</visible>
+		<animation effect="fade" start="0" end="100" time="200">Hidden</animation>
+	</control>
 	<include name="MainMenu">
 		<control type="wraplist" id="300">
 			<posx>0</posx>
@@ -74,9 +78,9 @@
 					<include>Animation_ButtonFocusFade</include>
 				</control>
 				<control type="label">
+					<visible>!Control.IsVisible(3003)</visible>
 					<include>MainMenu_Label</include>
 					<textcolor>FFFFFFFF</textcolor>
-					<animation effect="fade" start="0" end="100" time="0" condition="!Control.HasFocus(300)">Unfocus</animation>
 				</control>
 			</focusedlayout>
 			<content>

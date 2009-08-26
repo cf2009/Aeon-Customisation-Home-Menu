@@ -2387,6 +2387,10 @@
 		<effect type="fade" start="0" end="100" time="400" />
 	</animation>
 	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+	<control type="button" id="3004">
+		<visible>Container(325).OnPrevious|Container(325).OnNext</visible>
+		<animation effect="fade" start="0" end="100" time="200">Hidden</animation>
+	</control>
 	<control type="group" id="330">
 		<visible>[[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(2) | Container(300).HasFocus(1) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(22)]</visible>
 		<visible>!Skin.HasSetting(CustomMenuSub)</visible>
@@ -2485,9 +2489,9 @@
 					<include>Animation_ButtonFocusFade</include>
 				</control>
 				<control type="label">
+					<visible>!Control.IsVisible(3004)</visible>
 					<include>MainMenu_Label</include>
 					<textcolor>FFFFFFFF</textcolor>
-					<animation effect="fade" start="0" end="100" time="0" condition="!Control.HasFocus(300)">Unfocus</animation>
 				</control>
 			</focusedlayout>
 			<content>
