@@ -9,19 +9,6 @@
 		<effect type="fade" start="100" end="0" time="300" />
 	</animation>		
 	<controls>
-
-	<control type="image">
-		<description>Darken screen</description>
-		<posx>0</posx>
-		<posy>0</posy>
-		<width>1280</width>
-		<height>720</height>
-		<texture>common/black.png</texture>
-		<colordiffuse>d7FFFFFF</colordiffuse>
-		<include>Animation_CommonFade</include>
-		<visible>Control.HasFocus(450)</visible>
-	</control>
-
 	<control type="image">
 		<description>Panel</description>
 		<posx>200</posx>
@@ -47,7 +34,7 @@
 		<align>center</align>
 		<aligny>center</aligny>
 		<textcolor>66000000</textcolor>		
-		<label>$LOCALIZE[1036]</label>
+			<label>1036</label>
 		<font>Font_WeatherTitle</font>
 	</control>
 
@@ -56,8 +43,8 @@
 		<posy>95</posy>
 		<width>781</width>
 		<height>405</height>
-		<onleft>-</onleft>
-		<onright>-</onright>
+			<onleft>450</onleft>
+			<onright>450</onright>
 		<onup>450</onup>
 		<ondown>450</ondown>
 		<pagecontrol>-</pagecontrol>

@@ -49,7 +49,6 @@
 			<width>1280</width>
 			<onleft>300</onleft>
 			<onright>300</onright>
-			<viewtype>list</viewtype>
 			<orientation>horizontal</orientation>
 			<focusposition>2</focusposition>
 			<scrolltime>200</scrolltime>
@@ -114,6 +113,7 @@
 					<visible>!Skin.HasSetting(nomusic)</visible>
 				</item>
 				<item id="6">
+					<description>Movies</description>
 					<label>342</label>
 					<include>BackgroundVarsMovies</include>
 					<include>Movie_Link</include>
@@ -122,6 +122,7 @@
 					<visible>!Skin.HasSetting(nomovies)</visible>
 				</item>
 				<item id="7">
+					<description>TVshow</description>
 					<label>31014</label>
 					<include>BackgroundVarsTV</include>
 					<include>TV_Link</include>
@@ -130,6 +131,7 @@
 					<visible>!Skin.HasSetting(notvshows)</visible>
 				</item>
 				<item id="8">
+					<description>My Videos</description>
 					<label>31015</label>
 					<include>BackgroundVarsVideo</include>
 					<onclick>XBMC.ActivateWindow(MyVideoFiles)</onclick>
@@ -263,6 +265,7 @@
 					<visible>!Skin.HasSetting(no_programs)</visible>
 				</item>
 				<item id="9">
+					<description>Settings</description>
 					<label>31016</label>
 					<include>BackgroundVarsSettings</include>
 					<onclick>Skin.Reset(settingsfade)</onclick>
@@ -271,44 +274,44 @@
 				</item>
 				<item id="24">
 					<description>Scripts</description>
-					<include>BackgroundVarsScripts</include>
 					<label>31020</label>
+					<include>BackgroundVarsScripts</include>
 					<onclick>XBMC.ActivateWindow(20)</onclick>
 					<visible>Skin.HasSetting(scripts)</visible>
 				</item>
 				<item id="13">
 					<description>Play DVD</description>
-					<include>BackgroundVarsPlayDVD</include>
 					<label>31018</label>
+					<include>BackgroundVarsPlayDVD</include>
 					<onclick>XBMC.PlayDVD</onclick>
 					<visible>System.HasMediadvd</visible>
 				</item>
 				<item id="20">
 					<description>Refresh</description>
-					<include>BackgroundVarsSettings</include>
 					<label>31607</label>
+					<include>BackgroundVarsSettings</include>
 					<onclick>XBMC.ReloadSkin</onclick>
 					<visible>Skin.HasSetting(debug)</visible>
 				</item>
 				<item id="21">
 					<description>Assistant</description>
-					<include>BackgroundVarsAssistant</include>
 					<label>31021</label>
+					<include>BackgroundVarsAssistant</include>
 					<onclick>XBMC.ActivateWindow(605)</onclick>
 					<visible>Skin.HasSetting(assistant)</visible>
 				</item>
 				<item id="23">
 					<description>Sign out</description>
-					<include>BackgroundVarsSignOut</include>
 					<label>31209</label>
+					<include>BackgroundVarsSignOut</include>
 					<onclick>System.LogOff</onclick>
 					<visible>System.HasLoginScreen</visible>
 					<visible>Skin.HasSetting(signout)</visible>
 				</item>
 				<item id="22">
 					<description>Shutdown</description>
-					<include>BackgroundVarsShutdown</include>
 					<label>31019</label>
+					<include>BackgroundVarsShutdown</include>
 					<onclick>XBMC.Shutdown()</onclick>
 					<visible>Skin.HasSetting(shutdown)</visible>
 				</item>
@@ -325,7 +328,6 @@
 			<onright>300</onright>
 			<onup>6</onup>
 			<ondown>6</ondown>
-			<viewtype>list</viewtype>
 			<orientation>horizontal</orientation>
 			<focusposition>2</focusposition>
 			<scrolltime>200</scrolltime>
@@ -357,6 +359,7 @@
 			</focusedlayout>
 			<content>
 				<item id="1">
+					<description>Music</description>
 					<label>31010</label>
 					<include>BackgroundVarsMusic</include>
 					<onclick>Skin.SetString(custom,CustomMusic)</onclick>
@@ -373,6 +376,7 @@
 					<visible>!Skin.HasSetting(no_extras)</visible>
 				</item>
 				<item id="5">
+					<description>Pictures</description>
 					<label>31012</label>
 					<include>BackgroundVarsPictures</include>
 					<onclick>Skin.SetString(custom,CustomPictures)</onclick>
@@ -380,6 +384,7 @@
 					<visible>!Skin.HasSetting(nopictures)</visible>
 				</item>
 				<item id="6">
+					<description>Movies</description>
 					<label>31013</label>
 					<include>BackgroundVarsMovies</include>
 					<onclick>Skin.SetString(custom,CustomMovies)</onclick>
@@ -388,7 +393,7 @@
 					<visible>!Skin.HasSetting(nomovies)</visible>
 				</item>
 				<item id="7">
-					<description>My Videos</description>
+					<description>TVShows</description>
 					<label>31014</label>
 					<include>BackgroundVarsTV</include>
 					<onclick>Skin.SetString(custom,CustomTV)</onclick>
@@ -397,6 +402,7 @@
 					<visible>!Skin.HasSetting(notvshows)</visible>
 				</item>
 				<item id="8">
+					<description>My Videos</description>
 					<label>31015</label>
 					<include>BackgroundVarsVideo</include>
 					<onclick>Skin.SetString(custom,CustomVideos)</onclick>
@@ -404,6 +410,7 @@
 					<visible>!Skin.HasSetting(novideos)</visible>
 				</item>
 				<item id="24">
+					<description>Scripts</description>
 					<label>31020</label>
 					<include>BackgroundVarsScripts</include>
 					<onclick>Skin.SetString(custom,CustomScripts)</onclick>
@@ -418,10 +425,11 @@
 					<visible>!Skin.HasSetting(no_programs)</visible>
 				</item>
 				<item id="9">
+					<description>Settings</description>
+					<label>31016</label>
 					<include>BackgroundVarsSettings</include>
 					<onclick>Skin.SetString(custom,CustomSettings)</onclick>
 					<onclick>SetFocus(92)</onclick>
-					<label>31016</label>
 					<visible>!Skin.HasSetting(nosettings)</visible>
 				</item>
 				<item id="10">
@@ -581,7 +589,6 @@
 			<onright>301</onright>
 			<onup>346</onup>
 			<ondown>7</ondown>
-			<viewtype>list</viewtype>
 			<orientation>horizontal</orientation>
 			<focusposition>2</focusposition>
 			<scrolltime>200</scrolltime>
