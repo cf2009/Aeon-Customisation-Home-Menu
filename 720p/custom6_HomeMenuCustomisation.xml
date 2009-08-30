@@ -88,7 +88,7 @@
 			<textcolor>FFFFFFFF</textcolor>
 			<animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(20)">Conditional</animation>
 		</control>
-	<!-- Main menu -->
+	<!-- Menu -->
 		<control type="wraplist" id="10">
 			<posx>540</posx>
 			<posy>160</posy>
@@ -141,9 +141,10 @@
 				</item>
 			</content>
 		</control>
-	<!-- Main Menu -->
+		<control type="group" id="11">
+		<!-- Main Menu Itme List -->
 		<control type="list" id="13">
-			<visible>Container(10).HasFocus(1) + !Control.IsVisible(20)</visible>
+				<visible>Container(10).HasFocus(1)</visible>
 			<posx>520</posx>
 			<posy>207</posy>
 			<height>180</height>
@@ -153,6 +154,7 @@
 			<onup>13</onup>
 			<ondown>23</ondown>
 			<scrolltime>200</scrolltime>
+				<animation effect="fade" start="100" end="0" time="200" condition="Control.HasFocus(20)">Conditional</animation>
 			<include>Animation_CommonFade</include>
 			<itemlayout height="30">
 				<control type="image">
@@ -508,6 +510,7 @@
 				</item>
 			</content>
 		</control>
+		</control>
 	<!-- favourite list -->
 		<control type="list" id="20">
 			<visible allowhiddenfocus="true">Control.HasFocus(20)</visible>
@@ -603,7 +606,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.1.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.1.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.1.name))</visible>
 				</item>
 				<item id="2">
@@ -612,7 +615,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.2.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.2.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.2.name))</visible>
 				</item>
 				<item id="3">
@@ -621,7 +624,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.3.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.3.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.3.name))</visible>
 				</item>
 				<item id="4">
@@ -630,7 +633,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.4.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.4.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.4.name))</visible>
 				</item>
 				<item id="5">
@@ -639,7 +642,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.5.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.5.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.5.name))</visible>
 				</item>
 				<item id="6">
@@ -648,7 +651,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.6.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.6.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.6.name))</visible>
 				</item>
 				<item id="7">
@@ -657,7 +660,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.7.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.7.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.7.name))</visible>
 				</item>
 				<item id="8">
@@ -666,7 +669,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.8.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.8.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.8.name))</visible>
 				</item>
 				<item id="9">
@@ -675,7 +678,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.9.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.9.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.9.name))</visible>
 				</item>
 				<item id="10">
@@ -684,7 +687,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.10.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.10.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.10.name))</visible>
 				</item>
 				<item id="11">
@@ -693,7 +696,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.11.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.11.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.11.name))</visible>
 				</item>
 				<item id="12">
@@ -702,7 +705,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.12.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.12.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.12.name))</visible>
 				</item>
 				<item id="13">
@@ -711,7 +714,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.13.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.13.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.13.name))</visible>
 				</item>
 				<item id="14">
@@ -720,7 +723,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.14.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.14.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.14.name))</visible>
 				</item>
 				<item id="15">
@@ -729,7 +732,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.15.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.15.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.15.name))</visible>
 				</item>
 				<item id="16">
@@ -738,7 +741,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.16.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.16.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.16.name))</visible>
 				</item>
 				<item id="17">
@@ -747,7 +750,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.17.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.17.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.17.name))</visible>
 				</item>
 				<item id="18">
@@ -756,7 +759,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.18.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.18.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.18.name))</visible>
 				</item>
 				<item id="19">
@@ -765,7 +768,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.19.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.19.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.19.name))</visible>
 				</item>
 				<item id="20">
@@ -774,7 +777,7 @@
 					<onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.20.path)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.20.name)])</onclick>
 					<onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
-					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(13)</onclick>
 					<visible>!IsEmpty(Window(0).Property(favourite.20.name))</visible>
 				</item>
 			</content>
