@@ -1,7 +1,0 @@
-<widget>
-	<Title>On This Day</Title>
-	<URL>http://newsrss.bbc.co.uk/rss/on_this_day/front_page/rss.xml</URL>
-	<ContentTitle>&lt;item&gt;&lt;title&gt;(.*?)&lt;/title&gt;&lt;description&gt;</ContentTitle>
-	<Content>&lt;/title&gt;&lt;description&gt;(.*?)&lt;/description&gt;&lt;link&gt;</Content>
-	<Random>yes</Random>
-</widget>

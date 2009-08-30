@@ -221,12 +221,18 @@
 	<string id="31243">DISABLE ALL</string>
 	<string id="31244">MENUS</string>
 	<string id="31245">BROWSING LAYOUT</string>
+	<string id="31254">4 DAY</string>
+	<string id="31255">36 HOUR </string>
+	<string id="31256">WEEKEND</string>
+	<string id="31257">ANIMATE</string>
+	<string id="312571">7 DAY</string>
+	<string id="312572">ALERTS</string>
   
 <!-- Aeon Advanced options -->
 
 	<string id="31249">MEDIA FLAGS TOGGLE</string>
-	<string id="31250">MULTIPLEX LAYOUT (FANART, PLOT, THUMBSHOW)</string>
-	<string id="31251">MULTIPLEX INFO TOGGLE (ON, OFF, AUTO, TRIGGER)</string>
+	<string id="31250">MULTIPLEX/SHOWCASE LAYOUT (FANART, PLOT, THUMBSHOW)</string>
+	<string id="31251">MULTIPLEX/SHOWCASE INFO TOGGLE (ON, OFF, AUTO, TRIGGER)</string>
 	<string id="31252">GRADIENT EFFECT FOR HOME MAIN MENU</string>
 	<string id="31253">LINK GAMES SHORTCUT TO 'LAUNCHER' PLUGIN</string>
 	<string id="31258">SHOW RATINGS (IMDB, ETC.) IN MOVIE INFO PAGE</string>
@@ -460,6 +466,7 @@
 	<string id="31579">SLIM LIST</string>
 	<string id="31580">LOW LIST</string>
 	<string id="31581">CLEAR LIST</string>
+	<string id="31582">OLD MULTIPLEX</string>
 
 <!-- Aeon Settings panel labels -->
   
@@ -488,38 +495,10 @@
 
 <!-- Home mod 31850 to 31899 -->
 
-	<string id="31850">PLUGINS</string>
-	<string id="31851">WEEKEND</string>
-	<string id="31852">36 HOURS</string>
-	<string id="31853">4 DAYS</string>
-	<string id="31854">PARTY</string>
-	<string id="31855">ALARM</string>
-	<string id="31856">TIMER</string>
 	<string id="31857">New Item</string>
-	<string id="31858">Sub</string>
-	<string id="31859">Animated weather icons</string>
 	<string id="31860">CLEAR</string>
-	<string id="31861">10 DAYS</string>
-	<string id="31862">ALARM Off</string>
-	<string id="31863">7 DAYS</string>
 	<string id="31864">Open Playlists</string>
-	<string id="31865">Extras</string>
-	<string id="31866">Album Review</string>
 	<string id="31867">MAIN MENU</string>
-	<string id="31868">LOCK</string>
-	<string id="31869">Weather Backdrop by Current Weather Conditions</string>
-	<string id="31870">ALERTS</string>
-	<string id="31871">Random pick</string>
-	<string id="31872">-</string>
-	<string id="31873">Next 10 Days</string>
-	<string id="31874">Next 36 Hours</string>
-	<string id="31875">THIS WEEKEND</string>
-	<string id="31876">SUB MENU</string>
-	<string id="31877">Exit</string>
-	<string id="31878">TOTALS</string>
-	<string id="31879">RECENTLY ADDED</string>
-
-
 
 <!-- Credits -->
 

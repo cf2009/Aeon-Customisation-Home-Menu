@@ -1,4 +1,18 @@
 <includes>
+<!-- Add Item -->
+	<include name="TV_Link">
+		<onclick>Skin.SetBool(videotv)</onclick>
+		<onclick>Skin.Reset(videomovies)</onclick>
+	</include>
+	<include name="Movie_Link">
+		<onclick>Skin.SetBool(videomovies)</onclick>
+		<onclick>Skin.Reset(videotv)</onclick>
+	</include>
+	<include name="video_Link">
+		<onclick>Skin.SetBool(videomovies)</onclick>
+		<onclick>Skin.Reset(videotv)</onclick>
+	</include>
+<!-- Add Item End -->
 	<include name="MainMenu_Label">
 		<posy>1</posy>
 		<height>61</height>
@@ -25,23 +39,43 @@
 		<align>center</align>
 		<aligny>center</aligny>
 	</include>
-	<include name="TV_Link">
-		<onclick>Skin.SetBool(videotv)</onclick>
-		<onclick>Skin.Reset(videomovies)</onclick>
+	<include name="DownForSub">
+		<ondown>351</ondown>
 	</include>
-	<include name="Movie_Link">
-		<onclick>Skin.SetBool(videomovies)</onclick>
-		<onclick>Skin.Reset(videotv)</onclick>
+	<include name="LatestAdditions">
+		<onup>SetFocus(510)</onup>
+		<ondown>351</ondown>
 	</include>
-	<include name="video_Link">
-		<onclick>Skin.SetBool(videomovies)</onclick>
-		<onclick>Skin.Reset(videotv)</onclick>
+	<!-- Weather Backdrop by Current Weather Conditions -->
+	<include name="BackgroundVarsWeather2">
+		<thumb>$INFO[Skin.String(CustomWeather)]$INFO[Weather.FanartCode]</thumb>
 	</include>
-	<control type="button" id="3003">
-		<visible>Container(300).OnPrevious|Container(300).OnNext</visible>
-		<animation effect="fade" start="0" end="100" time="200">Hidden</animation>
-	</control>
+	<!-- End -->
 	<include name="MainMenu">
+		<control type="button" id="351">
+			<onfocus>SetFocus(940)</onfocus>
+			<visible>Container(300).HasFocus(6)</visible>
+		</control>
+		<control type="button" id="351">
+			<onfocus>SetFocus(942)</onfocus>
+			<visible>Container(300).HasFocus(7)</visible>
+		</control>
+		<control type="button" id="351">
+			<onfocus>SetFocus(941)</onfocus>
+			<visible>Container(300).HasFocus(1)</visible>
+		</control>
+		<control type="button" id="351">
+			<onfocus>SetFocus(943)</onfocus>
+			<visible>Container(300).HasFocus(9)</visible>
+		</control>
+		<control type="button" id="351">
+			<onfocus>SetFocus(944)</onfocus>
+			<visible>Container(300).HasFocus(22)</visible>
+		</control>
+		<control type="button" id="351">
+			<onfocus>SetFocus(945)</onfocus>
+			<visible>Container(300).HasFocus(10)</visible>
+		</control>
 		<control type="wraplist" id="300">
 			<posx>0</posx>
 			<posy>0</posy>
@@ -49,12 +83,13 @@
 			<width>1280</width>
 			<onleft>300</onleft>
 			<onright>300</onright>
+			<viewtype>list</viewtype>
 			<orientation>horizontal</orientation>
 			<focusposition>2</focusposition>
 			<scrolltime>200</scrolltime>
-			<ondown>322</ondown>
-			<onup>324</onup>
-			<include>homesubmenu_animation2</include>
+			<include condition="!Skin.HasSetting(homelatest)">DownForSub</include>
+			<include condition="Skin.HasSetting(homelatest)">LatestAdditions</include>
+			<onfocus>SetFocus(299)</onfocus>
 			<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
 				<effect type="slide" start="-1280" end="0" time="400" tween="quadratic" easing="out" />
 				<effect type="fade" start="0" end="100" time="400" />
@@ -76,62 +111,52 @@
 					<textcolor>FFFFFFFF</textcolor>
 					<include>Animation_ButtonFocusFade</include>
 				</control>
-				<control type="label">
-					<visible>!Control.IsVisible(3003)</visible>
-					<include>MainMenu_Label</include>
-					<textcolor>FFFFFFFF</textcolor>
-				</control>
 			</focusedlayout>
 			<content>
-				<item id="5">
-					<label>31012</label>
-					<include>BackgroundVarsPictures</include>
-					<onclick>XBMC.ActivateWindow(MyPictures)</onclick>
-					<visible>!Skin.HasSetting(nopictures)</visible>
-				</item>
-				<item id="2">
-					<description>Extras</description>
-					<label>31865</label>
-					<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
-					<thumb>$INFO[Skin.String(Custom_extras)]</thumb>
-					<onclick>SetFocus(324)</onclick>
-					<visible>!Skin.HasSetting(lowermainmenu)</visible>
-					<visible>!Skin.HasSetting(no_extras)</visible>
-				</item>
-				<item id="2">
-					<description>Extras</description>
-					<label>31865</label>
-					<include>BackgroundVars_extras</include>
-					<onclick>SetFocus(322)</onclick>
-					<visible>Skin.HasSetting(lowermainmenu)</visible>
-					<visible>!Skin.HasSetting(no_extras)</visible>
-				</item>
 				<item id="1">
 					<label>31010</label>
 					<include>BackgroundVarsMusic</include>
 					<onclick>XBMC.ActivateWindow(MyMusic,return)</onclick>
 					<visible>!Skin.HasSetting(nomusic)</visible>
 				</item>
+				<item id="2">
+					<label>31011</label>
+					<include>BackgroundVarsGames</include>
+					<onclick>XBMC.ActivateWindow(MyPrograms)</onclick>
+					<visible>!Skin.HasSetting(nogames)</visible>
+					<visible>!Skin.HasSetting(launcherforgames)</visible>
+				</item>
+				<item id="2">
+					<label>31011</label>
+					<include>BackgroundVarsGames</include>
+					<onclick>XBMC.ActivateWindow(1,plugin://programs/Launcher/)</onclick>
+					<visible>!Skin.HasSetting(nogames)</visible>
+					<visible>Skin.HasSetting(launcherforgames)</visible>
+				</item>
+				<item id="5">
+					<label>31012</label>
+					<include>BackgroundVarsPictures</include>
+					<onclick>XBMC.ActivateWindow(MyPictures)</onclick>
+					<visible>!Skin.HasSetting(nopictures)</visible>
+				</item>
 				<item id="6">
-					<description>Movies</description>
-					<label>342</label>
+					<label>31013</label>
 					<include>BackgroundVarsMovies</include>
-					<include>Movie_Link</include>
+					<onclick>Skin.SetBool(videomovies)</onclick>
+					<onclick>Skin.Reset(videotv)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,movietitles,return)</onclick>
-					<visible>library.hascontent(movies)</visible>
 					<visible>!Skin.HasSetting(nomovies)</visible>
 				</item>
 				<item id="7">
-					<description>TVshow</description>
+					<description>My Videos</description>
 					<label>31014</label>
 					<include>BackgroundVarsTV</include>
-					<include>TV_Link</include>
+					<onclick>Skin.SetBool(videotv)</onclick>
+					<onclick>Skin.Reset(videomovies)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowtitles,return)</onclick>
-					<visible>library.hascontent(tvshows)</visible>
 					<visible>!Skin.HasSetting(notvshows)</visible>
 				</item>
 				<item id="8">
-					<description>My Videos</description>
 					<label>31015</label>
 					<include>BackgroundVarsVideo</include>
 					<onclick>XBMC.ActivateWindow(MyVideoFiles)</onclick>
@@ -140,10 +165,9 @@
 				<item id="10">
 					<description>Weather</description>
 					<label>31017</label>
-					<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather2</include>
-					<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather</include>
-					<onclick>xbmc.activatewindow(2600)</onclick>
-					<visible>System.HasNetwork</visible>
+					<include condition="Skin.HasSetting(CustomWeather)">BackgroundVarsWeather2</include>
+					<include condition="!Skin.HasSetting(CustomWeather)">BackgroundVarsWeather</include>
+					<onclick>XBMC.ActivateWindow(2600)</onclick>
 					<visible>Skin.HasSetting(weather)</visible>
 				</item>
 			<!-- Add Items -->
@@ -258,14 +282,7 @@
 					<visible>Skin.HasSetting(mainmenu_10)</visible>
 				</item>
 			<!-- Add Item End -->
-				<item id="3">
-					<label>0</label>
-					<include>BackgroundVarsGames</include>
-					<onclick>XBMC.ActivateWindow(MyPrograms)</onclick>
-					<visible>!Skin.HasSetting(no_programs)</visible>
-				</item>
 				<item id="9">
-					<description>Settings</description>
 					<label>31016</label>
 					<include>BackgroundVarsSettings</include>
 					<onclick>Skin.Reset(settingsfade)</onclick>
@@ -274,44 +291,43 @@
 				</item>
 				<item id="24">
 					<description>Scripts</description>
-					<label>31020</label>
 					<include>BackgroundVarsScripts</include>
+					<label>31020</label>
 					<onclick>XBMC.ActivateWindow(20)</onclick>
 					<visible>Skin.HasSetting(scripts)</visible>
 				</item>
 				<item id="13">
 					<description>Play DVD</description>
-					<label>31018</label>
 					<include>BackgroundVarsPlayDVD</include>
+					<label>31018</label>
 					<onclick>XBMC.PlayDVD</onclick>
 					<visible>System.HasMediadvd</visible>
 				</item>
 				<item id="20">
 					<description>Refresh</description>
-					<label>31607</label>
 					<include>BackgroundVarsSettings</include>
+					<label>31607</label>
 					<onclick>XBMC.ReloadSkin</onclick>
 					<visible>Skin.HasSetting(debug)</visible>
 				</item>
 				<item id="21">
 					<description>Assistant</description>
-					<label>31021</label>
 					<include>BackgroundVarsAssistant</include>
+					<label>31021</label>
 					<onclick>XBMC.ActivateWindow(605)</onclick>
 					<visible>Skin.HasSetting(assistant)</visible>
 				</item>
 				<item id="23">
 					<description>Sign out</description>
-					<label>31209</label>
 					<include>BackgroundVarsSignOut</include>
+					<label>31209</label>
 					<onclick>System.LogOff</onclick>
-					<visible>System.HasLoginScreen</visible>
 					<visible>Skin.HasSetting(signout)</visible>
 				</item>
 				<item id="22">
 					<description>Shutdown</description>
-					<label>31019</label>
 					<include>BackgroundVarsShutdown</include>
+					<label>31019</label>
 					<onclick>XBMC.Shutdown()</onclick>
 					<visible>Skin.HasSetting(shutdown)</visible>
 				</item>
@@ -328,10 +344,11 @@
 			<onright>300</onright>
 			<onup>6</onup>
 			<ondown>6</ondown>
+			<viewtype>list</viewtype>
 			<orientation>horizontal</orientation>
 			<focusposition>2</focusposition>
 			<scrolltime>200</scrolltime>
-			<visible>![Control.HasFocus(301) | Control.HasFocus(7) | Control.HasFocus(10) | Control.HasFocus(345) | Control.HasFocus(346)]</visible>
+			<visible>![Control.HasFocus(301) | Control.HasFocus(7) | Control.HasFocus(10)]</visible>
 			<animation effect="fade" start="0" end="100" time="200" condition="!Window.Previous(56) + !Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(17) + !Window.Previous(18) + !Window.Previous(19)">WindowOpen</animation>
 			<itemlayout width="184" height="40">
 				<control type="label">
@@ -359,7 +376,6 @@
 			</focusedlayout>
 			<content>
 				<item id="1">
-					<description>Music</description>
 					<label>31010</label>
 					<include>BackgroundVarsMusic</include>
 					<onclick>Skin.SetString(custom,CustomMusic)</onclick>
@@ -367,16 +383,13 @@
 					<visible>!Skin.HasSetting(nomusic)</visible>
 				</item>
 				<item id="2">
-					<description>Extras</description>
-					<label>31865</label>
-					<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
-					<thumb>$INFO[Skin.String(Custom_extras)]</thumb>
-					<onclick>Skin.SetString(custom,Custom_extras)</onclick>
+					<label>31011</label>
+					<include>BackgroundVarsGames</include>
+					<onclick>Skin.SetString(custom,CustomGames)</onclick>
 					<onclick>SetFocus(92)</onclick>
-					<visible>!Skin.HasSetting(no_extras)</visible>
+					<visible>!Skin.HasSetting(nogames)</visible>
 				</item>
 				<item id="5">
-					<description>Pictures</description>
 					<label>31012</label>
 					<include>BackgroundVarsPictures</include>
 					<onclick>Skin.SetString(custom,CustomPictures)</onclick>
@@ -384,25 +397,21 @@
 					<visible>!Skin.HasSetting(nopictures)</visible>
 				</item>
 				<item id="6">
-					<description>Movies</description>
 					<label>31013</label>
 					<include>BackgroundVarsMovies</include>
 					<onclick>Skin.SetString(custom,CustomMovies)</onclick>
 					<onclick>SetFocus(92)</onclick>
-					<visible>library.hascontent(movies)</visible>
 					<visible>!Skin.HasSetting(nomovies)</visible>
 				</item>
 				<item id="7">
-					<description>TVShows</description>
+					<description>My Videos</description>
 					<label>31014</label>
 					<include>BackgroundVarsTV</include>
 					<onclick>Skin.SetString(custom,CustomTV)</onclick>
 					<onclick>SetFocus(92)</onclick>
-					<visible>library.hascontent(tvshows)</visible>
 					<visible>!Skin.HasSetting(notvshows)</visible>
 				</item>
 				<item id="8">
-					<description>My Videos</description>
 					<label>31015</label>
 					<include>BackgroundVarsVideo</include>
 					<onclick>Skin.SetString(custom,CustomVideos)</onclick>
@@ -410,46 +419,25 @@
 					<visible>!Skin.HasSetting(novideos)</visible>
 				</item>
 				<item id="24">
-					<description>Scripts</description>
 					<label>31020</label>
 					<include>BackgroundVarsScripts</include>
 					<onclick>Skin.SetString(custom,CustomScripts)</onclick>
 					<onclick>SetFocus(92)</onclick>
 					<visible>Skin.HasSetting(scripts)</visible>
 				</item>
-				<item id="3">
-					<label>0</label>
-					<include>BackgroundVarsGames</include>
-					<onclick>Skin.SetString(custom,CustomGames)</onclick>
-					<onclick>SetFocus(92)</onclick>
-					<visible>!Skin.HasSetting(no_programs)</visible>
-				</item>
 				<item id="9">
-					<description>Settings</description>
-					<label>31016</label>
 					<include>BackgroundVarsSettings</include>
 					<onclick>Skin.SetString(custom,CustomSettings)</onclick>
 					<onclick>SetFocus(92)</onclick>
+					<label>31016</label>
 					<visible>!Skin.HasSetting(nosettings)</visible>
 				</item>
 				<item id="10">
 					<description>Weather</description>
 					<label>31017</label>
-					<include>BackgroundVarsWeather</include>
+					<include>BackgroundVarsVideo</include>
 					<onclick>Skin.SetString(custom,CustomWeather)</onclick>
 					<onclick>SetFocus(92)</onclick>
-					<visible>System.HasNetwork</visible>
-					<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
-					<visible>Skin.HasSetting(weather)</visible>
-				</item>
-				<item id="10">
-					<description>Weather</description>
-					<label>31017</label>
-					<include>BackgroundVarsWeather2</include>
-					<onclick>Skin.SetString(custom,Custom_Weather)</onclick>
-					<onclick>SetFocus(92)</onclick>
-					<visible>System.HasNetwork</visible>
-					<visible>Skin.HasSetting(CustomWeatherConditions)</visible>
 					<visible>Skin.HasSetting(weather)</visible>
 				</item>
 			<!-- Add Item -->
@@ -565,7 +553,6 @@
 					<include>BackgroundVarsSignOut</include>
 					<onclick>Skin.SetString(custom,CustomSignOut)</onclick>
 					<onclick>SetFocus(92)</onclick>
-					<visible>System.HasLoginScreen</visible>
 					<visible>Skin.HasSetting(signout)</visible>
 				</item>
 				<item id="22">
@@ -587,13 +574,13 @@
 			<width>840</width>
 			<onleft>301</onleft>
 			<onright>301</onright>
-			<onup>346</onup>
+			<onup>7</onup>
 			<ondown>7</ondown>
+			<viewtype>list</viewtype>
 			<orientation>horizontal</orientation>
 			<focusposition>2</focusposition>
 			<scrolltime>200</scrolltime>
-			<visible allowhiddenfocus="true">Control.HasFocus(301) | Control.HasFocus(7) | Control.HasFocus(345)</visible>
-			<include>homesubmenu_Customiseanimation</include>
+			<visible allowhiddenfocus="true">Control.HasFocus(301) | Control.HasFocus(7)</visible>
 			<animation effect="fade" start="0" end="100" time="200" condition="!Window.Previous(56) + !Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(17) + !Window.Previous(18) + !Window.Previous(19)">WindowOpen</animation>
 			<itemlayout width="184" height="40">
 				<control type="label">
@@ -645,20 +632,16 @@
 					<visible>Skin.HasSetting(nomusic)</visible>
 				</item>
 				<item id="2">
-					<description>Extras on</description>
-					<label>31865</label>
-					<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
-					<thumb>$INFO[Skin.String(Custom_extras)]</thumb>
-					<onclick>Skin.SetBool(no_extras)</onclick>
-					<visible>!Skin.HasSetting(no_extras)</visible>
+					<label>31011</label>
+					<include>BackgroundVarsGames</include>
+					<onclick>Skin.SetBool(nogames)</onclick>
+					<visible>!Skin.HasSetting(nogames)</visible>
 				</item>
 				<item id="2">
-					<description>Extras off</description>
-					<label2>31865</label2>
-					<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
-					<thumb>$INFO[Skin.String(Custom_extras)]</thumb>
-					<onclick>Skin.Reset(no_extras)</onclick>
-					<visible>Skin.HasSetting(no_extras)</visible>
+					<label2>31011</label2>
+					<include>BackgroundVarsGames</include>
+					<onclick>Skin.Reset(nogames)</onclick>
+					<visible>Skin.HasSetting(nogames)</visible>
 				</item>
 				<item id="5">
 					<label>31012</label>
@@ -676,14 +659,12 @@
 					<label>31013</label>
 					<include>BackgroundVarsMovies</include>
 					<onclick>Skin.SetBool(nomovies)</onclick>
-					<visible>library.hascontent(movies)</visible>
 					<visible>!Skin.HasSetting(nomovies)</visible>
 				</item>
 				<item id="6">
 					<label2>31013</label2>
 					<include>BackgroundVarsMovies</include>
 					<onclick>Skin.Reset(nomovies)</onclick>
-					<visible>library.hascontent(movies)</visible>
 					<visible>Skin.HasSetting(nomovies)</visible>
 				</item>
 				<item id="7">
@@ -691,7 +672,6 @@
 					<label>31014</label>
 					<include>BackgroundVarsTV</include>
 					<onclick>Skin.SetBool(notvshows)</onclick>
-					<visible>library.hascontent(tvshows)</visible>
 					<visible>!Skin.HasSetting(notvshows)</visible>
 				</item>
 				<item id="7">
@@ -714,54 +694,19 @@
 					<visible>Skin.HasSetting(novideos)</visible>
 				</item>
 				<item id="10">
-					<description>Weather On</description>
 					<label>31017</label>
-					<include>BackgroundVarsWeather</include>
+					<include condition="Skin.HasSetting(CustomWeather)">BackgroundVarsWeather2</include>
+					<include condition="!Skin.HasSetting(CustomWeather)">BackgroundVarsWeather</include>
 					<onclick>Skin.Reset(weather)</onclick>
-					<visible>System.HasNetwork</visible>
-					<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
 					<visible>Skin.HasSetting(weather)</visible>
 				</item>
 				<item id="10">
-					<description>Weather Off</description>
+					<description>My Pictures</description>
 					<label2>31017</label2>
-					<include>BackgroundVarsWeather</include>
+					<icon>special://skin/media/backdrops/summer/summer.png</icon>
+					<thumb>$INFO[Skin.String(CustomWeather)]</thumb>
 					<onclick>Skin.SetBool(weather)</onclick>
-					<visible>System.HasNetwork</visible>
-					<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
 					<visible>!Skin.HasSetting(weather)</visible>
-				</item>
-				<item id="10">
-					<description>Weather On</description>
-					<label>31017</label>
-					<include>BackgroundVarsWeather2</include>
-					<onclick>Skin.Reset(weather)</onclick>
-					<visible>System.HasNetwork</visible>
-					<visible>Skin.HasSetting(CustomWeatherConditions)</visible>
-					<visible>Skin.HasSetting(weather)</visible>
-				</item>
-				<item id="10">
-					<description>Weather Off</description>
-					<label2>31017</label2>
-					<include>BackgroundVarsWeather2</include>
-					<onclick>Skin.SetBool(weather)</onclick>
-					<visible>System.HasNetwork</visible>
-					<visible>Skin.HasSetting(CustomWeatherConditions)</visible>
-					<visible>!Skin.HasSetting(weather)</visible>
-				</item>
-				<item id="3">
-					<description>Programs On</description>
-					<label>0</label>
-					<include>BackgroundVarsGames</include>
-					<onclick>Skin.SetBool(no_programs)</onclick>
-					<visible>!Skin.HasSetting(no_programs)</visible>
-				</item>
-				<item id="3">
-					<description>Programs Off</description>
-					<label2>0</label2>
-					<include>BackgroundVarsGames</include>
-					<onclick>Skin.Reset(no_programs)</onclick>
-					<visible>Skin.HasSetting(no_programs)</visible>
 				</item>
 			<!-- Add item settings -->
 				<item id="40">
@@ -933,12 +878,14 @@
 				</item>
 		<!-- Add Item End -->
 				<item id="24">
+					<description>My Pictures</description>
 					<label>31020</label>
 					<include>BackgroundVarsScripts</include>
 					<onclick>Skin.Reset(scripts)</onclick>
 					<visible>Skin.HasSetting(scripts)</visible>
 				</item>
 				<item id="24">
+					<description>My Pictures</description>
 					<label2>31020</label2>
 					<include>BackgroundVarsScripts</include>
 					<onclick>Skin.SetBool(scripts)</onclick>
@@ -989,7 +936,6 @@
 					<label>31209</label>
 					<include>BackgroundVarsSignOut</include>
 					<onclick>Skin.Reset(signout)</onclick>
-					<visible>System.HasLoginScreen</visible>
 					<visible>Skin.HasSetting(signout)</visible>
 				</item>
 				<item id="23">
