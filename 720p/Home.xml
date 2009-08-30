@@ -24,26 +24,7 @@
 
 <!-- Windowopen -->
 	<control type="button" id="323">
-		<include>homesubmenu_but</include>
-		<onfocus>setProperty(extra_extras,)</onfocus>
-		<onfocus>setProperty(Picture_extras,)</onfocus>
-		<onfocus>setProperty(totals_extras,)</onfocus>
-		<onfocus>setProperty(recentadded_extras,)</onfocus>
-		<onfocus>setProperty(CustomMenu1_extras,)</onfocus>
-		<onfocus>setProperty(CustomMenu2_extras,)</onfocus>
-		<onfocus>setProperty(random_order,)</onfocus>
-
-
-		<include condition="!Skin.HasSetting(Recently_added)">Widget_RecentAdded_py</include>
-		<include condition="!Skin.HasSetting(Library_info)">Widget_Totals_py</include>
-		<include condition="Skin.HasSetting(extra_widget_on)">Widget_Extras_py</include>
-		<include condition="Skin.HasSetting(Pictures_widget_on)">Widget_Picture_py</include>
-		<include condition="Skin.HasSetting(CustomMenu1_widget_on)">Widget_CustomMenu1_py</include>
-		<include condition="Skin.HasSetting(CustomMenu2_widget_on)">Widget_CustomMenu2_py</include>
-		<include condition="Skin.HasSetting(Widget_random_order)">Widget_random_order_py</include>
-
-		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True$INFO[Window.Property(random_order)]$INFO[Window.Property(CustomMenu1_extras)]$INFO[Window.Property(CustomMenu2_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(extra_extras)]$INFO[Window.Property(Picture_extras)]$INFO[Window.Property(totals_extras)]$INFO[Window.Property(recentadded_extras)])</onfocus>
-
+		<onfocus>XBMC.RunScript(special://skin/extras/extras.py,unplayed=True&amp;extra=$INFO[Skin.String(extra_widget_set)]&amp;picture=$INFO[Skin.String(Pictures_widget_set)]&amp;totals=$INFO[Skin.HasSetting(Library_info)]&amp;recentadded=$INFO[Skin.HasSetting(Recently_added)]&amp;CustomMenu1=$INFO[Skin.String(CustomMenu1_widget_set)]&amp;CustomMenu2=$INFO[Skin.String(CustomMenu2_widget_set)]&amp;random=$INFO[Skin.HasSetting(Widget_random_order)])</onfocus>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>SetFocus(300)</onfocus>
 		<onfocus>Skin.Reset(submenu)</onfocus>
@@ -242,8 +223,8 @@
 	</control>
 <!-- WIDGET_custom_mainmenu 1 End  -->
 
-	<include condition="!Skin.HasSetting(Library_info)">Widget_Totals</include>
-	<include condition="!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)">Widget_RecentAdded</include>
+	<include condition="Skin.HasSetting(Library_info)">Widget_Totals</include>
+	<include condition="Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)">Widget_RecentAdded</include>
 
 	<include>Objects_WeatherPopup2</include>
 	<include>Furniture_Time</include>

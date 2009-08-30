@@ -2272,7 +2272,7 @@
 		<!-- OnUp -->
 		<control type="group" id="324">
 			<control type="button" id="5020">
-				<visible>!Skin.HasSetting(Recently_added)+[Container(300).HasFocus(6) | Container(300).HasFocus(7)]</visible>
+				<visible>Skin.HasSetting(Recently_added)+[Container(300).HasFocus(6) | Container(300).HasFocus(7)]</visible>
 				<include>homesubmenu_but</include>
 				<onfocus>SetFocus(8001)</onfocus>
 			</control>
@@ -2448,6 +2448,10 @@
 				<include>Animation_CommonFade</include>
 				<include>homesubmenu_animation</include>
 			</control>
+			<control type="button" id="3004">
+				<visible>Container(300).OnPrevious|Container(300).OnNext</visible>
+				<animation effect="fade" start="0" end="100" time="200">Hidden</animation>
+			</control>
 			<control type="wraplist" id="325">
 				<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
 				<posx>-50</posx>
@@ -2477,19 +2481,9 @@
 						<width>300</width>
 						<posx>90</posx>
 						<include>MainMenu_Label</include>
-						<textcolor>48FFFFFF</textcolor>
-					</control>
-					<control type="label">
-						<width>300</width>
-						<posx>90</posx>
-						<include>MainMenu_Label</include>
 						<textcolor>FFFFFFFF</textcolor>
-						<include>Animation_ButtonFocusFade</include>
-					</control>
-					<control type="label">
-						<visible>!Control.IsVisible(3004)</visible>
-						<include>MainMenu_Label</include>
-						<textcolor>FFFFFFFF</textcolor>
+						<animation effect="fade" start="30" end="100" time="200" condition="Control.IsVisible(3004)">Focus</animation>
+						<animation effect="fade" start="100" end="30" time="200" condition="Control.HasFocus(325)">Unfocus</animation>
 					</control>
 				</focusedlayout>
 				<content>
@@ -3297,15 +3291,15 @@
 	<!-- Widget Recent Added -->
 	<include name="Widget_RecentAdded">
 		<control type="group">
-			<visible>!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)</visible>
+			<visible>Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)</visible>
 			<visible>[Container(300).HasFocus(6)+!IsEmpty(Window.Property(LatestEpisode.1.ShowTitle))] | [Container(300).HasFocus(7)+!IsEmpty(Window.Property(LatestMovie.1.Title))] | [Container(300).HasFocus(1)+!IsEmpty(Window.Property(LatestSong.1.Album))]</visible>
 			<visible>!Control.IsVisible(87)</visible>
 			<posx>1030</posx>
 			<posy>65</posy>
 			<animation effect="slide" start="0" end="300,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(8001)">Conditional</animation>
-			<animation effect="slide" start="0" end="0,15" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(Library_info)">Conditional</animation>
-			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)+Skin.HasSetting(Library_info)">Conditional</animation>
-			<animation effect="slide" start="0,390" end="0,390" time="0" condition="Skin.HasSetting(Library_info)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,15" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)+Skin.HasSetting(Library_info)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(Library_info)">Conditional</animation>
+			<animation effect="slide" start="0,390" end="0,390" time="0" condition="!Skin.HasSetting(Library_info)">Conditional</animation>
 			<include>animation_Window_ocvh</include>
 			<control type="image">
 				<width>240</width>
@@ -3462,7 +3456,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)</visible>
+			<visible>Skin.HasSetting(Recently_added) | Skin.HasSetting(Widget_random_order)</visible>
 			<visible>Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)</visible>
 			<visible>!Control.IsVisible(87)</visible>
 			<animation effect="slide" start="0,20" end="0,20" time="0" condition="Skin.HasSetting(highertime)">Conditional</animation>
@@ -4334,29 +4328,7 @@
 		<aspectratio scalediffuse="false" aligny="top">keep</aspectratio>
 		<fadetime>400</fadetime>
 	</include>
-	<!-- extras.py set up -->
-	<include name="Widget_Extras_py">
-		<onfocus>setProperty(extra_extras,&amp;extra=$INFO[Skin.String(extra_widget_set)])</onfocus>
-	</include>
-	<include name="Widget_Picture_py">
-		<onfocus>setProperty(Picture_extras,&amp;picture=$INFO[Skin.String(Pictures_widget_set)])</onfocus>
-	</include>
-	<include name="Widget_Totals_py">
-		<onfocus>setProperty(totals_extras,&amp;totals=true)</onfocus>
-	</include>
-	<include name="Widget_RecentAdded_py">
-		<onfocus>setProperty(recentadded_extras,&amp;recentadded=true)</onfocus>
-	</include>
-	<include name="Widget_CustomMenu1_py">
-		<onfocus>setProperty(CustomMenu1_extras,&amp;CustomMenu1=$INFO[Skin.String(CustomMenu1_widget_set)])</onfocus>
-	</include>
-	<include name="Widget_CustomMenu2_py">
-		<onfocus>setProperty(CustomMenu2_extras,&amp;CustomMenu2=$INFO[Skin.String(CustomMenu2_widget_set)])</onfocus>
-	</include>
-	<include name="Widget_random_order_py">
-		<onfocus>setProperty(random_order,&amp;random=true)</onfocus>
-	</include>
-	<!-- HomeNowPlaying2 -->
+<!-- HomeNowPlaying2 -->
 	<include name="Furniture_HomeNowPlaying2">
 		<control type="image">
 			<posx>0</posx>

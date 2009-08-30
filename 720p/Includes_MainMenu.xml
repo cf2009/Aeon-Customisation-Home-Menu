@@ -69,17 +69,9 @@
 			<focusedlayout width="280" height="61">
 				<control type="label">
 					<include>MainMenu_Label</include>
-					<textcolor>48FFFFFF</textcolor>
-				</control>
-				<control type="label">
-					<include>MainMenu_Label</include>
 					<textcolor>FFFFFFFF</textcolor>
-					<include>Animation_ButtonFocusFade</include>
-				</control>
-				<control type="label">
-					<visible>!Control.IsVisible(3003)</visible>
-					<include>MainMenu_Label</include>
-					<textcolor>FFFFFFFF</textcolor>
+					<animation effect="fade" start="30" end="100" time="200" condition="Control.IsVisible(3003)">Focus</animation>
+					<animation effect="fade" start="100" end="30" time="200" condition="Control.HasFocus(300)">Unfocus</animation>
 				</control>
 			</focusedlayout>
 			<content>
