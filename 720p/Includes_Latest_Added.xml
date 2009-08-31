@@ -1,16 +1,129 @@
 <includes>
-	<include name="animation_Window_ocvh">
+<!-- fix -->
+	<include name="movewidgets">
+		<!-- fix -->
+	</include>
+<!-- Widget Animation -->
+	<include name="widget_animation_Window_ocvh">
 		<animation effect="fade" start="0" end="100" delay="1300" time="500">WindowOpen</animation>
 		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 		<animation effect="fade" start="0" end="100" delay="1300" time="800" reversible="false">Visible</animation>
 		<animation effect="fade" start="100" end="0" time="200" reversible="false">Hidden</animation>
 	</include>
-	<include name="animation_Window_ocvh2">
+	<include name="widget_animation_Window_ocvh2">
 		<animation effect="fade" start="0" end="100" time="800" reversible="false">Visible</animation>
 		<animation effect="fade" start="100" end="0" time="200" reversible="false">Hidden</animation>
 	</include>
-	<!-- Widget Recent Added -->
-	<include name="latest_added">
+<!-- Widget  -->
+	<include name="widget_back1">
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>300</width>
+			<height>270</height>
+			<texture border="20">home/home_weather_big.png</texture>
+			<colordiffuse>cc000000</colordiffuse>
+		</control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>300</width>
+			<height>270</height>
+			<texture border="20">home/home_weather_big.png</texture>
+			<colordiffuse>ccffffff</colordiffuse>
+		</control>
+	</include>
+	<include name="widget_back2">
+		<control type="image">
+			<posx>-220</posx>
+			<posy>0</posy>
+			<width>520</width>
+			<height>270</height>
+			<texture border="20">home/home_weather_big.png</texture>
+			<colordiffuse>cc000000</colordiffuse>
+		</control>
+		<control type="image">
+			<posx>-220</posx>
+			<posy>0</posy>
+			<width>520</width>
+			<height>270</height>
+			<texture border="20">home/home_weather_big.png</texture>
+			<colordiffuse>ccffffff</colordiffuse>
+		</control>
+	</include>
+	<include name="widget_animation">
+		<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
+		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
+		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+		<animation effect="slide" start="0,-30" end="0,-30" time="0" condition="Skin.HasSetting(lowerrss)+!Skin.HasSetting(lowermainmenu)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="-372,0" time="500" easing="inout" tween="cubic" condition="!control.HasFocus(8001)">Conditional</animation>
+		<animation effect="slide" start="0" end="0,-180" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+	</include>
+	<include name="widget_Title">
+		<posx>10</posx>
+		<posy>8</posy>
+		<width>280</width>
+		<height>30</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_WeatherTitle</font>
+		<textcolor>c0FFFFFF</textcolor>
+	</include>
+	<include name="widget_ContentTitle">
+		<posx>10</posx>
+		<posy>35</posy>
+		<width>280</width>
+		<height>20</height>
+		<font>Font_ListObjects</font>
+		<align>center</align>
+		<aligny>center</aligny>
+		<textcolor>a9ffffff</textcolor>
+	</include>
+	<include name="widget_PubDate">
+		<posx>10</posx>
+		<posy>75</posy>
+		<width>280</width>
+		<height>15</height>
+		<font>Font_ListObjects</font>
+		<aligny>center</aligny>
+		<align>left</align>
+		<textcolor>a9ffffff</textcolor>
+	</include>
+	<include name="widget_PubDate_center">
+		<align>center</align>
+	</include>
+	<include name="widget_Content">
+		<posx>10</posx>
+		<posy>75</posy>
+		<width>280</width>
+		<height>160</height>
+		<font>Font_ListObjects</font>
+		<textcolor>aaffffff</textcolor>
+		<autoscroll delay="8000" time="2000" repeat="10000">!Control.HasFocus(61)</autoscroll>
+	</include>
+	<include name="widget_XY">
+		<posx>1340</posx>
+		<posy>440</posy>
+	</include>
+	<include name="widget_image">
+		<posx>10</posx>
+		<posy>75</posy>
+		<width>280</width>
+		<height>170</height>
+		<aspectratio scalediffuse="false" aligny="top">keep</aspectratio>
+		<fadetime>400</fadetime>
+	</include>
+	<include name="widget_image_small">
+		<posx>-200</posx>
+		<posy>75</posy>
+		<width>200</width>
+		<height>185</height>
+		<aspectratio scalediffuse="false" aligny="top">keep</aspectratio>
+		<fadetime>400</fadetime>
+	</include>
+<!-- Widgets -->
+	<include name="widget_recent_added">
 		<control type="button" id="500">
 			<texturefocus>-</texturefocus>
 			<texturenofocus>-</texturenofocus>
@@ -29,20 +142,20 @@
 			<posy>455</posy>
 			<animation effect="slide" start="0" end="300,0" time="500" easing="inout" tween="cubic" condition="control.HasFocus(510)">Conditional</animation>
 			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-			<include>animation_Window_ocvh</include>
+			<include>widget_animation_Window_ocvh</include>
 			<control type="image">
 				<width>240</width>
 				<height>240</height>
 				<texture border="20">home/home_weather_big.png</texture>
 				<colordiffuse>cc000000</colordiffuse>
-				<include>animation_Window_ocvh2</include>
+				<include>widget_animation_Window_ocvh2</include>
 			</control>
 			<control type="image">
 				<width>240</width>
 				<height>240</height>
 				<texture border="20">home/home_weather_big.png</texture>
 				<colordiffuse>ccffffff</colordiffuse>
-				<include>animation_Window_ocvh2</include>
+				<include>widget_animation_Window_ocvh2</include>
 			</control>
 			<control type="label">
 				<posx>10</posx>
@@ -54,7 +167,7 @@
 				<font>Font_WeatherTitle</font>
 				<textcolor>c0FFFFFF</textcolor>
 				<label>31879</label>
-				<include>animation_Window_ocvh2</include>
+				<include>widget_animation_Window_ocvh2</include>
 			</control>
 			<control type="image">
 				<texture diffuse="multiplex/multiplex_tvmask.png" background="true" fallback="defaultvideo.png">$INFO[Container(510).ListItem.ActualIcon]</texture>
@@ -64,7 +177,7 @@
 				<width>220</width>
 				<height>123</height>
 				<visible>Container(300).HasFocus(7)</visible>
-				<include>animation_Window_ocvh2</include>
+				<include>widget_animation_Window_ocvh2</include>
 			</control>
 			<control type="image">
 				<texture diffuse="multiplex/multiplex_tvmask.png" background="true" fallback="defaultvideo.png">$INFO[Container(510).ListItem.ActualIcon]</texture>
@@ -74,7 +187,7 @@
 				<width>220</width>
 				<height>123</height>
 				<visible>Container(300).HasFocus(6)</visible>
-				<include>animation_Window_ocvh2</include>
+				<include>widget_animation_Window_ocvh2</include>
 			</control>
 			<control type="image">
 				<texture diffuse="multiplex/multiplex_tvmask.png">multiplex/multiplex_tvglass.png</texture>
@@ -84,7 +197,7 @@
 				<height>123</height>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)</visible>
-				<include>animation_Window_ocvh2</include>
+				<include>widget_animation_Window_ocvh2</include>
 			</control>
 			<control type="image">
 				<texture diffuse="multiplex/multiplex_tvmask.png">home/list_episodeicon_glass.png</texture>
@@ -94,7 +207,7 @@
 				<height>123</height>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)</visible>
-				<include>animation_Window_ocvh2</include>
+				<include>widget_animation_Window_ocvh2</include>
 			</control>
 			<control type="image">
 				<texture diffuse="multiplex/multiplex_tvmask.png">home/list_episodeicon_glass.png</texture>
@@ -104,7 +217,7 @@
 				<height>123</height>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<visible>Container(300).HasFocus(6)|Container(300).HasFocus(7)</visible>
-				<include>animation_Window_ocvh2</include>
+				<include>widget_animation_Window_ocvh2</include>
 			</control>
 			<control type="label">
 				<posx>10</posx>
@@ -117,7 +230,7 @@
 				<aligny>center</aligny>
 				<visible>Container(300).HasFocus(7)</visible>
 				<label>$INFO[Container(510).ListItem.Label2]</label>
-				<include>animation_Window_ocvh2</include>
+				<include>widget_animation_Window_ocvh2</include>
 			</control>
 			<control type="label">
 				<posx>10</posx>
@@ -131,12 +244,12 @@
 				<visible>!Container(300).HasFocus(1)</visible>
 				<label>[UPPERCASE]$INFO[Container(510).ListItem.Label][/UPPERCASE]</label>
 				<animation effect="slide" start="0,0" end="0,-10" time="1" condition="Container(300).HasFocus(6)">Conditional</animation>
-				<include>animation_Window_ocvh2</include>
+				<include>widget_animation_Window_ocvh2</include>
 			</control>
 		<!-- LatestSong -->
 			<control type="group">
 				<visible>Container(300).HasFocus(1)</visible>
-				<include>animation_Window_ocvh</include>
+				<include>widget_animation_Window_ocvh</include>
 				<control type="image">
 					<texture diffuse="home/nowplaying_mask.png" background="true">defaultvideo.png</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
@@ -174,7 +287,7 @@
 			<visible>!Control.IsVisible(87)</visible>
 			<animation effect="slide" start="0,20" end="0,20" time="0" condition="Skin.HasSetting(highertime)">Conditional</animation>
 			<animation effect="slide" start="0" end="0,-165" time="350" easing="inout" tween="cubic" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-			<include>animation_Window_ocvh</include>
+			<include>widget_animation_Window_ocvh</include>
 			<control type="image">
 				<visible>Control.HasFocus(510)</visible>
 				<posx>0</posx>
@@ -903,6 +1016,198 @@
 						</content>
 					</control>
 				</control>
+			</control>
+		</control>
+	</include>
+	<include name="widget_extra_item">
+		<control type="group">
+			<visible>Skin.HasSetting(extra_widget_on)</visible>
+			<visible>Container(300).HasFocus(2)+StringCompare(Window.Property(ExtrasWidget.Got),yes)</visible>
+			<include>widget_XY</include>
+			<include>widget_animation</include>
+			<control type="group">
+				<visible>IsEmpty(Window.Property(ExtrasWidget.Picture)) | IsEmpty(Window.Property(ExtrasWidget.Content))</visible>
+				<include>widget_back1</include>
+			</control>
+			<control type="group">
+				<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture)) + !IsEmpty(Window.Property(ExtrasWidget.Content))</visible>
+				<include>widget_back2</include>
+			</control>
+			<control type="label">
+				<include>widget_Title</include>
+				<label>$INFO[Window.Property(ExtrasWidget.Title)]</label>
+				<animation effect="slide" start="-109,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(ExtrasWidget.Picture)) + !IsEmpty(Window.Property(ExtrasWidget.Content))">Conditional</animation>
+			</control>
+			<control type="label">
+				<include>widget_ContentTitle</include>
+				<label>[I]$INFO[Window.Property(ExtrasWidget.ContentTitle)][/I]</label>
+				<animation effect="slide" start="-109,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(ExtrasWidget.Picture)) + !IsEmpty(Window.Property(ExtrasWidget.Content))">Conditional</animation>
+			</control>
+			<control type="label">
+				<include condition="IsEmpty(Window.Property(ExtrasWidget.Content))">widget_PubDate_center</include>
+				<include>widget_PubDate</include>
+				<label>$INFO[Window.Property(ExtrasWidget.PubDate)]</label>
+			</control>
+			<control type="textbox">
+				<include>widget_Content</include>
+				<label>$INFO[Window.Property(ExtrasWidget.Content)]</label>
+				<animation effect="slide" start="0,19" end="0,20" time="1" condition="!IsEmpty(Window.Property(ExtrasWidget.PubDate))">Conditional</animation>
+			</control>
+			<control type="image">
+				<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture))+IsEmpty(Window.Property(ExtrasWidget.Content))]</visible>
+				<include>widget_image</include>
+				<texture>$INFO[Window.Property(ExtrasWidget.Picture)]</texture>
+				<animation effect="zoom" start="100" end="95" time="1" center="auto" condition="!IsEmpty(Window.Property(ExtrasWidget.PubDate))">Conditional</animation>
+				<animation effect="slide" start="0,14" end="0,15" time="1" condition="!IsEmpty(Window.Property(ExtrasWidget.PubDate))">Conditional</animation>
+			</control>
+			<control type="image">
+				<visible>!IsEmpty(Window.Property(ExtrasWidget.Picture))+!IsEmpty(Window.Property(ExtrasWidget.Content))</visible>
+				<include>widget_image_small</include>
+				<texture>$INFO[Window.Property(ExtrasWidget.Picture)]</texture>
+			</control>
+		</control>
+	</include>
+	<include name="widget_picture_item">
+		<control type="group">
+			<visible>Skin.HasSetting(Pictures_widget_on)</visible>
+			<visible>Container(300).HasFocus(5)+StringCompare(Window.Property(PictureWidget.Got),yes)</visible>
+			<include>widget_XY</include>
+			<include>widget_animation</include>
+			<control type="group">
+				<visible>IsEmpty(Window.Property(PictureWidget.Picture)) | IsEmpty(Window.Property(PictureWidget.Content))</visible>
+				<include>widget_back1</include>
+			</control>
+			<control type="group">
+				<visible>!IsEmpty(Window.Property(PictureWidget.Picture)) + !IsEmpty(Window.Property(PictureWidget.Content))</visible>
+				<include>widget_back2</include>
+			</control>
+			<control type="label">
+				<include>widget_Title</include>
+				<label>$INFO[Window.Property(PictureWidget.Title)]</label>
+				<animation effect="slide" start="0,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(PictureWidget.Picture)) + !IsEmpty(Window.Property(PictureWidget.Content))">Conditional</animation>
+			</control>
+			<control type="label">
+				<include>widget_ContentTitle</include>
+				<label>[I]$INFO[Window.Property(PictureWidget.ContentTitle)][/I]</label>
+				<animation effect="slide" start="0,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(PictureWidget.Picture)) + !IsEmpty(Window.Property(PictureWidget.Content))">Conditional</animation>
+			</control>
+			<control type="label">
+				<include condition="IsEmpty(Window.Property(PictureWidget.Content))">widget_PubDate_center</include>
+				<include>widget_PubDate</include>
+				<label>$INFO[Window.Property(PictureWidget.PubDate)]</label>
+			</control>
+			<control type="textbox">
+				<include>widget_Content</include>
+				<label>$INFO[Window.Property(PictureWidget.Content)]</label>
+				<animation effect="slide" start="19,0" end="0,20" time="1" condition="!IsEmpty(Window.Property(PictureWidget.PubDate))">Conditional</animation>
+			</control>
+			<control type="image">
+				<visible>!IsEmpty(Window.Property(PictureWidget.Picture))+IsEmpty(Window.Property(PictureWidget.Content))]</visible>
+				<include>widget_image</include>
+				<texture>$INFO[Window.Property(PictureWidget.Picture)]</texture>
+				<animation effect="zoom" start="100" end="95" time="1" center="auto" condition="!IsEmpty(Window.Property(PictureWidget.PubDate))">Conditional</animation>
+				<animation effect="slide" start="0,14" end="0,15" time="1" condition="!IsEmpty(Window.Property(PictureWidget.PubDate))">Conditional</animation>
+			</control>
+			<control type="image">
+				<visible>!IsEmpty(Window.Property(PictureWidget.Picture))+!IsEmpty(Window.Property(PictureWidget.Content))</visible>
+				<include>widget_image_small</include>
+				<texture>$INFO[Window.Property(PictureWidget.Picture)]</texture>
+			</control>
+		</control>
+	</include>
+	<include name="widget_custom_item1">
+		<control type="group">
+			<visible>Skin.HasSetting(CustomMenu1_widget_on)</visible>
+			<visible>Container(300).HasFocus(30)+StringCompare(Window.Property(CustomMenu1.Got),yes)</visible>
+			<include>widget_XY</include>
+			<include>widget_animation</include>
+			<control type="group">
+				<visible>IsEmpty(Window.Property(CustomMenu1.Picture)) | IsEmpty(Window.Property(CustomMenu1.Content))</visible>
+				<include>widget_back1</include>
+			</control>
+			<control type="group">
+				<visible>!IsEmpty(Window.Property(CustomMenu1.Picture)) + !IsEmpty(Window.Property(CustomMenu1.Content))</visible>
+				<include>widget_back2</include>
+			</control>
+			<control type="label">
+				<include>widget_Title</include>
+				<label>$INFO[Window.Property(CustomMenu1.Title)]</label>
+				<animation effect="slide" start="0,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(CustomMenu1.Picture)) + !IsEmpty(Window.Property(CustomMenu1.Content))">Conditional</animation>
+			</control>
+			<control type="label">
+				<include>widget_ContentTitle</include>
+				<label>[I]$INFO[Window.Property(CustomMenu1.ContentTitle)][/I]</label>
+				<animation effect="slide" start="0,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(CustomMenu1.Picture)) + !IsEmpty(Window.Property(CustomMenu1.Content))">Conditional</animation>
+			</control>
+			<control type="label">
+				<include condition="IsEmpty(Window.Property(CustomMenu1.Content))">widget_PubDate_center</include>
+				<include>widget_PubDate</include>
+				<label>$INFO[Window.Property(CustomMenu1.PubDate)]</label>
+			</control>
+			<control type="textbox">
+				<include>widget_Content</include>
+				<label>$INFO[Window.Property(CustomMenu1.Content)]</label>
+				<animation effect="slide" start="19,0" end="0,20" time="1" condition="!IsEmpty(Window.Property(CustomMenu1.PubDate))">Conditional</animation>
+			</control>
+			<control type="image">
+				<visible>!IsEmpty(Window.Property(CustomMenu1.Picture))+IsEmpty(Window.Property(CustomMenu1.Content))]</visible>
+				<include>widget_image</include>
+				<texture>$INFO[Window.Property(CustomMenu1.Picture)]</texture>
+				<animation effect="zoom" start="100" end="95" time="1" center="auto" condition="!IsEmpty(Window.Property(CustomMenu1.PubDate))">Conditional</animation>
+				<animation effect="slide" start="0,14" end="0,15" time="1" condition="!IsEmpty(Window.Property(CustomMenu1.PubDate))">Conditional</animation>
+			</control>
+			<control type="image">
+				<visible>!IsEmpty(Window.Property(CustomMenu1.Picture))+!IsEmpty(Window.Property(CustomMenu1.Content))</visible>
+				<include>widget_image_small</include>
+				<texture>$INFO[Window.Property(CustomMenu1.Picture)]</texture>
+			</control>
+		</control>
+	</include>
+	<include name="widget_custom_item2">
+		<control type="group">
+			<visible>Skin.HasSetting(CustomMenu2_widget_on)</visible>
+			<visible>Container(300).HasFocus(31)+StringCompare(Window.Property(CustomMenu2.Got),yes)</visible>
+			<include>widget_XY</include>
+			<include>widget_animation</include>
+			<control type="group">
+				<visible>IsEmpty(Window.Property(CustomMenu2.Picture)) | IsEmpty(Window.Property(CustomMenu2.Content))</visible>
+				<include>widget_back1</include>
+			</control>
+			<control type="group">
+				<visible>!IsEmpty(Window.Property(CustomMenu2.Picture)) + !IsEmpty(Window.Property(CustomMenu2.Content))</visible>
+				<include>widget_back2</include>
+			</control>
+			<control type="label">
+				<include>widget_Title</include>
+				<label>$INFO[Window.Property(CustomMenu2.Title)]</label>
+				<animation effect="slide" start="0,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(CustomMenu2.Picture)) + !IsEmpty(Window.Property(CustomMenu2.Content))">Conditional</animation>
+			</control>
+			<control type="label">
+				<include>widget_ContentTitle</include>
+				<label>[I]$INFO[Window.Property(CustomMenu2.ContentTitle)][/I]</label>
+				<animation effect="slide" start="0,0" end="-110,0" time="1" condition="!IsEmpty(Window.Property(CustomMenu2.Picture)) + !IsEmpty(Window.Property(CustomMenu2.Content))">Conditional</animation>
+			</control>
+			<control type="label">
+				<include condition="IsEmpty(Window.Property(CustomMenu2.Content))">widget_PubDate_center</include>
+				<include>widget_PubDate</include>
+				<label>$INFO[Window.Property(CustomMenu2.PubDate)]</label>
+			</control>
+			<control type="textbox">
+				<include>widget_Content</include>
+				<label>$INFO[Window.Property(CustomMenu2.Content)]</label>
+				<animation effect="slide" start="19,0" end="0,20" time="1" condition="!IsEmpty(Window.Property(CustomMenu2.PubDate))">Conditional</animation>
+			</control>
+			<control type="image">
+				<visible>!IsEmpty(Window.Property(CustomMenu2.Picture))+IsEmpty(Window.Property(CustomMenu2.Content))]</visible>
+				<include>widget_image</include>
+				<texture>$INFO[Window.Property(CustomMenu2.Picture)]</texture>
+				<animation effect="zoom" start="100" end="95" time="1" center="auto" condition="!IsEmpty(Window.Property(CustomMenu2.PubDate))">Conditional</animation>
+				<animation effect="slide" start="0,14" end="0,15" time="1" condition="!IsEmpty(Window.Property(CustomMenu2.PubDate))">Conditional</animation>
+			</control>
+			<control type="image">
+				<visible>!IsEmpty(Window.Property(CustomMenu2.Picture))+!IsEmpty(Window.Property(CustomMenu2.Content))</visible>
+				<include>widget_image_small</include>
+				<texture>$INFO[Window.Property(CustomMenu2.Picture)]</texture>
 			</control>
 		</control>
 	</include>

@@ -1,12 +1,12 @@
 import xbmc, xbmcgui, os, sys
-from xbmcgui import Window
+from xbmcgui import WindowDialog
 from xml.dom.minidom import parseString
 
 dialog = xbmcgui.DialogProgress()
 
 class Main:
     # grab the home window
-    WINDOW = Window ( 10000 )
+	WINDOW = WindowDialog ( 10801 )
 
     def __init__( self ):
         dialog.create("Aeon Mod","Loading and parsing favourites data...")
