@@ -128,7 +128,7 @@
 				<textcolor>c0FFFFFF</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
-				<visible>!Container(300).HasFocus()</visible>
+				<visible>!Container(300).HasFocus(1)</visible>
 				<label>[UPPERCASE]$INFO[Container(510).ListItem.Label][/UPPERCASE]</label>
 				<animation effect="slide" start="0,0" end="0,-10" time="1" condition="Container(300).HasFocus(6)">Conditional</animation>
 				<include>animation_Window_ocvh2</include>
