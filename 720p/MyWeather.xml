@@ -19,7 +19,7 @@
 		<include>Animation_CommonFade</include>
 	</control>
 	<include>Furniture_Time</include>
-	<!--include>Furniture_WindowRSS</include-->
+	
 	<control type="group">
 		<posy>40</posy>
 		<include>Objects_WeatherPopup2</include>

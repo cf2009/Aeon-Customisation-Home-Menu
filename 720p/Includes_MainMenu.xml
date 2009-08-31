@@ -93,7 +93,8 @@
 				<item id="2">
 					<description>Extras</description>
 					<label>31865</label>
-					<include>BackgroundVars_extras</include>
+					<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
+					<thumb>$INFO[Skin.String(Custom_extras)]</thumb>
 					<onclick>SetFocus(322)</onclick>
 					<visible>Skin.HasSetting(lowermainmenu)</visible>
 					<visible>!Skin.HasSetting(no_extras)</visible>

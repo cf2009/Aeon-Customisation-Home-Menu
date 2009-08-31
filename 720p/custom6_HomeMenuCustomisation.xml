@@ -183,15 +183,8 @@
 				</item>
 			</content>
 		</control>
-	<!-- -->
+	<!-- dododo -->
 		<control type="group" id="11">
-			<!-- favourites 
-				<item id="99">
-					<label>[B]Open $LOCALIZE[1036][/B]</label>
-					<onclick>xbmc.activatewindow(134)</onclick>
-					<visible>Container(10).HasFocus(7)</visible>
-				</item>
-			-->
 			<!-- Main Menu -->
 			<control type="list" id="13">
 				<visible>Container(10).HasFocus(1)</visible>
